@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EAD9FAD519D0EAB50031E006 /* argo.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD9FAD419D0EAB50031E006 /* argo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EAD9FADF19D0EAB60031E006 /* argoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FADE19D0EAB60031E006 /* argoTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EAD9FACF19D0EAB50031E006 /* argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD9FAD319D0EAB50031E006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EAD9FAD419D0EAB50031E006 /* argo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = argo.h; sourceTree = "<group>"; };
 		EAD9FADA19D0EAB60031E006 /* argoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = argoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD9FADD19D0EAB60031E006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAD9FADE19D0EAB60031E006 /* argoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = argoTests.swift; sourceTree = "<group>"; };
@@ -59,18 +57,9 @@
 		EAD9FAD119D0EAB50031E006 /* argo */ = {
 			isa = PBXGroup;
 			children = (
-				EAD9FAD419D0EAB50031E006 /* argo.h */,
-				EAD9FAD219D0EAB50031E006 /* Supporting Files */,
+				EAD9FAE819D0F5B50031E006 /* Resources */,
 			);
 			path = argo;
-			sourceTree = "<group>";
-		};
-		EAD9FAD219D0EAB50031E006 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				EAD9FAD319D0EAB50031E006 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		EAD9FADB19D0EAB60031E006 /* argoTests */ = {
@@ -90,6 +79,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EAD9FAE819D0F5B50031E006 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EAD9FAD319D0EAB50031E006 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -97,7 +94,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAD9FAD519D0EAB50031E006 /* argo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +298,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = argo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/argo/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -317,7 +313,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = argo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/argo/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -374,6 +370,7 @@
 				EAD9FAE419D0EAB60031E006 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAD9FAE519D0EAB60031E006 /* Build configuration list for PBXNativeTarget "argoTests" */ = {
 			isa = XCConfigurationList;
@@ -382,6 +379,7 @@
 				EAD9FAE719D0EAB60031E006 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
