@@ -1,0 +1,9 @@
+{
+  "id": 3,
+  "text": "A Cool story.",
+  "author": {
+    "id": 1,
+    "name": "Cool User"
+  },
+  "comments": []
+}

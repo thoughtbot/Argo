@@ -7,7 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EAD9FADF19D0EAB60031E006 /* argoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FADE19D0EAB60031E006 /* argoTests.swift */; };
+		EAD9FAEB19D0F6930031E006 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAEA19D0F6930031E006 /* Operators.swift */; };
+		EAD9FAED19D0F6DA0031E006 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAEC19D0F6DA0031E006 /* Optional.swift */; };
+		EAD9FAF219D0F72D0031E006 /* pure.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF119D0F72D0031E006 /* pure.swift */; };
+		EAD9FAF419D0F74C0031E006 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF319D0F74C0031E006 /* JSON.swift */; };
+		EAD9FAF619D0F7900031E006 /* JSONOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* JSONOperators.swift */; };
+		EAD9FAF919D0F7CA0031E006 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF819D0F7CA0031E006 /* JSONDecodable.swift */; };
+		EAD9FAFB19D210CB0031E006 /* flatten.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAFA19D210CB0031E006 /* flatten.swift */; };
+		EAD9FAFE19D2113C0031E006 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAFD19D2113C0031E006 /* User.swift */; };
+		EAD9FB0019D211630031E006 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAFF19D211630031E006 /* Comment.swift */; };
+		EAD9FB0219D211C10031E006 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB0119D211C10031E006 /* Post.swift */; };
+		EAD9FB0619D2143A0031E006 /* user_with_email.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD9FB0419D2143A0031E006 /* user_with_email.json */; };
+		EAD9FB0A19D214AA0031E006 /* user_without_email.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD9FB0819D214AA0031E006 /* user_without_email.json */; };
+		EAD9FB0B19D214AA0031E006 /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD9FB0919D214AA0031E006 /* TemplateIcon2x.png */; };
+		EAD9FB0E19D215570031E006 /* OptionalPropertyDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB0D19D215570031E006 /* OptionalPropertyDecodingTests.swift */; };
+		EAD9FB1019D21AF50031E006 /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB0F19D21AF50031E006 /* JSONFileReader.swift */; };
+		EAD9FB1219D30E660031E006 /* EmbeddedJSONDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB1119D30E660031E006 /* EmbeddedJSONDecodingTests.swift */; };
+		EAD9FB1419D30ED00031E006 /* comment.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD9FB1319D30ED00031E006 /* comment.json */; };
+		EAD9FB1619D30F8D0031E006 /* post_no_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD9FB1519D30F8D0031E006 /* post_no_comments.json */; };
+		EAD9FB1819D49A3E0031E006 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB1719D49A3E0031E006 /* TestModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -15,7 +33,25 @@
 		EAD9FAD319D0EAB50031E006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAD9FADA19D0EAB60031E006 /* argoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = argoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD9FADD19D0EAB60031E006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EAD9FADE19D0EAB60031E006 /* argoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = argoTests.swift; sourceTree = "<group>"; };
+		EAD9FAEA19D0F6930031E006 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		EAD9FAEC19D0F6DA0031E006 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
+		EAD9FAF119D0F72D0031E006 /* pure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pure.swift; sourceTree = "<group>"; };
+		EAD9FAF319D0F74C0031E006 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		EAD9FAF519D0F7900031E006 /* JSONOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONOperators.swift; sourceTree = "<group>"; };
+		EAD9FAF819D0F7CA0031E006 /* JSONDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
+		EAD9FAFA19D210CB0031E006 /* flatten.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = flatten.swift; sourceTree = "<group>"; };
+		EAD9FAFD19D2113C0031E006 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EAD9FAFF19D211630031E006 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		EAD9FB0119D211C10031E006 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		EAD9FB0419D2143A0031E006 /* user_with_email.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_with_email.json; sourceTree = "<group>"; };
+		EAD9FB0819D214AA0031E006 /* user_without_email.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_without_email.json; sourceTree = "<group>"; };
+		EAD9FB0919D214AA0031E006 /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon2x.png; sourceTree = "<group>"; };
+		EAD9FB0D19D215570031E006 /* OptionalPropertyDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalPropertyDecodingTests.swift; sourceTree = "<group>"; };
+		EAD9FB0F19D21AF50031E006 /* JSONFileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFileReader.swift; sourceTree = "<group>"; };
+		EAD9FB1119D30E660031E006 /* EmbeddedJSONDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbeddedJSONDecodingTests.swift; sourceTree = "<group>"; };
+		EAD9FB1319D30ED00031E006 /* comment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comment.json; sourceTree = "<group>"; };
+		EAD9FB1519D30F8D0031E006 /* post_no_comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = post_no_comments.json; sourceTree = "<group>"; };
+		EAD9FB1719D49A3E0031E006 /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestModel.swift; path = ../../../Argo/argoTests/Models/TestModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +93,9 @@
 		EAD9FAD119D0EAB50031E006 /* argo */ = {
 			isa = PBXGroup;
 			children = (
+				EAD9FAF719D0F7B10031E006 /* Protocols */,
+				EAD9FAF019D0F7150031E006 /* Globals */,
+				EAD9FAE919D0F6480031E006 /* Operators */,
 				EAD9FAE819D0F5B50031E006 /* Resources */,
 			);
 			path = argo;
@@ -65,7 +104,9 @@
 		EAD9FADB19D0EAB60031E006 /* argoTests */ = {
 			isa = PBXGroup;
 			children = (
-				EAD9FADE19D0EAB60031E006 /* argoTests.swift */,
+				EAD9FB0C19D215020031E006 /* Tests */,
+				EAD9FB0319D213F30031E006 /* JSON */,
+				EAD9FAFC19D2110D0031E006 /* Models */,
 				EAD9FADC19D0EAB60031E006 /* Supporting Files */,
 			);
 			path = argoTests;
@@ -85,6 +126,67 @@
 				EAD9FAD319D0EAB50031E006 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		EAD9FAE919D0F6480031E006 /* Operators */ = {
+			isa = PBXGroup;
+			children = (
+				EAD9FAEA19D0F6930031E006 /* Operators.swift */,
+				EAD9FAEC19D0F6DA0031E006 /* Optional.swift */,
+				EAD9FAF519D0F7900031E006 /* JSONOperators.swift */,
+			);
+			path = Operators;
+			sourceTree = "<group>";
+		};
+		EAD9FAF019D0F7150031E006 /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				EAD9FAF119D0F72D0031E006 /* pure.swift */,
+				EAD9FAF319D0F74C0031E006 /* JSON.swift */,
+				EAD9FAFA19D210CB0031E006 /* flatten.swift */,
+			);
+			path = Globals;
+			sourceTree = "<group>";
+		};
+		EAD9FAF719D0F7B10031E006 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EAD9FAF819D0F7CA0031E006 /* JSONDecodable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EAD9FAFC19D2110D0031E006 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EAD9FAFD19D2113C0031E006 /* User.swift */,
+				EAD9FAFF19D211630031E006 /* Comment.swift */,
+				EAD9FB0119D211C10031E006 /* Post.swift */,
+				EAD9FB1719D49A3E0031E006 /* TestModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EAD9FB0319D213F30031E006 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				EAD9FB0F19D21AF50031E006 /* JSONFileReader.swift */,
+				EAD9FB0419D2143A0031E006 /* user_with_email.json */,
+				EAD9FB0819D214AA0031E006 /* user_without_email.json */,
+				EAD9FB0919D214AA0031E006 /* TemplateIcon2x.png */,
+				EAD9FB1319D30ED00031E006 /* comment.json */,
+				EAD9FB1519D30F8D0031E006 /* post_no_comments.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		EAD9FB0C19D215020031E006 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EAD9FB0D19D215570031E006 /* OptionalPropertyDecodingTests.swift */,
+				EAD9FB1119D30E660031E006 /* EmbeddedJSONDecodingTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +284,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAD9FB1619D30F8D0031E006 /* post_no_comments.json in Resources */,
+				EAD9FB0A19D214AA0031E006 /* user_without_email.json in Resources */,
+				EAD9FB0619D2143A0031E006 /* user_with_email.json in Resources */,
+				EAD9FB0B19D214AA0031E006 /* TemplateIcon2x.png in Resources */,
+				EAD9FB1419D30ED00031E006 /* comment.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +299,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAD9FAF219D0F72D0031E006 /* pure.swift in Sources */,
+				EAD9FAEB19D0F6930031E006 /* Operators.swift in Sources */,
+				EAD9FAF619D0F7900031E006 /* JSONOperators.swift in Sources */,
+				EAD9FAF919D0F7CA0031E006 /* JSONDecodable.swift in Sources */,
+				EAD9FAED19D0F6DA0031E006 /* Optional.swift in Sources */,
+				EAD9FAFB19D210CB0031E006 /* flatten.swift in Sources */,
+				EAD9FAF419D0F74C0031E006 /* JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +313,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAD9FADF19D0EAB60031E006 /* argoTests.swift in Sources */,
+				EAD9FB1219D30E660031E006 /* EmbeddedJSONDecodingTests.swift in Sources */,
+				EAD9FB1019D21AF50031E006 /* JSONFileReader.swift in Sources */,
+				EAD9FB0219D211C10031E006 /* Post.swift in Sources */,
+				EAD9FB1819D49A3E0031E006 /* TestModel.swift in Sources */,
+				EAD9FB0E19D215570031E006 /* OptionalPropertyDecodingTests.swift in Sources */,
+				EAD9FAFE19D2113C0031E006 /* User.swift in Sources */,
+				EAD9FB0019D211630031E006 /* Comment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +414,7 @@
 		EAD9FAE319D0EAB60031E006 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -303,12 +424,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		EAD9FAE419D0EAB60031E006 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -324,6 +447,7 @@
 		EAD9FAE619D0EAB60031E006 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -335,12 +459,14 @@
 				INFOPLIST_FILE = argoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		EAD9FAE719D0EAB60031E006 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
