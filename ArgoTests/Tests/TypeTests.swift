@@ -11,8 +11,8 @@ class TypeTests: XCTestCase {
     XCTAssert(model?.string == "Cool string")
     XCTAssert(model?.double == 3.4)
     XCTAssert(model?.bool == false)
-    XCTAssert(model?.intOpt != nil)
-//    XCTAssert(model?.stringArray.count == 2)
+//    XCTAssert(model?.intOpt != nil)
+    XCTAssert(model?.stringArray.count == 2)
   }
 }
 

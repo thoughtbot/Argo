@@ -32,11 +32,13 @@ public func <|<A: JSONDecodable>(value: JSONValue, key: String) -> [A]? {
     if let val = v {
       switch val {
       case let .JSONArray(a):
-        var list: [A?] = []
+        var list: [A] = []
         for item in a {
-          list.append(A.decode(item))
+          if let realItem = A.decode(item) {
+            list.append(realItem)
+          }
         }
-        return flatten(list)
+        return list
       default: break
       }
     }
@@ -47,5 +49,9 @@ public func <|<A: JSONDecodable>(value: JSONValue, key: String) -> [A]? {
 }
 
 public func <|*<A: JSONDecodable>(d: JSONValue, key: String) -> A?? {
+  return pure(d <| key)
+}
+
+public func <|*<A: JSONDecodable>(d: JSONValue, key: String) -> [A]?? {
   return pure(d <| key)
 }
