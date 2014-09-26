@@ -12,14 +12,12 @@ extension Post: JSONDecodable {
     return Post(id: id, text: text, author: author, comments: comments)
   }
 
-  static func decode(json: JSON) -> Post? {
-    return _JSONParse(json) >>- { (d: JSONObject) in
-      Post.create
-        <^> d <| "id"
-        <*> d <| "text"
-        <*> d <| "author"
-        <*> d <| "comments"
-    }
+  static func decode(json: JSONValue) -> Post? {
+    return Post.create
+      <^> json <| "id"
+      <*> json <| "text"
+      <*> json <| "author"
+      <*> json <| "comments"
   }
 }
 

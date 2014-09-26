@@ -1,0 +1,11 @@
+{
+  "int": 5,
+  "string": "Cool string",
+  "double": 3.4,
+  "bool": false,
+  "int_opt": 4,
+  "string_array": [
+    "hello",
+    "world"
+  ]
+}
