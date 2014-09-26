@@ -9,7 +9,7 @@ struct TestModel {
   let userOpt: User?
 }
 
-import argo
+import Argo
 
 extension TestModel: JSONDecodable {
   static func create(int: Int)(string: String)(double: Double)(bool: Bool)(intOpt: Int?)(stringArray: [String])(stringArrayOpt: [String]?)(userOpt: User?) -> TestModel {

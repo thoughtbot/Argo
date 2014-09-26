@@ -1,5 +1,5 @@
 import XCTest
-import argo
+import Argo
 
 class OptionalPropertyDecodingTests: XCTestCase {
   func testUserDecodingWithEmail() {

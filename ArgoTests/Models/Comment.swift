@@ -4,7 +4,7 @@ struct Comment {
   let authorName: String
 }
 
-import argo
+import Argo
 
 extension Comment: JSONDecodable {
   static func create(id: Int)(text: String)(authorName: String) -> Comment {

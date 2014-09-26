@@ -4,7 +4,7 @@ struct User {
   let email: String?
 }
 
-import argo
+import Argo
 
 extension User: JSONDecodable {
   static func create(id: Int)(name: String)(email: String?) -> User {

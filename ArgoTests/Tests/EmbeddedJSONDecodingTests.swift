@@ -1,5 +1,5 @@
 import XCTest
-import argo
+import Argo
 
 class EmbeddedJSONDecodingTests: XCTestCase {
   func testCommentDecodingWithEmbeddedUserName() {

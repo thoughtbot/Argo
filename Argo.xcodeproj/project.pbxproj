@@ -29,9 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EAD9FACF19D0EAB50031E006 /* argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAD9FACF19D0EAB50031E006 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD9FAD319D0EAB50031E006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EAD9FADA19D0EAB60031E006 /* argoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = argoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAD9FADA19D0EAB60031E006 /* ArgoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArgoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD9FADD19D0EAB60031E006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAD9FAEA19D0F6930031E006 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		EAD9FAEC19D0F6DA0031E006 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
@@ -75,8 +75,8 @@
 		EAD9FAC519D0EAB50031E006 = {
 			isa = PBXGroup;
 			children = (
-				EAD9FAD119D0EAB50031E006 /* argo */,
-				EAD9FADB19D0EAB60031E006 /* argoTests */,
+				EAD9FAD119D0EAB50031E006 /* Argo */,
+				EAD9FADB19D0EAB60031E006 /* ArgoTests */,
 				EAD9FAD019D0EAB50031E006 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,13 +84,13 @@
 		EAD9FAD019D0EAB50031E006 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EAD9FACF19D0EAB50031E006 /* argo.framework */,
-				EAD9FADA19D0EAB60031E006 /* argoTests.xctest */,
+				EAD9FACF19D0EAB50031E006 /* Argo.framework */,
+				EAD9FADA19D0EAB60031E006 /* ArgoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EAD9FAD119D0EAB50031E006 /* argo */ = {
+		EAD9FAD119D0EAB50031E006 /* Argo */ = {
 			isa = PBXGroup;
 			children = (
 				EAD9FAF719D0F7B10031E006 /* Protocols */,
@@ -98,10 +98,11 @@
 				EAD9FAE919D0F6480031E006 /* Operators */,
 				EAD9FAE819D0F5B50031E006 /* Resources */,
 			);
-			path = argo;
+			name = Argo;
+			path = ../Argo/Argo;
 			sourceTree = "<group>";
 		};
-		EAD9FADB19D0EAB60031E006 /* argoTests */ = {
+		EAD9FADB19D0EAB60031E006 /* ArgoTests */ = {
 			isa = PBXGroup;
 			children = (
 				EAD9FB0C19D215020031E006 /* Tests */,
@@ -109,7 +110,8 @@
 				EAD9FAFC19D2110D0031E006 /* Models */,
 				EAD9FADC19D0EAB60031E006 /* Supporting Files */,
 			);
-			path = argoTests;
+			name = ArgoTests;
+			path = ../Argo/ArgoTests;
 			sourceTree = "<group>";
 		};
 		EAD9FADC19D0EAB60031E006 /* Supporting Files */ = {
@@ -202,9 +204,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		EAD9FACE19D0EAB50031E006 /* argo */ = {
+		EAD9FACE19D0EAB50031E006 /* Argo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EAD9FAE219D0EAB60031E006 /* Build configuration list for PBXNativeTarget "argo" */;
+			buildConfigurationList = EAD9FAE219D0EAB60031E006 /* Build configuration list for PBXNativeTarget "Argo" */;
 			buildPhases = (
 				EAD9FACA19D0EAB50031E006 /* Sources */,
 				EAD9FACB19D0EAB50031E006 /* Frameworks */,
@@ -215,14 +217,14 @@
 			);
 			dependencies = (
 			);
-			name = argo;
+			name = Argo;
 			productName = argo;
-			productReference = EAD9FACF19D0EAB50031E006 /* argo.framework */;
+			productReference = EAD9FACF19D0EAB50031E006 /* Argo.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		EAD9FAD919D0EAB60031E006 /* argoTests */ = {
+		EAD9FAD919D0EAB60031E006 /* ArgoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EAD9FAE519D0EAB60031E006 /* Build configuration list for PBXNativeTarget "argoTests" */;
+			buildConfigurationList = EAD9FAE519D0EAB60031E006 /* Build configuration list for PBXNativeTarget "ArgoTests" */;
 			buildPhases = (
 				EAD9FAD619D0EAB60031E006 /* Sources */,
 				EAD9FAD719D0EAB60031E006 /* Frameworks */,
@@ -232,9 +234,9 @@
 			);
 			dependencies = (
 			);
-			name = argoTests;
+			name = ArgoTests;
 			productName = argoTests;
-			productReference = EAD9FADA19D0EAB60031E006 /* argoTests.xctest */;
+			productReference = EAD9FADA19D0EAB60031E006 /* ArgoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -254,7 +256,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EAD9FAC919D0EAB50031E006 /* Build configuration list for PBXProject "argo" */;
+			buildConfigurationList = EAD9FAC919D0EAB50031E006 /* Build configuration list for PBXProject "Argo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -266,8 +268,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EAD9FACE19D0EAB50031E006 /* argo */,
-				EAD9FAD919D0EAB60031E006 /* argoTests */,
+				EAD9FACE19D0EAB50031E006 /* Argo */,
+				EAD9FAD919D0EAB60031E006 /* ArgoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -419,10 +421,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/argo/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Argo/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Argo;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -436,10 +438,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/argo/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Argo/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Argo;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -458,7 +460,7 @@
 				);
 				INFOPLIST_FILE = argoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ArgoTests;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -473,14 +475,14 @@
 				);
 				INFOPLIST_FILE = argoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ArgoTests;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EAD9FAC919D0EAB50031E006 /* Build configuration list for PBXProject "argo" */ = {
+		EAD9FAC919D0EAB50031E006 /* Build configuration list for PBXProject "Argo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EAD9FAE019D0EAB60031E006 /* Debug */,
@@ -489,7 +491,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EAD9FAE219D0EAB60031E006 /* Build configuration list for PBXNativeTarget "argo" */ = {
+		EAD9FAE219D0EAB60031E006 /* Build configuration list for PBXNativeTarget "Argo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EAD9FAE319D0EAB60031E006 /* Debug */,
@@ -498,7 +500,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EAD9FAE519D0EAB60031E006 /* Build configuration list for PBXNativeTarget "argoTests" */ = {
+		EAD9FAE519D0EAB60031E006 /* Build configuration list for PBXNativeTarget "ArgoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EAD9FAE619D0EAB60031E006 /* Debug */,

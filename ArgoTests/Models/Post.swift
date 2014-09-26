@@ -5,7 +5,7 @@ struct Post {
   let comments: [Comment]
 }
 
-import argo
+import Argo
 
 extension Post: JSONDecodable {
   static func create(id: Int)(text: String)(author: User)(comments: [Comment]) -> Post {
