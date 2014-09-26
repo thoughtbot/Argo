@@ -6,27 +6,29 @@ struct TestModel {
   let intOpt: Int?
   let stringArray: [String]
   let stringArrayOpt: [String]?
+  let eStringArray: [String]
+  let eStringArrayOpt: [String]?
   let userOpt: User?
 }
 
 import Argo
 
 extension TestModel: JSONDecodable {
-  static func create(int: Int)(string: String)(double: Double)(bool: Bool)(intOpt: Int?)(stringArray: [String])(stringArrayOpt: [String]?)(userOpt: User?) -> TestModel {
-    return TestModel(int: int, string: string, double: double, bool: bool, intOpt: intOpt, stringArray: stringArray, stringArrayOpt: stringArrayOpt, userOpt: userOpt)
+  static func create(int: Int)(string: String)(double: Double)(bool: Bool)(intOpt: Int?)(stringArray: [String])(stringArrayOpt: [String]?)(eStringArray: [String])(eStringArrayOpt: [String]?)(userOpt: User?) -> TestModel {
+    return TestModel(int: int, string: string, double: double, bool: bool, intOpt: intOpt, stringArray: stringArray, stringArrayOpt: stringArrayOpt, eStringArray: eStringArray, eStringArrayOpt: eStringArrayOpt, userOpt: userOpt)
   }
 
-  static func decode(json: JSON) -> TestModel? {
-    return _JSONParse(json) >>- { d in
-      TestModel.create
-        <^> d <| "int"
-        <*> d <| "string"
-        <*> d <| "double"
-        <*> d <| "bool"
-        <*> d <|* "int_opt"
-        <*> d <| "string_array"
-        <*> d <|* "string_array_opt"
-        <*> d <|* "user_opt"
-    }
+  static var decoder: JSONValue -> TestModel? {
+    return TestModel.create
+      <^> <|"int"
+      <*> <|["user_opt", "name"]
+      <*> <|"double"
+      <*> <|"bool"
+      <*> <|*"int_opt"
+      <*> <||"string_array"
+      <*> <||*"string_array_opt"
+      <*> <||["embedded", "string_array"]
+      <*> <||*["embedded", "string_array_opt"]
+      <*> <|*"user_opt"
   }
 }

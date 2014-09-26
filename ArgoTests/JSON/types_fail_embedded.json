@@ -1,0 +1,14 @@
+{
+  "int": 5,
+  "double": 3.4,
+  "bool": false,
+  "int_opt": 4,
+  "string_array": [
+    "hello",
+    "world"
+  ],
+  "user_opt": {
+    "id": 6,
+    "fail": "Cooler User"
+  }
+}

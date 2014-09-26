@@ -1,0 +1,21 @@
+{
+  "int": 5,
+  "double": 3.4,
+  "bool": false,
+  "int_opt": 4,
+  "string_array": [
+    "hello",
+    "world"
+  ],
+  "embedded": {
+    "string_array": [
+      "hello",
+      "world"
+    ],
+    "string_array_opt": []
+  },
+  "user_opt": {
+    "id": 6,
+    "name": "Cooler User"
+  }
+}

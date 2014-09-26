@@ -3,8 +3,8 @@ import Argo
 
 class OptionalPropertyDecodingTests: XCTestCase {
   func testUserDecodingWithEmail() {
-    let json: JSON? = JSONFileReader.JSON(fromFile: "user_with_email")
-    let user = json >>- User.decode
+    let json: AnyObject? = JSONFileReader.JSON(fromFile: "user_with_email")
+    let user = json >>- JSONValue.parse >>- User.decoder
 
     XCTAssert(user != nil)
     XCTAssert(user?.id == 1)
@@ -14,8 +14,8 @@ class OptionalPropertyDecodingTests: XCTestCase {
   }
 
   func testUserDecodingWithoutEmail() {
-    let json: JSON? = JSONFileReader.JSON(fromFile: "user_without_email")
-    let user = json >>- User.decode
+    let json: AnyObject? = JSONFileReader.JSON(fromFile: "user_without_email")
+    let user = json >>- JSONValue.parse >>- User.decoder
 
     XCTAssert(user != nil)
     XCTAssert(user?.id == 1)
