@@ -24,7 +24,7 @@ struct User {
 ```
 
 Then, extend the model to conform to `JSONDecodable`. You will also need to
-write a static constructor method that is curryed. I like to use `create`.
+write a static constructor method that is curried. I like to use `create`.
 
 ```swift
 extension User: JSONDecodable {
@@ -35,7 +35,7 @@ extension User: JSONDecodable {
 ```
 
 It's important that the `create` function's parameters are all in separate
-parenthesis. This will make the function curryed. Then inside the function we
+parenthesis. This will make the function curried. Then inside the function we
 can call the model's constructor.
 
 Finally, implement the `JSONDecodable` `decode` function to decode the incoming
