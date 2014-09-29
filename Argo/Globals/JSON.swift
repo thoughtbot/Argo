@@ -30,7 +30,12 @@ extension Double: JSONDecodable {
 extension Bool: JSONDecodable {
   public static func decode(json: JSONValue) -> Bool? {
     switch json {
-    case let .JSONNumber(b): return b == 0 ? false : true
+    case let .JSONNumber(b):
+      switch b {
+      case 0: return false
+      case 1: return true
+      default: return .None
+      }
     default: return .None
     }
   }
