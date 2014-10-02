@@ -7,15 +7,8 @@
     "hello",
     "world"
   ],
-  "embedded": {
-    "string_array": [
-      "hello",
-      "world"
-    ],
-    "string_array_opt": []
-  },
   "user_opt": {
     "id": 6,
-    "name": "Cooler User"
+    "fail": "Cooler User"
   }
 }

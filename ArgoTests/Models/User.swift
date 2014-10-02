@@ -8,14 +8,14 @@ import Argo
 
 extension User: JSONDecodable {
   static func create(id: Int)(name: String)(email: String?) -> User {
-    println("create user")
     return User(id: id, name: name, email: email)
   }
 
-  static func decode(json: JSONValue) -> User? {
-    return User.create
-      <^> json <|  "id"
-      <*> json <|  "name"
-      <*> json <|* "email"
+  static var decoder: JSONValue -> User? {
+     return User.create
+      <^> <|"id"
+      <*> <|"name"
+      <*> <|*"email"
   }
 }
+

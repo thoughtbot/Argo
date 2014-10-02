@@ -1,34 +1,36 @@
+//import Foundation
+
 struct TestModel {
   let int: Int
   let string: String
   let double: Double
   let bool: Bool
-//  let intOpt: Int?
+  let intOpt: Int?
   let stringArray: [String]
-//  let stringArrayOpt: [String]?
-//  let userOpt: User?
+  let stringArrayOpt: [String]?
+  let eStringArray: [String]
+  let eStringArrayOpt: [String]?
+  let userOpt: User?
 }
 
 import Argo
 
 extension TestModel: JSONDecodable {
-//  static func create(int: Int)(string: String)(double: Double)(bool: Bool)(intOpt: Int?)(stringArray: [String])(stringArrayOpt: [String]?)(userOpt: User?) -> TestModel {
-//    return TestModel(int: int, string: string, double: double, bool: bool, intOpt: intOpt, stringArray: stringArray, stringArrayOpt: stringArrayOpt, userOpt: userOpt)
-//  }
-  static func create(int: Int)(string: String)(double: Double)(bool: Bool)(stringArray: [String]) -> TestModel {
-    return TestModel(int: int, string: string, double: double, bool: bool, stringArray: stringArray)
+  static func create(int: Int)(string: String)(double: Double)(bool: Bool)(intOpt: Int?)(stringArray: [String])(stringArrayOpt: [String]?)(eStringArray: [String])(eStringArrayOpt: [String]?)(userOpt: User?) -> TestModel {
+    return TestModel(int: int, string: string, double: double, bool: bool, intOpt: intOpt, stringArray: stringArray, stringArrayOpt: stringArrayOpt, eStringArray: eStringArray, eStringArrayOpt: eStringArrayOpt, userOpt: userOpt)
   }
 
-  static func decode(json: JSONValue) -> TestModel? {
-    println(json)
+  static var decoder: JSONValue -> TestModel? {
     return TestModel.create
-      <^> json <| "int"
-      <*> json <| "string"
-      <*> json <| "double"
-      <*> json <| "bool"
-//      <*> json <|* "int_opt"
-      <*> json <| "string_array"
-//      <*> json <|* "string_array_opt"
-//      <*> json <|* "user_opt"
+      <^> <|"int"
+      <*> <|["user_opt", "name"]
+      <*> <|"double"
+      <*> <|"bool"
+      <*> <|*"int_opt"
+      <*> <||"string_array"
+      <*> <||*"string_array_opt"
+      <*> <||["embedded", "string_array"]
+      <*> <||*["embedded", "string_array_opt"]
+      <*> <|*"user_opt"
   }
 }

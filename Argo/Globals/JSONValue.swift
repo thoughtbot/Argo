@@ -30,6 +30,30 @@ public enum JSONValue: Printable {
     }
   }
 
+  public func value<A>() -> A? {
+    switch self {
+    case let .JSONString(v): return v as? A
+    case let .JSONNumber(v): return v as? A
+    case let .JSONNull: return .None
+    case let .JSONArray(a): return a as? A
+    case let .JSONObject(o): return o as? A
+    }
+  }
+
+  public func pull(key: String) -> JSONValue? {
+    switch self {
+    case let .JSONObject(o): return o[key]
+    default: return .None
+    }
+  }
+
+  public static func map<A: JSONDecodable>(value: JSONValue) -> [A]? {
+    switch value {
+    case let .JSONArray(a): return a.map { A.decoder($0) } >>- flatten
+    default: return .None
+    }
+  }
+
   public var description: String {
     switch self {
     case let .JSONString(v): return "String(\(v))"

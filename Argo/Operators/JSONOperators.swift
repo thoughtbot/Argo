@@ -1,57 +1,39 @@
-import Foundation
-
-public func <|<A: JSONDecodable>(value: JSONValue, key: String) -> A? {
-  switch value {
-  case let .JSONObject(o):
-    if let v = o[key] {
-      return A.decode(v)
-    }
-    fallthrough
-
-  default: return .None
-  }
+// Pull value from JSON
+prefix public func <|<A: JSONDecodable>(key: String) -> JSONValue -> A? {
+  return <|[key]
 }
 
-public func <|(value: JSONValue, key: String) -> JSONValue {
-  switch value {
-  case let .JSONObject(o):
-    if let d = o[key] {
-      return d
-    }
-    fallthrough
-
-  default: return .JSONObject([:])
-  }
+// Pull embedded value from JSON
+prefix public func <|<A: JSONDecodable>(keys: [String]) -> JSONValue -> A? {
+  return { keys.reduce($0) { $0?.pull($1) } >>- A.decoder }
 }
 
-public func <|<A: JSONDecodable>(value: JSONValue, key: String) -> [A]? {
-  switch value {
-  case let .JSONObject(o):
-    let v: JSONValue? = o[key]
-
-    if let val = v {
-      switch val {
-      case let .JSONArray(a):
-        var list: [A] = []
-        for item in a {
-          if let realItem = A.decode(item) {
-            list.append(realItem)
-          }
-        }
-        return list
-      default: break
-      }
-    }
-    fallthrough
-
-  default: return .None
-  }
+// Pull array from JSON
+prefix public func <||<A: JSONDecodable>(key: String) -> JSONValue -> [A]? {
+  return <||[key]
 }
 
-public func <|*<A: JSONDecodable>(d: JSONValue, key: String) -> A?? {
-  return pure(d <| key)
+// Pull embedded array from JSON
+prefix public func <||<A: JSONDecodable>(keys: [String]) -> JSONValue -> [A]? {
+  return { keys.reduce($0) { $0?.pull($1) } >>- JSONValue.map }
 }
 
-public func <|*<A: JSONDecodable>(d: JSONValue, key: String) -> [A]?? {
-  return pure(d <| key)
+// Pull optional value from JSON
+prefix public func <|*<A: JSONDecodable>(key: String) -> JSONValue -> A?? {
+  return <|*[key]
+}
+
+// Pull embedded optional value from JSON
+prefix public func <|*<A: JSONDecodable>(keys: [String]) -> JSONValue -> A?? {
+  return { pure(keys.reduce($0) { $0?.pull($1) } >>- A.decoder) }
+}
+
+// Pull optional array from JSON
+prefix public func <||*<A: JSONDecodable>(key: String) -> JSONValue -> [A]?? {
+  return <||*[key]
+}
+
+// Pull embedded optional array from JSON
+prefix public func <||*<A: JSONDecodable>(keys: [String]) -> JSONValue -> [A]?? {
+  return { pure(keys.reduce($0) { $0?.pull($1) } >>- JSONValue.map) }
 }

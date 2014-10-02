@@ -11,10 +11,10 @@ extension Comment: JSONDecodable {
     return Comment(id: id, text: text, authorName: authorName)
   }
 
-  static func decode(json: JSONValue) -> Comment? {
+  static var decoder: JSONValue -> Comment? {
     return Comment.create
-      <^> json <| "id"
-      <*> json <| "text"
-      <*> json <| "author" <| "name"
+      <^> <|"id"
+      <*> <|"text"
+      <*> <|["author", "name"]
   }
 }

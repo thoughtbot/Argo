@@ -1,3 +1,3 @@
 public protocol JSONDecodable {
-  class func decode(json: JSONValue) -> Self?
+  class var decoder: JSONValue -> Self? { get }
 }
