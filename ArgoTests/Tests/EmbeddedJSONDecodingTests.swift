@@ -3,7 +3,7 @@ import Argo
 
 class EmbeddedJSONDecodingTests: XCTestCase {
   func testCommentDecodingWithEmbeddedUserName() {
-    let json: JSON? = JSONFileReader.JSON(fromFile: "comment")
+    let json: AnyObject? = JSONFileReader.JSON(fromFile: "comment")
     let comment = json >>- JSONValue.parse >>- Comment.decoder
 
     XCTAssert(comment != nil)
@@ -13,7 +13,7 @@ class EmbeddedJSONDecodingTests: XCTestCase {
   }
 
   func testPostDecodingWithEmbeddedUserModel() {
-    let json: JSON? = JSONFileReader.JSON(fromFile: "post_no_comments")
+    let json: AnyObject? = JSONFileReader.JSON(fromFile: "post_no_comments")
     let post = json >>- JSONValue.parse >>- Post.decoder
 
     XCTAssert(post != nil)
@@ -24,7 +24,7 @@ class EmbeddedJSONDecodingTests: XCTestCase {
   }
 
   func testPostDecodingWithEmbeddedUserModelAndComments() {
-    let json: JSON? = JSONFileReader.JSON(fromFile: "post_comments")
+    let json: AnyObject? = JSONFileReader.JSON(fromFile: "post_comments")
     let post = json >>- JSONValue.parse >>- Post.decoder
 
     XCTAssert(post != nil)

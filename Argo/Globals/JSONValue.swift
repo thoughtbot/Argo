@@ -1,7 +1,5 @@
 import Foundation
 
-public typealias JSON = AnyObject
-
 public enum JSONValue: Printable {
   case JSONObject([String:JSONValue])
   case JSONArray([JSONValue])
@@ -9,14 +7,14 @@ public enum JSONValue: Printable {
   case JSONNumber(NSNumber)
   case JSONNull
 
-  public static func parse(json: JSON) -> JSONValue {
+  public static func parse(json: AnyObject) -> JSONValue {
     switch json {
-    case let v as [JSON]: return .JSONArray(v.map { self.parse($0) })
+    case let v as [AnyObject]: return .JSONArray(v.map { self.parse($0) })
 
-    case let v as [String:JSON]:
+    case let v as [String:AnyObject]:
       var object: [String:JSONValue] = [:]
       for key in v.keys {
-        if let value: JSON = v[key] {
+        if let value: AnyObject = v[key] {
           object[key] = parse(value)
         } else {
           object[key] = .JSONNull

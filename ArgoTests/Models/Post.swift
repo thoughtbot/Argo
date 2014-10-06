@@ -20,5 +20,3 @@ extension Post: JSONDecodable {
       <*> <||"comments"
   }
 }
-
-

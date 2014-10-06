@@ -1,5 +1,3 @@
-//import Foundation
-
 struct TestModel {
   let int: Int
   let string: String
