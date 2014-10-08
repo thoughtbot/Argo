@@ -5,7 +5,7 @@ prefix public func <|<A: JSONDecodable>(key: String) -> JSONValue -> A? {
 
 // Pull embedded value from JSON
 prefix public func <|<A: JSONDecodable>(keys: [String]) -> JSONValue -> A? {
-  return { keys.reduce($0) { $0?.pull($1) } >>- A.decoder }
+  return { keys.reduce($0) { $0?[$1] } >>- A.decoder }
 }
 
 // Pull array from JSON
@@ -15,7 +15,7 @@ prefix public func <||<A: JSONDecodable>(key: String) -> JSONValue -> [A]? {
 
 // Pull embedded array from JSON
 prefix public func <||<A: JSONDecodable>(keys: [String]) -> JSONValue -> [A]? {
-  return { keys.reduce($0) { $0?.pull($1) } >>- JSONValue.map }
+  return { keys.reduce($0) { $0?[$1] } >>- JSONValue.map }
 }
 
 // Pull optional value from JSON
@@ -25,7 +25,7 @@ prefix public func <|*<A: JSONDecodable>(key: String) -> JSONValue -> A?? {
 
 // Pull embedded optional value from JSON
 prefix public func <|*<A: JSONDecodable>(keys: [String]) -> JSONValue -> A?? {
-  return { pure(keys.reduce($0) { $0?.pull($1) } >>- A.decoder) }
+  return { pure(keys.reduce($0) { $0?[$1] } >>- A.decoder) }
 }
 
 // Pull optional array from JSON
@@ -35,5 +35,5 @@ prefix public func <||*<A: JSONDecodable>(key: String) -> JSONValue -> [A]?? {
 
 // Pull embedded optional array from JSON
 prefix public func <||*<A: JSONDecodable>(keys: [String]) -> JSONValue -> [A]?? {
-  return { pure(keys.reduce($0) { $0?.pull($1) } >>- JSONValue.map) }
+  return { pure(keys.reduce($0) { $0?[$1] } >>- JSONValue.map) }
 }

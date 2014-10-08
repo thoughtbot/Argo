@@ -38,7 +38,7 @@ public enum JSONValue: Printable {
     }
   }
 
-  public func pull(key: String) -> JSONValue? {
+  public subscript(key: String) -> JSONValue? {
     switch self {
     case let .JSONObject(o): return o[key]
     default: return .None
