@@ -60,8 +60,8 @@
 		EAD9FB1119D30E660031E006 /* EmbeddedJSONDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbeddedJSONDecodingTests.swift; sourceTree = "<group>"; };
 		EAD9FB1319D30ED00031E006 /* comment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comment.json; sourceTree = "<group>"; };
 		EAD9FB1519D30F8D0031E006 /* post_no_comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = post_no_comments.json; sourceTree = "<group>"; };
-		EAD9FB1719D49A3E0031E006 /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestModel.swift; path = ../../../Argo/argoTests/Models/TestModel.swift; sourceTree = "<group>"; };
-		EAD9FB1919D4B23F0031E006 /* JSONValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONValue.swift; path = ../../../Argo/argo/Globals/JSONValue.swift; sourceTree = "<group>"; };
+		EAD9FB1719D49A3E0031E006 /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestModel.swift; path = ../../../Argo/ArgoTests/Models/TestModel.swift; sourceTree = "<group>"; };
+		EAD9FB1919D4B23F0031E006 /* JSONValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONValue.swift; path = ../../../Argo/Argo/Globals/JSONValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -478,7 +478,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = argoTests/Info.plist;
+				INFOPLIST_FILE = ArgoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ArgoTests;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -493,7 +493,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = argoTests/Info.plist;
+				INFOPLIST_FILE = ArgoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ArgoTests;
 			};
