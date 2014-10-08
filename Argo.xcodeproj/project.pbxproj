@@ -97,6 +97,8 @@
 		F893355E1A4CE83000B88685 /* Argo-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Argo-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893356D1A4CE8FC00B88685 /* Argo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argo.h; sourceTree = "<group>"; };
 		EAD9FB1919D4B23F0031E006 /* JSONValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONValue.swift; path = ../../../Argo/argo/Globals/JSONValue.swift; sourceTree = "<group>"; };
+		EAD9FB1719D49A3E0031E006 /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestModel.swift; path = ../../../Argo/ArgoTests/Models/TestModel.swift; sourceTree = "<group>"; };
+		EAD9FB1919D4B23F0031E006 /* JSONValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONValue.swift; path = ../../../Argo/Argo/Globals/JSONValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -693,7 +695,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = argoTests/Info.plist;
+				INFOPLIST_FILE = ArgoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ArgoTests;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -708,7 +710,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = argoTests/Info.plist;
+				INFOPLIST_FILE = ArgoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ArgoTests;
 			};
