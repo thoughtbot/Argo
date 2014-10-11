@@ -7,7 +7,7 @@ much like Aeson inspired his son Jason.
 
 ## Installation
 
-Until CocoPods fully supports Swift projects, my recommended method of
+Until CocoaPods fully supports Swift projects, my recommended method of
 installation is to use git-submodules. Add this repo as a submodule to your
 project repo, then add the project file to you workspace.
 
