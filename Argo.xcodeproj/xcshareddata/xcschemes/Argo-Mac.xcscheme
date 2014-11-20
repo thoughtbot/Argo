@@ -28,13 +28,23 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F893355D1A4CE83000B88685"
+               BuildableName = "Argo-MacTests.xctest"
+               BlueprintName = "Argo-MacTests"
+               ReferencedContainer = "container:Argo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EAD9FACE19D0EAB50031E006"
+            BlueprintIdentifier = "F89335531A4CE83000B88685"
             BuildableName = "Argo.framework"
-            BlueprintName = "Argo-iOS"
+            BlueprintName = "Argo-Mac"
             ReferencedContainer = "container:Argo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -48,6 +58,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F89335531A4CE83000B88685"
+            BuildableName = "Argo.framework"
+            BlueprintName = "Argo-Mac"
+            ReferencedContainer = "container:Argo.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,6 +76,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F89335531A4CE83000B88685"
+            BuildableName = "Argo.framework"
+            BlueprintName = "Argo-Mac"
+            ReferencedContainer = "container:Argo.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

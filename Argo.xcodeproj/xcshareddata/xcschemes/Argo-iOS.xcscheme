@@ -28,7 +28,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EAD9FAD919D0EAB60031E006"
+               BuildableName = "ArgoTests.xctest"
+               BlueprintName = "ArgoTests"
+               ReferencedContainer = "container:Argo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "EAD9FACE19D0EAB50031E006"
+            BuildableName = "Argo.framework"
+            BlueprintName = "Argo-iOS"
+            ReferencedContainer = "container:Argo.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
