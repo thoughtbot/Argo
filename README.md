@@ -7,9 +7,31 @@ much like Aeson inspired his son Jason.
 
 ## Installation
 
-Until CocoaPods fully supports Swift projects, my recommended method of
-installation is to use git-submodules. Add this repo as a submodule to your
-project repo, then add the project file to you workspace.
+### [Carthage]
+
+[Carthage]: https://github.com/Carthage/Carthage
+
+Add the following to your Cartfile:
+
+```
+github "thoughtbot/Argo"
+```
+
+Then run `carthage update`. Drag `Argo.framework` into your project, and
+you're good to go.
+
+### [CocoaPods]
+
+[CocoaPods]: http://cocoapods.org
+
+ *coming soon*
+
+### Git Submodules ###
+
+I guess you could do it this way if that's your thing.
+
+Add this repo as a submodule, and add the project file to your workspace. You
+can then link against `Argo.framework` for your application target.
 
 ## Usage
 
