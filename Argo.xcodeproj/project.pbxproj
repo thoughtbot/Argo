@@ -26,7 +26,39 @@
 		EAD9FB1419D30ED00031E006 /* comment.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD9FB1319D30ED00031E006 /* comment.json */; };
 		EAD9FB1619D30F8D0031E006 /* post_no_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD9FB1519D30F8D0031E006 /* post_no_comments.json */; };
 		EAD9FB1819D49A3E0031E006 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB1719D49A3E0031E006 /* TestModel.swift */; };
+		F893355F1A4CE83000B88685 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F89335541A4CE83000B88685 /* Argo.framework */; };
+		F893356E1A4CE8FC00B88685 /* Argo.h in Headers */ = {isa = PBXBuildFile; fileRef = F893356D1A4CE8FC00B88685 /* Argo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F893356F1A4CE8FC00B88685 /* Argo.h in Headers */ = {isa = PBXBuildFile; fileRef = F893356D1A4CE8FC00B88685 /* Argo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F89335701A4CE92D00B88685 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF819D0F7CA0031E006 /* JSONDecodable.swift */; };
+		F89335711A4CE93000B88685 /* pure.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF119D0F72D0031E006 /* pure.swift */; };
+		F89335721A4CE93600B88685 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF319D0F74C0031E006 /* JSON.swift */; };
+		F89335731A4CE93600B88685 /* flatten.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAFA19D210CB0031E006 /* flatten.swift */; };
+		F89335741A4CE93600B88685 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAEA19D0F6930031E006 /* Operators.swift */; };
+		F89335751A4CE93600B88685 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAEC19D0F6DA0031E006 /* Optional.swift */; };
+		F89335761A4CE93600B88685 /* JSONOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* JSONOperators.swift */; };
+		F8EF756A1A4CEC6100BDCC2D /* OptionalPropertyDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB0D19D215570031E006 /* OptionalPropertyDecodingTests.swift */; };
+		F8EF756B1A4CEC6400BDCC2D /* EmbeddedJSONDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB1119D30E660031E006 /* EmbeddedJSONDecodingTests.swift */; };
+		F8EF756C1A4CEC7100BDCC2D /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB0F19D21AF50031E006 /* JSONFileReader.swift */; };
+		F8EF756D1A4CEC7100BDCC2D /* user_with_email.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD9FB0419D2143A0031E006 /* user_with_email.json */; };
+		F8EF756E1A4CEC7100BDCC2D /* user_without_email.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD9FB0819D214AA0031E006 /* user_without_email.json */; };
+		F8EF756F1A4CEC7100BDCC2D /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD9FB0919D214AA0031E006 /* TemplateIcon2x.png */; };
+		F8EF75701A4CEC7100BDCC2D /* comment.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD9FB1319D30ED00031E006 /* comment.json */; };
+		F8EF75711A4CEC7100BDCC2D /* post_no_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD9FB1519D30F8D0031E006 /* post_no_comments.json */; };
+		F8EF75721A4CEC7800BDCC2D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAFD19D2113C0031E006 /* User.swift */; };
+		F8EF75731A4CEC7800BDCC2D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAFF19D211630031E006 /* Comment.swift */; };
+		F8EF75741A4CEC7800BDCC2D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB0119D211C10031E006 /* Post.swift */; };
+		F8EF75751A4CEC7800BDCC2D /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB1719D49A3E0031E006 /* TestModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F89335601A4CE83000B88685 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAD9FAC619D0EAB50031E006 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F89335531A4CE83000B88685;
+			remoteInfo = "Argo-Mac";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		EAD9FACF19D0EAB50031E006 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +84,9 @@
 		EAD9FB1319D30ED00031E006 /* comment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comment.json; sourceTree = "<group>"; };
 		EAD9FB1519D30F8D0031E006 /* post_no_comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = post_no_comments.json; sourceTree = "<group>"; };
 		EAD9FB1719D49A3E0031E006 /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestModel.swift; path = ../../../Argo/argoTests/Models/TestModel.swift; sourceTree = "<group>"; };
+		F89335541A4CE83000B88685 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F893355E1A4CE83000B88685 /* Argo-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Argo-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F893356D1A4CE8FC00B88685 /* Argo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +101,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F89335501A4CE83000B88685 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F893355B1A4CE83000B88685 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F893355F1A4CE83000B88685 /* Argo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +136,8 @@
 			children = (
 				EAD9FACF19D0EAB50031E006 /* Argo.framework */,
 				EAD9FADA19D0EAB60031E006 /* ArgoTests.xctest */,
+				F89335541A4CE83000B88685 /* Argo.framework */,
+				F893355E1A4CE83000B88685 /* Argo-MacTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				EAD9FAD319D0EAB50031E006 /* Info.plist */,
+				F893356D1A4CE8FC00B88685 /* Argo.h */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -198,15 +251,24 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F893356E1A4CE8FC00B88685 /* Argo.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F89335511A4CE83000B88685 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F893356F1A4CE8FC00B88685 /* Argo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		EAD9FACE19D0EAB50031E006 /* Argo */ = {
+		EAD9FACE19D0EAB50031E006 /* Argo-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EAD9FAE219D0EAB60031E006 /* Build configuration list for PBXNativeTarget "Argo" */;
+			buildConfigurationList = EAD9FAE219D0EAB60031E006 /* Build configuration list for PBXNativeTarget "Argo-iOS" */;
 			buildPhases = (
 				EAD9FACA19D0EAB50031E006 /* Sources */,
 				EAD9FACB19D0EAB50031E006 /* Frameworks */,
@@ -217,7 +279,7 @@
 			);
 			dependencies = (
 			);
-			name = Argo;
+			name = "Argo-iOS";
 			productName = argo;
 			productReference = EAD9FACF19D0EAB50031E006 /* Argo.framework */;
 			productType = "com.apple.product-type.framework";
@@ -239,6 +301,42 @@
 			productReference = EAD9FADA19D0EAB60031E006 /* ArgoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F89335531A4CE83000B88685 /* Argo-Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F89335671A4CE83000B88685 /* Build configuration list for PBXNativeTarget "Argo-Mac" */;
+			buildPhases = (
+				F893354F1A4CE83000B88685 /* Sources */,
+				F89335501A4CE83000B88685 /* Frameworks */,
+				F89335511A4CE83000B88685 /* Headers */,
+				F89335521A4CE83000B88685 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Argo-Mac";
+			productName = "Argo-Mac";
+			productReference = F89335541A4CE83000B88685 /* Argo.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F893355D1A4CE83000B88685 /* Argo-MacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F893356A1A4CE83000B88685 /* Build configuration list for PBXNativeTarget "Argo-MacTests" */;
+			buildPhases = (
+				F893355A1A4CE83000B88685 /* Sources */,
+				F893355B1A4CE83000B88685 /* Frameworks */,
+				F893355C1A4CE83000B88685 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F89335611A4CE83000B88685 /* PBXTargetDependency */,
+			);
+			name = "Argo-MacTests";
+			productName = "Argo-MacTests";
+			productReference = F893355E1A4CE83000B88685 /* Argo-MacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -254,6 +352,12 @@
 					EAD9FAD919D0EAB60031E006 = {
 						CreatedOnToolsVersion = 6.0.1;
 					};
+					F89335531A4CE83000B88685 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					F893355D1A4CE83000B88685 = {
+						CreatedOnToolsVersion = 6.2;
+					};
 				};
 			};
 			buildConfigurationList = EAD9FAC919D0EAB50031E006 /* Build configuration list for PBXProject "Argo" */;
@@ -268,8 +372,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EAD9FACE19D0EAB50031E006 /* Argo */,
+				EAD9FACE19D0EAB50031E006 /* Argo-iOS */,
 				EAD9FAD919D0EAB60031E006 /* ArgoTests */,
+				F89335531A4CE83000B88685 /* Argo-Mac */,
+				F893355D1A4CE83000B88685 /* Argo-MacTests */,
 			);
 		};
 /* End PBXProject section */
@@ -291,6 +397,25 @@
 				EAD9FB0619D2143A0031E006 /* user_with_email.json in Resources */,
 				EAD9FB0B19D214AA0031E006 /* TemplateIcon2x.png in Resources */,
 				EAD9FB1419D30ED00031E006 /* comment.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F89335521A4CE83000B88685 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F893355C1A4CE83000B88685 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8EF75711A4CEC7100BDCC2D /* post_no_comments.json in Resources */,
+				F8EF756E1A4CEC7100BDCC2D /* user_without_email.json in Resources */,
+				F8EF756D1A4CEC7100BDCC2D /* user_with_email.json in Resources */,
+				F8EF756F1A4CEC7100BDCC2D /* TemplateIcon2x.png in Resources */,
+				F8EF75701A4CEC7100BDCC2D /* comment.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +450,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F893354F1A4CE83000B88685 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F89335721A4CE93600B88685 /* JSON.swift in Sources */,
+				F89335741A4CE93600B88685 /* Operators.swift in Sources */,
+				F89335701A4CE92D00B88685 /* JSONDecodable.swift in Sources */,
+				F89335731A4CE93600B88685 /* flatten.swift in Sources */,
+				F89335761A4CE93600B88685 /* JSONOperators.swift in Sources */,
+				F89335711A4CE93000B88685 /* pure.swift in Sources */,
+				F89335751A4CE93600B88685 /* Optional.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F893355A1A4CE83000B88685 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8EF75731A4CEC7800BDCC2D /* Comment.swift in Sources */,
+				F8EF75721A4CEC7800BDCC2D /* User.swift in Sources */,
+				F8EF756B1A4CEC6400BDCC2D /* EmbeddedJSONDecodingTests.swift in Sources */,
+				F8EF75751A4CEC7800BDCC2D /* TestModel.swift in Sources */,
+				F8EF75741A4CEC7800BDCC2D /* Post.swift in Sources */,
+				F8EF756A1A4CEC6100BDCC2D /* OptionalPropertyDecodingTests.swift in Sources */,
+				F8EF756C1A4CEC7100BDCC2D /* JSONFileReader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F89335611A4CE83000B88685 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F89335531A4CE83000B88685 /* Argo-Mac */;
+			targetProxy = F89335601A4CE83000B88685 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		EAD9FAE019D0EAB60031E006 /* Debug */ = {
@@ -479,6 +640,86 @@
 			};
 			name = Release;
 		};
+		F89335681A4CE83000B88685 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Argo/Resources/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = Argo;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F89335691A4CE83000B88685 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Argo/Resources/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = Argo;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F893356B1A4CE83000B88685 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ArgoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F893356C1A4CE83000B88685 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ArgoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -491,7 +732,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EAD9FAE219D0EAB60031E006 /* Build configuration list for PBXNativeTarget "Argo" */ = {
+		EAD9FAE219D0EAB60031E006 /* Build configuration list for PBXNativeTarget "Argo-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EAD9FAE319D0EAB60031E006 /* Debug */,
@@ -505,6 +746,24 @@
 			buildConfigurations = (
 				EAD9FAE619D0EAB60031E006 /* Debug */,
 				EAD9FAE719D0EAB60031E006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F89335671A4CE83000B88685 /* Build configuration list for PBXNativeTarget "Argo-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F89335681A4CE83000B88685 /* Debug */,
+				F89335691A4CE83000B88685 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F893356A1A4CE83000B88685 /* Build configuration list for PBXNativeTarget "Argo-MacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F893356B1A4CE83000B88685 /* Debug */,
+				F893356C1A4CE83000B88685 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
