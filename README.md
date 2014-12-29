@@ -24,7 +24,13 @@ you're good to go.
 
 [CocoaPods]: http://cocoapods.org
 
- *coming soon*
+Add the following to your [Podfile](http://guides.cocoapods.org/using/the-podfile.html):
+
+```ruby
+pod 'Argo'
+```
+
+Then run `pod install` with CocoaPods 0.36 or newer.
 
 ### Git Submodules ###
 
