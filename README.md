@@ -35,7 +35,7 @@ can then link against `Argo.framework` for your application target.
 
 ## Usage
 
-First, create your model. I like to use structs but a class is OK too.
+First, create your model. We like to use structs but a class is OK too.
 
 ```swift
 struct User {
@@ -46,7 +46,7 @@ struct User {
 ```
 
 Then, extend the model to conform to `JSONDecodable`. You will also need to
-write a static constructor method that is curried. I like to use `create`.
+write a static constructor method that is curried. We like to use `create`.
 
 ```swift
 extension User: JSONDecodable {
@@ -61,8 +61,10 @@ parenthesis. This will make the function curried. Then inside the function we
 can call the model's constructor.
 
 Finally, implement the `JSONDecodable` `decode` function to decode the incoming
-JSON. If incoming JSON looks like this:
+JSON. Here is an example of decoding a `User` from JSON received from a network
+request.
 
+JSON received from network request:
 ```
 {
   "id": 1,
@@ -70,6 +72,24 @@ JSON. If incoming JSON looks like this:
   "email": "cool.user@example.com"
 }
 ```
+
+Parse data to JSON then to a `JSONValue` and finally to our `User` object:
+
+```swift
+let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions(0), error: nil)
+
+if let j: AnyObject = json {
+  if let value: JSONValue = JSONValue.parse(j) {
+    let user: User? = User.decode(value)
+  }
+}
+```
+
+1. We use `NSJSONSerialization` to get a JSON object from the data.
+2. Then we unwrap the JSON into `JSONValue`s `parse` function to give us our
+   `JSONValue` object.
+3. Now we can unwrap the `JSONValue` object into the `User` `decode` function
+   to get our `User` object.
 
 Then the decoding implementation will look like this:
 
@@ -79,26 +99,23 @@ extension User: JSONDecodable {
     return User(id: id, name: name, email: email)
   }
 
-  static func decode(json: JSON) -> User? {
-    return _JSONParse(json) >>- { d in
-      User.create
-        <^> d <|  "id"
-        <*> d <|  "name"
-        <*> d <|* "email"
+  static func decode(j: JSONValue) -> User? {
+    return User.create
+      <^> j <|  "id"
+      <*> j <|  "name"
+      <*> j <|? "email"
     }
   }
 }
 ```
 
-First, we check that `json` is a JSON object using `_JSONParse`. Then, we bind
-(`>>-`) that to a closure that takes our JSON object and returns the optional
-`User`. We call `User.create` and use fmap (`<^>`) and apply (`<*>`) to check
-if each value exists within the JSON object. If any value is missing, the
-operation will return `.None`; otherwise, we'll receive the `User`. `d` is our
-JSON object and we pull the value from it by using the `<|` (`<|*` for
-optionals) operator along with the key that references the value we want. It's
-important that these values follow the same order as the `create` function
-parameters.
+We create the user by calling `User.create` and use fmap (`<^>`) and apply
+(`<*>`) to check if each value exists within the `JSONValue` object. If any
+value is missing, the operation will return `.None`; otherwise, we'll receive
+the `User`. `j` is our `JSONValue` object and we pull values from it by using
+the `<|` operator (`<|?` for optionals) along with the key that references the
+value we want. It's important that these values follow the same order as the
+`create` function parameters.
 
 ## Advanced
 
@@ -117,12 +134,11 @@ extension Post: JSONDecodable {
     return Post(id: id, text: text, author: author)
   }
 
-  static func decode(json: JSON) -> Post? {
-    return _JSONParse(json) >>- { d in
-      Post.create
-        <^> d <| "id"
-        <*> d <| "text"
-        <*> d <| "author"
+  static func decode(j: JSONValue) -> Post? {
+    return Post.create
+      <^> j <| "id"
+      <*> j <| "text"
+      <*> j <| "author"
     }
   }
 }
@@ -141,8 +157,9 @@ From the JSON:
 }
 ```
 
-You can pull values from embedded objects by chaining `<|`. This `Post` model
-just stores the author's name and not the whole model.
+You can pull values from embedded objects by passing an array of keys as
+`Strings` to `<|`. For example, this `Post` model just stores the author's name
+and not the whole model.
 
 ```swift
 struct Post {
@@ -156,18 +173,19 @@ extension Post: JSONDecodable {
     return Post(id: id, text: text, authorName: authorName)
   }
 
-  static func decode(json: JSON) -> Post? {
-    return _JSONParse(json) >>- { d in
-      Post.create
-        <^> d <| "id"
-        <*> d <| "text"
-        <*> d <| "author" <| "name"
+  static func decode(j: JSONValue) -> Post? {
+    return Post.create
+      <^> j <| "id"
+      <*> j <| "text"
+      <*> j <| ["author", "name"]
     }
   }
 }
 ```
 
-Arrays of models or Swift types also work the same way.
+Arrays of models or Swift types also work the same way; however, we have a
+slightly modified operator to distinguish between values and arrays of values,
+`<||` and `<||?` for optional arrays.
 
 ```swift
 struct Post {
@@ -182,13 +200,12 @@ extension Post: JSONDecodable {
     return Post(id: id, text: text, authorName: authorName, comments: comments)
   }
 
-  static func decode(json: JSON) -> Post? {
-    return _JSONParse(json) >>- { d in
-      Post.create
-        <^> d <| "id"
-        <*> d <| "text"
-        <*> d <| "author" <| "name"
-        <*> d <| "comments"
+  static func decode(j: JSONValue) -> Post? {
+    return Post.create
+      <^> j <|  "id"
+      <*> j <|  "text"
+      <*> j <|  ["author", "name"]
+      <*> j <|| "comments"
     }
   }
 }
@@ -197,3 +214,5 @@ extension Post: JSONDecodable {
 `Post` comments could also be an array of a custom struct `Comment` in that
 example and the decoding code would still be the same as long as `Comment` also
 conforms to `JSONDecodable`.
+
+For more examples on how to use Argo, please check out the tests.
