@@ -62,6 +62,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EA395DC01A51FF5200EB607E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAD9FAC619D0EAB50031E006 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAD9FACE19D0EAB50031E006;
+			remoteInfo = "Argo-iOS";
+		};
 		F89335601A4CE83000B88685 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EAD9FAC619D0EAB50031E006 /* Project object */;
@@ -322,6 +329,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EA395DC11A51FF5200EB607E /* PBXTargetDependency */,
 			);
 			name = ArgoTests;
 			productName = argoTests;
@@ -536,6 +544,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EA395DC11A51FF5200EB607E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAD9FACE19D0EAB50031E006 /* Argo-iOS */;
+			targetProxy = EA395DC01A51FF5200EB607E /* PBXContainerItemProxy */;
+		};
 		F89335611A4CE83000B88685 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F89335531A4CE83000B88685 /* Argo-Mac */;
