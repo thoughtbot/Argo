@@ -1,6 +1,6 @@
 import Foundation
 
-public enum JSONValue: Printable {
+public enum JSONValue {
   case JSONObject([String:JSONValue])
   case JSONArray([JSONValue])
   case JSONString(String)
@@ -45,6 +45,10 @@ public enum JSONValue: Printable {
     }
   }
 
+  func find(keys: [String]) -> JSONValue? {
+    return keys.reduce(self) { $0?[$1] }
+  }
+
   public static func map<A: JSONDecodable>(value: JSONValue) -> [A]? {
     switch value {
     case let .JSONArray(a):
@@ -59,7 +63,9 @@ public enum JSONValue: Printable {
     default: return .None
     }
   }
+}
 
+extension JSONValue: Printable {
   public var description: String {
     switch self {
     case let .JSONString(v): return "String(\(v))"

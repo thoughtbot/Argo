@@ -2,8 +2,7 @@
 
 // Pull embedded value from JSON
 public func <|<A: JSONDecodable>(json: JSONValue, keys: [String]) -> A? {
-  let object: JSONValue? = keys.reduce(json) { $0?[$1] }
-  if let o = object {
+  if let o = json.find(keys) {
     return A.decode(o)
   }
 
@@ -29,7 +28,7 @@ public func <|?<A: JSONDecodable>(json: JSONValue, key: String) -> A?? {
 
 // Pull embedded array from JSON
 public func <||<A: JSONDecodable>(json: JSONValue, keys: [String]) -> [A]? {
-  return keys.reduce(json) { $0?[$1] } >>- JSONValue.map
+  return json.find(keys) >>- JSONValue.map
 }
 
 // Pull array from JSON
