@@ -6,6 +6,8 @@ Pod::Spec.new do |spec|
   spec.license = { :type => 'MIT', :file => 'LICENSE' }
   spec.author = {
     'Gordon Fontenot' => 'gordon@thoughtbot.com',
+    'Tony DiPasquale' => 'tony@thoughtbot.com',
+    'thoughbot' => nil,
   }
   spec.social_media_url = 'http://twitter.com/thoughtbot'
   spec.source = { :git => 'https://github.com/thoughtbot/Argo.git', :tag => "v#{spec.version}" }
