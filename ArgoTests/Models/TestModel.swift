@@ -24,11 +24,11 @@ extension TestModel: JSONDecodable {
       <*> <|["user_opt", "name"]
       <*> <|"double"
       <*> <|"bool"
-      <*> <|*"int_opt"
+      <*> <|?"int_opt"
       <*> <||"string_array"
-      <*> <||*"string_array_opt"
+      <*> <||?"string_array_opt"
       <*> <||["embedded", "string_array"]
-      <*> <||*["embedded", "string_array_opt"]
-      <*> <|*"user_opt"
+      <*> <||?["embedded", "string_array_opt"]
+      <*> <|?"user_opt"
   }
 }

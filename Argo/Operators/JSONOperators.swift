@@ -11,12 +11,12 @@ prefix public func <|<A: JSONDecodable>(key: String) -> JSONValue -> A? {
 }
 
 // Pull optional value from JSON
-prefix public func <|*<A: JSONDecodable>(key: String) -> JSONValue -> A?? {
-  return <|*[key]
+prefix public func <|?<A: JSONDecodable>(key: String) -> JSONValue -> A?? {
+  return <|?[key]
 }
 
 // Pull embedded optional value from JSON
-prefix public func <|*<A: JSONDecodable>(keys: [String]) -> JSONValue -> A?? {
+prefix public func <|?<A: JSONDecodable>(keys: [String]) -> JSONValue -> A?? {
   return { pure((<|keys)($0)) }
 }
 
@@ -33,11 +33,11 @@ prefix public func <||<A: JSONDecodable>(key: String) -> JSONValue -> [A]? {
 }
 
 // Pull optional array from JSON
-prefix public func <||*<A: JSONDecodable>(key: String) -> JSONValue -> [A]?? {
-  return <||*[key]
+prefix public func <||?<A: JSONDecodable>(key: String) -> JSONValue -> [A]?? {
+  return <||?[key]
 }
 
 // Pull embedded optional array from JSON
-prefix public func <||*<A: JSONDecodable>(keys: [String]) -> JSONValue -> [A]?? {
+prefix public func <||?<A: JSONDecodable>(keys: [String]) -> JSONValue -> [A]?? {
   return { pure((<||keys)($0)) }
 }

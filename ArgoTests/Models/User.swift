@@ -15,6 +15,6 @@ extension User: JSONDecodable {
      return User.create
       <^> <|"id"
       <*> <|"name"
-      <*> <|*"email"
+      <*> <|?"email"
   }
 }
