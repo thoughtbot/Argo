@@ -9,7 +9,7 @@ public enum JSONValue: Printable {
 
   public static func parse(json: AnyObject) -> JSONValue {
     switch json {
-    case let v as [AnyObject]: return .JSONArray(v.map { self.parse($0) })
+    case let v as [AnyObject]: return .JSONArray(v.map(parse))
 
     case let v as [String:AnyObject]:
       var object: [String:JSONValue] = [:]
@@ -47,7 +47,15 @@ public enum JSONValue: Printable {
 
   public static func map<A: JSONDecodable>(value: JSONValue) -> [A]? {
     switch value {
-    case let .JSONArray(a): return a.map(A.decoder) >>- flatten
+    case let .JSONArray(a):
+      return pure(a.reduce([]) { list, element in
+        if let obj = A.decode(element) {
+          return list + [obj]
+        } else {
+          return list
+        }
+      })
+
     default: return .None
     }
   }

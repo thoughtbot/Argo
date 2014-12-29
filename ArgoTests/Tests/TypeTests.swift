@@ -4,7 +4,7 @@ import Argo
 class TypeTests: XCTestCase {
   func testAllTheTypes() {
     let json: AnyObject? = JSONFileReader.JSON(fromFile: "types")
-    let model = json >>- JSONValue.parse >>- TestModel.decoder
+    let model = json >>- JSONValue.parse >>- TestModel.decode
 
     XCTAssert(model != nil)
     XCTAssert(model?.int == 5)
@@ -24,7 +24,7 @@ class TypeTests: XCTestCase {
 
   func testFailingEmbedded() {
     let json: AnyObject? = JSONFileReader.JSON(fromFile: "types_fail_embedded")
-    let model = json >>- JSONValue.parse >>- TestModel.decoder
+    let model = json >>- JSONValue.parse >>- TestModel.decode
 
     XCTAssert(model == nil)
   }

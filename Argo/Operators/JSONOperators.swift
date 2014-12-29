@@ -2,7 +2,12 @@
 
 // Pull embedded value from JSON
 public func <|<A: JSONDecodable>(json: JSONValue, keys: [String]) -> A? {
-  return keys.reduce(json) { $0?[$1] } >>- A.decoder
+  let object: JSONValue? = keys.reduce(json) { $0?[$1] }
+  if let o = object {
+    return A.decode(o)
+  }
+
+  return .None
 }
 
 // Pull value from JSON

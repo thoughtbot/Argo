@@ -11,11 +11,10 @@ extension User: JSONDecodable {
     return User(id: id, name: name, email: email)
   }
 
-  static var decoder: JSONValue -> User? {
-    return { j in User.create
+  static func decode(j: JSONValue) -> User? {
+    return User.create
       <^> j <| "id"
       <*> j <| "name"
       <*> j <|? "email"
-    }
   }
 }

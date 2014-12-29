@@ -18,8 +18,8 @@ extension TestModel: JSONDecodable {
     return TestModel(int: int, string: string, double: double, bool: bool, intOpt: intOpt, stringArray: stringArray, stringArrayOpt: stringArrayOpt, eStringArray: eStringArray, eStringArrayOpt: eStringArrayOpt, userOpt: userOpt)
   }
 
-  static var decoder: JSONValue -> TestModel? {
-    return { j in TestModel.create
+  static func decode(j: JSONValue) -> TestModel? {
+    return TestModel.create
       <^> j <| "int"
       <*> j <| ["user_opt", "name"]
       <*> j <| "double"
@@ -30,6 +30,5 @@ extension TestModel: JSONDecodable {
       <*> j <|| ["embedded", "string_array"]
       <*> j <||? ["embedded", "string_array_opt"]
       <*> j <|? "user_opt"
-    }
   }
 }
