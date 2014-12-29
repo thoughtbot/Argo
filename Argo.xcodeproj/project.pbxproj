@@ -17,7 +17,6 @@
 		EAD9FAF419D0F74C0031E006 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF319D0F74C0031E006 /* JSON.swift */; };
 		EAD9FAF619D0F7900031E006 /* JSONOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* JSONOperators.swift */; };
 		EAD9FAF919D0F7CA0031E006 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF819D0F7CA0031E006 /* JSONDecodable.swift */; };
-		EAD9FAFB19D210CB0031E006 /* flatten.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAFA19D210CB0031E006 /* flatten.swift */; };
 		EAD9FAFE19D2113C0031E006 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAFD19D2113C0031E006 /* User.swift */; };
 		EAD9FB0019D211630031E006 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAFF19D211630031E006 /* Comment.swift */; };
 		EAD9FB0219D211C10031E006 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB0119D211C10031E006 /* Post.swift */; };
@@ -42,7 +41,6 @@
 		F89335701A4CE92D00B88685 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF819D0F7CA0031E006 /* JSONDecodable.swift */; };
 		F89335711A4CE93000B88685 /* pure.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF119D0F72D0031E006 /* pure.swift */; };
 		F89335721A4CE93600B88685 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF319D0F74C0031E006 /* JSON.swift */; };
-		F89335731A4CE93600B88685 /* flatten.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAFA19D210CB0031E006 /* flatten.swift */; };
 		F89335741A4CE93600B88685 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAEA19D0F6930031E006 /* Operators.swift */; };
 		F89335751A4CE93600B88685 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAEC19D0F6DA0031E006 /* Optional.swift */; };
 		F89335761A4CE93600B88685 /* JSONOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* JSONOperators.swift */; };
@@ -88,7 +86,6 @@
 		EAD9FAF319D0F74C0031E006 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		EAD9FAF519D0F7900031E006 /* JSONOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONOperators.swift; sourceTree = "<group>"; };
 		EAD9FAF819D0F7CA0031E006 /* JSONDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
-		EAD9FAFA19D210CB0031E006 /* flatten.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = flatten.swift; sourceTree = "<group>"; };
 		EAD9FAFD19D2113C0031E006 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EAD9FAFF19D211630031E006 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		EAD9FB0119D211C10031E006 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -221,7 +218,6 @@
 			children = (
 				EAD9FAF119D0F72D0031E006 /* pure.swift */,
 				EAD9FAF319D0F74C0031E006 /* JSON.swift */,
-				EAD9FAFA19D210CB0031E006 /* flatten.swift */,
 				EAD9FB1919D4B23F0031E006 /* JSONValue.swift */,
 				F8E33FA11A51DE020025A6E5 /* curry.swift */,
 			);
@@ -487,7 +483,6 @@
 				EAD9FAF619D0F7900031E006 /* JSONOperators.swift in Sources */,
 				EAD9FAF919D0F7CA0031E006 /* JSONDecodable.swift in Sources */,
 				EAD9FAED19D0F6DA0031E006 /* Optional.swift in Sources */,
-				EAD9FAFB19D210CB0031E006 /* flatten.swift in Sources */,
 				F8E33FA21A51DE020025A6E5 /* curry.swift in Sources */,
 				EAD9FAF419D0F74C0031E006 /* JSON.swift in Sources */,
 			);
@@ -516,7 +511,6 @@
 				F862E0AA1A519D360093B028 /* JSONValue.swift in Sources */,
 				F89335741A4CE93600B88685 /* Operators.swift in Sources */,
 				F89335701A4CE92D00B88685 /* JSONDecodable.swift in Sources */,
-				F89335731A4CE93600B88685 /* flatten.swift in Sources */,
 				F89335761A4CE93600B88685 /* JSONOperators.swift in Sources */,
 				F89335711A4CE93000B88685 /* pure.swift in Sources */,
 				F8E33FA31A51DE510025A6E5 /* curry.swift in Sources */,
