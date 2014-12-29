@@ -33,4 +33,11 @@ class EmbeddedJSONDecodingTests: XCTestCase {
     XCTAssert(post?.author.name == "Cool User")
     XCTAssert(post?.comments.count == 2)
   }
+
+  func testPostDecodingWithBadComments() {
+    let json: AnyObject? = JSONFileReader.JSON(fromFile: "post_bad_comments")
+    let post = json >>- JSONValue.parse >>- Post.decode
+
+    XCTAssert(post == nil)
+  }
 }

@@ -46,6 +46,9 @@
 		F89335741A4CE93600B88685 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAEA19D0F6930031E006 /* Operators.swift */; };
 		F89335751A4CE93600B88685 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAEC19D0F6DA0031E006 /* Optional.swift */; };
 		F89335761A4CE93600B88685 /* JSONOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* JSONOperators.swift */; };
+		F8E33FA21A51DE020025A6E5 /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E33FA11A51DE020025A6E5 /* curry.swift */; };
+		F8E33FA31A51DE510025A6E5 /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E33FA11A51DE020025A6E5 /* curry.swift */; };
+		F8E33FA51A51E0C20025A6E5 /* post_bad_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = F8E33FA41A51E0C20025A6E5 /* post_bad_comments.json */; };
 		F8EF756A1A4CEC6100BDCC2D /* OptionalPropertyDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB0D19D215570031E006 /* OptionalPropertyDecodingTests.swift */; };
 		F8EF756B1A4CEC6400BDCC2D /* EmbeddedJSONDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB1119D30E660031E006 /* EmbeddedJSONDecodingTests.swift */; };
 		F8EF756C1A4CEC7100BDCC2D /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB0F19D21AF50031E006 /* JSONFileReader.swift */; };
@@ -102,6 +105,8 @@
 		F89335541A4CE83000B88685 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893355E1A4CE83000B88685 /* Argo-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Argo-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893356D1A4CE8FC00B88685 /* Argo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argo.h; sourceTree = "<group>"; };
+		F8E33FA11A51DE020025A6E5 /* curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = curry.swift; sourceTree = "<group>"; };
+		F8E33FA41A51E0C20025A6E5 /* post_bad_comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = post_bad_comments.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +223,7 @@
 				EAD9FAF319D0F74C0031E006 /* JSON.swift */,
 				EAD9FAFA19D210CB0031E006 /* flatten.swift */,
 				EAD9FB1919D4B23F0031E006 /* JSONValue.swift */,
+				F8E33FA11A51DE020025A6E5 /* curry.swift */,
 			);
 			path = Globals;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 				EAD9FB1319D30ED00031E006 /* comment.json */,
 				EAD9FB1519D30F8D0031E006 /* post_no_comments.json */,
 				EA08313219D5EEF2003B90D7 /* post_comments.json */,
+				F8E33FA41A51E0C20025A6E5 /* post_bad_comments.json */,
 				EA08313419D5EFC0003B90D7 /* types.json */,
 				EA4EAF7219DD96330036AE0D /* types_fail_embedded.json */,
 			);
@@ -423,6 +430,7 @@
 				EAD9FB0A19D214AA0031E006 /* user_without_email.json in Resources */,
 				EAD9FB0619D2143A0031E006 /* user_with_email.json in Resources */,
 				EAD9FB0B19D214AA0031E006 /* TemplateIcon2x.png in Resources */,
+				F8E33FA51A51E0C20025A6E5 /* post_bad_comments.json in Resources */,
 				EAD9FB1419D30ED00031E006 /* comment.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +488,7 @@
 				EAD9FAF919D0F7CA0031E006 /* JSONDecodable.swift in Sources */,
 				EAD9FAED19D0F6DA0031E006 /* Optional.swift in Sources */,
 				EAD9FAFB19D210CB0031E006 /* flatten.swift in Sources */,
+				F8E33FA21A51DE020025A6E5 /* curry.swift in Sources */,
 				EAD9FAF419D0F74C0031E006 /* JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,6 +519,7 @@
 				F89335731A4CE93600B88685 /* flatten.swift in Sources */,
 				F89335761A4CE93600B88685 /* JSONOperators.swift in Sources */,
 				F89335711A4CE93000B88685 /* pure.swift in Sources */,
+				F8E33FA31A51DE510025A6E5 /* curry.swift in Sources */,
 				F89335751A4CE93600B88685 /* Optional.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

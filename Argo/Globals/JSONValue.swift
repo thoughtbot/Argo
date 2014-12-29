@@ -52,14 +52,7 @@ public enum JSONValue {
   public static func map<A: JSONDecodable>(value: JSONValue) -> [A]? {
     switch value {
     case let .JSONArray(a):
-      return pure(a.reduce([]) { list, element in
-        if let obj = A.decode(element) {
-          return list + [obj]
-        } else {
-          return list
-        }
-      })
-
+      return a.reduce([]) { curry(+) <^> $0 <*> (pure <^> A.decode($1)) }
     default: return .None
     }
   }
