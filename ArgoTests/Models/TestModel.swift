@@ -19,16 +19,17 @@ extension TestModel: JSONDecodable {
   }
 
   static var decoder: JSONValue -> TestModel? {
-    return TestModel.create
-      <^> <|"int"
-      <*> <|["user_opt", "name"]
-      <*> <|"double"
-      <*> <|"bool"
-      <*> <|?"int_opt"
-      <*> <||"string_array"
-      <*> <||?"string_array_opt"
-      <*> <||["embedded", "string_array"]
-      <*> <||?["embedded", "string_array_opt"]
-      <*> <|?"user_opt"
+    return { j in TestModel.create
+      <^> j <| "int"
+      <*> j <| ["user_opt", "name"]
+      <*> j <| "double"
+      <*> j <| "bool"
+      <*> j <|? "int_opt"
+      <*> j <|| "string_array"
+      <*> j <||? "string_array_opt"
+      <*> j <|| ["embedded", "string_array"]
+      <*> j <||? ["embedded", "string_array_opt"]
+      <*> j <|? "user_opt"
+    }
   }
 }

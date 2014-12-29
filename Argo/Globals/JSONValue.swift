@@ -47,7 +47,7 @@ public enum JSONValue: Printable {
 
   public static func map<A: JSONDecodable>(value: JSONValue) -> [A]? {
     switch value {
-    case let .JSONArray(a): return a.map { A.decoder($0) } >>- flatten
+    case let .JSONArray(a): return a.map(A.decoder) >>- flatten
     default: return .None
     }
   }

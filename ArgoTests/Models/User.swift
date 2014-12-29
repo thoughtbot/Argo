@@ -12,9 +12,10 @@ extension User: JSONDecodable {
   }
 
   static var decoder: JSONValue -> User? {
-     return User.create
-      <^> <|"id"
-      <*> <|"name"
-      <*> <|?"email"
+    return { j in User.create
+      <^> j <| "id"
+      <*> j <| "name"
+      <*> j <|? "email"
+    }
   }
 }

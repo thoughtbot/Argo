@@ -12,9 +12,10 @@ extension Comment: JSONDecodable {
   }
 
   static var decoder: JSONValue -> Comment? {
-    return Comment.create
-      <^> <|"id"
-      <*> <|"text"
-      <*> <|["author", "name"]
+    return { j in Comment.create
+      <^> j <| "id"
+      <*> j <| "text"
+      <*> j <| ["author", "name"]
+    }
   }
 }

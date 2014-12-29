@@ -13,10 +13,11 @@ extension Post: JSONDecodable {
   }
 
   static var decoder: JSONValue -> Post? {
-    return Post.create
-      <^> <|"id"
-      <*> <|"text"
-      <*> <|"author"
-      <*> <||"comments"
+    return { j in Post.create
+      <^> j <| "id"
+      <*> j <| "text"
+      <*> j <| "author"
+      <*> j <|| "comments"
+    }
   }
 }
