@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
   spec.author = {
     'Gordon Fontenot' => 'gordon@thoughtbot.com',
     'Tony DiPasquale' => 'tony@thoughtbot.com',
-    'thoughbot' => nil,
+    'thoughtbot' => nil,
   }
   spec.social_media_url = 'http://twitter.com/thoughtbot'
   spec.source = { :git => 'https://github.com/thoughtbot/Argo.git', :tag => "v#{spec.version}" }
