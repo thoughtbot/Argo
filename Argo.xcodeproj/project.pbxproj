@@ -37,6 +37,8 @@
 		EAD9FB1619D30F8D0031E006 /* post_no_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD9FB1519D30F8D0031E006 /* post_no_comments.json */; };
 		EAD9FB1819D49A3E0031E006 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB1719D49A3E0031E006 /* TestModel.swift */; };
 		EAD9FB1A19D4B23F0031E006 /* JSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB1919D4B23F0031E006 /* JSONValue.swift */; };
+		EADADCB21A5DB6F600B180EC /* EquatableSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADADCB11A5DB6F600B180EC /* EquatableSpec.swift */; };
+		EADADCB41A5DB7F800B180EC /* EquatableSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADADCB11A5DB6F600B180EC /* EquatableSpec.swift */; };
 		F862E0AA1A519D360093B028 /* JSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB1919D4B23F0031E006 /* JSONValue.swift */; };
 		F862E0AB1A519D470093B028 /* TypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA08313019D5EEAF003B90D7 /* TypeTests.swift */; };
 		F862E0AC1A519D520093B028 /* post_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = EA08313219D5EEF2003B90D7 /* post_comments.json */; };
@@ -116,6 +118,7 @@
 		EAD9FB1519D30F8D0031E006 /* post_no_comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = post_no_comments.json; sourceTree = "<group>"; };
 		EAD9FB1719D49A3E0031E006 /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestModel.swift; path = ../../../Argo/ArgoTests/Models/TestModel.swift; sourceTree = "<group>"; };
 		EAD9FB1919D4B23F0031E006 /* JSONValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONValue.swift; path = ../../../Argo/Argo/Globals/JSONValue.swift; sourceTree = "<group>"; };
+		EADADCB11A5DB6F600B180EC /* EquatableSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableSpec.swift; sourceTree = "<group>"; };
 		F89335541A4CE83000B88685 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893355E1A4CE83000B88685 /* Argo-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Argo-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893356D1A4CE8FC00B88685 /* Argo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argo.h; sourceTree = "<group>"; };
@@ -286,6 +289,7 @@
 				EAD9FB1119D30E660031E006 /* EmbeddedJSONDecodingTests.swift */,
 				EA08313019D5EEAF003B90D7 /* TypeTests.swift */,
 				EA395DC61A52F93B00EB607E /* ExampleTests.swift */,
+				EADADCB11A5DB6F600B180EC /* EquatableSpec.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -527,6 +531,7 @@
 				EAD9FB0019D211630031E006 /* Comment.swift in Sources */,
 				EA08313119D5EEAF003B90D7 /* TypeTests.swift in Sources */,
 				EA395DC71A52F93B00EB607E /* ExampleTests.swift in Sources */,
+				EADADCB21A5DB6F600B180EC /* EquatableSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +563,7 @@
 				F8EF756C1A4CEC7100BDCC2D /* JSONFileReader.swift in Sources */,
 				F862E0AB1A519D470093B028 /* TypeTests.swift in Sources */,
 				EA395DC81A52FA5300EB607E /* ExampleTests.swift in Sources */,
+				EADADCB41A5DB7F800B180EC /* EquatableSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -69,3 +69,16 @@ extension JSONValue: Printable {
     }
   }
 }
+
+extension JSONValue: Equatable { }
+
+public func ==(lhs: JSONValue, rhs: JSONValue) -> Bool {
+  switch (lhs, rhs) {
+  case let (.JSONString(l), .JSONString(r)): return l == r
+  case let (.JSONNumber(l), .JSONNumber(r)): return l == r
+  case let (.JSONNull, .JSONNull): return true
+  case let (.JSONArray(l), .JSONArray(r)): return l == r
+  case let (.JSONObject(l), .JSONObject(r)): return l == r
+  default: return false
+  }
+}
