@@ -1,3 +1,8 @@
 machine:
   environment:
     XCODE_SCHEME: Argo-iOS
+
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init
