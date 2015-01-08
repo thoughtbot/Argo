@@ -1,3 +1,4 @@
 public protocol JSONDecodable {
-  class func decode(JSONValue) -> Self?
+  typealias DecodedType = Self
+  class func decode(JSONValue) -> DecodedType?
 }

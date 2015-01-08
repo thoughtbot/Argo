@@ -39,6 +39,10 @@
 		EAD9FB1A19D4B23F0031E006 /* JSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB1919D4B23F0031E006 /* JSONValue.swift */; };
 		EADADCB21A5DB6F600B180EC /* EquatableSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADADCB11A5DB6F600B180EC /* EquatableSpec.swift */; };
 		EADADCB41A5DB7F800B180EC /* EquatableSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADADCB11A5DB6F600B180EC /* EquatableSpec.swift */; };
+		F802D4C31A5EE061005E236C /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F802D4C21A5EE061005E236C /* NSURL.swift */; };
+		F802D4C41A5EE172005E236C /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F802D4C21A5EE061005E236C /* NSURL.swift */; };
+		F802D4C61A5EE2D5005E236C /* url.json in Resources */ = {isa = PBXBuildFile; fileRef = F802D4C51A5EE2D5005E236C /* url.json */; };
+		F802D4C71A5EE2D5005E236C /* url.json in Resources */ = {isa = PBXBuildFile; fileRef = F802D4C51A5EE2D5005E236C /* url.json */; };
 		F862E0AA1A519D360093B028 /* JSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB1919D4B23F0031E006 /* JSONValue.swift */; };
 		F862E0AB1A519D470093B028 /* TypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA08313019D5EEAF003B90D7 /* TypeTests.swift */; };
 		F862E0AC1A519D520093B028 /* post_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = EA08313219D5EEF2003B90D7 /* post_comments.json */; };
@@ -119,6 +123,8 @@
 		EAD9FB1719D49A3E0031E006 /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestModel.swift; path = ../../../Argo/ArgoTests/Models/TestModel.swift; sourceTree = "<group>"; };
 		EAD9FB1919D4B23F0031E006 /* JSONValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONValue.swift; path = ../../../Argo/Argo/Globals/JSONValue.swift; sourceTree = "<group>"; };
 		EADADCB11A5DB6F600B180EC /* EquatableSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableSpec.swift; sourceTree = "<group>"; };
+		F802D4C21A5EE061005E236C /* NSURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURL.swift; sourceTree = "<group>"; };
+		F802D4C51A5EE2D5005E236C /* url.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = url.json; sourceTree = "<group>"; };
 		F89335541A4CE83000B88685 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893355E1A4CE83000B88685 /* Argo-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Argo-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893356D1A4CE8FC00B88685 /* Argo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argo.h; sourceTree = "<group>"; };
@@ -259,6 +265,7 @@
 				EAD9FAFF19D211630031E006 /* Comment.swift */,
 				EAD9FB0119D211C10031E006 /* Post.swift */,
 				EAD9FB1719D49A3E0031E006 /* TestModel.swift */,
+				F802D4C21A5EE061005E236C /* NSURL.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -269,6 +276,7 @@
 				EAD9FB0F19D21AF50031E006 /* JSONFileReader.swift */,
 				EAD9FB0419D2143A0031E006 /* user_with_email.json */,
 				EAD9FB0819D214AA0031E006 /* user_without_email.json */,
+				F802D4C51A5EE2D5005E236C /* url.json */,
 				EAD9FB0919D214AA0031E006 /* TemplateIcon2x.png */,
 				EAD9FB1319D30ED00031E006 /* comment.json */,
 				EAD9FB1519D30F8D0031E006 /* post_no_comments.json */,
@@ -455,6 +463,7 @@
 				EA395DC41A52F8EB00EB607E /* array_root.json in Resources */,
 				F8E33FA51A51E0C20025A6E5 /* post_bad_comments.json in Resources */,
 				EAD9FB1419D30ED00031E006 /* comment.json in Resources */,
+				F802D4C61A5EE2D5005E236C /* url.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +489,7 @@
 				EA395DC51A52F8EE00EB607E /* array_root.json in Resources */,
 				EA395DC21A5209C000EB607E /* post_bad_comments.json in Resources */,
 				F8EF75701A4CEC7100BDCC2D /* comment.json in Resources */,
+				F802D4C71A5EE2D5005E236C /* url.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +533,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAD9FB1219D30E660031E006 /* EmbeddedJSONDecodingTests.swift in Sources */,
+				F802D4C31A5EE061005E236C /* NSURL.swift in Sources */,
 				EAD9FB1019D21AF50031E006 /* JSONFileReader.swift in Sources */,
 				EAD9FB0219D211C10031E006 /* Post.swift in Sources */,
 				EAD9FB1819D49A3E0031E006 /* TestModel.swift in Sources */,
@@ -555,6 +566,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8EF75731A4CEC7800BDCC2D /* Comment.swift in Sources */,
+				F802D4C41A5EE172005E236C /* NSURL.swift in Sources */,
 				F8EF75721A4CEC7800BDCC2D /* User.swift in Sources */,
 				F8EF756B1A4CEC6400BDCC2D /* EmbeddedJSONDecodingTests.swift in Sources */,
 				F8EF75751A4CEC7800BDCC2D /* TestModel.swift in Sources */,

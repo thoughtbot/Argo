@@ -49,7 +49,7 @@ public enum JSONValue {
     return keys.reduce(self) { $0?[$1] }
   }
 
-  public static func map<A: JSONDecodable>(value: JSONValue) -> [A]? {
+  public static func map<A where A: JSONDecodable, A == A.DecodedType>(value: JSONValue) -> [A]? {
     switch value {
     case let .JSONArray(a):
       return a.reduce([]) { curry(+) <^> $0 <*> (pure <^> A.decode($1)) }

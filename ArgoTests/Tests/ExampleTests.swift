@@ -20,4 +20,12 @@ class ExampleTests: XCTestCase {
     XCTAssert(user?.email != nil)
     XCTAssert(user?.email! == "u.cool@example.com")
   }
+
+  func testDecodingNonFinalClass() {
+    let json: AnyObject? = JSONFileReader.JSON(fromFile: "url")
+    let url: NSURL? = json >>- JSONValue.parse >>- { $0["url"] >>- NSURL.decode }
+
+    XCTAssert(url != nil)
+    XCTAssert(url?.absoluteString == "http://example.com")
+  }
 }
