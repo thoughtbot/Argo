@@ -19,7 +19,6 @@
 		EA395DCB1A52FC1400EB607E /* root_object.json in Resources */ = {isa = PBXBuildFile; fileRef = EA395DC91A52FC1400EB607E /* root_object.json */; };
 		EA4EAF7319DD96330036AE0D /* types_fail_embedded.json in Resources */ = {isa = PBXBuildFile; fileRef = EA4EAF7219DD96330036AE0D /* types_fail_embedded.json */; };
 		EAD9FAEB19D0F6930031E006 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAEA19D0F6930031E006 /* Operators.swift */; };
-		EAD9FAED19D0F6DA0031E006 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAEC19D0F6DA0031E006 /* Optional.swift */; };
 		EAD9FAF219D0F72D0031E006 /* pure.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF119D0F72D0031E006 /* pure.swift */; };
 		EAD9FAF419D0F74C0031E006 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF319D0F74C0031E006 /* JSON.swift */; };
 		EAD9FAF619D0F7900031E006 /* JSONOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* JSONOperators.swift */; };
@@ -55,8 +54,9 @@
 		F89335711A4CE93000B88685 /* pure.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF119D0F72D0031E006 /* pure.swift */; };
 		F89335721A4CE93600B88685 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF319D0F74C0031E006 /* JSON.swift */; };
 		F89335741A4CE93600B88685 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAEA19D0F6930031E006 /* Operators.swift */; };
-		F89335751A4CE93600B88685 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAEC19D0F6DA0031E006 /* Optional.swift */; };
 		F89335761A4CE93600B88685 /* JSONOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* JSONOperators.swift */; };
+		F8C05D451A649A04004A8D0F /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C05D441A649A04004A8D0F /* Runes.framework */; };
+		F8C05D471A649A08004A8D0F /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C05D461A649A08004A8D0F /* Runes.framework */; };
 		F8CBE6631A64508200316FBC /* sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBE6621A64508200316FBC /* sequence.swift */; };
 		F8CBE6641A6450F200316FBC /* sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBE6621A64508200316FBC /* sequence.swift */; };
 		F8CBE6671A64521000316FBC /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBE6661A64521000316FBC /* Dictionary.swift */; };
@@ -95,6 +95,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F8C05D481A649A14004A8D0F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8C05D4B1A649A21004A8D0F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		EA08313019D5EEAF003B90D7 /* TypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeTests.swift; sourceTree = "<group>"; };
 		EA08313219D5EEF2003B90D7 /* post_comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = post_comments.json; sourceTree = "<group>"; };
@@ -108,7 +129,6 @@
 		EAD9FADA19D0EAB60031E006 /* ArgoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArgoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD9FADD19D0EAB60031E006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAD9FAEA19D0F6930031E006 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
-		EAD9FAEC19D0F6DA0031E006 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		EAD9FAF119D0F72D0031E006 /* pure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pure.swift; sourceTree = "<group>"; };
 		EAD9FAF319D0F74C0031E006 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		EAD9FAF519D0F7900031E006 /* JSONOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONOperators.swift; sourceTree = "<group>"; };
@@ -132,6 +152,8 @@
 		F89335541A4CE83000B88685 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893355E1A4CE83000B88685 /* Argo-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Argo-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893356D1A4CE8FC00B88685 /* Argo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argo.h; sourceTree = "<group>"; };
+		F8C05D441A649A04004A8D0F /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = "../Carthage/Checkouts/runes/build/Debug-iphoneos/Runes.framework"; sourceTree = "<group>"; };
+		F8C05D461A649A08004A8D0F /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = ../Carthage/Checkouts/runes/build/Debug/Runes.framework; sourceTree = "<group>"; };
 		F8CBE6621A64508200316FBC /* sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sequence.swift; sourceTree = "<group>"; };
 		F8CBE6661A64521000316FBC /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		F8E33FA11A51DE020025A6E5 /* curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = curry.swift; sourceTree = "<group>"; };
@@ -143,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8C05D451A649A04004A8D0F /* Runes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8C05D471A649A08004A8D0F /* Runes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +226,7 @@
 				EAD9FAF019D0F7150031E006 /* Globals */,
 				EAD9FAE919D0F6480031E006 /* Operators */,
 				EAD9FAE819D0F5B50031E006 /* Resources */,
+				F8C05D411A6499CE004A8D0F /* Frameworks */,
 			);
 			name = Argo;
 			path = ../Argo/Argo;
@@ -240,7 +265,6 @@
 			isa = PBXGroup;
 			children = (
 				EAD9FAEA19D0F6930031E006 /* Operators.swift */,
-				EAD9FAEC19D0F6DA0031E006 /* Optional.swift */,
 				EAD9FAF519D0F7900031E006 /* JSONOperators.swift */,
 			);
 			path = Operators;
@@ -310,6 +334,15 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		F8C05D411A6499CE004A8D0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8C05D461A649A08004A8D0F /* Runes.framework */,
+				F8C05D441A649A04004A8D0F /* Runes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F8CBE6651A6451F800316FBC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +382,7 @@
 				EAD9FACC19D0EAB50031E006 /* Headers */,
 				EAD9FACD19D0EAB50031E006 /* Resources */,
 				2BF79DC6DAAA04A8DB0169BA /* Warn for TODO and FIXME comments */,
+				F8C05D481A649A14004A8D0F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -385,6 +419,7 @@
 				F89335501A4CE83000B88685 /* Frameworks */,
 				F89335511A4CE83000B88685 /* Headers */,
 				F89335521A4CE83000B88685 /* Resources */,
+				F8C05D4B1A649A21004A8D0F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -540,7 +575,6 @@
 				EAD9FAEB19D0F6930031E006 /* Operators.swift in Sources */,
 				EAD9FAF619D0F7900031E006 /* JSONOperators.swift in Sources */,
 				EAD9FAF919D0F7CA0031E006 /* JSONDecodable.swift in Sources */,
-				EAD9FAED19D0F6DA0031E006 /* Optional.swift in Sources */,
 				F8E33FA21A51DE020025A6E5 /* curry.swift in Sources */,
 				EAD9FAF419D0F74C0031E006 /* JSON.swift in Sources */,
 			);
@@ -577,7 +611,6 @@
 				F89335761A4CE93600B88685 /* JSONOperators.swift in Sources */,
 				F89335711A4CE93000B88685 /* pure.swift in Sources */,
 				F8E33FA31A51DE510025A6E5 /* curry.swift in Sources */,
-				F89335751A4CE93600B88685 /* Optional.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

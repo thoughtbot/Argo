@@ -27,6 +27,9 @@ build/
 # Cocoapods
 Pods
 
+# Carthage
+Carthage/Build
+
 # AppCode specific files
 .idea/
 *.iml

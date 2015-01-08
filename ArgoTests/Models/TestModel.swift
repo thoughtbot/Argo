@@ -1,3 +1,6 @@
+import Argo
+import Runes
+
 struct TestModel {
   let int: Int
   let string: String
@@ -10,8 +13,6 @@ struct TestModel {
   let eStringArrayOpt: [String]?
   let userOpt: User?
 }
-
-import Argo
 
 extension TestModel: JSONDecodable {
   static func create(int: Int)(string: String)(double: Double)(bool: Bool)(intOpt: Int?)(stringArray: [String])(stringArrayOpt: [String]?)(eStringArray: [String])(eStringArrayOpt: [String]?)(userOpt: User?) -> TestModel {

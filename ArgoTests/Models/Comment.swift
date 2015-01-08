@@ -1,10 +1,11 @@
+import Argo
+import Runes
+
 struct Comment {
   let id: Int
   let text: String
   let authorName: String
 }
-
-import Argo
 
 extension Comment: JSONDecodable {
   static func create(id: Int)(text: String)(authorName: String) -> Comment {

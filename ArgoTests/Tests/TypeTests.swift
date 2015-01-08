@@ -1,5 +1,6 @@
 import XCTest
 import Argo
+import Runes
 
 class TypeTests: XCTestCase {
   func testAllTheTypes() {

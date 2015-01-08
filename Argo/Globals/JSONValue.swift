@@ -1,4 +1,5 @@
 import Foundation
+import Runes
 
 public typealias JSONDict = [String: JSONValue]
 

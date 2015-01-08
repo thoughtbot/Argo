@@ -1,5 +1,6 @@
 import XCTest
 import Argo
+import Runes
 
 class EquatableSpec: XCTestCase {
   func testEqualJSONObjects() {

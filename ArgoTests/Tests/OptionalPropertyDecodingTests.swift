@@ -1,5 +1,6 @@
 import XCTest
 import Argo
+import Runes
 
 class OptionalPropertyDecodingTests: XCTestCase {
   func testUserDecodingWithEmail() {
