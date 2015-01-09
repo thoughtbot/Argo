@@ -35,54 +35,117 @@ pod 'Argo', :git => 'https://github.com/thoughtbot/Argo'
 
 Then run `pod install` with CocoaPods 0.36 or newer.
 
-### Git Submodules ###
+### Git Submodules
 
 I guess you could do it this way if that's your thing.
 
 Add this repo as a submodule, and add the project file to your workspace. You
 can then link against `Argo.framework` for your application target.
 
-## Usage
-
-First, create your model. We like to use structs but a class is OK too.
+## Usage tl;dr:
 
 ```swift
 struct User {
   let id: Int
   let name: String
   let email: String?
+  let role: Role
+  let companyName: String
+  let friends: [User]
 }
-```
 
-Then, extend the model to conform to `JSONDecodable`. You will also need to
-write a static constructor method that is curried. We like to use `create`.
-
-```swift
 extension User: JSONDecodable {
-  static func create(id: Int)(name: String)(email: String?) -> User {
-    return User(id: id, name: name, email: email)
+  static func create(id: Int)(name: String)(email: String?)(role: Role)(companyName: String)(friends: [User]) -> User {
+    return User(id: id, name: name, email: email, role: role, companyName: companyName, friends: friends)
+  }
+
+  static func decode(j: JSONValue) -> User? {
+    return User.create
+      <^> j <| "id"
+      <*> j <| "name"
+      <*> j <|? "email" // Use ? for parsing optional values
+      <*> j <| "role" // Custom types that also conform to JSONDecodable just work
+      <*> j <| ["company", "name"] // Parse nested objects
+      <*> j <|| "friends" // parse arrays of objects
+  }
+}
+
+// Wherever you receive JSON data:
+
+let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: .None)
+
+if let j: AnyObject = json {
+  if let value = JSONValue.parse(j) {
+    let user = User.decode(value)
   }
 }
 ```
 
-It's important that the `create` function's parameters are all in separate
-parenthesis. This will make the function curried. Then inside the function we
-can call the model's constructor.
+## Ideology
 
-Finally, implement the `JSONDecodable` `decode` function to decode the incoming
-JSON. Here is an example of decoding a `User` from JSON received from a network
-request.
+Argo's core concept is that in order to maintain type safety, you should only
+be able to successfully decode an object if all parameters are satisfied
+properly. So if you have a model that looks like this:
 
-JSON received from network request:
-```
-{
-  "id": 1,
-  "name": "Cool User",
-  "email": "cool.user@example.com"
+```swift
+struct User {
+  let id: Int
+  let name: String
 }
 ```
 
-Parse data to JSON then to a `JSONValue` and finally to our `User` object:
+but the JSON you receive from the server looks like this:
+
+```json
+{
+  "user": {
+    "id": "this isn't a number",
+    "name": "Gob Bluth"
+  }
+}
+```
+
+you would want that JSON parsing to fail and return `.None` instead of a
+`User` object. That base concept means that when you're dealing with an actual
+`User` object, you can be sure that when you ask for `user.id`, you're going
+to get the type you expect.
+
+If you're interested in learning more about the concepts and ideology that
+went into building Argo, we recommend reading the series of articles that were
+written alongside its development:
+
+- [Efficient JSON in Swift with Functional Concepts and Generics](http://robots.thoughtbot.com/efficient-json-in-swift-with-functional-concepts-and-generics)
+- [Real World JSON Parsing with Swift](http://robots.thoughtbot.com/real-world-json-parsing-with-swift)
+- [Parsing Embedded JSON and Arrays in Swift](http://robots.thoughtbot.com/parsing-embedded-json-and-arrays-in-swift)
+
+## Functional Concepts
+
+Argo really wants to be used with patterns borrowed from functional
+programming such as `map` and `apply`. We feel that these patterns greatly
+reduce the pain felt in trying to use JSON (an inherently loosely typed
+format) with Swift (a strictly typed language). It also gives us a way to
+succinctly maintain the core concept described above, and short circuit the
+decoding process if any part of it fails.
+
+Additionally, we feel that the use of operators for these functions greatly
+improves the readability of the code we're suggesting. Using named functions
+would lead to nested functions and a confusing number of parenthesis.
+
+If you aren't familiar with how these functions work (or just aren't
+comfortable with using operators), that's totally OK. It's possible to use the
+library without using them, although it might be a little more painful.
+
+If you're looking to learn more about these functions, we would recommend
+reading the following articles:
+
+- [Functional Swift for Dealing with Optional Values](http://robots.thoughtbot.com/functional-swift-for-dealing-with-optional-values)
+- [Railway Oriented Programming](http://fsharpforfunandprofit.com/posts/recipe-part2/)
+
+## Usage
+
+The first thing you need to do when you receive JSON data is convert it to an
+instance of the `JSONValue` enum. This is done by passing the `AnyObject`
+value returned from `NSJSONSerialization` to `JSONValue.parse()`:
 
 ```swift
 let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions(0), error: nil)
@@ -94,134 +157,146 @@ if let j: AnyObject = json {
 }
 ```
 
-1. We use `NSJSONSerialization` to get a JSON object from the data.
-2. Then we unwrap the JSON into `JSONValue`s `parse` function to give us our
-   `JSONValue` object.
-3. Now we can unwrap the `JSONValue` object into the `User` `decode` function
-   to get our `User` object.
+Note that you probably want to use an error pointer to track errors from
+`NSJSONSerialization`.
 
-Then the decoding implementation will look like this:
+The `JSONValue` enum exists to help with some of the type inference, and also
+wraps up some of the casting that we'll need to to to transform the JSON into
+native types.
+
+Next, you need to make sure that models that you wish to decode from JSON
+conform to the `JSONDecodable` protocol:
+
+```swift
+public protocol JSONDecodable {
+  typealias DecodedType = Self
+  class func decode(JSONValue) -> DecodedType?
+}
+```
+
+You will need to implement the `decode` function to perform any kinds of
+transformations you need to transform your model from a JSON value. A simple
+implementation for an enum value might look like:
+
+```swift
+enum RoleType: String {
+  case Admin = "Admin"
+  case User = "User"
+}
+
+extension RoleType: JSONDecodable {
+  static func decode(j: JSONValue) -> RoleType? {
+    switch j {
+    case let .JSONString(s): return RoleType(rawValue: s)
+    default: return .None
+    }
+  }
+}
+```
+
+The real power of Argo can be seen when decoding actual model objects. To
+illustrate this, we will decode the simple `User` object that we used earlier.
+
+Create your model normally:
+
+```swift
+struct User {
+  let id: Int
+  let name: String
+}
+```
+
+You will also want to create a curried creation function. This is needed
+because of a deficiency in Swift that doesn't allow us to pass `init`
+functions around like other functions.
+
+```swift
+extension User {
+  static func create(id: Int)(name: String) -> User {
+    return User(id: id, name: name)
+  }
+}
+```
+
+Using this curried syntax will allow us to partially apply the function over
+the course of the decoding process. If you'd like to learn more about
+currying, we recommend the following articles:
+
+- [Apple's documentation of curried functions](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Declarations.html#//apple_ref/doc/uid/TP40014097-CH34-XID_615)
+- [Introduction to Function Currying in Swift](http://robots.thoughtbot.com/introduction-to-function-currying-in-swift)
+
+The last thing to do will be to conform to `JSONDecodable` and implement the
+required `decode` function. We will implement this function by using `map`
+(`<^>`) and `apply` (`<*>`) to conditionally pass the required parameters to
+the creation function. The common pattern will look like:
+
+```swift
+return Model.create <^> paramOne <*> paramTwo <*> paramThree
+```
+
+and so on. If any of those parameters are `.None`, the entire creation process
+will fail, and the function will return `.None`. If all of the parameters are
+`.Some(value)`, the value will be unwrapped and passed to the creation
+function.
+
+In order to help with the decoding process, Argo introduces two new operators
+for parsing a value out of the JSON:
+
+- `<|` will attempt to parse a single value from the JSON
+- `<||` will attempt to parse an array of values from the JSON
+
+The usage of these operators is the same regardless:
+
+- `json <| "key"` is analogous to `json["key"]`
+- `json <| ["key", "nested"]` is analogous to `json["key"]["nested"]`
+
+Both operators will attempt to parse the value from the JSON and will also
+attempt to cast the value to the expected type. If it can't find a value, or
+if that value is of the wrong type, the function will return `.None`.
+
+There are also Optional versions of these operators:
+
+- `<|?` will attempt to parse an optional value from the JSON
+- `<||?` will attempt to parse an optional array of values from the JSON
+
+Usage is the same as the non-optionals. The difference is that if these fail
+parsing, the parsing continues. This is useful for including parameters that
+truly are optional values. For example, if your system doesn't require someone
+to supply an email address, you could have an optional property: `let email:
+String?` and parse it with `json <|? "email"`.
+
+So to implement our `decode` function, we can use the JSON parsing operator in
+conjunction with `map` and `apply`:
 
 ```swift
 extension User: JSONDecodable {
-  static func create(id: Int)(name: String)(email: String?) -> User {
-    return User(id: id, name: name, email: email)
-  }
-
   static func decode(j: JSONValue) -> User? {
     return User.create
-      <^> j <|  "id"
-      <*> j <|  "name"
-      <*> j <|? "email"
-    }
-  }
-}
-```
-
-We create the user by calling `User.create` and use fmap (`<^>`) and apply
-(`<*>`) to check if each value exists within the `JSONValue` object. If any
-value is missing, the operation will return `.None`; otherwise, we'll receive
-the `User`. `j` is our `JSONValue` object and we pull values from it by using
-the `<|` operator (`<|?` for optionals) along with the key that references the
-value we want. It's important that these values follow the same order as the
-`create` function parameters.
-
-## Advanced
-
-As long as your models conform to `JSONDecodable` you can use them in other
-models like this `Post` model.
-
-```swift
-struct Post {
-  let id: Int
-  let text: String
-  let author: User
-}
-
-extension Post: JSONDecodable {
-  static func create(id: Int)(text: String)(author: User) -> Post {
-    return Post(id: id, text: text, author: author)
-  }
-
-  static func decode(j: JSONValue) -> Post? {
-    return Post.create
       <^> j <| "id"
-      <*> j <| "text"
-      <*> j <| "author"
-    }
+      <*> j <| "name"
   }
 }
 ```
 
-From the JSON:
-
-```
-{
-  "id": 5,
-  "text": "A cool story.",
-  "author": {
-    "id": 1,
-    "name": "Cool User"
-  }
-}
-```
-
-You can pull values from embedded objects by passing an array of keys as
-`Strings` to `<|`. For example, this `Post` model just stores the author's name
-and not the whole model.
+For comparison, this same function without Argo would look like so:
 
 ```swift
-struct Post {
-  let id: Int
-  let text: String
-  let authorName: String
-}
-
-extension Post: JSONDecodable {
-  static func create(id: Int)(text: String)(authorName: String) -> Post {
-    return Post(id: id, text: text, authorName: authorName)
-  }
-
-  static func decode(j: JSONValue) -> Post? {
-    return Post.create
-      <^> j <| "id"
-      <*> j <| "text"
-      <*> j <| ["author", "name"]
+extension User {
+  static func decode(j: NSDictionary) -> User? {
+    if let id = j["id"] as Int {
+      if let name = j["name"] as String {
+        return User(id: id, name: name)
+      }
     }
   }
+
+  return .None
 }
 ```
 
-Arrays of models or Swift types also work the same way; however, we have a
-slightly modified operator to distinguish between values and arrays of values,
-`<||` and `<||?` for optional arrays.
+You could see how this would get much worse with a more complex model.
 
-```swift
-struct Post {
-  let id: Int
-  let text: String
-  let authorName: String
-  let comments: [String]
-}
-
-extension Post: JSONDecodable {
-  static func create(id: Int)(text: String)(authorName: String)(comments: [String]) -> Post {
-    return Post(id: id, text: text, authorName: authorName, comments: comments)
-  }
-
-  static func decode(j: JSONValue) -> Post? {
-    return Post.create
-      <^> j <|  "id"
-      <*> j <|  "text"
-      <*> j <|  ["author", "name"]
-      <*> j <|| "comments"
-    }
-  }
-}
-```
-
-`Post` comments could also be an array of a custom struct `Comment` in that
-example and the decoding code would still be the same as long as `Comment` also
-conforms to `JSONDecodable`.
+You can decode custom types the same way, as long as the type also conforms to
+`JSONDecodable`.
 
 For more examples on how to use Argo, please check out the tests.
