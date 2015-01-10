@@ -25,7 +25,7 @@ you're good to go.
 [CocoaPods]: http://cocoapods.org
 
 __DISCLAIMER: CocoaPods doesn't officially support Swift projects yet. Use the
-pre-release version at your own discression.__
+pre-release version at your own discretion.__
 
 Add the following to your [Podfile](http://guides.cocoapods.org/using/the-podfile.html):
 
