@@ -57,6 +57,8 @@
 		F89335741A4CE93600B88685 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAEA19D0F6930031E006 /* Operators.swift */; };
 		F89335751A4CE93600B88685 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAEC19D0F6DA0031E006 /* Optional.swift */; };
 		F89335761A4CE93600B88685 /* JSONOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* JSONOperators.swift */; };
+		F8CBE6631A64508200316FBC /* sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBE6621A64508200316FBC /* sequence.swift */; };
+		F8CBE6641A6450F200316FBC /* sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBE6621A64508200316FBC /* sequence.swift */; };
 		F8E33FA21A51DE020025A6E5 /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E33FA11A51DE020025A6E5 /* curry.swift */; };
 		F8E33FA31A51DE510025A6E5 /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E33FA11A51DE020025A6E5 /* curry.swift */; };
 		F8E33FA51A51E0C20025A6E5 /* post_bad_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = F8E33FA41A51E0C20025A6E5 /* post_bad_comments.json */; };
@@ -128,6 +130,7 @@
 		F89335541A4CE83000B88685 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893355E1A4CE83000B88685 /* Argo-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Argo-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893356D1A4CE8FC00B88685 /* Argo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argo.h; sourceTree = "<group>"; };
+		F8CBE6621A64508200316FBC /* sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sequence.swift; sourceTree = "<group>"; };
 		F8E33FA11A51DE020025A6E5 /* curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = curry.swift; sourceTree = "<group>"; };
 		F8E33FA41A51E0C20025A6E5 /* post_bad_comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = post_bad_comments.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -246,6 +249,7 @@
 				EAD9FAF319D0F74C0031E006 /* JSON.swift */,
 				EAD9FB1919D4B23F0031E006 /* JSONValue.swift */,
 				F8E33FA11A51DE020025A6E5 /* curry.swift */,
+				F8CBE6621A64508200316FBC /* sequence.swift */,
 			);
 			path = Globals;
 			sourceTree = "<group>";
@@ -518,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAD9FAF219D0F72D0031E006 /* pure.swift in Sources */,
+				F8CBE6631A64508200316FBC /* sequence.swift in Sources */,
 				EAD9FB1A19D4B23F0031E006 /* JSONValue.swift in Sources */,
 				EAD9FAEB19D0F6930031E006 /* Operators.swift in Sources */,
 				EAD9FAF619D0F7900031E006 /* JSONOperators.swift in Sources */,
@@ -551,6 +556,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F89335721A4CE93600B88685 /* JSON.swift in Sources */,
+				F8CBE6641A6450F200316FBC /* sequence.swift in Sources */,
 				F862E0AA1A519D360093B028 /* JSONValue.swift in Sources */,
 				F89335741A4CE93600B88685 /* Operators.swift in Sources */,
 				F89335701A4CE92D00B88685 /* JSONDecodable.swift in Sources */,
