@@ -4,7 +4,7 @@ import Argo
 class ExampleTests: XCTestCase {
   func testJSONWithRootArray() {
     let json: AnyObject? = JSONFileReader.JSON(fromFile: "array_root")
-    let stringArray: [String]? = json >>- JSONValue.parse >>- JSONValue.map
+    let stringArray: [String]? = json >>- JSONValue.parse >>- JSONValue.mapDecode
 
     XCTAssertNotNil(stringArray)
     XCTAssertEqual(stringArray!, ["foo", "bar", "baz"])

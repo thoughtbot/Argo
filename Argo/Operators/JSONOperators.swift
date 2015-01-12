@@ -28,7 +28,7 @@ public func <|?<A where A: JSONDecodable, A == A.DecodedType>(json: JSONValue, k
 
 // Pull embedded array from JSON
 public func <||<A where A: JSONDecodable, A == A.DecodedType>(json: JSONValue, keys: [String]) -> [A]? {
-  return json.find(keys) >>- JSONValue.map
+  return json.find(keys) >>- JSONValue.mapDecode
 }
 
 // Pull array from JSON

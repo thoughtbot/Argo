@@ -30,7 +30,7 @@ public extension JSONValue {
     }
   }
 
-  static func map<A where A: JSONDecodable, A == A.DecodedType>(value: JSONValue) -> [A]? {
+  static func mapDecode<A where A: JSONDecodable, A == A.DecodedType>(value: JSONValue) -> [A]? {
     switch value {
     case let .JSONArray(a):
       return a.reduce([]) { curry(+) <^> $0 <*> (pure <^> A.decode($1)) }
