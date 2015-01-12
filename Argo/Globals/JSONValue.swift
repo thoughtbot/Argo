@@ -6,8 +6,10 @@ public enum JSONValue {
   case JSONString(String)
   case JSONNumber(NSNumber)
   case JSONNull
+}
 
-  public static func parse(json: AnyObject) -> JSONValue {
+public extension JSONValue {
+  static func parse(json: AnyObject) -> JSONValue {
     switch json {
     case let v as [AnyObject]: return .JSONArray(v.map(parse))
 
@@ -28,7 +30,17 @@ public enum JSONValue {
     }
   }
 
-  public func value<A>() -> A? {
+  static func map<A where A: JSONDecodable, A == A.DecodedType>(value: JSONValue) -> [A]? {
+    switch value {
+    case let .JSONArray(a):
+      return a.reduce([]) { curry(+) <^> $0 <*> (pure <^> A.decode($1)) }
+    default: return .None
+    }
+  }
+}
+
+public extension JSONValue {
+  func value<A>() -> A? {
     switch self {
     case let .JSONString(v): return v as? A
     case let .JSONNumber(v): return v as? A
@@ -38,7 +50,7 @@ public enum JSONValue {
     }
   }
 
-  public subscript(key: String) -> JSONValue? {
+  subscript(key: String) -> JSONValue? {
     switch self {
     case let .JSONObject(o): return o[key]
     default: return .None
@@ -49,13 +61,6 @@ public enum JSONValue {
     return keys.reduce(self) { $0?[$1] }
   }
 
-  public static func map<A where A: JSONDecodable, A == A.DecodedType>(value: JSONValue) -> [A]? {
-    switch value {
-    case let .JSONArray(a):
-      return a.reduce([]) { curry(+) <^> $0 <*> (pure <^> A.decode($1)) }
-    default: return .None
-    }
-  }
 }
 
 extension JSONValue: Printable {
