@@ -1,7 +1,9 @@
 import Foundation
 
+public typealias JSONDict = [String: JSONValue]
+
 public enum JSONValue {
-  case JSONObject([String:JSONValue])
+  case JSONObject(JSONDict)
   case JSONArray([JSONValue])
   case JSONString(String)
   case JSONNumber(NSNumber)
@@ -13,14 +15,10 @@ public extension JSONValue {
     switch json {
     case let v as [AnyObject]: return .JSONArray(v.map(parse))
 
-    case let v as [String:AnyObject]:
-      var object: [String:JSONValue] = [:]
-      for key in v.keys {
-        if let value: AnyObject = v[key] {
-          object[key] = parse(value)
-        } else {
-          object[key] = .JSONNull
-        }
+    case let v as [String: AnyObject]:
+      let object = reduce(v.keys, JSONDict()) { accum, key in
+        let append = curry(Dictionary.appendKey)(accum)(key)
+        return (append <^> v[key] >>- self.parse) ?? append(.JSONNull)
       }
       return .JSONObject(object)
 
