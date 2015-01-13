@@ -17,8 +17,18 @@ Add the following to your Cartfile:
 github "thoughtbot/Argo"
 ```
 
-Then run `carthage update`. Drag `Argo.framework` into your project, and
-you're good to go.
+Then run `carthage update`.
+
+Follow the current instructions in [Carthage's README][carthage-installation]
+for up to date installation instructions.
+
+[carthage-installation]: https://github.com/Carthage/Carthage#adding-frameworks-to-an-application
+
+If you want to use the functional operators (`<^>`, `<*>`, `>>-`) in your app,
+you'll also need to add `Runes.framework` to your project. [Runes] is a
+dependency of Argo, so you don't need to specify it in your Cartfile.
+
+[Runes]: https://github.com/thoughtbot/runes
 
 ### [CocoaPods]
 
