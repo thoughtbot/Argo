@@ -19,7 +19,7 @@ public extension JSONValue {
     case let v as [String: AnyObject]:
       let object = reduce(v.keys, JSONDict()) { accum, key in
         let append = curry(Dictionary.appendKey)(accum)(key)
-        return (append <^> v[key] >>- self.parse) ?? append(.JSONNull)
+        return (append <^> (self.parse <^> v[key])) ?? append(.JSONNull)
       }
       return .JSONObject(object)
 

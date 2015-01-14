@@ -47,6 +47,8 @@
 		F862E0AC1A519D520093B028 /* post_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = EA08313219D5EEF2003B90D7 /* post_comments.json */; };
 		F862E0AD1A519D560093B028 /* types.json in Resources */ = {isa = PBXBuildFile; fileRef = EA08313419D5EFC0003B90D7 /* types.json */; };
 		F862E0AE1A519D5C0093B028 /* types_fail_embedded.json in Resources */ = {isa = PBXBuildFile; fileRef = EA4EAF7219DD96330036AE0D /* types_fail_embedded.json */; };
+		F874B7EA1A66BF52004CCE5E /* root_array.json in Resources */ = {isa = PBXBuildFile; fileRef = F874B7E91A66BF52004CCE5E /* root_array.json */; };
+		F874B7EB1A66C221004CCE5E /* root_array.json in Resources */ = {isa = PBXBuildFile; fileRef = F874B7E91A66BF52004CCE5E /* root_array.json */; };
 		F893355F1A4CE83000B88685 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F89335541A4CE83000B88685 /* Argo.framework */; };
 		F893356E1A4CE8FC00B88685 /* Argo.h in Headers */ = {isa = PBXBuildFile; fileRef = F893356D1A4CE8FC00B88685 /* Argo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F893356F1A4CE8FC00B88685 /* Argo.h in Headers */ = {isa = PBXBuildFile; fileRef = F893356D1A4CE8FC00B88685 /* Argo.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -149,6 +151,7 @@
 		EADADCB11A5DB6F600B180EC /* EquatableSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableSpec.swift; sourceTree = "<group>"; };
 		F802D4C21A5EE061005E236C /* NSURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURL.swift; sourceTree = "<group>"; };
 		F802D4C51A5EE2D5005E236C /* url.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = url.json; sourceTree = "<group>"; };
+		F874B7E91A66BF52004CCE5E /* root_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = root_array.json; sourceTree = "<group>"; };
 		F89335541A4CE83000B88685 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893355E1A4CE83000B88685 /* Argo-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Argo-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893356D1A4CE8FC00B88685 /* Argo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argo.h; sourceTree = "<group>"; };
@@ -309,6 +312,7 @@
 				EAD9FB0419D2143A0031E006 /* user_with_email.json */,
 				EAD9FB0819D214AA0031E006 /* user_without_email.json */,
 				F802D4C51A5EE2D5005E236C /* url.json */,
+				F874B7E91A66BF52004CCE5E /* root_array.json */,
 				EAD9FB0919D214AA0031E006 /* TemplateIcon2x.png */,
 				EAD9FB1319D30ED00031E006 /* comment.json */,
 				EAD9FB1519D30F8D0031E006 /* post_no_comments.json */,
@@ -506,6 +510,7 @@
 				EA08313519D5EFC0003B90D7 /* types.json in Resources */,
 				EA4EAF7319DD96330036AE0D /* types_fail_embedded.json in Resources */,
 				EA395DCA1A52FC1400EB607E /* root_object.json in Resources */,
+				F874B7EA1A66BF52004CCE5E /* root_array.json in Resources */,
 				EAD9FB1619D30F8D0031E006 /* post_no_comments.json in Resources */,
 				EA08313319D5EEF2003B90D7 /* post_comments.json in Resources */,
 				EAD9FB0A19D214AA0031E006 /* user_without_email.json in Resources */,
@@ -532,6 +537,7 @@
 				F862E0AD1A519D560093B028 /* types.json in Resources */,
 				F862E0AE1A519D5C0093B028 /* types_fail_embedded.json in Resources */,
 				EA395DCB1A52FC1400EB607E /* root_object.json in Resources */,
+				F874B7EB1A66C221004CCE5E /* root_array.json in Resources */,
 				F8EF75711A4CEC7100BDCC2D /* post_no_comments.json in Resources */,
 				F862E0AC1A519D520093B028 /* post_comments.json in Resources */,
 				F8EF756E1A4CEC7100BDCC2D /* user_without_email.json in Resources */,

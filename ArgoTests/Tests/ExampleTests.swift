@@ -29,4 +29,12 @@ class ExampleTests: XCTestCase {
     XCTAssert(url != nil)
     XCTAssert(url?.absoluteString == "http://example.com")
   }
+
+  func testDecodingJSONWithRootArray() {
+    let expected = JSONValue.parse([["title": "Foo", "age": 21], ["title": "Bar", "age": 32]])
+    let json: AnyObject? = JSONFileReader.JSON(fromFile: "root_array")
+    let parsed = json >>- JSONValue.parse
+
+    XCTAssert(.Some(expected) == parsed)
+  }
 }
