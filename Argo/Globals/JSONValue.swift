@@ -15,14 +15,14 @@ public extension JSONValue {
   static func parse(json: AnyObject) -> JSONValue {
     switch json {
     case let v as [AnyObject]: return .JSONArray(v.map(parse))
-      
+
     case let v as [String: AnyObject]:
       let object = reduce(v.keys, JSONDict()) { accum, key in
         let value = self.parse(v[key]!)
         return Dictionary.appendKey(accum, key: key, value: value)
       }
       return .JSONObject(object)
-      
+
     case let v as String: return .JSONString(v)
     case let v as NSNumber: return .JSONNumber(v)
     default: return .JSONNull
