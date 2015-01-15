@@ -4,16 +4,16 @@ import Runes
 
 class ExampleTests: XCTestCase {
   func testJSONWithRootArray() {
-    let json: AnyObject? = JSONFileReader.JSON(fromFile: "array_root")
-    let stringArray: [String]? = json >>- JSONValue.parse >>- JSONValue.mapDecode
+    let json = JSONValue.parse <^> JSONFileReader.JSON(fromFile: "array_root")
+    let stringArray: [String]? = json >>- JSONValue.mapDecode
 
     XCTAssertNotNil(stringArray)
     XCTAssertEqual(stringArray!, ["foo", "bar", "baz"])
   }
 
   func testJSONWithRootObject() {
-    let json: AnyObject? = JSONFileReader.JSON(fromFile: "root_object")
-    let user: User? = json >>- JSONValue.parse >>- { $0["user"] >>- User.decode }
+    let json = JSONValue.parse <^> JSONFileReader.JSON(fromFile: "root_object")
+    let user: User? = json >>- { $0["user"] >>- User.decode }
 
     XCTAssert(user != nil)
     XCTAssert(user?.id == 1)
@@ -23,8 +23,8 @@ class ExampleTests: XCTestCase {
   }
 
   func testDecodingNonFinalClass() {
-    let json: AnyObject? = JSONFileReader.JSON(fromFile: "url")
-    let url: NSURL? = json >>- JSONValue.parse >>- { $0["url"] >>- NSURL.decode }
+    let json = JSONValue.parse <^> JSONFileReader.JSON(fromFile: "url")
+    let url: NSURL? = json >>- { $0["url"] >>- NSURL.decode }
 
     XCTAssert(url != nil)
     XCTAssert(url?.absoluteString == "http://example.com")
@@ -32,9 +32,8 @@ class ExampleTests: XCTestCase {
 
   func testDecodingJSONWithRootArray() {
     let expected = JSONValue.parse([["title": "Foo", "age": 21], ["title": "Bar", "age": 32]])
-    let json: AnyObject? = JSONFileReader.JSON(fromFile: "root_array")
-    let parsed = json >>- JSONValue.parse
+    let json = JSONValue.parse <^> JSONFileReader.JSON(fromFile: "root_array")
 
-    XCTAssert(.Some(expected) == parsed)
+    XCTAssert(.Some(expected) == json)
   }
 }

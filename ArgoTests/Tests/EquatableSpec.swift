@@ -4,19 +4,16 @@ import Runes
 
 class EquatableSpec: XCTestCase {
   func testEqualJSONObjects() {
-    let json: AnyObject? = JSONFileReader.JSON(fromFile: "types")
-    let parsed = json >>- JSONValue.parse
-    let anotherParsed = json >>- JSONValue.parse
+    let json = JSONValue.parse <^> JSONFileReader.JSON(fromFile: "types")
+    let anotherParsed = JSONValue.parse <^> JSONFileReader.JSON(fromFile: "types")
 
-    XCTAssertEqual(parsed!, anotherParsed!)
+    XCTAssertEqual(json!, anotherParsed!)
   }
 
   func testNotEqualJSONObjects() {
-    let json: AnyObject? = JSONFileReader.JSON(fromFile: "types")
-    let anotherJSON: AnyObject? = JSONFileReader.JSON(fromFile: "types_fail_embedded")
-    let parsed = json >>- JSONValue.parse
-    let anotherParsed = anotherJSON >>- JSONValue.parse
+    let json = JSONValue.parse <^> JSONFileReader.JSON(fromFile: "types")
+    let anotherJSON = JSONValue.parse <^> JSONFileReader.JSON(fromFile: "types_fail_embedded")
 
-    XCTAssertNotEqual(parsed!, anotherParsed!)
+    XCTAssertNotEqual(json!, anotherJSON!)
   }
 }
