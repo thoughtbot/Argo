@@ -29,3 +29,27 @@ extension Float: JSONDecodable {
     return j.value()
   }
 }
+
+extension String: JSONEncodable {
+  public func encode() -> JSONValue {
+    return .JSONString(self)
+  }
+}
+
+extension Int: JSONEncodable {
+  public func encode() -> JSONValue {
+    return .JSONNumber(self)
+  }
+}
+
+extension Double: JSONEncodable {
+  public func encode() -> JSONValue {
+    return .JSONNumber(self)
+  }
+}
+
+extension Bool: JSONEncodable {
+  public func encode() -> JSONValue {
+    return .JSONNumber(self)
+  }
+}
