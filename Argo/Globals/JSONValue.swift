@@ -122,20 +122,20 @@ extension JSONValue : BooleanLiteralConvertible {
 
 extension JSONValue : DictionaryLiteralConvertible {
   public typealias Key = String
-  public typealias Value = JSONEncodable
+  public typealias Value = JSONEncodable?
   public init(dictionaryLiteral elements: (Key, Value)...) {
     var dictionary : [String:JSONValue] = [:]
     for (key,value) in elements {
-      dictionary[key] = value.encode()
+      dictionary[key] = value?.encode() ?? .JSONNull
     }
     self = .JSONObject(dictionary)
   }
 }
 
 extension JSONValue : ArrayLiteralConvertible {
-  public typealias Element = JSONEncodable
+  public typealias Element = JSONEncodable?
   public init(arrayLiteral elements: Element...) {
-    let e = elements.map({$0.encode()})
+    let e = elements.map({$0?.encode() ?? .JSONNull})
     self = .JSONArray(e)
   }
 }
