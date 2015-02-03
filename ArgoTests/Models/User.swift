@@ -19,3 +19,9 @@ extension User: JSONDecodable {
       <*> j <|? "email"
   }
 }
+
+extension User: JSONEncodable {
+  func encode() -> JSONValue {
+    return ["id":id,"name":name,"email":email]
+  }
+}
