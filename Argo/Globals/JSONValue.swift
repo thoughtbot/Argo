@@ -86,6 +86,12 @@ public func ==(lhs: JSONValue, rhs: JSONValue) -> Bool {
   }
 }
 
+extension JSONValue: JSONEncodable {
+  public func encode() -> JSONValue {
+    return self
+  }
+}
+
 //MARK: LiteralConvertible
 
 extension JSONValue : StringLiteralConvertible {
