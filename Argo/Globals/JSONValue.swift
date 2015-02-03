@@ -85,3 +85,63 @@ public func ==(lhs: JSONValue, rhs: JSONValue) -> Bool {
   default: return false
   }
 }
+
+//MARK: LiteralConvertible
+
+extension JSONValue : StringLiteralConvertible {
+  public typealias UnicodeScalarLiteralType = StringLiteralType
+  public typealias ExtendedGraphemeClusterLiteralType = StringLiteralType
+  public init(stringLiteral value: StringLiteralType) {
+    self =  .JSONString(value)
+  }
+  public init(extendedGraphemeClusterLiteral value: ExtendedGraphemeClusterLiteralType) {
+    self =  .JSONString(value)
+  }
+  public init(unicodeScalarLiteral value: UnicodeScalarLiteralType) {
+    self = .JSONString(value)
+  }
+}
+
+extension JSONValue : IntegerLiteralConvertible {
+  public init(integerLiteral value: IntegerLiteralType) {
+    self = .JSONNumber(value)
+  }
+}
+
+extension JSONValue : FloatLiteralConvertible {
+  public init(floatLiteral value: FloatLiteralType) {
+    self = .JSONNumber(value)
+  }
+}
+
+extension JSONValue : BooleanLiteralConvertible {
+  public init(booleanLiteral value: BooleanLiteralType) {
+    self = .JSONNumber(value)
+  }
+}
+
+extension JSONValue : DictionaryLiteralConvertible {
+  public typealias Key = String
+  public typealias Value = JSONEncodable
+  public init(dictionaryLiteral elements: (Key, Value)...) {
+    var dictionary : [String:JSONValue] = [:]
+    for (key,value) in elements {
+      dictionary[key] = value.encode()
+    }
+    self = .JSONObject(dictionary)
+  }
+}
+
+extension JSONValue : ArrayLiteralConvertible {
+  public typealias Element = JSONEncodable
+  public init(arrayLiteral elements: Element...) {
+    let e = elements.map({$0.encode()})
+    self = .JSONArray(e)
+  }
+}
+
+extension JSONValue : NilLiteralConvertible {
+  public init(nilLiteral: ()) {
+    self = .JSONNull
+  }
+}
