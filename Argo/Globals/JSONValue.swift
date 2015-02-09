@@ -31,7 +31,7 @@ public extension JSONValue {
 
   static func mapDecode<A where A: JSONDecodable, A == A.DecodedType>(value: JSONValue) -> [A]? {
     switch value {
-    case let .JSONArray(a): return sequence(a.map { A.decode($0) })
+    case let .JSONArray(a): return sequence(A.decode <^> a)
     default: return .None
     }
   }

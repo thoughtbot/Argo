@@ -4,11 +4,7 @@ import Runes
 
 // Pull embedded value from JSON
 public func <|<A where A: JSONDecodable, A == A.DecodedType>(json: JSONValue, keys: [String]) -> A? {
-  if let o = json.find(keys) {
-    return A.decode(o)
-  }
-
-  return .None
+  return json.find(keys) >>- A.decode
 }
 
 // Pull value from JSON
