@@ -7,6 +7,8 @@ much like Aeson inspired his son Jason.
 
 ## Installation
 
+NOTE: Version 0.4.0 is for Swift 1.2b 
+
 ### [Carthage]
 
 [Carthage]: https://github.com/Carthage/Carthage
