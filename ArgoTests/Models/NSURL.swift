@@ -11,3 +11,12 @@ extension NSURL: JSONDecodable {
         }
     }
 }
+
+extension NSURL: JSONEncodable {
+  public func encode() -> JSONValue {
+    if let string = self.absoluteString {
+      return .JSONString(string)
+    }
+    return .JSONNull
+  }
+}

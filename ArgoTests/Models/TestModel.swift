@@ -35,3 +35,18 @@ extension TestModel: JSONDecodable {
       <*> j <|? "user_opt"
   }
 }
+
+extension TestModel: JSONEncodable {
+  func encode() -> JSONValue {
+    let embedded: JSONValue = ["string_array":JSONValue(array: eStringArray),"string_array_opt":JSONValue(array: eStringArrayOpt)]
+    var value: JSONValue = ["int":int
+                           ,"double":double
+                           ,"bool":bool
+                           ,"int_opt":intOpt
+                           ,"string_array":JSONValue(array: stringArray)
+                           ,"string_array_opt": JSONValue(array: stringArrayOpt)
+                           ,"embedded":embedded
+                           ,"user_opt":userOpt]
+    return value.filterJSONNull()
+  }
+}

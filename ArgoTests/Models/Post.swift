@@ -21,3 +21,9 @@ extension Post: JSONDecodable {
       <*> j <|| "comments"
   }
 }
+
+extension Post: JSONEncodable {
+  func encode() -> JSONValue {
+    return ["id":id,"text":text,"author":author,"comments":JSONValue(array:comments)]
+  }
+}
