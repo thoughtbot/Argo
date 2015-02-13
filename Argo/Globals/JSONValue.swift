@@ -103,6 +103,21 @@ extension JSONValue: JSONEncodable {
   }
 }
 
+//MARK: Initializers
+extension JSONValue {
+  public init<T:JSONEncodable>(optional: T?) {
+    self = optional?.encode() ?? .JSONNull
+  }
+  
+  public init<T:JSONEncodable>(array: [T]?) {
+    self = array?.encode() ?? .JSONNull
+  }
+  
+  public init<K:String,V:JSONEncodable>(dictionary: [K:V]?) {
+    self = dictionary?.encode() ?? .JSONNull
+  }
+}
+
 //MARK: LiteralConvertible
 
 extension JSONValue : StringLiteralConvertible {
