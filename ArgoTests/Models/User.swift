@@ -22,6 +22,7 @@ extension User: JSONDecodable {
 
 extension User: JSONEncodable {
   func encode() -> JSONValue {
-    return ["id":id,"name":name,"email":email]
+    let json: JSONValue = ["id":id,"name":name,"email":email]
+    return json.filterJSONNull()
   }
 }
