@@ -103,6 +103,28 @@ extension JSONValue: JSONEncodable {
   }
 }
 
+extension JSONValue {
+  public func filterJSONNull() -> JSONValue {
+    switch self {
+    case let .JSONObject(o):
+      var dict: JSONDict = [:]
+      for (key,value) in o {
+        if value != .JSONNull {
+          dict[key] = value.filterJSONNull()
+        }
+      }
+      return .JSONObject(dict)
+    case let .JSONArray(a):
+      let filtered = filter(a,{ (e:JSONValue) in e != .JSONNull})
+      let mapped = filtered.map({$0.filterJSONNull()})
+      return .JSONArray(mapped)
+    default:
+      return self
+    }
+  }
+}
+
+
 //MARK: Initializers
 extension JSONValue {
   public init<T:JSONEncodable>(optional: T?) {
