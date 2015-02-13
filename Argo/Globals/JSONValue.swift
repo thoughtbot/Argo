@@ -165,10 +165,9 @@ extension JSONValue : DictionaryLiteralConvertible {
 }
 
 extension JSONValue : ArrayLiteralConvertible {
-  public typealias Element = JSONEncodable?
+  public typealias Element = JSONEncodable
   public init(arrayLiteral elements: Element...) {
-    let e = elements.map({$0?.encode() ?? .JSONNull})
-    self = .JSONArray(e)
+    self = JSONValue(array: elements)
   }
 }
 
