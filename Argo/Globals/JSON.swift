@@ -1,5 +1,6 @@
 import Foundation
 
+//MARK: JSONDecodable
 extension String: JSONDecodable {
   public static func decode(j: JSONValue) -> String? {
     return j.value()
@@ -30,6 +31,7 @@ extension Float: JSONDecodable {
   }
 }
 
+//MARK: JSONEncodable
 extension String: JSONEncodable {
   public func encode() -> JSONValue {
     return .JSONString(self)
