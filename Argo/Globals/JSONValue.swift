@@ -49,9 +49,20 @@ public extension JSONValue {
   }
 
   subscript(key: String) -> JSONValue? {
-    switch self {
-    case let .JSONObject(o): return o[key]
-    default: return .None
+    get {
+      switch self {
+      case let .JSONObject(o): return o[key]
+      default: return .None
+      }
+    }
+    set {
+      switch self {
+      case var .JSONObject(o):
+        o[key] = newValue
+        self = .JSONObject(o)
+      default:
+        assert(false,"Attempted setting subscripted value of a non JSONObject")
+      }
     }
   }
 
