@@ -21,3 +21,10 @@ extension Comment: JSONDecodable {
       <*> j <|? ["author", "id"]
   }
 }
+
+extension Comment: JSONEncodable {
+  func encode() -> JSONValue {
+    let author: JSONValue = ["name":authorName,"id":authorId]
+    return ["id":id,"text":text,"author":author]
+  }
+}
