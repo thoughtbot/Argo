@@ -1,6 +1,7 @@
 {
   "int": 5,
   "double": 3.4,
+  "float": 1.1,
   "bool": false,
   "int_opt": 4,
   "string_array": [

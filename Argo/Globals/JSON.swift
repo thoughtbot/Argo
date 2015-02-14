@@ -23,3 +23,9 @@ extension Bool: JSONDecodable {
     return j.value()
   }
 }
+
+extension Float: JSONDecodable {
+  public static func decode(j: JSONValue) -> Float? {
+    return j.value()
+  }
+}
