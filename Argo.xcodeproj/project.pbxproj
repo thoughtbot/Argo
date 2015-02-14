@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B31647C81A8F9B5B00679BBA /* JSONEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B351CE711A80ACE8008E20D0 /* JSONEncodable.swift */; };
+		B31647C91A8F9B6E00679BBA /* JSONEncodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C023A1A8A8ACF001D687A /* JSONEncodableTests.swift */; };
 		B351CE721A80ACE8008E20D0 /* JSONEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B351CE711A80ACE8008E20D0 /* JSONEncodable.swift */; };
 		B36C023B1A8A8ACF001D687A /* JSONEncodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C023A1A8A8ACF001D687A /* JSONEncodableTests.swift */; };
 		EA08313119D5EEAF003B90D7 /* TypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA08313019D5EEAF003B90D7 /* TypeTests.swift */; };
@@ -679,6 +681,7 @@
 				F89335701A4CE92D00B88685 /* JSONDecodable.swift in Sources */,
 				F89335761A4CE93600B88685 /* JSONOperators.swift in Sources */,
 				F8E33FA31A51DE510025A6E5 /* curry.swift in Sources */,
+				B31647C81A8F9B5B00679BBA /* JSONEncodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +690,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8EF75731A4CEC7800BDCC2D /* Comment.swift in Sources */,
+				B31647C91A8F9B6E00679BBA /* JSONEncodableTests.swift in Sources */,
 				F802D4C41A5EE172005E236C /* NSURL.swift in Sources */,
 				F8EF75721A4CEC7800BDCC2D /* User.swift in Sources */,
 				F8EF756B1A4CEC6400BDCC2D /* EmbeddedJSONDecodingTests.swift in Sources */,
