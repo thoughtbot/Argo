@@ -135,7 +135,7 @@ extension JSONValue {
     self = array?.encode() ?? .JSONNull
   }
   
-  public init<K:String,V:JSONEncodable>(dictionary: [K:V]?) {
+  public init<V:JSONEncodable>(dictionary: [String:V]?) {
     self = dictionary?.encode() ?? .JSONNull
   }
 }
@@ -189,7 +189,7 @@ extension JSONValue : DictionaryLiteralConvertible {
 extension JSONValue : ArrayLiteralConvertible {
   public typealias Element = JSONEncodable
   public init(arrayLiteral elements: Element...) {
-    self = JSONValue(array: elements)
+    self = elements.encode() ?? .JSONNull
   }
 }
 
