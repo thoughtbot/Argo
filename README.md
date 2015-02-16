@@ -5,8 +5,9 @@ The Greek word for _swift_ and the ship used by Jason, son of Aeson, of the
 Argonauts. Aeson is the JSON parsing library in Haskell that inspired Argo,
 much like Aeson inspired his son Jason.
 
-NOTE: The master branch of Argo is pushing ahead with Swift 1.2 support. Support for 
-Swift 1.1 can be found on branch [swift-1.1] and with tag version v0.3.2.
+NOTE: The master branch of Argo is pushing ahead with Swift 1.2 support.
+Support for Swift 1.1 can be found on branch [swift-1.1] and in the 0.3.x
+versions of tags/releases.
 
 [swift-1.1]: https://github.com/thoughtbot/Argo/tree/swift-1.1
 
