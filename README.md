@@ -29,8 +29,7 @@ for up to date installation instructions.
 
 [carthage-installation]: https://github.com/Carthage/Carthage#adding-frameworks-to-an-application
 
-If you want to use the functional operators (`<^>`, `<*>`, `>>-`) in your app,
-you'll also need to add `Runes.framework` to your project. [Runes] is a
+You'll also need to add `Runes.framework` to your project. [Runes] is a
 dependency of Argo, so you don't need to specify it in your Cartfile.
 
 [Runes]: https://github.com/thoughtbot/runes
@@ -56,6 +55,8 @@ I guess you could do it this way if that's your thing.
 
 Add this repo as a submodule, and add the project file to your workspace. You
 can then link against `Argo.framework` for your application target.
+
+You'll also need to add [Runes] to your project the same way.
 
 ## Usage tl;dr:
 
