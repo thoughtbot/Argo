@@ -1,1 +1,1 @@
-github "thoughtbot/runes"
+github "thoughtbot/runes" ~> 1.2
