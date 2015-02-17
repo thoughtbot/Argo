@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B312B0991A933F7A0087888D /* array_types.json in Resources */ = {isa = PBXBuildFile; fileRef = B312B0981A933F7A0087888D /* array_types.json */; };
+		B312B09A1A93406F0087888D /* array_types.json in Resources */ = {isa = PBXBuildFile; fileRef = B312B0981A933F7A0087888D /* array_types.json */; };
 		B31647C81A8F9B5B00679BBA /* JSONEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B351CE711A80ACE8008E20D0 /* JSONEncodable.swift */; };
 		B31647C91A8F9B6E00679BBA /* JSONEncodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C023A1A8A8ACF001D687A /* JSONEncodableTests.swift */; };
 		B351CE721A80ACE8008E20D0 /* JSONEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B351CE711A80ACE8008E20D0 /* JSONEncodable.swift */; };
@@ -146,6 +148,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B312B0981A933F7A0087888D /* array_types.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = array_types.json; sourceTree = "<group>"; };
 		B351CE711A80ACE8008E20D0 /* JSONEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONEncodable.swift; sourceTree = "<group>"; };
 		B36C023A1A8A8ACF001D687A /* JSONEncodableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONEncodableTests.swift; sourceTree = "<group>"; };
 		EA08313019D5EEAF003B90D7 /* TypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeTests.swift; sourceTree = "<group>"; };
@@ -356,6 +359,7 @@
 				EA4EAF7219DD96330036AE0D /* types_fail_embedded.json */,
 				EA395DC31A52F8EB00EB607E /* array_root.json */,
 				EA395DC91A52FC1400EB607E /* root_object.json */,
+				B312B0981A933F7A0087888D /* array_types.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -573,6 +577,7 @@
 			files = (
 				EA08313519D5EFC0003B90D7 /* types.json in Resources */,
 				EA4EAF7319DD96330036AE0D /* types_fail_embedded.json in Resources */,
+				B312B0991A933F7A0087888D /* array_types.json in Resources */,
 				EA395DCA1A52FC1400EB607E /* root_object.json in Resources */,
 				F874B7EA1A66BF52004CCE5E /* root_array.json in Resources */,
 				EAD9FB1619D30F8D0031E006 /* post_no_comments.json in Resources */,
@@ -601,6 +606,7 @@
 				F862E0AD1A519D560093B028 /* types.json in Resources */,
 				F862E0AE1A519D5C0093B028 /* types_fail_embedded.json in Resources */,
 				EA395DCB1A52FC1400EB607E /* root_object.json in Resources */,
+				B312B09A1A93406F0087888D /* array_types.json in Resources */,
 				F874B7EB1A66C221004CCE5E /* root_array.json in Resources */,
 				F8EF75711A4CEC7100BDCC2D /* post_no_comments.json in Resources */,
 				F862E0AC1A519D520093B028 /* post_comments.json in Resources */,
