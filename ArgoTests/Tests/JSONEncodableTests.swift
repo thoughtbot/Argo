@@ -81,4 +81,19 @@ class JSONEncodableTests: XCTestCase {
     XCTAssertEqual(post!.encode(), json!)
   }
 
+  func testJSONValueToString() {
+    let filename = "array_types"
+    let path = NSBundle(forClass: self.dynamicType).pathForResource(filename, ofType: "json")
+    XCTAssert(path != nil)
+    let data = NSData(contentsOfFile: path!)
+    XCTAssertNotNil(data)
+    let fileString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+    
+    let readFile: AnyObject? = JSONFileReader.JSON(fromFile: filename)
+    let json = JSONValue.parse <^> readFile
+    XCTAssertNotNil(readFile)
+    XCTAssert(json != nil)
+    let jsonString: String = json!.toString()
+    XCTAssertEqual(fileString!,jsonString)
+  }
 }
