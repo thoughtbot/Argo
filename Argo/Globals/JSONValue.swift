@@ -28,6 +28,21 @@ public extension JSONValue {
     default: return .JSONNull
     }
   }
+  
+  func dump() -> AnyObject {
+    switch self {
+    case let .JSONString(v): return v
+    case let .JSONNumber(v): return v
+    case let .JSONNull: return NSNull()
+    case let .JSONArray(a): return a.map({$0.dump()})
+    case let .JSONObject(o):
+      var dict: [String:AnyObject] = [:]
+      for (key,value) in o {
+        dict[key] = value.dump()
+      }
+      return dict
+    }
+  }
 
   static func mapDecode<A where A: JSONDecodable, A == A.DecodedType>(value: JSONValue) -> [A]? {
     switch value {
@@ -184,6 +199,7 @@ extension JSONValue : IntegerLiteralConvertible {
 extension JSONValue : FloatLiteralConvertible {
   public init(floatLiteral value: FloatLiteralType) {
     self = .JSONNumber(value)
+    
   }
 }
 
