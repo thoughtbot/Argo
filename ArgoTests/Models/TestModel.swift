@@ -42,6 +42,7 @@ extension TestModel: JSONEncodable {
     var value: JSONValue = ["int":int
                            ,"double":double
                            ,"bool":bool
+                           ,"float":float
                            ,"int_opt":intOpt
                            ,"string_array":JSONValue(array: stringArray)
                            ,"string_array_opt": JSONValue(array: stringArrayOpt)

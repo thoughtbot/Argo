@@ -51,7 +51,7 @@ class JSONEncodableTests: XCTestCase {
     
     XCTAssert(json != nil)
     XCTAssert(model != nil)
-    XCTAssertEqual(json!,model!.encode())
+    XCTAssertEqual(json!.toString(),model!.encode().toString())
   }
 
   func testCommentDecodingWithEmbeddedUserName() {
