@@ -19,3 +19,10 @@ extension User: JSONDecodable {
       <*> j <|? "email"
   }
 }
+
+extension User: JSONEncodable {
+  func encode() -> JSONValue {
+    let json: JSONValue = ["id":id,"name":name,"email":email]
+    return json.filterJSONNull()
+  }
+}
