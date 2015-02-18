@@ -92,9 +92,8 @@ extension User: JSONDecodable {
 let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: .None)
 
 if let j: AnyObject = json {
-  if let value = JSONValue.parse(j) {
-    let user = User.decode(value)
-  }
+  let value = JSONValue.parse(j)
+  let user = User.decode(value)
 }
 ```
 
@@ -168,9 +167,8 @@ value returned from `NSJSONSerialization` to `JSONValue.parse()`:
 let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions(0), error: nil)
 
 if let j: AnyObject = json {
-  if let value: JSONValue = JSONValue.parse(j) {
-    let user: User? = User.decode(value)
-  }
+  let value: JSONValue = JSONValue.parse(j)
+  let user: User? = User.decode(value)
 }
 ```
 
