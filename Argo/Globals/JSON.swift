@@ -3,31 +3,46 @@ import Runes
 
 extension String: JSONDecodable {
   public static func decode(j: JSONValue) -> String? {
-    return j.value()
+    switch j {
+    case let .JSONString(s): return s
+    default: return .None
+    }
   }
 }
 
 extension Int: JSONDecodable {
   public static func decode(j: JSONValue) -> Int? {
-    return j.value()
+    switch j {
+    case let .JSONNumber(n): return n as Int
+    default: return .None
+    }
   }
 }
 
 extension Double: JSONDecodable {
   public static func decode(j: JSONValue) -> Double? {
-    return j.value()
+    switch j {
+    case let .JSONNumber(n): return n as Double
+    default: return .None
+    }
   }
 }
 
 extension Bool: JSONDecodable {
   public static func decode(j: JSONValue) -> Bool? {
-    return j.value()
+    switch j {
+    case let .JSONNumber(n): return n as Bool
+    default: return .None
+    }
   }
 }
 
 extension Float: JSONDecodable {
   public static func decode(j: JSONValue) -> Float? {
-    return j.value()
+    switch j {
+    case let .JSONNumber(n): return n as Float
+    default: return .None
+    }
   }
 }
 

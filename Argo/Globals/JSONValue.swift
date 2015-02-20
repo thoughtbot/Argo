@@ -31,16 +31,6 @@ public extension JSONValue {
 }
 
 public extension JSONValue {
-  func value<A>() -> A? {
-    switch self {
-    case let .JSONString(v): return v as? A
-    case let .JSONNumber(v): return v as? A
-    case let .JSONNull: return .None
-    case let .JSONArray(a): return a as? A
-    case let .JSONObject(o): return o as? A
-    }
-  }
-
   subscript(key: String) -> JSONValue? {
     switch self {
     case let .JSONObject(o): return o[key]
