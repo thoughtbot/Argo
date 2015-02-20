@@ -179,8 +179,6 @@
 		F89335541A4CE83000B88685 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893355E1A4CE83000B88685 /* Argo-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Argo-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893356D1A4CE8FC00B88685 /* Argo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argo.h; sourceTree = "<group>"; };
-		F8C05D441A649A04004A8D0F /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = "../Carthage/Checkouts/runes/build/Debug-iphoneos/Runes.framework"; sourceTree = "<group>"; };
-		F8C05D461A649A08004A8D0F /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = ../Carthage/Checkouts/runes/build/Debug/Runes.framework; sourceTree = "<group>"; };
 		F8CBE6621A64508200316FBC /* sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sequence.swift; sourceTree = "<group>"; };
 		F8CBE6661A64521000316FBC /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		F8E33FA11A51DE020025A6E5 /* curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = curry.swift; sourceTree = "<group>"; };
@@ -257,7 +255,6 @@
 				EAD9FAF019D0F7150031E006 /* Globals */,
 				EAD9FAE919D0F6480031E006 /* Operators */,
 				EAD9FAE819D0F5B50031E006 /* Resources */,
-				F8C05D411A6499CE004A8D0F /* Frameworks */,
 			);
 			name = Argo;
 			path = ../Argo/Argo;
@@ -390,15 +387,6 @@
 			);
 			name = Mac;
 			path = Carthage/Build/Mac;
-			sourceTree = "<group>";
-		};
-		F8C05D411A6499CE004A8D0F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F8C05D461A649A08004A8D0F /* Runes.framework */,
-				F8C05D441A649A04004A8D0F /* Runes.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F8CBE6651A6451F800316FBC /* Extensions */ = {
