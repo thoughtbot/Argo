@@ -1,4 +1,5 @@
 import Foundation
+import Runes
 
 extension String: JSONDecodable {
   public static func decode(j: JSONValue) -> String? {
@@ -27,5 +28,12 @@ extension Bool: JSONDecodable {
 extension Float: JSONDecodable {
   public static func decode(j: JSONValue) -> Float? {
     return j.value()
+  }
+}
+
+public func decodeArray<A where A: JSONDecodable, A == A.DecodedType>(value: JSONValue) -> [A]? {
+  switch value {
+  case let .JSONArray(a): return sequence({ A.decode($0) } <^> a)
+  default: return .None
   }
 }
