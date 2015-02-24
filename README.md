@@ -76,7 +76,7 @@ extension User: JSONDecodable {
     return User(id: id, name: name, email: email, role: role, companyName: companyName, friends: friends)
   }
 
-  static func decode(j: JSONValue) -> User? {
+  static func decode(j: JSON) -> User? {
     return User.create
       <^> j <| "id"
       <*> j <| "name"
@@ -92,7 +92,7 @@ extension User: JSONDecodable {
 let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: .None)
 
 if let j: AnyObject = json {
-  let value = JSONValue.parse(j)
+  let value = JSON.parse(j)
   let user = User.decode(value)
 }
 ```
@@ -160,14 +160,14 @@ reading the following articles:
 ## Usage
 
 The first thing you need to do when you receive JSON data is convert it to an
-instance of the `JSONValue` enum. This is done by passing the `AnyObject`
-value returned from `NSJSONSerialization` to `JSONValue.parse()`:
+instance of the `JSON` enum. This is done by passing the `AnyObject`
+value returned from `NSJSONSerialization` to `JSON.parse()`:
 
 ```swift
 let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions(0), error: nil)
 
 if let j: AnyObject = json {
-  let value: JSONValue = JSONValue.parse(j)
+  let value: JSON = JSON.parse(j)
   let user: User? = User.decode(value)
 }
 ```
@@ -175,7 +175,7 @@ if let j: AnyObject = json {
 Note that you probably want to use an error pointer to track errors from
 `NSJSONSerialization`.
 
-The `JSONValue` enum exists to help with some of the type inference, and also
+The `JSON` enum exists to help with some of the type inference, and also
 wraps up some of the casting that we'll need to to to transform the JSON into
 native types.
 
@@ -185,7 +185,7 @@ conform to the `JSONDecodable` protocol:
 ```swift
 public protocol JSONDecodable {
   typealias DecodedType = Self
-  class func decode(JSONValue) -> DecodedType?
+  class func decode(JSON) -> DecodedType?
 }
 ```
 
@@ -200,9 +200,9 @@ enum RoleType: String {
 }
 
 extension RoleType: JSONDecodable {
-  static func decode(j: JSONValue) -> RoleType? {
+  static func decode(j: JSON) -> RoleType? {
     switch j {
-    case let .JSONString(s): return RoleType(rawValue: s)
+    case let .String(s): return RoleType(rawValue: s)
     default: return .None
     }
   }
@@ -262,12 +262,12 @@ for parsing a value out of the JSON:
 
 The usage of these operators is the same regardless:
 
-- `json <| "key"` is analogous to `json["key"]`
-- `json <| ["key", "nested"]` is analogous to `json["key"]["nested"]`
+- `json <| "key"` will decode the value for the key "key"
+- `json <| ["key", "nested"]` will decode the value at '{ "key": { "nested"'
 
-Both operators will attempt to parse the value from the JSON and will also
-attempt to cast the value to the expected type. If it can't find a value, or
-if that value is of the wrong type, the function will return `.None`.
+Both operators will attempt to decode the value from the JSON into the
+expected type. If it can't find a value, or if that value is of the wrong
+type, the function will return `.None`.
 
 There are also Optional versions of these operators:
 
@@ -285,7 +285,7 @@ conjunction with `map` and `apply`:
 
 ```swift
 extension User: JSONDecodable {
-  static func decode(j: JSONValue) -> User? {
+  static func decode(j: JSON) -> User? {
     return User.create
       <^> j <| "id"
       <*> j <| "name"
