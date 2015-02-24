@@ -27,18 +27,10 @@ public extension JSON {
   }
 }
 
-public extension JSON {
-  subscript(key: Swift.String) -> JSON? {
-    switch self {
-    case let .Object(o): return o[key]
-    default: return .None
-    }
+extension JSON: JSONDecodable {
+  public static func decode(j: JSON) -> JSON? {
+    return j
   }
-
-  func find(keys: [Swift.String]) -> JSON? {
-    return keys.reduce(self) { $0?[$1] }
-  }
-
 }
 
 extension JSON: Printable {

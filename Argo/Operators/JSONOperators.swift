@@ -4,12 +4,17 @@ import Runes
 
 // Pull embedded value from JSON
 public func <|<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, keys: [String]) -> A? {
-  return json.find(keys) >>- { A.decode($0) }
+  return reduce(keys, json) { accum, key in
+    accum >>- { $0 <| key }
+    } >>- { A.decode($0) }
 }
 
 // Pull value from JSON
 public func <|<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, key: String) -> A? {
-  return json <| [key]
+  switch json {
+  case let .Object(o): return o[key] >>- { A.decode($0) }
+  default: return .None
+  }
 }
 
 // Pull embedded optional value from JSON
@@ -19,19 +24,19 @@ public func <|?<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, keys: 
 
 // Pull optional value from JSON
 public func <|?<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, key: String) -> A?? {
-  return json <|? [key]
+  return pure(json <| key)
 }
 
 // MARK: Arrays
 
 // Pull embedded array from JSON
 public func <||<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, keys: [String]) -> [A]? {
-  return json.find(keys) >>- decodeArray
+  return json <| keys >>- decodeArray
 }
 
 // Pull array from JSON
 public func <||<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, key: String) -> [A]? {
-  return json <|| [key]
+  return json <| key >>- decodeArray
 }
 
 
@@ -42,5 +47,5 @@ public func <||?<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, keys:
 
 // Pull optional array from JSON
 public func <||?<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, key: String) -> [A]?? {
-  return json <||? [key]
+  return pure(json <|| key)
 }
