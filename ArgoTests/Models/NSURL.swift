@@ -6,7 +6,7 @@ extension NSURL: JSONDecodable {
 
   public class func decode(j: JSON) -> DecodedType? {
         switch j {
-        case .JSONString(let url): return NSURL(string: url)
+        case .String(let url): return NSURL(string: url)
         default: return .None
         }
     }
