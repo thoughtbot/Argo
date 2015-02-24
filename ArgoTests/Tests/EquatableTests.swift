@@ -2,7 +2,7 @@ import XCTest
 import Argo
 import Runes
 
-class EquatableSpec: XCTestCase {
+class EquatableTests: XCTestCase {
   func testEqualJSONObjects() {
     let json = JSON.parse <^> JSONFileReader.JSON(fromFile: "types")
     let anotherParsed = JSON.parse <^> JSONFileReader.JSON(fromFile: "types")
