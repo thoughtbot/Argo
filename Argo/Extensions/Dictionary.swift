@@ -1,6 +1,10 @@
-extension Dictionary {
-  static func appendKey(var dict: [Key: Value], key: Key, value: Value) -> [Key: Value] {
-    dict[key] = value
-    return dict
+// pure merge for Dictionaries
+func +<T, V>(var lhs: [T: V], rhs: [T: V]) -> [T: V] {
+  var dict = lhs
+
+  for (key, val) in rhs {
+    dict[key] = val
   }
+
+  return dict
 }

@@ -15,11 +15,10 @@ public extension JSON {
     case let v as [AnyObject]: return .Array(v.map(parse))
 
     case let v as [Swift.String: AnyObject]:
-      let object: [Swift.String: JSON] = reduce(v.keys, [:]) { accum, key in
-        let append = curry(Dictionary.appendKey)(accum)(key)
-        return (append <^> (self.parse <^> v[key])) ?? append(.Null)
-      }
-      return .Object(object)
+      return .Object(reduce(v.keys, [:]) { accum, key in
+        let parsedValue = (self.parse <^> v[key]) ?? .Null
+        return accum + [key: parsedValue]
+      })
 
     case let v as Swift.String: return .String(v)
     case let v as NSNumber: return .Number(v)
