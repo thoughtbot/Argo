@@ -4,9 +4,7 @@ import Runes
 
 // Pull embedded value from JSON
 public func <|<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, keys: [String]) -> A? {
-  return reduce(keys, json) { accum, key in
-    accum >>- { $0 <| key }
-    } >>- { A.decode($0) }
+  return foldM(keys, json, <|) >>- { A.decode($0) }
 }
 
 // Pull value from JSON

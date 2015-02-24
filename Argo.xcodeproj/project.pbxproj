@@ -70,6 +70,8 @@
 		F89335721A4CE93600B88685 /* StandardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF319D0F74C0031E006 /* StandardTypes.swift */; };
 		F89335741A4CE93600B88685 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAEA19D0F6930031E006 /* Operators.swift */; };
 		F89335761A4CE93600B88685 /* JSONOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* JSONOperators.swift */; };
+		F8A1ACF81A9CE15200118B29 /* fold.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1ACF71A9CE15200118B29 /* fold.swift */; };
+		F8A1ACF91A9CE34500118B29 /* fold.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1ACF71A9CE15200118B29 /* fold.swift */; };
 		F8CBE6631A64508200316FBC /* sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBE6621A64508200316FBC /* sequence.swift */; };
 		F8CBE6641A6450F200316FBC /* sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBE6621A64508200316FBC /* sequence.swift */; };
 		F8CBE6671A64521000316FBC /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBE6661A64521000316FBC /* Dictionary.swift */; };
@@ -191,6 +193,7 @@
 		F89335541A4CE83000B88685 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893355E1A4CE83000B88685 /* Argo-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Argo-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893356D1A4CE8FC00B88685 /* Argo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argo.h; sourceTree = "<group>"; };
+		F8A1ACF71A9CE15200118B29 /* fold.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fold.swift; sourceTree = "<group>"; };
 		F8CBE6621A64508200316FBC /* sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sequence.swift; sourceTree = "<group>"; };
 		F8CBE6661A64521000316FBC /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		F8E33FA11A51DE020025A6E5 /* curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = curry.swift; sourceTree = "<group>"; };
@@ -327,6 +330,7 @@
 				EAD9FB1919D4B23F0031E006 /* JSON.swift */,
 				F8E33FA11A51DE020025A6E5 /* curry.swift */,
 				F8CBE6621A64508200316FBC /* sequence.swift */,
+				F8A1ACF71A9CE15200118B29 /* fold.swift */,
 			);
 			path = Globals;
 			sourceTree = "<group>";
@@ -649,6 +653,7 @@
 				EAD9FB1A19D4B23F0031E006 /* JSON.swift in Sources */,
 				EAD9FAEB19D0F6930031E006 /* Operators.swift in Sources */,
 				EAD9FAF619D0F7900031E006 /* JSONOperators.swift in Sources */,
+				F8A1ACF81A9CE15200118B29 /* fold.swift in Sources */,
 				EAD9FAF919D0F7CA0031E006 /* JSONDecodable.swift in Sources */,
 				F8E33FA21A51DE020025A6E5 /* curry.swift in Sources */,
 				EAD9FAF419D0F74C0031E006 /* StandardTypes.swift in Sources */,
@@ -685,6 +690,7 @@
 				F8CBE6641A6450F200316FBC /* sequence.swift in Sources */,
 				F862E0AA1A519D360093B028 /* JSON.swift in Sources */,
 				F89335741A4CE93600B88685 /* Operators.swift in Sources */,
+				F8A1ACF91A9CE34500118B29 /* fold.swift in Sources */,
 				F89335701A4CE92D00B88685 /* JSONDecodable.swift in Sources */,
 				F89335761A4CE93600B88685 /* JSONOperators.swift in Sources */,
 				F8E33FA31A51DE510025A6E5 /* curry.swift in Sources */,
