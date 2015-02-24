@@ -2,11 +2,6 @@ import Runes
 
 // MARK: Values
 
-// Pull embedded value from JSON
-public func <|<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, keys: [String]) -> A? {
-  return foldM(keys, json, <|) >>- { A.decode($0) }
-}
-
 // Pull value from JSON
 public func <|<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, key: String) -> A? {
   switch json {
@@ -15,35 +10,39 @@ public func <|<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, key: St
   }
 }
 
-// Pull embedded optional value from JSON
-public func <|?<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, keys: [String]) -> A?? {
-  return pure(json <| keys)
-}
-
 // Pull optional value from JSON
 public func <|?<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, key: String) -> A?? {
   return pure(json <| key)
 }
 
-// MARK: Arrays
-
-// Pull embedded array from JSON
-public func <||<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, keys: [String]) -> [A]? {
-  return json <| keys >>- decodeArray
+// Pull embedded value from JSON
+public func <|<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, keys: [String]) -> A? {
+  return foldM(keys, json, <|) >>- { A.decode($0) }
 }
+
+// Pull embedded optional value from JSON
+public func <|?<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, keys: [String]) -> A?? {
+  return pure(json <| keys)
+}
+
+// MARK: Arrays
 
 // Pull array from JSON
 public func <||<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, key: String) -> [A]? {
   return json <| key >>- decodeArray
 }
 
+// Pull optional array from JSON
+public func <||?<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, key: String) -> [A]?? {
+  return pure(json <|| key)
+}
+
+// Pull embedded array from JSON
+public func <||<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, keys: [String]) -> [A]? {
+  return json <| keys >>- decodeArray
+}
 
 // Pull embedded optional array from JSON
 public func <||?<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, keys: [String]) -> [A]?? {
   return pure(json <|| keys)
-}
-
-// Pull optional array from JSON
-public func <||?<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, key: String) -> [A]?? {
-  return pure(json <|| key)
 }
