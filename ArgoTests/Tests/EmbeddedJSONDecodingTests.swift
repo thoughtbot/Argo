@@ -4,7 +4,7 @@ import Runes
 
 class EmbeddedJSONDecodingTests: XCTestCase {
   func testCommentDecodingWithEmbeddedUserName() {
-    let json = JSONValue.parse <^> JSONFileReader.JSON(fromFile: "comment")
+    let json = JSON.parse <^> JSONFileReader.JSON(fromFile: "comment")
     let comment = json >>- Comment.decode
 
     XCTAssert(comment != nil)
@@ -14,7 +14,7 @@ class EmbeddedJSONDecodingTests: XCTestCase {
   }
 
   func testPostDecodingWithEmbeddedUserModel() {
-    let json = JSONValue.parse <^> JSONFileReader.JSON(fromFile: "post_no_comments")
+    let json = JSON.parse <^> JSONFileReader.JSON(fromFile: "post_no_comments")
     let post = json >>- Post.decode
 
     XCTAssert(post != nil)
@@ -25,7 +25,7 @@ class EmbeddedJSONDecodingTests: XCTestCase {
   }
 
   func testPostDecodingWithEmbeddedUserModelAndComments() {
-    let json = JSONValue.parse <^> JSONFileReader.JSON(fromFile: "post_comments")
+    let json = JSON.parse <^> JSONFileReader.JSON(fromFile: "post_comments")
     let post = json >>- Post.decode
 
     XCTAssert(post != nil)
@@ -36,7 +36,7 @@ class EmbeddedJSONDecodingTests: XCTestCase {
   }
 
   func testPostDecodingWithBadComments() {
-    let json = JSONValue.parse <^> JSONFileReader.JSON(fromFile: "post_bad_comments")
+    let json = JSON.parse <^> JSONFileReader.JSON(fromFile: "post_bad_comments")
     let post = json >>- Post.decode
 
     XCTAssert(post == nil)

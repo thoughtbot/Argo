@@ -4,7 +4,7 @@ import Runes
 
 class ExampleTests: XCTestCase {
   func testJSONWithRootArray() {
-    let json = JSONValue.parse <^> JSONFileReader.JSON(fromFile: "array_root")
+    let json = JSON.parse <^> JSONFileReader.JSON(fromFile: "array_root")
     let stringArray: [String]? = json >>- decodeArray
 
     XCTAssertNotNil(stringArray)
@@ -12,7 +12,7 @@ class ExampleTests: XCTestCase {
   }
 
   func testJSONWithRootObject() {
-    let json = JSONValue.parse <^> JSONFileReader.JSON(fromFile: "root_object")
+    let json = JSON.parse <^> JSONFileReader.JSON(fromFile: "root_object")
     let user: User? = json >>- { $0["user"] >>- User.decode }
 
     XCTAssert(user != nil)
@@ -23,7 +23,7 @@ class ExampleTests: XCTestCase {
   }
 
   func testDecodingNonFinalClass() {
-    let json = JSONValue.parse <^> JSONFileReader.JSON(fromFile: "url")
+    let json = JSON.parse <^> JSONFileReader.JSON(fromFile: "url")
     let url: NSURL? = json >>- { $0["url"] >>- NSURL.decode }
 
     XCTAssert(url != nil)
@@ -31,8 +31,8 @@ class ExampleTests: XCTestCase {
   }
 
   func testDecodingJSONWithRootArray() {
-    let expected = JSONValue.parse([["title": "Foo", "age": 21], ["title": "Bar", "age": 32]])
-    let json = JSONValue.parse <^> JSONFileReader.JSON(fromFile: "root_array")
+    let expected = JSON.parse([["title": "Foo", "age": 21], ["title": "Bar", "age": 32]])
+    let json = JSON.parse <^> JSONFileReader.JSON(fromFile: "root_array")
 
     XCTAssert(.Some(expected) == json)
   }

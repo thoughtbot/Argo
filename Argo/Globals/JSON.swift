@@ -1,18 +1,18 @@
 import Foundation
 import Runes
 
-public typealias JSONDict = [String: JSONValue]
+public typealias JSONDict = [String: JSON]
 
-public enum JSONValue {
+public enum JSON {
   case JSONObject(JSONDict)
-  case JSONArray([JSONValue])
+  case JSONArray([JSON])
   case JSONString(String)
   case JSONNumber(NSNumber)
   case JSONNull
 }
 
-public extension JSONValue {
-  static func parse(json: AnyObject) -> JSONValue {
+public extension JSON {
+  static func parse(json: AnyObject) -> JSON {
     switch json {
     case let v as [AnyObject]: return .JSONArray(v.map(parse))
 
@@ -30,21 +30,21 @@ public extension JSONValue {
   }
 }
 
-public extension JSONValue {
-  subscript(key: String) -> JSONValue? {
+public extension JSON {
+  subscript(key: String) -> JSON? {
     switch self {
     case let .JSONObject(o): return o[key]
     default: return .None
     }
   }
 
-  func find(keys: [String]) -> JSONValue? {
+  func find(keys: [String]) -> JSON? {
     return keys.reduce(self) { $0?[$1] }
   }
 
 }
 
-extension JSONValue: Printable {
+extension JSON: Printable {
   public var description: String {
     switch self {
     case let .JSONString(v): return "String(\(v))"
@@ -56,9 +56,9 @@ extension JSONValue: Printable {
   }
 }
 
-extension JSONValue: Equatable { }
+extension JSON: Equatable { }
 
-public func ==(lhs: JSONValue, rhs: JSONValue) -> Bool {
+public func ==(lhs: JSON, rhs: JSON) -> Bool {
   switch (lhs, rhs) {
   case let (.JSONString(l), .JSONString(r)): return l == r
   case let (.JSONNumber(l), .JSONNumber(r)): return l == r

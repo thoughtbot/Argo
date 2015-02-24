@@ -4,7 +4,7 @@ import Runes
 
 class OptionalPropertyDecodingTests: XCTestCase {
   func testUserDecodingWithEmail() {
-    let json = JSONValue.parse <^> JSONFileReader.JSON(fromFile: "user_with_email")
+    let json = JSON.parse <^> JSONFileReader.JSON(fromFile: "user_with_email")
     let user = json >>- User.decode
 
     XCTAssert(user != nil)
@@ -15,7 +15,7 @@ class OptionalPropertyDecodingTests: XCTestCase {
   }
 
   func testUserDecodingWithoutEmail() {
-    let json = JSONValue.parse <^> JSONFileReader.JSON(fromFile: "user_without_email")
+    let json = JSON.parse <^> JSONFileReader.JSON(fromFile: "user_without_email")
     let user = json >>- User.decode
 
     XCTAssert(user != nil)

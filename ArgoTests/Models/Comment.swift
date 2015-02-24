@@ -12,7 +12,7 @@ extension Comment: JSONDecodable {
     return Comment(id: id, text: text, authorName: authorName)
   }
 
-  static func decode(j: JSONValue) -> Comment? {
+  static func decode(j: JSON) -> Comment? {
     return Comment.create
       <^> j <| "id"
       <*> j <| "text"
