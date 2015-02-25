@@ -17,7 +17,7 @@ public func <|?<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, key: S
 
 // Pull embedded value from JSON
 public func <|<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, keys: [String]) -> A? {
-  return foldM(keys, json, <|) >>- { A.decode($0) }
+  return flatReduce(keys, json, <|) >>- { A.decode($0) }
 }
 
 // Pull embedded optional value from JSON
