@@ -7,6 +7,16 @@ public enum JSON {
   case String(Swift.String)
   case Number(NSNumber)
   case Null
+
+  public init?(data: NSData) {
+    let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: nil)
+
+    if let j = JSON.parse <^> json {
+      self = j
+    } else {
+      return nil
+    }
+  }
 }
 
 public extension JSON {
