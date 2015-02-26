@@ -1,1 +1,2 @@
 github "thoughtbot/runes" ~> 1.2
+github "robrix/Box" ~> 1.2.0

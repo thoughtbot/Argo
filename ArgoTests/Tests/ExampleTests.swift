@@ -4,8 +4,7 @@ import Runes
 
 class ExampleTests: XCTestCase {
   func testJSONWithRootArray() {
-    let json = JSON.parse <^> JSONFileReader.JSON(fromFile: "array_root")
-    let stringArray: [String]? = json >>- decodeArray
+    let stringArray: [String]? = JSONFileReader.JSON(fromFile: "array_root") >>- decode
 
     XCTAssertNotNil(stringArray)
     XCTAssertEqual(stringArray!, ["foo", "bar", "baz"])
@@ -13,7 +12,7 @@ class ExampleTests: XCTestCase {
 
   func testJSONWithRootObject() {
     let json = JSON.parse <^> JSONFileReader.JSON(fromFile: "root_object")
-    let user: User? = json >>- { $0 <| "user" >>- User.decode }
+    let user: User? = json >>- { ($0 <| "user").value }
 
     XCTAssert(user != nil)
     XCTAssert(user?.id == 1)
@@ -24,7 +23,7 @@ class ExampleTests: XCTestCase {
 
   func testDecodingNonFinalClass() {
     let json = JSON.parse <^> JSONFileReader.JSON(fromFile: "url")
-    let url: NSURL? = json >>- { $0 <| "url" >>- NSURL.decode }
+    let url: NSURL? = json >>- { ($0 <| "url").value }
 
     XCTAssert(url != nil)
     XCTAssert(url?.absoluteString == "http://example.com")

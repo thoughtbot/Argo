@@ -4,8 +4,7 @@ import Runes
 
 class PListDecodingTests: XCTestCase {
   func testDecodingAllTypesFromPList() {
-    let value = JSON.parse <^> PListFileReader.plist(fromFile: "types")
-    let model = value >>- TestModel.decode
+    let model: TestModel? = PListFileReader.plist(fromFile: "types") >>- decode
 
     XCTAssert(model != nil)
     XCTAssert(model?.int == 5)
