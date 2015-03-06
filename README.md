@@ -16,6 +16,7 @@ versions of tags/releases.
 ### [Carthage]
 
 [Carthage]: https://github.com/Carthage/Carthage
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 Add the following to your Cartfile:
 
