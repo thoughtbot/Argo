@@ -1,7 +1,6 @@
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+<img src="https://raw.githubusercontent.com/thoughtbot/Argo/gh-pages/Argo.png" width="250" />
 
-Argo
-====
+# Argo [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 The Greek word for _swift_ and the ship used by Jason, son of Aeson, of the
 Argonauts. Aeson is the JSON parsing library in Haskell that inspired Argo,
