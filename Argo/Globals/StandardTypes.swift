@@ -48,7 +48,7 @@ extension Float: JSONDecodable {
 
 public func decodeArray<A where A: JSONDecodable, A == A.DecodedType>(value: JSON) -> [A]? {
   switch value {
-  case let .Array(a): return sequence({ A.decode($0) } <^> a)
+  case let .Array(a): return sequence(A.decode <^> a)
   default: return .None
   }
 }

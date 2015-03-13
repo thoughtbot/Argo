@@ -5,7 +5,7 @@ import Runes
 // Pull value from JSON
 public func <|<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, key: String) -> A? {
   switch json {
-  case let .Object(o): return o[key] >>- { A.decode($0) }
+  case let .Object(o): return o[key] >>- A.decode
   default: return .None
   }
 }
@@ -17,7 +17,7 @@ public func <|?<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, key: S
 
 // Pull embedded value from JSON
 public func <|<A where A: JSONDecodable, A == A.DecodedType>(json: JSON, keys: [String]) -> A? {
-  return flatReduce(keys, json, <|) >>- { A.decode($0) }
+  return flatReduce(keys, json, <|) >>- A.decode
 }
 
 // Pull embedded optional value from JSON
