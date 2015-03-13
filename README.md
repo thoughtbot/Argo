@@ -39,12 +39,10 @@ dependency of Argo, so you don't need to specify it in your Cartfile.
 
 [CocoaPods]: http://cocoapods.org
 
-__DISCLAIMER: CocoaPods doesn't officially support Swift projects yet. Use the
-pre-release version at your own discretion.__
-
 Add the following to your [Podfile](http://guides.cocoapods.org/using/the-podfile.html):
 
 ```ruby
+use_frameworks!
 pod 'Argo', :git => 'https://github.com/thoughtbot/Argo'
 ```
 
