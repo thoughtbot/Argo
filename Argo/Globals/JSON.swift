@@ -15,9 +15,9 @@ public extension JSON {
     case let v as [AnyObject]: return .Array(v.map(parse))
 
     case let v as [Swift.String: AnyObject]:
-      return .Object(reduce(v.keys, [:]) { (var accum, key) in
-        let parsedValue = (self.parse <^> v[key]) ?? .Null
-        accum[key] = parsedValue
+      return .Object(reduce(v, [:]) { (var accum, elem) in
+        let parsedValue = (self.parse <^> elem.1) ?? .Null
+        accum[elem.0] = parsedValue
         return accum
       })
 
