@@ -307,9 +307,9 @@ extension User {
         return User(id: id, name: name)
       }
     }
-  }
 
-  return .None
+    return .None
+  }
 }
 ```
 
