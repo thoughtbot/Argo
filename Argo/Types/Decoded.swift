@@ -1,4 +1,5 @@
 import Box
+import Runes
 
 public enum Decoded<T> {
   case Success(Box<T>)
@@ -19,4 +20,48 @@ public enum Decoded<T> {
     case let .TypeMismatch(string): return .TypeMismatch(string)
     }
   }
+}
+
+public extension Decoded {
+  func map<U>(f: T -> U) -> Decoded<U> {
+    switch self {
+    case let .Success(box): return .Success(Box(f(box.value)))
+    case let .MissingKey(string): return .MissingKey(string)
+    case let .TypeMismatch(string): return .TypeMismatch(string)
+    }
+  }
+
+  func apply<U>(f: Decoded<T -> U>) -> Decoded<U> {
+    switch f {
+    case let .Success(box): return box.value <^> self
+    case let .MissingKey(string): return .MissingKey(string)
+    case let .TypeMismatch(string): return .TypeMismatch(string)
+    }
+  }
+
+  func flatMap<U>(f: T -> Decoded<U>) -> Decoded<U> {
+    switch self {
+    case let .Success(box): return f(box.value)
+    case let .MissingKey(string): return .MissingKey(string)
+    case let .TypeMismatch(string): return .TypeMismatch(string)
+    }
+  }
+}
+
+public func pure<A>(a: A) -> Decoded<A> {
+  return .Success(Box(a))
+}
+
+// MARK: Monadic Operators
+
+public func >>-<A, B>(a: Decoded<A>, f: A -> Decoded<B>) -> Decoded<B> {
+  return a.flatMap(f)
+}
+
+public func <^><A, B>(f: A -> B, a: Decoded<A>) -> Decoded<B> {
+  return a.map(f)
+}
+
+public func <*><A, B>(f: Decoded<A -> B>, a: Decoded<A>) -> Decoded<B> {
+  return a.apply(f)
 }
