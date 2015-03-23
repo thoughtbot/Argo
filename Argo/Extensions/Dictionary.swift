@@ -2,13 +2,11 @@ import Runes
 
 // pure merge for Dictionaries
 func +<T, V>(var lhs: [T: V], rhs: [T: V]) -> [T: V] {
-  var dict = lhs
-
   for (key, val) in rhs {
-    dict[key] = val
+    lhs[key] = val
   }
 
-  return dict
+  return lhs
 }
 
 extension Dictionary {
