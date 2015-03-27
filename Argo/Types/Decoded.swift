@@ -12,12 +12,21 @@ public enum Decoded<T> {
     default: return .None
     }
   }
+}
 
-  public static func optional<A>(p: Decoded<A>) -> Decoded<A?> {
-    switch p {
+public extension Decoded {
+  static func optional<T>(x: Decoded<T>) -> Decoded<T?> {
+    switch x {
     case let .Success(box): return .Success(Box(.Some(box.value)))
     case let .MissingKey(string): return .Success(Box(.None))
     case let .TypeMismatch(string): return .TypeMismatch(string)
+    }
+  }
+
+  static func fromOptional<T>(x: T?) -> Decoded<T> {
+    switch x {
+    case let .Some(value): return .Success(Box(value))
+    case .None: return .TypeMismatch("Expected .Some(\(T.self)), got .None")
     }
   }
 }

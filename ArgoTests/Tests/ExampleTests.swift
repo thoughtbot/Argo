@@ -35,4 +35,22 @@ class ExampleTests: XCTestCase {
 
     XCTAssert(.Some(expected) == json)
   }
+
+  func testFlatMapOptionals() {
+    let json: AnyObject? = JSONFileReader.JSON(fromFile: "user_with_email")
+    let user: User? = json >>- decode
+
+    XCTAssert(user?.id == 1)
+    XCTAssert(user?.name == "Cool User")
+    XCTAssert(user?.email == "u.cool@example.com")
+  }
+
+  func testFlatMapDecoded() {
+    let json: AnyObject? = JSONFileReader.JSON(fromFile: "user_with_email")
+    let user: Decoded<User> = .fromOptional(json) >>- decode
+
+    XCTAssert(user.value?.id == 1)
+    XCTAssert(user.value?.name == "Cool User")
+    XCTAssert(user.value?.email == "u.cool@example.com")
+  }
 }
