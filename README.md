@@ -180,7 +180,7 @@ Note that you probably want to use an error pointer to track errors from
 `NSJSONSerialization`.
 
 The `JSONValue` enum exists to help with some of the type inference, and also
-wraps up some of the casting that we'll need to to to transform the JSON into
+wraps up some of the casting that we'll need to do to transform the JSON into
 native types.
 
 Next, you need to make sure that models that you wish to decode from JSON
