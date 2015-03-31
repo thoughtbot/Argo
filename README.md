@@ -66,6 +66,9 @@ You'll also need to add [Runes] to your project the same way.
 ## Usage tl;dr:
 
 ```swift
+import Argo
+import Runes
+
 struct User {
   let id: Int
   let name: String
