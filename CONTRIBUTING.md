@@ -1,7 +1,7 @@
 We love pull requests from everyone. Follow the thoughtbot [code of conduct]
 while contributing.
 
-[code of conduct]: https://thoughtbot.github.com/code-of-conduct
+[code of conduct]: https://thoughtbot.com/open-source-code-of-conduct
 
 ## Dependencies
 
