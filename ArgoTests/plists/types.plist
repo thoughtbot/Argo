@@ -2,12 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>int</key>
-	<integer>5</integer>
-	<key>double</key>
-	<real>3.4</real>
-	<key>float</key>
-	<real>1.1</real>
+	<key>numerics</key>
+	<dict>
+		<key>int</key>
+		<integer>5</integer>
+		<key>int64</key>
+		<integer>9007199254740992</integer>
+		<key>double</key>
+		<real>3.4</real>
+		<key>float</key>
+		<real>1.1</real>
+	</dict>
 	<key>bool</key>
 	<false/>
 	<key>embedded</key>

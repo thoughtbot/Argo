@@ -4,11 +4,14 @@ import Argo
 class SwiftDictionaryDecodingTests: XCTestCase {
   func testDecodingAllTypesFromSwiftDictionary() {
     let typesDict = [
-      "int": 5,
-      "double": 3.4,
-      "float": 1.1,
+       "numerics": [
+        "int": 5,
+        "int64": 9007199254740992,
+        "double": 3.4,
+        "float": 1.1,
+        "int_opt": 4
+      ],
       "bool": false,
-      "int_opt": 4,
       "string_array": ["hello", "world"],
       "embedded": [
         "string_array": ["hello", "world"],
@@ -23,13 +26,14 @@ class SwiftDictionaryDecodingTests: XCTestCase {
     let model: TestModel? = decode(typesDict)
 
     XCTAssert(model != nil)
-    XCTAssert(model?.int == 5)
+    XCTAssert(model?.numerics.int == 5)
+    XCTAssert(model?.numerics.int64 == 9007199254740992)
+    XCTAssert(model?.numerics.double == 3.4)
+    XCTAssert(model?.numerics.float == 1.1)
+    XCTAssert(model?.numerics.intOpt != nil)
+    XCTAssert(model?.numerics.intOpt! == 4)
     XCTAssert(model?.string == "Cooler User")
-    XCTAssert(model?.double == 3.4)
-    XCTAssert(model?.float == 1.1)
     XCTAssert(model?.bool == false)
-    XCTAssert(model?.intOpt != nil)
-    XCTAssert(model?.intOpt! == 4)
     XCTAssert(model?.stringArray.count == 2)
     XCTAssert(model?.stringArrayOpt == nil)
     XCTAssert(model?.eStringArray.count == 2)

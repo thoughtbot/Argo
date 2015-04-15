@@ -1,9 +1,12 @@
 {
-  "int": 5,
-  "double": 3.4,
-  "float": 1.1,
+  "numerics": {
+    "int": 5,
+    "int64": 9007199254740992,
+    "double": 3.4,
+    "float": 1.1,
+    "int_opt": 4
+  },
   "bool": false,
-  "int_opt": 4,
   "string_array": [
     "hello",
     "world"
