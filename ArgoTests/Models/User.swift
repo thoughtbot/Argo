@@ -7,7 +7,7 @@ struct User {
   let email: String?
 }
 
-extension User: JSONDecodable {
+extension User: Decodable {
   static func create(id: Int)(name: String)(email: String?) -> User {
     return User(id: id, name: name, email: email)
   }

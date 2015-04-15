@@ -8,7 +8,7 @@ struct Post {
   let comments: [Comment]
 }
 
-extension Post: JSONDecodable {
+extension Post: Decodable {
   static func create(id: Int)(text: String)(author: User)(comments: [Comment]) -> Post {
     return Post(id: id, text: text, author: author, comments: comments)
   }

@@ -1,7 +1,7 @@
 import Foundation
 import Runes
 
-extension String: JSONDecodable {
+extension String: Decodable {
   public static func decode(j: JSON) -> Decoded<String> {
     switch j {
     case let .String(s): return pure(s)
@@ -10,7 +10,7 @@ extension String: JSONDecodable {
   }
 }
 
-extension Int: JSONDecodable {
+extension Int: Decodable {
   public static func decode(j: JSON) -> Decoded<Int> {
     switch j {
     case let .Number(n): return pure(n as Int)
@@ -19,7 +19,7 @@ extension Int: JSONDecodable {
   }
 }
 
-extension Int64: JSONDecodable {
+extension Int64: Decodable {
   public static func decode(j: JSON) -> Decoded<Int64> {
     switch j {
     case let .Number(n): return pure(n.longLongValue)
@@ -28,7 +28,7 @@ extension Int64: JSONDecodable {
   }
 }
 
-extension Double: JSONDecodable {
+extension Double: Decodable {
   public static func decode(j: JSON) -> Decoded<Double> {
     switch j {
     case let .Number(n): return pure(n as Double)
@@ -37,7 +37,7 @@ extension Double: JSONDecodable {
   }
 }
 
-extension Bool: JSONDecodable {
+extension Bool: Decodable {
   public static func decode(j: JSON) -> Decoded<Bool> {
     switch j {
     case let .Number(n): return pure(n as Bool)
@@ -46,7 +46,7 @@ extension Bool: JSONDecodable {
   }
 }
 
-extension Float: JSONDecodable {
+extension Float: Decodable {
   public static func decode(j: JSON) -> Decoded<Float> {
     switch j {
     case let .Number(n): return pure(n as Float)
@@ -55,14 +55,14 @@ extension Float: JSONDecodable {
   }
 }
 
-public func decodeArray<A where A: JSONDecodable, A == A.DecodedType>(value: JSON) -> Decoded<[A]> {
+public func decodeArray<A where A: Decodable, A == A.DecodedType>(value: JSON) -> Decoded<[A]> {
   switch value {
   case let .Array(a): return sequence(A.decode <^> a)
   default: return typeMismatch("Array", value)
   }
 }
 
-public func decodeObject<A where A: JSONDecodable, A == A.DecodedType>(value: JSON) -> Decoded<[String: A]> {
+public func decodeObject<A where A: Decodable, A == A.DecodedType>(value: JSON) -> Decoded<[String: A]> {
   switch value {
   case let .Object(o): return sequence(A.decode <^> o)
   default: return typeMismatch("Object", value)

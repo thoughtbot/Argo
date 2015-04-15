@@ -1,7 +1,7 @@
 import Argo
 import Foundation
 
-extension NSURL: JSONDecodable {
+extension NSURL: Decodable {
   public typealias DecodedType = NSURL
 
   public class func decode(j: JSON) -> Decoded<NSURL> {

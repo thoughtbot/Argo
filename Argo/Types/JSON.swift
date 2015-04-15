@@ -28,7 +28,7 @@ public extension JSON {
   }
 }
 
-extension JSON: JSONDecodable {
+extension JSON: Decodable {
   public static func decode(j: JSON) -> Decoded<JSON> {
     return pure(j)
   }

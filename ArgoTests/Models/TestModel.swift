@@ -12,7 +12,7 @@ struct TestModel {
   let userOpt: User?
 }
 
-extension TestModel: JSONDecodable {
+extension TestModel: Decodable {
   static func create(numerics: TestModelNumerics)(string: String)(bool: Bool)(stringArray: [String])(stringArrayOpt: [String]?)(eStringArray: [String])(eStringArrayOpt: [String]?)(userOpt: User?) -> TestModel {
     return TestModel(numerics: numerics, string: string, bool: bool, stringArray: stringArray, stringArrayOpt: stringArrayOpt, eStringArray: eStringArray, eStringArrayOpt: eStringArrayOpt, userOpt: userOpt)
   }
@@ -27,7 +27,6 @@ extension TestModel: JSONDecodable {
       <*> j <|| ["embedded", "string_array"]
       <*> j <||? ["embedded", "string_array_opt"]
       <*> j <|? "user_opt"
-
   }
 }
 
@@ -39,11 +38,11 @@ struct TestModelNumerics {
   let intOpt: Int?
 }
 
-extension TestModelNumerics: JSONDecodable {
+extension TestModelNumerics: Decodable {
   static func create(int: Int)(int64: Int64)(double: Double)(float: Float)(intOpt: Int?) -> TestModelNumerics {
     return TestModelNumerics(int: int, int64: int64, double: double, float: float, intOpt: intOpt)
   }
-  
+
   static func decode(j: JSON) -> Decoded<TestModelNumerics> {
     return TestModelNumerics.create
       <^> j <| "int"
