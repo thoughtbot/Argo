@@ -19,6 +19,15 @@ extension Int: JSONDecodable {
   }
 }
 
+extension Int64: JSONDecodable {
+  public static func decode(j: JSON) -> Decoded<Int64> {
+    switch j {
+    case let .Number(n): return pure(n.longLongValue)
+    default: return typeMismatch("Int64", j)
+    }
+  }
+}
+
 extension Double: JSONDecodable {
   public static func decode(j: JSON) -> Decoded<Double> {
     switch j {
