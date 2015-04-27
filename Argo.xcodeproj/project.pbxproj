@@ -22,10 +22,6 @@
 		EA6DD69D1AB383FB00CA3A5B /* DictionaryPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6DD69B1AB383FB00CA3A5B /* DictionaryPerformanceTests.swift */; };
 		EA6DD69F1AB384C700CA3A5B /* big_data.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6DD69E1AB384C700CA3A5B /* big_data.json */; };
 		EA6DD6A01AB384C700CA3A5B /* big_data.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6DD69E1AB384C700CA3A5B /* big_data.json */; };
-		EA8148B61A9E476D00683AFF /* Decoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8148B51A9E476D00683AFF /* Decoded.swift */; };
-		EA8148B71A9E476D00683AFF /* Decoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8148B51A9E476D00683AFF /* Decoded.swift */; };
-		EA8148B91A9E573300683AFF /* decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8148B81A9E573300683AFF /* decode.swift */; };
-		EA8148BA1A9E573300683AFF /* decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8148B81A9E573300683AFF /* decode.swift */; };
 		EABDF68A1A9CD46100B6CC83 /* SwiftDictionaryDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABDF6891A9CD46100B6CC83 /* SwiftDictionaryDecodingTests.swift */; };
 		EABDF68B1A9CD46400B6CC83 /* SwiftDictionaryDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABDF6891A9CD46100B6CC83 /* SwiftDictionaryDecodingTests.swift */; };
 		EABDF68F1A9CD4EA00B6CC83 /* PListFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABDF68D1A9CD4EA00B6CC83 /* PListFileReader.swift */; };
@@ -177,8 +173,6 @@
 		EA4EAF7219DD96330036AE0D /* types_fail_embedded.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = types_fail_embedded.json; sourceTree = "<group>"; };
 		EA6DD69B1AB383FB00CA3A5B /* DictionaryPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryPerformanceTests.swift; sourceTree = "<group>"; };
 		EA6DD69E1AB384C700CA3A5B /* big_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = big_data.json; sourceTree = "<group>"; };
-		EA8148B51A9E476D00683AFF /* Decoded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decoded.swift; sourceTree = "<group>"; };
-		EA8148B81A9E573300683AFF /* decode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = decode.swift; sourceTree = "<group>"; };
 		EABDF6891A9CD46100B6CC83 /* SwiftDictionaryDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDictionaryDecodingTests.swift; sourceTree = "<group>"; };
 		EABDF68D1A9CD4EA00B6CC83 /* PListFileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PListFileReader.swift; sourceTree = "<group>"; };
 		EABDF68E1A9CD4EA00B6CC83 /* types.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = types.plist; sourceTree = "<group>"; };
