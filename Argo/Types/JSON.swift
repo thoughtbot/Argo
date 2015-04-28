@@ -26,6 +26,13 @@ public extension JSON {
     default: return .Null
     }
   }
+
+  static func optional(json: JSON) -> JSON? {
+    switch json {
+    case .Null: return .None
+    default: return json
+    }
+  }
 }
 
 extension JSON: Decodable {
