@@ -11,6 +11,7 @@
     "hello",
     "world"
   ],
+  "string_array_opt": null,
   "embedded": {
     "string_array": [
       "hello",
