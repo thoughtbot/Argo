@@ -1,8 +1,5 @@
 machine:
   environment:
-    XCODE_SCHEME: Argo-iOS
-
-checkout:
-  post:
-    - git submodule sync
-    - git submodule update --init
+    XCODE_SCHEME: Argo-Mac
+  xcode:
+    version: 6.3.1
