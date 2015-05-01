@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xctool -project Argo.xcodeproj -scheme Argo-Mac -sdk macosx clean test
