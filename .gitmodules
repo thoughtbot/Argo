@@ -1,0 +1,6 @@
+[submodule "Vendor/Runes"]
+	path = Vendor/Runes
+	url = https://github.com/thoughtbot/Runes.git
+[submodule "Vendor/Box"]
+	path = Vendor/Box
+	url = https://github.com/robrix/Box.git

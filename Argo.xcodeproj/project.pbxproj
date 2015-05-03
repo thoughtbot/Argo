@@ -104,6 +104,62 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		964283E61AF6AE9500C586FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964283DF1AF6AE9500C586FC /* Box.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D470AC3719E86128003DA6C6;
+			remoteInfo = "Box-Mac";
+		};
+		964283E81AF6AE9500C586FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964283DF1AF6AE9500C586FC /* Box.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D470AC4219E86128003DA6C6;
+			remoteInfo = "Box-MacTests";
+		};
+		964283EA1AF6AE9500C586FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964283DF1AF6AE9500C586FC /* Box.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8BB81D31A939B66001AA352;
+			remoteInfo = "Box-iOS";
+		};
+		964283EC1AF6AE9500C586FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964283DF1AF6AE9500C586FC /* Box.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8BB81DD1A939B67001AA352;
+			remoteInfo = "Box-iOSTests";
+		};
+		964284041AF6AEA300C586FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964283FD1AF6AEA300C586FC /* Runes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F802D4D21A5F218E005E236C;
+			remoteInfo = "Runes-iOS";
+		};
+		964284061AF6AEA300C586FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964283FD1AF6AEA300C586FC /* Runes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F86B2E0B1A5F2B8D00C3B8BD;
+			remoteInfo = "Runes-Mac";
+		};
+		964284081AF6AEA300C586FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964283FD1AF6AEA300C586FC /* Runes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8624C261A645A9600C883B3;
+			remoteInfo = "Runes-iOS Tests";
+		};
+		9642840A1AF6AEA300C586FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964283FD1AF6AEA300C586FC /* Runes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8624C451A645C9500C883B3;
+			remoteInfo = "Runes-Mac Tests";
+		};
 		EA395DC01A51FF5200EB607E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EAD9FAC619D0EAB50031E006 /* Project object */;
@@ -164,6 +220,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		964283DF1AF6AE9500C586FC /* Box.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Box.xcodeproj; path = Box/Box.xcodeproj; sourceTree = "<group>"; };
+		964283FD1AF6AEA300C586FC /* Runes.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Runes.xcodeproj; path = Runes/Runes.xcodeproj; sourceTree = "<group>"; };
 		EA08313019D5EEAF003B90D7 /* TypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeTests.swift; sourceTree = "<group>"; };
 		EA08313219D5EEF2003B90D7 /* post_comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = post_comments.json; sourceTree = "<group>"; };
 		EA08313419D5EFC0003B90D7 /* types.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = types.json; sourceTree = "<group>"; };
@@ -257,6 +315,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9642835F1AF6AE8900C586FC /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				964283FD1AF6AEA300C586FC /* Runes.xcodeproj */,
+				964283DF1AF6AE9500C586FC /* Box.xcodeproj */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		964283E01AF6AE9500C586FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				964283E71AF6AE9500C586FC /* Box.framework */,
+				964283E91AF6AE9500C586FC /* Box-MacTests.xctest */,
+				964283EB1AF6AE9500C586FC /* Box.framework */,
+				964283ED1AF6AE9500C586FC /* Box-iOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		964283FE1AF6AEA300C586FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				964284051AF6AEA300C586FC /* Runes.framework */,
+				964284071AF6AEA300C586FC /* Runes.framework */,
+				964284091AF6AEA300C586FC /* Runes-iOS Tests.xctest */,
+				9642840B1AF6AEA300C586FC /* Runes-Mac Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		EABDF68C1A9CD4EA00B6CC83 /* plists */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +360,7 @@
 			children = (
 				EAD9FAD119D0EAB50031E006 /* Argo */,
 				EAD9FADB19D0EAB60031E006 /* ArgoTests */,
+				9642835F1AF6AE8900C586FC /* Vendor */,
 				F87D9D7D1A9266DB00C8AF1D /* Frameworks */,
 				EAD9FAD019D0EAB50031E006 /* Products */,
 			);
@@ -581,6 +671,16 @@
 			mainGroup = EAD9FAC519D0EAB50031E006;
 			productRefGroup = EAD9FAD019D0EAB50031E006 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 964283E01AF6AE9500C586FC /* Products */;
+					ProjectRef = 964283DF1AF6AE9500C586FC /* Box.xcodeproj */;
+				},
+				{
+					ProductGroup = 964283FE1AF6AEA300C586FC /* Products */;
+					ProjectRef = 964283FD1AF6AEA300C586FC /* Runes.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				EAD9FACE19D0EAB50031E006 /* Argo-iOS */,
@@ -590,6 +690,65 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		964283E71AF6AE9500C586FC /* Box.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Box.framework;
+			remoteRef = 964283E61AF6AE9500C586FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		964283E91AF6AE9500C586FC /* Box-MacTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Box-MacTests.xctest";
+			remoteRef = 964283E81AF6AE9500C586FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		964283EB1AF6AE9500C586FC /* Box.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Box.framework;
+			remoteRef = 964283EA1AF6AE9500C586FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		964283ED1AF6AE9500C586FC /* Box-iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Box-iOSTests.xctest";
+			remoteRef = 964283EC1AF6AE9500C586FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		964284051AF6AEA300C586FC /* Runes.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Runes.framework;
+			remoteRef = 964284041AF6AEA300C586FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		964284071AF6AEA300C586FC /* Runes.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Runes.framework;
+			remoteRef = 964284061AF6AEA300C586FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		964284091AF6AEA300C586FC /* Runes-iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Runes-iOS Tests.xctest";
+			remoteRef = 964284081AF6AEA300C586FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9642840B1AF6AEA300C586FC /* Runes-Mac Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Runes-Mac Tests.xctest";
+			remoteRef = 9642840A1AF6AEA300C586FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		EAD9FACD19D0EAB50031E006 /* Resources */ = {
