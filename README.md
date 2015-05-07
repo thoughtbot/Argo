@@ -96,7 +96,7 @@ extension User: Decodable {
 
 // Wherever you receive JSON data:
 
-let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: .None)
+let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: nil)
 
 if let j: AnyObject = json {
   let user: User? = decode(j)
