@@ -31,6 +31,16 @@ public extension Decoded {
   }
 }
 
+extension Decoded: Printable {
+  public var description: String {
+    switch self {
+    case let .Success(x): return "Success(\(x))"
+    case let .TypeMismatch(s): return "TypeMismatch(\(s))"
+    case let .MissingKey(s): return "MissingKey(\(s))"
+    }
+  }
+}
+
 public extension Decoded {
   func map<U>(f: T -> U) -> Decoded<U> {
     switch self {
