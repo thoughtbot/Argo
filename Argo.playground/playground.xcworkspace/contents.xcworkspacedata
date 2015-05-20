@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../../Code/thoughtbot/Argo/Argo.playground">
+      location = "group:Argo.playground">
    </FileRef>
 </Workspace>
