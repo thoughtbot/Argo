@@ -69,6 +69,20 @@ public func decodeObject<A where A: Decodable, A == A.DecodedType>(value: JSON) 
   }
 }
 
+func decodedJSONForKey(json: JSON, key: String) -> Decoded<JSON> {
+  switch json {
+  case let .Object(o): return guardNull(key, o[key] ?? .Null)
+  default: return typeMismatch("Object", json)
+  }
+}
+
 private func typeMismatch<T>(expectedType: String, object: JSON) -> Decoded<T> {
   return .TypeMismatch("\(object) is not a \(expectedType)")
+}
+
+private func guardNull(key: String, j: JSON) -> Decoded<JSON> {
+  switch j {
+  case .Null: return .MissingKey(key)
+  default: return pure(j)
+  }
 }

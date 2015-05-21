@@ -9,7 +9,7 @@ infix operator <||? { associativity left precedence 150 }
 
 // Pull value from JSON
 public func <|<A where A: Decodable, A == A.DecodedType>(json: JSON, key: String) -> Decoded<A> {
-  return decodeObject(json) >>- { pure($0[key] ?? .Null) } >>- guardNull(key) >>- A.decode
+  return decodedJSONForKey(json, key) >>- A.decode
 }
 
 // Pull optional value from JSON
@@ -19,7 +19,7 @@ public func <|?<A where A: Decodable, A == A.DecodedType>(json: JSON, key: Strin
 
 // Pull embedded value from JSON
 public func <|<A where A: Decodable, A == A.DecodedType>(json: JSON, keys: [String]) -> Decoded<A> {
-  return flatReduce(keys, json, <|) >>- A.decode
+  return flatReduce(keys, json, decodedJSONForKey) >>- A.decode
 }
 
 // Pull embedded optional value from JSON
@@ -47,11 +47,4 @@ public func <||<A where A: Decodable, A == A.DecodedType>(json: JSON, keys: [Str
 // Pull embedded optional array from JSON
 public func <||?<A where A: Decodable, A == A.DecodedType>(json: JSON, keys: [String]) -> Decoded<[A]?> {
   return .optional(json <|| keys)
-}
-
-private func guardNull(key: String)(j: JSON) -> Decoded<JSON> {
-  switch j {
-  case .Null: return .MissingKey(key)
-  default: return pure(j)
-  }
 }
