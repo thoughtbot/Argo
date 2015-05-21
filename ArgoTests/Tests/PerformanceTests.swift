@@ -2,8 +2,8 @@ import XCTest
 import Argo
 import Runes
 
-class DictionaryPerformanceTests: XCTestCase {
-  func testJSONParse() {
+class PerformanceTests: XCTestCase {
+  func testParsePerformance() {
     let json: AnyObject = JSONFileReader.JSON(fromFile: "big_data")!
 
     measureBlock {

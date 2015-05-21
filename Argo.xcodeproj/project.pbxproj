@@ -24,8 +24,8 @@
 		EA47BB591AFC5E65002D2CCD /* user_without_key.json in Resources */ = {isa = PBXBuildFile; fileRef = EA47BB581AFC5E65002D2CCD /* user_without_key.json */; };
 		EA47BB5A1AFC5E65002D2CCD /* user_without_key.json in Resources */ = {isa = PBXBuildFile; fileRef = EA47BB581AFC5E65002D2CCD /* user_without_key.json */; };
 		EA4EAF7319DD96330036AE0D /* types_fail_embedded.json in Resources */ = {isa = PBXBuildFile; fileRef = EA4EAF7219DD96330036AE0D /* types_fail_embedded.json */; };
-		EA6DD69C1AB383FB00CA3A5B /* DictionaryPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6DD69B1AB383FB00CA3A5B /* DictionaryPerformanceTests.swift */; };
-		EA6DD69D1AB383FB00CA3A5B /* DictionaryPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6DD69B1AB383FB00CA3A5B /* DictionaryPerformanceTests.swift */; };
+		EA6DD69C1AB383FB00CA3A5B /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6DD69B1AB383FB00CA3A5B /* PerformanceTests.swift */; };
+		EA6DD69D1AB383FB00CA3A5B /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6DD69B1AB383FB00CA3A5B /* PerformanceTests.swift */; };
 		EA6DD69F1AB384C700CA3A5B /* big_data.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6DD69E1AB384C700CA3A5B /* big_data.json */; };
 		EA6DD6A01AB384C700CA3A5B /* big_data.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6DD69E1AB384C700CA3A5B /* big_data.json */; };
 		EABDF68A1A9CD46100B6CC83 /* SwiftDictionaryDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABDF6891A9CD46100B6CC83 /* SwiftDictionaryDecodingTests.swift */; };
@@ -170,7 +170,7 @@
 		EA47BB551AFC5DAC002D2CCD /* user_with_bad_type.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_with_bad_type.json; sourceTree = "<group>"; };
 		EA47BB581AFC5E65002D2CCD /* user_without_key.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_without_key.json; sourceTree = "<group>"; };
 		EA4EAF7219DD96330036AE0D /* types_fail_embedded.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = types_fail_embedded.json; sourceTree = "<group>"; };
-		EA6DD69B1AB383FB00CA3A5B /* DictionaryPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryPerformanceTests.swift; sourceTree = "<group>"; };
+		EA6DD69B1AB383FB00CA3A5B /* PerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 		EA6DD69E1AB384C700CA3A5B /* big_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = big_data.json; sourceTree = "<group>"; };
 		EABDF6891A9CD46100B6CC83 /* SwiftDictionaryDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDictionaryDecodingTests.swift; sourceTree = "<group>"; };
 		EABDF68D1A9CD4EA00B6CC83 /* PListFileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PListFileReader.swift; sourceTree = "<group>"; };
@@ -384,7 +384,7 @@
 				EA08313019D5EEAF003B90D7 /* TypeTests.swift */,
 				EA395DC61A52F93B00EB607E /* ExampleTests.swift */,
 				EADADCB11A5DB6F600B180EC /* EquatableTests.swift */,
-				EA6DD69B1AB383FB00CA3A5B /* DictionaryPerformanceTests.swift */,
+				EA6DD69B1AB383FB00CA3A5B /* PerformanceTests.swift */,
 				EA47BB521AFC5B76002D2CCD /* DecodedTests.swift */,
 			);
 			path = Tests;
@@ -704,7 +704,7 @@
 				EA47BB531AFC5B76002D2CCD /* DecodedTests.swift in Sources */,
 				EAD9FAFE19D2113C0031E006 /* User.swift in Sources */,
 				EAD9FB0019D211630031E006 /* Comment.swift in Sources */,
-				EA6DD69C1AB383FB00CA3A5B /* DictionaryPerformanceTests.swift in Sources */,
+				EA6DD69C1AB383FB00CA3A5B /* PerformanceTests.swift in Sources */,
 				EABDF68A1A9CD46100B6CC83 /* SwiftDictionaryDecodingTests.swift in Sources */,
 				EA08313119D5EEAF003B90D7 /* TypeTests.swift in Sources */,
 				EA395DC71A52F93B00EB607E /* ExampleTests.swift in Sources */,
@@ -744,7 +744,7 @@
 				EA47BB541AFC5B76002D2CCD /* DecodedTests.swift in Sources */,
 				F8EF756A1A4CEC6100BDCC2D /* OptionalPropertyDecodingTests.swift in Sources */,
 				F8EF756C1A4CEC7100BDCC2D /* JSONFileReader.swift in Sources */,
-				EA6DD69D1AB383FB00CA3A5B /* DictionaryPerformanceTests.swift in Sources */,
+				EA6DD69D1AB383FB00CA3A5B /* PerformanceTests.swift in Sources */,
 				EABDF68B1A9CD46400B6CC83 /* SwiftDictionaryDecodingTests.swift in Sources */,
 				F862E0AB1A519D470093B028 /* TypeTests.swift in Sources */,
 				EA395DC81A52FA5300EB607E /* ExampleTests.swift in Sources */,
