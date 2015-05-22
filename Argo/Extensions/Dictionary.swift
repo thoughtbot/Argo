@@ -1,7 +1,7 @@
 import Runes
 
 // pure merge for Dictionaries
-func +<T, V>(var lhs: [T: V], rhs: [T: V]) -> [T: V] {
+func + <T, V>(var lhs: [T: V], rhs: [T: V]) -> [T: V] {
   for (key, val) in rhs {
     lhs[key] = val
   }
@@ -15,6 +15,6 @@ extension Dictionary {
   }
 }
 
-func <^><A, B, C>(f: A -> B, a: [C: A]) -> [C: B] {
+func <^> <A, B, C>(f: A -> B, a: [C: A]) -> [C: B] {
   return a.map(f)
 }

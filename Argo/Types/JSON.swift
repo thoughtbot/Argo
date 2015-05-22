@@ -48,7 +48,7 @@ extension JSON: Printable {
 
 extension JSON: Equatable { }
 
-public func ==(lhs: JSON, rhs: JSON) -> Bool {
+public func == (lhs: JSON, rhs: JSON) -> Bool {
   switch (lhs, rhs) {
   case let (.String(l), .String(r)): return l == r
   case let (.Number(l), .Number(r)): return l == r

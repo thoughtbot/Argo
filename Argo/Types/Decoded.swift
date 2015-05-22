@@ -73,14 +73,14 @@ public func pure<A>(a: A) -> Decoded<A> {
 
 // MARK: Monadic Operators
 
-public func >>-<A, B>(a: Decoded<A>, f: A -> Decoded<B>) -> Decoded<B> {
+public func >>- <A, B>(a: Decoded<A>, f: A -> Decoded<B>) -> Decoded<B> {
   return a.flatMap(f)
 }
 
-public func <^><A, B>(f: A -> B, a: Decoded<A>) -> Decoded<B> {
+public func <^> <A, B>(f: A -> B, a: Decoded<A>) -> Decoded<B> {
   return a.map(f)
 }
 
-public func <*><A, B>(f: Decoded<A -> B>, a: Decoded<A>) -> Decoded<B> {
+public func <*> <A, B>(f: Decoded<A -> B>, a: Decoded<A>) -> Decoded<B> {
   return a.apply(f)
 }
