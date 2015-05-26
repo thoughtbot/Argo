@@ -33,3 +33,5 @@ Carthage/Build
 # AppCode specific files
 .idea/
 *.iml
+
+Argo.framework.zip
