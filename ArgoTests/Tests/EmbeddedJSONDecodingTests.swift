@@ -4,7 +4,7 @@ import Runes
 
 class EmbeddedJSONDecodingTests: XCTestCase {
   func testCommentDecodingWithEmbeddedUserName() {
-    let comment: Comment? = JSONFileReader.JSON(fromFile: "comment") >>- decode
+    let comment: Comment? = JSONFromFile("comment") >>- decode
 
     XCTAssert(comment != nil)
     XCTAssert(comment?.id == 6)
@@ -13,7 +13,7 @@ class EmbeddedJSONDecodingTests: XCTestCase {
   }
 
   func testPostDecodingWithEmbeddedUserModel() {
-    let post: Post? = JSONFileReader.JSON(fromFile: "post_no_comments") >>- decode
+    let post: Post? = JSONFromFile("post_no_comments") >>- decode
 
     XCTAssert(post != nil)
     XCTAssert(post?.id == 3)
@@ -23,7 +23,7 @@ class EmbeddedJSONDecodingTests: XCTestCase {
   }
 
   func testPostDecodingWithEmbeddedUserModelAndComments() {
-    let post: Post? = JSONFileReader.JSON(fromFile: "post_comments") >>- decode
+    let post: Post? = JSONFromFile("post_comments") >>- decode
 
     XCTAssert(post != nil)
     XCTAssert(post?.id == 3)
@@ -33,7 +33,7 @@ class EmbeddedJSONDecodingTests: XCTestCase {
   }
 
   func testPostDecodingWithBadComments() {
-    let post: Post? = JSONFileReader.JSON(fromFile: "post_bad_comments") >>- decode
+    let post: Post? = JSONFromFile("post_bad_comments") >>- decode
 
     XCTAssert(post == nil)
   }

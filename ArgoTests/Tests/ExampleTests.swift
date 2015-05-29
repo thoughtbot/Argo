@@ -4,14 +4,14 @@ import Runes
 
 class ExampleTests: XCTestCase {
   func testJSONWithRootArray() {
-    let stringArray: [String]? = JSONFileReader.JSON(fromFile: "array_root") >>- decode
+    let stringArray: [String]? = JSONFromFile("array_root") >>- decode
 
     XCTAssertNotNil(stringArray)
     XCTAssertEqual(stringArray!, ["foo", "bar", "baz"])
   }
 
   func testJSONWithRootObject() {
-    let json = JSON.parse <^> JSONFileReader.JSON(fromFile: "root_object")
+    let json = JSON.parse <^> JSONFromFile("root_object")
     let user: User? = json >>- { ($0 <| "user").value }
 
     XCTAssert(user != nil)
@@ -22,7 +22,7 @@ class ExampleTests: XCTestCase {
   }
 
   func testDecodingNonFinalClass() {
-    let json = JSON.parse <^> JSONFileReader.JSON(fromFile: "url")
+    let json = JSON.parse <^> JSONFromFile("url")
     let url: NSURL? = json >>- { ($0 <| "url").value }
 
     XCTAssert(url != nil)
@@ -31,13 +31,13 @@ class ExampleTests: XCTestCase {
 
   func testDecodingJSONWithRootArray() {
     let expected = JSON.parse([["title": "Foo", "age": 21], ["title": "Bar", "age": 32]])
-    let json = JSON.parse <^> JSONFileReader.JSON(fromFile: "root_array")
+    let json = JSON.parse <^> JSONFromFile("root_array")
 
     XCTAssert(.Some(expected) == json)
   }
 
   func testFlatMapOptionals() {
-    let json: AnyObject? = JSONFileReader.JSON(fromFile: "user_with_email")
+    let json: AnyObject? = JSONFromFile("user_with_email")
     let user: User? = json >>- decode
 
     XCTAssert(user?.id == 1)
@@ -46,7 +46,7 @@ class ExampleTests: XCTestCase {
   }
 
   func testFlatMapDecoded() {
-    let json: AnyObject? = JSONFileReader.JSON(fromFile: "user_with_email")
+    let json: AnyObject? = JSONFromFile("user_with_email")
     let user: Decoded<User> = .fromOptional(json) >>- decode
 
     XCTAssert(user.value?.id == 1)
