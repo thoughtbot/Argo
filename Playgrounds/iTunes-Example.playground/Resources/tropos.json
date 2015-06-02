@@ -1,0 +1,80 @@
+{
+  "resultCount":1,
+  "results":[
+             {
+             "isGameCenterEnabled":false,
+             "screenshotUrls":[
+                               "http://a5.mzstatic.com/us/r30/Purple5/v4/8b/3e/bd/8b3ebd2c-9dfe-1ce5-cdf5-8c89d854e375/screen322x572.jpeg",
+                               "http://a1.mzstatic.com/us/r30/Purple5/v4/e6/4f/36/e64f369d-d453-f007-dd15-361d21641116/screen322x572.jpeg",
+                               "http://a1.mzstatic.com/us/r30/Purple1/v4/74/77/cd/7477cd91-a094-3c22-fff1-cf75e7474dad/screen322x572.jpeg"
+                               ],
+             "ipadScreenshotUrls":[
+             
+             ],
+             "artworkUrl60":"http://is2.mzstatic.com/image/pf/us/r30/Purple3/v4/1b/b7/31/1bb731e3-a35a-9eaa-b13e-c536e639851c/AppIcon60x60_U00402x.png",
+             "artworkUrl512":"http://is4.mzstatic.com/image/pf/us/r30/Purple3/v4/e2/c5/42/e2c542e5-664e-36df-2285-490b7c16941e/mzl.ivsinquu.png",
+             "artistViewUrl":"https://itunes.apple.com/us/artist/thoughtbot-inc./id337354066?uo=4",
+             "kind":"software",
+             "features":[
+             
+             ],
+             "supportedDevices":[
+                                 "iPhone4S",
+                                 "iPadThirdGen4G",
+                                 "iPodTouchFifthGen",
+                                 "iPhone6",
+                                 "iPadMini4G",
+                                 "iPhone6Plus",
+                                 "iPadThirdGen",
+                                 "iPadFourthGen",
+                                 "iPad23G",
+                                 "iPad2Wifi",
+                                 "iPadFourthGen4G",
+                                 "iPadMini",
+                                 "iPhone5c",
+                                 "iPhone5",
+                                 "iPhone5s"
+                                 ],
+             "advisories":[
+             
+             ],
+             "averageUserRatingForCurrentVersion":5.0,
+             "artworkUrl100":"http://is4.mzstatic.com/image/pf/us/r30/Purple3/v4/e2/c5/42/e2c542e5-664e-36df-2285-490b7c16941e/mzl.ivsinquu.png",
+             "trackCensoredName":"Tropos – Weather and forecasts for humans",
+             "languageCodesISO2A":[
+                                   "EN"
+                                   ],
+             "fileSizeBytes":"2945254",
+             "sellerUrl":"http://troposweather.com",
+             "contentAdvisoryRating":"4+",
+             "userRatingCountForCurrentVersion":1,
+             "trackViewUrl":"https://itunes.apple.com/us/app/tropos-weather-forecasts-for/id955209376?mt=8&uo=4",
+             "trackContentRating":"4+",
+             "currency":"USD",
+             "wrapperType":"software",
+             "version":"1.0.1",
+             "artistId":337354066,
+             "artistName":"thoughtbot, inc.",
+             "genres":[
+                       "Weather"
+                       ],
+             "price":0.99,
+             "description":"Weather and forecasts for humans. Information you can act on.\n\nMost weather apps throw a lot of information at you but that doesn't answer the question of \"What does it feel like outside?\". Tropos answers this by relating the current conditions to conditions the same time yesterday.\n\nFeatures:\n• Current conditions presented in plain language. For example, “It is warmer tonight than last night.”\n• Intelligent use of color to convey how it feels in your area compared to yesterday.\n• Simple, 3-day forecast that allows you to see how the next few days are trending.\n\nthoughtbot is dedicated to building the best possible application. Your feedback is invaluable to us. Get in touch at help@troposweather.com.",
+             "bundleId":"com.thoughtbot.carlweathers",
+             "genreIds":[
+                         "6001"
+                         ],
+             "releaseDate":"2015-03-25T18:34:40Z",
+             "sellerName":"thoughtbot, inc.",
+             "trackId":955209376,
+             "trackName":"Tropos – Weather and forecasts for humans",
+             "primaryGenreName":"Weather",
+             "primaryGenreId":6001,
+             "releaseNotes":"- Fixed an issue where the app could crash if you're going buck-wild messing around with the pull to refresh control.\n- Improved the relative weather description in cases where it's crazy hot or ridiculously cold outside. Tropos will no longer tell you that it's hotter today when it's 10°F outside. (Sorry, Boston)\n- Fixed an issue where the high and low temperatures could be lower or higher than the current temperature, respectively. That's just silly.\n\nFinally, we want to thank everyone for supporting Tropos!",
+             "minimumOsVersion":"8.0",
+             "formattedPrice":"$0.99",
+             "averageUserRating":4.5,
+             "userRatingCount":10
+             }
+             ]
+}
