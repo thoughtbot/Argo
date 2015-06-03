@@ -16,5 +16,8 @@
       <FileRef
          location = "group:Argo-Basics.playground">
       </FileRef>
+      <FileRef
+         location = "group:iTunes-Example.playground">
+      </FileRef>
    </Group>
 </Workspace>
