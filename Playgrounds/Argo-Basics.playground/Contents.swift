@@ -45,7 +45,9 @@ extension User: Decodable  {
       <*> j <|? "email"
   }
 }
-
+/*:
+* * *
+*/
 let user: User? = JSONFromFile("user_with_email") >>- decode
 println(user!)
 
