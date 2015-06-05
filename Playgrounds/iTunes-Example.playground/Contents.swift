@@ -12,7 +12,7 @@ import Runes
 func JSONFromFile(file: String) -> AnyObject? {
   return NSBundle.mainBundle().pathForResource(file, ofType: "json")
     >>- { NSData(contentsOfFile: $0) }
-    >>- { NSJSONSerialization.JSONObjectWithData($0, options: NSJSONReadingOptions(0), error: nil) }
+    >>- { NSJSONSerialization.JSONObjectWithData($0, options: nil, error: nil) }
 }
 /*:
 During JSON decoding, a **String** representation of a date needs to be converted to a **NSDate**.
