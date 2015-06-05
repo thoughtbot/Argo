@@ -7,18 +7,12 @@ import Foundation
 import Argo
 import Runes
 /*:
-**Helper functions**
+**Helper function** – load JSON from a file
 */
-typealias JSONDict = [String: AnyObject]
-
-func JSONFromFile(file: String) -> JSONDict? {
+func JSONFromFile(file: String) -> AnyObject? {
   return NSBundle.mainBundle().pathForResource(file, ofType: "json")
     >>- { NSData(contentsOfFile: $0) }
-    >>- { NSJSONSerialization.JSONObjectWithData($0, options: NSJSONReadingOptions(0), error: nil) as? JSONDict }
-}
-
-func toJSONArray(key:String)(_ j:JSONDict) -> [JSONDict]? {
-  return j[key] as? [JSONDict]
+    >>- { NSJSONSerialization.JSONObjectWithData($0, options: NSJSONReadingOptions(0), error: nil) }
 }
 /*:
 During JSON decoding, a **String** representation of a date needs to be converted to a **NSDate**.
@@ -65,14 +59,8 @@ extension App: Decodable  {
   }
 }
 /*:
-When decoding JSON, the data that we're interested in is often nested a level or two inside the JSON structure.
-The iTunes JSON format contains a "results" Array and we're only interested in the first entry.
-The function below extracts the nested JSON structure containing the app info.
-*/
-let appInfoFromJSONfile = { file in JSONFromFile(file) >>- toJSONArray("results") >>- first }
-/*:
 * * *
 */
-let app: App? = appInfoFromJSONfile("tropos") >>- decode
+let app: App? = JSONFromFile("tropos")?["results"] >>- decode >>- first
 println(app!)
 
