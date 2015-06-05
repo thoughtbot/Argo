@@ -38,12 +38,14 @@ let toNSDate: String -> Decoded<NSDate> = {
 
 An example JSON file (**tropos.json**) can be found in the **resources** folder.
 */
-struct App: Printable {
+struct App {
   let name: String
   let formattedPrice: String
   let averageUserRating: Float?
   let releaseDate: NSDate
-  
+}
+
+extension App: Printable {
   var description: String {
     return "name: \(name)\nprice: \(formattedPrice), rating: \(averageUserRating), released: \(releaseDate)"
   }

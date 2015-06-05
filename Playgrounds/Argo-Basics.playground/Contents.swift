@@ -21,11 +21,13 @@ The **User** struct has three properties, one of which is an Optional value.
 
 (The example JSON file can be found in the **Resources** folder.)
 */
-struct User: Printable {
+struct User {
   let id: Int
   let name: String
   let email: String?
-  
+}
+
+extension User: Printable {
   var description: String {
     return "name: \(name), id: \(id), email: \(email)"
   }
