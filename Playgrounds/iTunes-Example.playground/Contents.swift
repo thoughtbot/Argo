@@ -3,6 +3,11 @@
 
 * * *
 */
+/*:
+**Note:** For **Argo** to be imported into the Playground, ensure that the **Argo-Mac** *scheme* is selected from the list of schemes.
+
+* * *
+*/
 import Foundation
 import Argo
 import Runes
@@ -12,11 +17,18 @@ import Runes
 func JSONFromFile(file: String) -> AnyObject? {
   return NSBundle.mainBundle().pathForResource(file, ofType: "json")
     >>- { NSData(contentsOfFile: $0) }
-    >>- { NSJSONSerialization.JSONObjectWithData($0, options: nil, error: nil) }
+    >>- { do {
+      try NSJSONSerialization.JSONObjectWithData($0, options: [])
+    } catch _ {
+      return nil
+    } }
 }
 /*:
 During JSON decoding, a **String** representation of a date needs to be converted to a **NSDate**.
-To achieve this, a **NSDateFormatter** and a helper function will be used.
+To achieve this,/*:
+**Helper function** – load JSON from a file
+*/
+ a **NSDateFormatter** and a helper function will be used.
 */
 let jsonDateFormatter: NSDateFormatter = {
   let dateFormatter = NSDateFormatter()
@@ -24,7 +36,11 @@ let jsonDateFormatter: NSDateFormatter = {
   return dateFormatter
 }()
 
-let toNSDate: String -> Decoded<NSDate> = {
+let toNSDate/*:
+During JSON decoding, a **String** representation of a date needs to be converted to a **NSDate**.
+To achieve this, a **NSDateFormatter** and a helper function will be used.
+*/
+: String -> Decoded<NSDate> = {
   .fromOptional(jsonDateFormatter.dateFromString($0))
 }
 /*:
@@ -33,13 +49,18 @@ let toNSDate: String -> Decoded<NSDate> = {
 An example JSON file (**tropos.json**) can be found in the **resources** folder.
 */
 struct App {
-  let name: String
+  let name: /*:
+## Decoding selected entries from the iTunes store JSON format
+
+An example JSON file (**tropos.json**) can be found in the **resources** folder.
+*/
+String
   let formattedPrice: String
   let averageUserRating: Float?
   let releaseDate: NSDate
 }
 
-extension App: Printable {
+extension App: CustomStringConvertible {
   var description: String {
     return "name: \(name)\nprice: \(formattedPrice), rating: \(averageUserRating), released: \(releaseDate)"
   }
@@ -60,7 +81,10 @@ extension App: Decodable  {
 }
 /*:
 * * *
+*/*:
+* * *
 */
+/
 let app: App? = JSONFromFile("tropos")?["results"] >>- decode >>- first
-println(app!)
+print(app!)
 

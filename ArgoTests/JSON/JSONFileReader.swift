@@ -4,7 +4,16 @@ import Runes
 func JSONFromFile(file: String) -> AnyObject? {
   return NSBundle(forClass: JSONFileReader.self).pathForResource(file, ofType: "json")
     >>- { NSData(contentsOfFile: $0) }
-    >>- { NSJSONSerialization.JSONObjectWithData($0, options: NSJSONReadingOptions(0), error: nil) }
+    >>- parseJSON
 }
 
 private class JSONFileReader { }
+
+func parseJSON(data: NSData) -> AnyObject? {
+  do {
+    return try NSJSONSerialization.JSONObjectWithData(data, options: [])
+  }
+  catch _ {
+    return .None
+  }
+}

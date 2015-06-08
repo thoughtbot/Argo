@@ -1,6 +1,5 @@
 import XCTest
 import Argo
-import Box
 
 class DecodedTests: XCTestCase {
   func testDecodedSuccess() {
