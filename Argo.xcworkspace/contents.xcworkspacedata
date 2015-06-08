@@ -7,14 +7,7 @@
    <FileRef
       location = "group:Carthage/Checkouts/Runes/Runes.xcodeproj">
    </FileRef>
-   <Group
-      location = "group:Playgrounds"
-      name = "Playground examples">
-      <FileRef
-         location = "group:Argo-Basics.playground">
-      </FileRef>
-      <FileRef
-         location = "group:iTunes-Example.playground">
-      </FileRef>
-   </Group>
+   <FileRef
+      location = "group:/Users/tony/dev/thoughtbot/Argo/Playgrounds/Argo Playground.playground">
+   </FileRef>
 </Workspace>
