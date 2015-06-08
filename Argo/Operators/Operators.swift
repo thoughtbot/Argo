@@ -9,7 +9,7 @@ infix operator <||? { associativity left precedence 150 }
 
 // Pull value from JSON
 public func <| <A where A: Decodable, A == A.DecodedType>(json: JSON, key: String) -> Decoded<A> {
-  return decodedJSONForKey(json, key: key) >>- A.decode
+  return decodedJSONForKey(json, key) >>- A.decode
 }
 
 // Pull optional value from JSON
