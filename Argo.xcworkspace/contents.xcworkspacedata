@@ -8,6 +8,6 @@
       location = "group:Carthage/Checkouts/Runes/Runes.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:/Users/tony/dev/thoughtbot/Argo/Playgrounds/Argo Playground.playground">
+      location = "group:Argo Playground.playground">
    </FileRef>
 </Workspace>
