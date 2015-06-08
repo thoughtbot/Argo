@@ -17,7 +17,7 @@ public extension Decoded {
   static func optional<T>(x: Decoded<T>) -> Decoded<T?> {
     switch x {
     case let .Success(value): return .Success(.Some(value))
-    case .MissingKey(_): return .Success(.None)
+    case .MissingKey: return .Success(.None)
     case let .TypeMismatch(string): return .TypeMismatch(string)
     }
   }

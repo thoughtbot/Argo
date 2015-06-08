@@ -7,7 +7,7 @@ class PerformanceTests: XCTestCase {
     let json: AnyObject = JSONFromFile("big_data")!
 
     measureBlock {
-      _ = JSON.parse(json)
+      JSON.parse(json)
     }
   }
 
@@ -16,7 +16,7 @@ class PerformanceTests: XCTestCase {
     let j = JSON.parse(json)
 
     measureBlock {
-      _ = j <|| "types" as Decoded<[TestModel]>
+      j <|| "types" as Decoded<[TestModel]>
     }
   }
 }
