@@ -9,7 +9,7 @@ infix operator <||? { associativity left precedence 150 }
 
 // Pull value from JSON
 public func <| <A where A: Decodable, A == A.DecodedType>(json: JSON, key: String) -> Decoded<A> {
-  return decodedJSONForKey(json, key) >>- A.decode
+  return decodedJSON(json, forKey: key) >>- A.decode
 }
 
 // Pull optional value from JSON
@@ -19,7 +19,7 @@ public func <|? <A where A: Decodable, A == A.DecodedType>(json: JSON, key: Stri
 
 // Pull embedded value from JSON
 public func <| <A where A: Decodable, A == A.DecodedType>(json: JSON, keys: [String]) -> Decoded<A> {
-  return flatReduce(keys, initial: json, combine: decodedJSONForKey) >>- A.decode
+  return flatReduce(keys, initial: json, combine: decodedJSON) >>- A.decode
 }
 
 // Pull embedded optional value from JSON
