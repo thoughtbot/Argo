@@ -17,7 +17,7 @@ func JSONFromFile(file: String) -> AnyObject? {
 
 func JSONObjectWithData(data: NSData) -> AnyObject? {
   do { return try NSJSONSerialization.JSONObjectWithData(data, options: []) }
-  catch _ { return .None }
+  catch { return .None }
 }
 /*:
 ## Decoding JSON into a simple **User** struct
