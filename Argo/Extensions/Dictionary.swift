@@ -11,7 +11,7 @@ func + <T, V>(var lhs: [T: V], rhs: [T: V]) -> [T: V] {
 
 extension Dictionary {
   func map<A>(f: Value -> A) -> [Key: A] {
-    return reduce(self, [:]) { $0 + [$1.0: f($1.1)] }
+    return self.reduce([:]) { $0 + [$1.0: f($1.1)] }
   }
 }
 

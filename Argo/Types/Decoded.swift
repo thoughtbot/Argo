@@ -1,14 +1,13 @@
-import Box
 import Runes
 
 public enum Decoded<T> {
-  case Success(Box<T>)
+  case Success(T)
   case TypeMismatch(String)
   case MissingKey(String)
 
   public var value: T? {
     switch self {
-    case let .Success(box): return box.value
+    case let .Success(value): return value
     default: return .None
     }
   }
@@ -17,21 +16,21 @@ public enum Decoded<T> {
 public extension Decoded {
   static func optional<T>(x: Decoded<T>) -> Decoded<T?> {
     switch x {
-    case let .Success(box): return .Success(Box(.Some(box.value)))
-    case let .MissingKey(string): return .Success(Box(.None))
+    case let .Success(value): return .Success(.Some(value))
+    case .MissingKey(_): return .Success(.None)
     case let .TypeMismatch(string): return .TypeMismatch(string)
     }
   }
 
   static func fromOptional<T>(x: T?) -> Decoded<T> {
     switch x {
-    case let .Some(value): return .Success(Box(value))
+    case let .Some(value): return .Success(value)
     case .None: return .TypeMismatch("Expected .Some(\(T.self)), got .None")
     }
   }
 }
 
-extension Decoded: Printable {
+extension Decoded: CustomStringConvertible {
   public var description: String {
     switch self {
     case let .Success(x): return "Success(\(x))"
@@ -44,7 +43,7 @@ extension Decoded: Printable {
 public extension Decoded {
   func map<U>(f: T -> U) -> Decoded<U> {
     switch self {
-    case let .Success(box): return .Success(Box(f(box.value)))
+    case let .Success(value): return .Success(f(value))
     case let .MissingKey(string): return .MissingKey(string)
     case let .TypeMismatch(string): return .TypeMismatch(string)
     }
@@ -52,7 +51,7 @@ public extension Decoded {
 
   func apply<U>(f: Decoded<T -> U>) -> Decoded<U> {
     switch f {
-    case let .Success(box): return box.value <^> self
+    case let .Success(value): return value <^> self
     case let .MissingKey(string): return .MissingKey(string)
     case let .TypeMismatch(string): return .TypeMismatch(string)
     }
@@ -60,7 +59,7 @@ public extension Decoded {
 
   func flatMap<U>(f: T -> Decoded<U>) -> Decoded<U> {
     switch self {
-    case let .Success(box): return f(box.value)
+    case let .Success(value): return f(value)
     case let .MissingKey(string): return .MissingKey(string)
     case let .TypeMismatch(string): return .TypeMismatch(string)
     }
@@ -68,7 +67,7 @@ public extension Decoded {
 }
 
 public func pure<A>(a: A) -> Decoded<A> {
-  return .Success(Box(a))
+  return .Success(a)
 }
 
 // MARK: Monadic Operators
