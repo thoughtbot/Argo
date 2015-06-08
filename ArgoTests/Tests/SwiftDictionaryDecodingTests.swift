@@ -6,7 +6,7 @@ class SwiftDictionaryDecodingTests: XCTestCase {
     let typesDict = [
        "numerics": [
         "int": 5,
-        "int64": 9007199254740992,
+        "int64": 900719,//9254740992, Dictionaries can't handle 64bit ints (iOS only, Mac works)
         "double": 3.4,
         "float": 1.1,
         "int_opt": 4
@@ -27,7 +27,7 @@ class SwiftDictionaryDecodingTests: XCTestCase {
 
     XCTAssert(model != nil)
     XCTAssert(model?.numerics.int == 5)
-    XCTAssert(model?.numerics.int64 == 9007199254740992)
+    XCTAssert(model?.numerics.int64 == 900719)//9254740992)
     XCTAssert(model?.numerics.double == 3.4)
     XCTAssert(model?.numerics.float == 1.1)
     XCTAssert(model?.numerics.intOpt != nil)
