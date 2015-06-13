@@ -1,6 +1,3 @@
-[submodule "Carthage/Checkouts/Box"]
-	path = Carthage/Checkouts/Box
-	url = https://github.com/robrix/Box.git
 [submodule "Carthage/Checkouts/Runes"]
 	path = Carthage/Checkouts/Runes
 	url = https://github.com/thoughtbot/Runes.git
