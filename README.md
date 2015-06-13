@@ -30,11 +30,10 @@ for up to date installation instructions.
 
 [carthage-installation]: https://github.com/Carthage/Carthage#adding-frameworks-to-an-application
 
-You'll also need to add `Runes.framework` and `Box.framework` to your Xcode
+You'll also need to add `Runes.framework` to your Xcode
 project.
 
 [Runes]: https://github.com/thoughtbot/runes
-[Box]: https://github.com/robrix/box
 
 ### [CocoaPods]
 
@@ -61,7 +60,7 @@ I guess you could do it this way if that's your thing.
 Add this repo as a submodule, and add the project file to your workspace. You
 can then link against `Argo.framework` for your application target.
 
-You'll also need to add [Runes] and [Box] to your project the same way.
+You'll also need to add [Runes] to your project the same way.
 
 ## Usage tl;dr:
 
