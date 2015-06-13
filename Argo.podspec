@@ -17,6 +17,5 @@ Pod::Spec.new do |spec|
   spec.osx.deployment_target = '10.9'
 
   spec.dependency 'Runes', '>= 1.2.2'
-  spec.dependency 'Box', '~> 1.2'
 end
 
