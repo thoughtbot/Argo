@@ -12,7 +12,14 @@ public func <| <A where A: Decodable, A == A.DecodedType>(json: JSON, key: Strin
 
 // Pull optional value from JSON
 public func <|? <A where A: Decodable, A == A.DecodedType>(json: JSON, key: String) throws -> A? {
-  return try .Some(json <| key)
+  do {
+    return try .Some(json <| key)
+  } catch let error as DecodedError {
+    switch error {
+    case .MissingKey(_): return .None
+    default: throw error
+    }
+  }
 }
 
 // Pull embedded value from JSON
@@ -22,7 +29,14 @@ public func <| <A where A: Decodable, A == A.DecodedType>(json: JSON, keys: [Str
 
 // Pull embedded optional value from JSON
 public func <|? <A where A: Decodable, A == A.DecodedType>(json: JSON, keys: [String]) throws -> A? {
-  return try .Some(json <| keys)
+  do {
+    return try .Some(json <| keys)
+  } catch let error as DecodedError {
+    switch error {
+    case .MissingKey(_): return .None
+    default: throw error
+    }
+  }
 }
 
 // MARK: Arrays
@@ -34,7 +48,14 @@ public func <|| <A where A: Decodable, A == A.DecodedType>(json: JSON, key: Stri
 
 // Pull optional array from JSON
 public func <||? <A where A: Decodable, A == A.DecodedType>(json: JSON, key: String) throws -> [A]? {
-  return try .Some(json <|| key)
+  do {
+    return try .Some(json <|| key)
+  } catch let error as DecodedError {
+    switch error {
+    case .MissingKey(_): return .None
+    default: throw error
+    }
+  }
 }
 
 // Pull embedded array from JSON
@@ -44,6 +65,13 @@ public func <|| <A where A: Decodable, A == A.DecodedType>(json: JSON, keys: [St
 
 // Pull embedded optional array from JSON
 public func <||? <A where A: Decodable, A == A.DecodedType>(json: JSON, keys: [String]) throws -> [A]? {
-  return try .Some(json <|| keys)
+  do {
+    return try .Some(json <|| keys)
+  } catch let error as DecodedError {
+    switch error {
+    case .MissingKey(_): return .None
+    default: throw error
+    }
+  }
 }
 

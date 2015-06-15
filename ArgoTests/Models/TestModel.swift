@@ -1,5 +1,4 @@
 import Argo
-import Runes
 
 struct TestModel {
   let numerics: TestModelNumerics
@@ -13,20 +12,16 @@ struct TestModel {
 }
 
 extension TestModel: Decodable {
-  static func create(numerics: TestModelNumerics)(string: String)(bool: Bool)(stringArray: [String])(stringArrayOpt: [String]?)(eStringArray: [String])(eStringArrayOpt: [String]?)(userOpt: User?) -> TestModel {
-    return TestModel(numerics: numerics, string: string, bool: bool, stringArray: stringArray, stringArrayOpt: stringArrayOpt, eStringArray: eStringArray, eStringArrayOpt: eStringArrayOpt, userOpt: userOpt)
-  }
-
-  static func decode(j: JSON) -> Decoded<TestModel> {
-    return TestModel.create
-      <^> j <| "numerics"
-      <*> j <| ["user_opt", "name"]
-      <*> j <| "bool"
-      <*> j <|| "string_array"
-      <*> j <||? "string_array_opt"
-      <*> j <|| ["embedded", "string_array"]
-      <*> j <||? ["embedded", "string_array_opt"]
-      <*> j <|? "user_opt"
+  static func decode(j: JSON) throws -> TestModel {
+    return try TestModel(
+      numerics: j <| "numerics",
+      string: j <| ["user_opt", "name"],
+      bool: j <| "bool",
+      stringArray: j <|| "string_array",
+      stringArrayOpt: j <||? "string_array_opt",
+      eStringArray: j <|| ["embedded", "string_array"],
+      eStringArrayOpt: j <||? ["embedded", "string_array_opt"],
+      userOpt: j <|? "user_opt")
   }
 }
 
@@ -39,16 +34,12 @@ struct TestModelNumerics {
 }
 
 extension TestModelNumerics: Decodable {
-  static func create(int: Int)(int64: Int64)(double: Double)(float: Float)(intOpt: Int?) -> TestModelNumerics {
-    return TestModelNumerics(int: int, int64: int64, double: double, float: float, intOpt: intOpt)
-  }
-
-  static func decode(j: JSON) -> Decoded<TestModelNumerics> {
-    return TestModelNumerics.create
-      <^> j <| "int"
-      <*> j <| "int64"
-      <*> j <| "double"
-      <*> j <| "float"
-      <*> j <|? "int_opt"
+  static func decode(j: JSON) throws -> TestModelNumerics {
+    return try TestModelNumerics(
+      int: j <| "int",
+      int64: j <| "int64",
+      double: j <| "double",
+      float: j <| "float",
+      intOpt: j <|? "int_opt")
   }
 }

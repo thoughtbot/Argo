@@ -1,24 +1,29 @@
 import XCTest
 import Argo
-import Runes
 
 class OptionalPropertyDecodingTests: XCTestCase {
   func testUserDecodingWithEmail() {
-    let user: User? = JSONFromFile("user_with_email") >>- decode
+    do {
+      let user: User = try decode(JSONFromFile("user_with_email")!)
 
-    XCTAssert(user != nil)
-    XCTAssert(user?.id == 1)
-    XCTAssert(user?.name == "Cool User")
-    XCTAssert(user?.email != nil)
-    XCTAssert(user?.email! == "u.cool@example.com")
+      XCTAssert(user.id == 1)
+      XCTAssert(user.name == "Cool User")
+      XCTAssert(user.email != nil)
+      XCTAssert(user.email! == "u.cool@example.com")
+    } catch {
+      XCTFail()
+    }
   }
 
   func testUserDecodingWithoutEmail() {
-    let user: User? = JSONFromFile("user_without_email") >>- decode
+    do {
+      let user: User = try decode(JSONFromFile("user_without_email")!)
 
-    XCTAssert(user != nil)
-    XCTAssert(user?.id == 1)
-    XCTAssert(user?.name == "Cool User")
-    XCTAssert(user?.email == nil)
+      XCTAssert(user.id == 1)
+      XCTAssert(user.name == "Cool User")
+      XCTAssert(user.email == nil)
+    } catch {
+      XCTFail()
+    }
   }
 }
