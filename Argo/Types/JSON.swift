@@ -12,7 +12,7 @@ public enum JSON {
 public extension JSON {
   static func parse(json: AnyObject) -> JSON {
     switch json {
-    case let v as [AnyObject]: return .Array(v.map(parse))
+    case let v as [AnyObject]: return .Array(parse <^> v)
 
     case let v as [Swift.String: AnyObject]:
       return .Object(v.reduce([:]) { (var accum, elem) in
@@ -29,8 +29,8 @@ public extension JSON {
 }
 
 extension JSON: Decodable {
-  public static func decode(j: JSON) -> Decoded<JSON> {
-    return pure(j)
+  public static func decode(j: JSON) throws -> JSON {
+    return j
   }
 }
 
