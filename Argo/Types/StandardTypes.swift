@@ -1,6 +1,3 @@
-import Foundation
-import Runes
-
 extension String: Decodable {
   public static func decode(j: JSON) throws -> String {
     switch j {
@@ -57,14 +54,14 @@ extension Float: Decodable {
 
 public func decodeArray<A where A: Decodable, A == A.DecodedType>(value: JSON) throws -> [A] {
   switch value {
-  case let .Array(a): return try a.map(A.decode)
+  case let .Array(a): return try a.mapThrows(A.decode)
   default: throw typeMismatch("Array", forObject: value)
   }
 }
 
 public func decodeObject<A where A: Decodable, A == A.DecodedType>(value: JSON) throws -> [String: A] {
   switch value {
-  case let .Object(o): return try o.map(A.decode)
+  case let .Object(o): return try o.mapThrows(A.decode)
   default: throw typeMismatch("Object", forObject: value)
   }
 }

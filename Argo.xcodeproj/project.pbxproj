@@ -66,8 +66,6 @@
 		F874B7EA1A66BF52004CCE5E /* root_array.json in Resources */ = {isa = PBXBuildFile; fileRef = F874B7E91A66BF52004CCE5E /* root_array.json */; };
 		F874B7EB1A66C221004CCE5E /* root_array.json in Resources */ = {isa = PBXBuildFile; fileRef = F874B7E91A66BF52004CCE5E /* root_array.json */; };
 		F87897EF1A927864009316A5 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD9FACF19D0EAB50031E006 /* Argo.framework */; };
-		F87AD8B61AF7DFC500D6E3FF /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87AD8B41AF7DFC500D6E3FF /* Runes.framework */; };
-		F87AD8BA1AF7DFCD00D6E3FF /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87AD8B81AF7DFCD00D6E3FF /* Runes.framework */; };
 		F87EB6A41ABC5F1300E3B0AB /* decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69A1ABC5F1300E3B0AB /* decode.swift */; };
 		F87EB6A51ABC5F1300E3B0AB /* decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69A1ABC5F1300E3B0AB /* decode.swift */; };
 		F87EB6A61ABC5F1300E3B0AB /* flatReduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69B1ABC5F1300E3B0AB /* flatReduce.swift */; };
@@ -135,13 +133,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F8C05D481A649A14004A8D0F /* CopyFiles */ = {
+		F8C05D481A649A14004A8D0F /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F8C05D4B1A649A21004A8D0F /* CopyFiles */ = {
@@ -216,7 +215,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F87AD8B61AF7DFC500D6E3FF /* Runes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +230,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F87AD8BA1AF7DFCD00D6E3FF /* Runes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +467,7 @@
 				EAD9FACC19D0EAB50031E006 /* Headers */,
 				EAD9FACD19D0EAB50031E006 /* Resources */,
 				2BF79DC6DAAA04A8DB0169BA /* Warn for TODO and FIXME comments */,
-				F8C05D481A649A14004A8D0F /* CopyFiles */,
+				F8C05D481A649A14004A8D0F /* Copy Files */,
 			);
 			buildRules = (
 			);

@@ -1,6 +1,3 @@
-import Foundation
-import Runes
-
 public enum JSON {
   case Object([Swift.String: JSON])
   case Array([JSON])
@@ -12,11 +9,11 @@ public enum JSON {
 public extension JSON {
   static func parse(json: AnyObject) -> JSON {
     switch json {
-    case let v as [AnyObject]: return .Array(parse <^> v)
+    case let v as [AnyObject]: return .Array(v.map(parse))
 
     case let v as [Swift.String: AnyObject]:
       return .Object(v.reduce([:]) { (var accum, elem) in
-        let parsedValue = (self.parse <^> elem.1) ?? .Null
+        let parsedValue = self.parse(elem.1) ?? .Null
         accum[elem.0] = parsedValue
         return accum
       })
