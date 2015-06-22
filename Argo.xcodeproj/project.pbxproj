@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D5F6DD91B3832C200D79B25 /* user_with_nested_name.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D5F6DD81B3832C200D79B25 /* user_with_nested_name.json */; };
+		4D5F6DDA1B3832C200D79B25 /* user_with_nested_name.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D5F6DD81B3832C200D79B25 /* user_with_nested_name.json */; };
 		EA08313119D5EEAF003B90D7 /* TypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA08313019D5EEAF003B90D7 /* TypeTests.swift */; };
 		EA08313319D5EEF2003B90D7 /* post_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = EA08313219D5EEF2003B90D7 /* post_comments.json */; };
 		EA08313519D5EFC0003B90D7 /* types.json in Resources */ = {isa = PBXBuildFile; fileRef = EA08313419D5EFC0003B90D7 /* types.json */; };
@@ -158,6 +160,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4D5F6DD81B3832C200D79B25 /* user_with_nested_name.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_with_nested_name.json; sourceTree = "<group>"; };
 		EA08313019D5EEAF003B90D7 /* TypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeTests.swift; sourceTree = "<group>"; };
 		EA08313219D5EEF2003B90D7 /* post_comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = post_comments.json; sourceTree = "<group>"; };
 		EA08313419D5EFC0003B90D7 /* types.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = types.json; sourceTree = "<group>"; };
@@ -352,6 +355,7 @@
 				EAD9FB0F19D21AF50031E006 /* JSONFileReader.swift */,
 				EAD9FB0419D2143A0031E006 /* user_with_email.json */,
 				EAD9FB0819D214AA0031E006 /* user_without_email.json */,
+				4D5F6DD81B3832C200D79B25 /* user_with_nested_name.json */,
 				F802D4C51A5EE2D5005E236C /* url.json */,
 				F874B7E91A66BF52004CCE5E /* root_array.json */,
 				EAD9FB0919D214AA0031E006 /* TemplateIcon2x.png */,
@@ -606,6 +610,7 @@
 				EAD9FB1619D30F8D0031E006 /* post_no_comments.json in Resources */,
 				EA6DD69F1AB384C700CA3A5B /* big_data.json in Resources */,
 				EA08313319D5EEF2003B90D7 /* post_comments.json in Resources */,
+				4D5F6DD91B3832C200D79B25 /* user_with_nested_name.json in Resources */,
 				EABDF6911A9CD4EA00B6CC83 /* types.plist in Resources */,
 				EAD9FB0A19D214AA0031E006 /* user_without_email.json in Resources */,
 				EAD9FB0619D2143A0031E006 /* user_with_email.json in Resources */,
@@ -637,6 +642,7 @@
 				F8EF75711A4CEC7100BDCC2D /* post_no_comments.json in Resources */,
 				EA6DD6A01AB384C700CA3A5B /* big_data.json in Resources */,
 				F862E0AC1A519D520093B028 /* post_comments.json in Resources */,
+				4D5F6DDA1B3832C200D79B25 /* user_with_nested_name.json in Resources */,
 				EABDF6921A9CD4EA00B6CC83 /* types.plist in Resources */,
 				F8EF756E1A4CEC7100BDCC2D /* user_without_email.json in Resources */,
 				F8EF756D1A4CEC7100BDCC2D /* user_with_email.json in Resources */,
