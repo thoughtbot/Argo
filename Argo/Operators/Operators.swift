@@ -4,6 +4,7 @@ infix operator <| { associativity left precedence 150 }
 infix operator <|? { associativity left precedence 150 }
 infix operator <|| { associativity left precedence 150 }
 infix operator <||? { associativity left precedence 150 }
+infix operator <|> { associativity left precedence 140 }
 
 // MARK: Values
 
@@ -50,3 +51,10 @@ public func <||? <A where A: Decodable, A == A.DecodedType>(json: JSON, keys: [S
   return .optional(json <|| keys)
 }
 
+// MARK: Alternative operator
+public func <|><A>(lhs: Decoded<A>, rhs: Decoded<A>) -> Decoded<A> {
+  if case .Success = lhs {
+    return lhs
+  }
+  return rhs
+}
