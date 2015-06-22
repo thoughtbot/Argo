@@ -44,6 +44,15 @@ class ExampleTests: XCTestCase {
     XCTAssert(user?.name == "Cool User")
     XCTAssert(user?.email == "u.cool@example.com")
   }
+  
+  func testNilCoalescing() {
+    let json: AnyObject? = JSONFromFile("user_with_nested_name")
+    let user: User? = json >>- decode
+
+    XCTAssert(user?.id == 1)
+    XCTAssert(user?.name == "Very Cool User")
+    XCTAssert(user?.email == "u.cool@example.com")
+  }
 
   func testFlatMapDecoded() {
     let json: AnyObject? = JSONFromFile("user_with_email")
