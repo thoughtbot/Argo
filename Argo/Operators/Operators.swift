@@ -1,6 +1,9 @@
 import Runes
 
 infix operator <| { associativity left precedence 150 }
+infix operator <|? { associativity left precedence 150 }
+infix operator <|| { associativity left precedence 150 }
+infix operator <||? { associativity left precedence 150 }
 
 // MARK: Values
 
@@ -11,7 +14,7 @@ public func <| <A where A: Decodable, A == A.DecodedType>(json: JSON, key: Strin
 }
 
 // Pull optional value from JSON
-public func <| <A where A: Decodable, A == A.DecodedType>(json: JSON, key: String) -> Decoded<A?> {
+public func <|? <A where A: Decodable, A == A.DecodedType>(json: JSON, key: String) -> Decoded<A?> {
   return .optional(json <| [key])
 }
 
@@ -21,29 +24,29 @@ public func <| <A where A: Decodable, A == A.DecodedType>(json: JSON, keys: [Str
 }
 
 // Pull embedded optional value from JSON
-public func <| <A where A: Decodable, A == A.DecodedType>(json: JSON, keys: [String]) -> Decoded<A?> {
+public func <|? <A where A: Decodable, A == A.DecodedType>(json: JSON, keys: [String]) -> Decoded<A?> {
   return .optional(json <| keys)
 }
 
 // MARK: Arrays
 
 // Pull array from JSON
-public func <| <A where A: Decodable, A == A.DecodedType>(json: JSON, key: String) -> Decoded<[A]> {
-  return json <| [key]
+public func <|| <A where A: Decodable, A == A.DecodedType>(json: JSON, key: String) -> Decoded<[A]> {
+  return json <|| [key]
 }
 
 // Pull optional array from JSON
-public func <| <A where A: Decodable, A == A.DecodedType>(json: JSON, key: String) -> Decoded<[A]?> {
-  return .optional(json <| [key])
+public func <||? <A where A: Decodable, A == A.DecodedType>(json: JSON, key: String) -> Decoded<[A]?> {
+  return .optional(json <|| [key])
 }
 
 // Pull embedded array from JSON
-public func <| <A where A: Decodable, A == A.DecodedType>(json: JSON, keys: [String]) -> Decoded<[A]> {
+public func <|| <A where A: Decodable, A == A.DecodedType>(json: JSON, keys: [String]) -> Decoded<[A]> {
   return flatReduce(keys, initial: json, combine: decodedJSON) >>- Array<A>.decode
 }
 
 // Pull embedded optional array from JSON
-public func <| <A where A: Decodable, A == A.DecodedType>(json: JSON, keys: [String]) -> Decoded<[A]?> {
-  return .optional(json <| keys)
+public func <||? <A where A: Decodable, A == A.DecodedType>(json: JSON, keys: [String]) -> Decoded<[A]?> {
+  return .optional(json <|| keys)
 }
 
