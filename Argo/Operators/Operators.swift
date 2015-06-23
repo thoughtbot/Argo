@@ -49,13 +49,6 @@ public func <||? <A where A: Decodable, A == A.DecodedType>(json: JSON, keys: [S
   return .optional(json <|| keys)
 }
 
-// MARK: Standard Operators
-
-// Nil Coalescing Support
-public func ??<A>(optional: Decoded<A?>, alternateValue: Decoded<A>) -> Decoded<A> {
-  switch optional.value {
-  case .Some(.Some(let x)): return Decoded.Success(x)
-  default: return alternateValue
   }
 }
 

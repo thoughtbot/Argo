@@ -15,7 +15,6 @@ extension User: Decodable {
   static func decode(j: JSON) -> Decoded<User> {
     return User.create
       <^> j <| "id"
-      <*> (j <|? ["userinfo", "name"]) ?? (j <| "name")
       <*> j <|? "email"
   }
 }
