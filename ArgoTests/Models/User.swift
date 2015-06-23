@@ -12,6 +12,6 @@ extension User: Decodable {
     return curry(User.init)
       <^> j <| "id"
       <*> j <| "name"
-      <*> j <| "email"
+      <*> j <|? "email"
   }
 }
