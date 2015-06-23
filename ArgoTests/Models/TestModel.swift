@@ -22,11 +22,11 @@ extension TestModel: Decodable {
       <^> j <| "numerics"
       <*> j <| ["user_opt", "name"]
       <*> j <| "bool"
-      <*> j <|| "string_array"
-      <*> j <||? "string_array_opt"
-      <*> j <|| ["embedded", "string_array"]
-      <*> j <||? ["embedded", "string_array_opt"]
-      <*> j <|? "user_opt"
+      <*> j <| "string_array"
+      <*> j <| "string_array_opt"
+      <*> j <| ["embedded", "string_array"]
+      <*> j <| ["embedded", "string_array_opt"]
+      <*> j <| "user_opt"
   }
 }
 
@@ -49,6 +49,6 @@ extension TestModelNumerics: Decodable {
       <*> j <| "int64"
       <*> j <| "double"
       <*> j <| "float"
-      <*> j <|? "int_opt"
+      <*> j <| "int_opt"
   }
 }

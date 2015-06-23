@@ -18,6 +18,6 @@ extension Post: Decodable {
       <^> j <| "id"
       <*> j <| "text"
       <*> j <| "author"
-      <*> j <|| "comments"
+      <*> j <| "comments"
   }
 }

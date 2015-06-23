@@ -11,5 +11,5 @@ public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject) -> 
 }
 
 public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject) -> Decoded<[T]> {
-  return decodeArray(JSON.parse(object))
+  return Array<T>.decode(JSON.parse(object))
 }
