@@ -55,17 +55,27 @@ extension Float: Decodable {
   }
 }
 
-public func decodeArray<A where A: Decodable, A == A.DecodedType>(value: JSON) -> Decoded<[A]> {
-  switch value {
-  case let .Array(a): return sequence(A.decode <^> a)
-  default: return typeMismatch("Array", forObject: value)
+public extension Optional where T: Decodable, T == T.DecodedType {
+  static func decode(j: JSON) -> Decoded<T?> {
+    return .optional(T.decode(j))
   }
 }
 
-public func decodeObject<A where A: Decodable, A == A.DecodedType>(value: JSON) -> Decoded<[String: A]> {
-  switch value {
-  case let .Object(o): return sequence(A.decode <^> o)
-  default: return typeMismatch("Object", forObject: value)
+public extension Array where T: Decodable, T == T.DecodedType {
+  static func decode(j: JSON) -> Decoded<[T]> {
+    switch j {
+    case let .Array(a): return sequence(T.decode <^> a)
+    default: return typeMismatch("Array", forObject: j)
+    }
+  }
+}
+
+public extension Dictionary where Value: Decodable, Value == Value.DecodedType {
+  static func decode(j: JSON) -> Decoded<[String: Value]> {
+    switch j {
+    case let .Object(o): return sequence(Value.decode <^> o)
+    default: return typeMismatch("Object", forObject: j)
+    }
   }
 }
 

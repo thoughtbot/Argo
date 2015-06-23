@@ -16,6 +16,6 @@ extension User: Decodable {
     return User.create
       <^> j <| "id"
       <*> j <| "name"
-      <*> j <|? "email"
+      <*> j <| "email"
   }
 }

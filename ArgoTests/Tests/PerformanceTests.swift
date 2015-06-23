@@ -16,7 +16,7 @@ class PerformanceTests: XCTestCase {
     let j = JSON.parse(json)
 
     measureBlock {
-      j <|| "types" as Decoded<[TestModel]>
+      j <| "types" as Decoded<[TestModel]>
     }
   }
 }
