@@ -54,14 +54,14 @@ extension Float: Decodable {
 
 public func decodeArray<A where A: Decodable, A == A.DecodedType>(value: JSON) throws -> [A] {
   switch value {
-  case let .Array(a): return try a.mapThrows(A.decode)
+  case let .Array(a): return a.map(A.decode)
   default: throw typeMismatch("Array", forObject: value)
   }
 }
 
 public func decodeObject<A where A: Decodable, A == A.DecodedType>(value: JSON) throws -> [String: A] {
   switch value {
-  case let .Object(o): return try o.mapThrows(A.decode)
+  case let .Object(o): return o.map(A.decode)
   default: throw typeMismatch("Object", forObject: value)
   }
 }
