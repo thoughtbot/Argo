@@ -1,6 +1,5 @@
 import XCTest
 import Argo
-import Runes
 
 class PerformanceTests: XCTestCase {
   func testParsePerformance() {
@@ -16,7 +15,9 @@ class PerformanceTests: XCTestCase {
     let j = JSON.parse(json)
 
     measureBlock {
-      j <|| "types" as Decoded<[TestModel]>
+      do {
+        try j <|| "types" as [TestModel]
+      } catch { }
     }
   }
 }

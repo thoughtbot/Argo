@@ -1,6 +1,3 @@
-import Foundation
-import Runes
-
 public enum JSON {
   case Object([Swift.String: JSON])
   case Array([JSON])
@@ -16,7 +13,7 @@ public extension JSON {
 
     case let v as [Swift.String: AnyObject]:
       return .Object(v.reduce([:]) { (var accum, elem) in
-        let parsedValue = (self.parse <^> elem.1) ?? .Null
+        let parsedValue = self.parse(elem.1) ?? .Null
         accum[elem.0] = parsedValue
         return accum
       })
@@ -29,8 +26,8 @@ public extension JSON {
 }
 
 extension JSON: Decodable {
-  public static func decode(j: JSON) -> Decoded<JSON> {
-    return pure(j)
+  public static func decode(j: JSON) throws -> JSON {
+    return j
   }
 }
 

@@ -1,40 +1,50 @@
 import XCTest
 import Argo
-import Runes
 
 class EmbeddedJSONDecodingTests: XCTestCase {
   func testCommentDecodingWithEmbeddedUserName() {
-    let comment: Comment? = JSONFromFile("comment") >>- decode
+    do {
+      let comment: Comment = try decode(JSONFromFile("comment")!)
 
-    XCTAssert(comment != nil)
-    XCTAssert(comment?.id == 6)
-    XCTAssert(comment?.text == "Cool story bro.")
-    XCTAssert(comment?.authorName == "Cool User")
+      XCTAssert(comment.id == 6)
+      XCTAssert(comment.text == "Cool story bro.")
+      XCTAssert(comment.authorName == "Cool User")
+    } catch {
+      XCTFail()
+    }
   }
 
   func testPostDecodingWithEmbeddedUserModel() {
-    let post: Post? = JSONFromFile("post_no_comments") >>- decode
+    do {
+      let post: Post = try decode(JSONFromFile("post_no_comments")!)
 
-    XCTAssert(post != nil)
-    XCTAssert(post?.id == 3)
-    XCTAssert(post?.text == "A Cool story.")
-    XCTAssert(post?.author.name == "Cool User")
-    XCTAssert(post?.comments.count == 0)
+      XCTAssert(post.id == 3)
+      XCTAssert(post.text == "A Cool story.")
+      XCTAssert(post.author.name == "Cool User")
+      XCTAssert(post.comments.count == 0)
+    } catch {
+      XCTFail()
+    }
   }
 
   func testPostDecodingWithEmbeddedUserModelAndComments() {
-    let post: Post? = JSONFromFile("post_comments") >>- decode
+    do {
+      let post: Post = try decode(JSONFromFile("post_comments")!)
 
-    XCTAssert(post != nil)
-    XCTAssert(post?.id == 3)
-    XCTAssert(post?.text == "A Cool story.")
-    XCTAssert(post?.author.name == "Cool User")
-    XCTAssert(post?.comments.count == 2)
+      XCTAssert(post.id == 3)
+      XCTAssert(post.text == "A Cool story.")
+      XCTAssert(post.author.name == "Cool User")
+      XCTAssert(post.comments.count == 2)
+    } catch {
+      XCTFail()
+    }
   }
 
   func testPostDecodingWithBadComments() {
-    let post: Post? = JSONFromFile("post_bad_comments") >>- decode
-
-    XCTAssert(post == nil)
+    do {
+      try decode(JSONFromFile("post_bad_comments")!) as Post
+    } catch {
+      XCTAssert(true)
+    }
   }
 }
