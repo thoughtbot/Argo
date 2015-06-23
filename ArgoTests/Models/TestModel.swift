@@ -13,16 +13,13 @@ struct TestModel {
 }
 
 extension TestModel: Decodable {
-  static func create(numerics: TestModelNumerics)(string: String)(bool: Bool)(stringArray: [String])(stringArrayOpt: [String]?)(eStringArray: [String])(eStringArrayOpt: [String]?)(userOpt: User?) -> TestModel {
-    return TestModel(numerics: numerics, string: string, bool: bool, stringArray: stringArray, stringArrayOpt: stringArrayOpt, eStringArray: eStringArray, eStringArrayOpt: eStringArrayOpt, userOpt: userOpt)
-  }
-
   static func decode(j: JSON) -> Decoded<TestModel> {
-    return TestModel.create
+    let a = curry(TestModel.init)
       <^> j <| "numerics"
       <*> j <| ["user_opt", "name"]
       <*> j <| "bool"
       <*> j <| "string_array"
+    return a
       <*> j <| "string_array_opt"
       <*> j <| ["embedded", "string_array"]
       <*> j <| ["embedded", "string_array_opt"]
@@ -39,15 +36,12 @@ struct TestModelNumerics {
 }
 
 extension TestModelNumerics: Decodable {
-  static func create(int: Int)(int64: Int64)(double: Double)(float: Float)(intOpt: Int?) -> TestModelNumerics {
-    return TestModelNumerics(int: int, int64: int64, double: double, float: float, intOpt: intOpt)
-  }
-
   static func decode(j: JSON) -> Decoded<TestModelNumerics> {
-    return TestModelNumerics.create
+    let a = curry(TestModelNumerics.init)
       <^> j <| "int"
       <*> j <| "int64"
       <*> j <| "double"
+    return a
       <*> j <| "float"
       <*> j <| "int_opt"
   }
