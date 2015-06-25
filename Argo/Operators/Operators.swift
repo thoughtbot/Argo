@@ -52,7 +52,7 @@ public func <||? <A where A: Decodable, A == A.DecodedType>(json: JSON, keys: [S
 
 // MARK: Alternative operator
 public func <|><A>(lhs: Decoded<A>, rhs: Decoded<A>) -> Decoded<A> {
-  if case .Success(_) = lhs {
+  if case .Success = lhs {
     return lhs
   }
   return rhs
