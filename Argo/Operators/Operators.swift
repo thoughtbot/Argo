@@ -4,6 +4,7 @@ infix operator <| { associativity left precedence 150 }
 infix operator <|? { associativity left precedence 150 }
 infix operator <|| { associativity left precedence 150 }
 infix operator <||? { associativity left precedence 150 }
+infix operator <|?| { associativity left precedence 150 }
 
 // MARK: Values
 
@@ -37,6 +38,11 @@ public func <|| <A where A: Decodable, A == A.DecodedType>(json: JSON, key: Stri
 // Pull optional array from JSON
 public func <||? <A where A: Decodable, A == A.DecodedType>(json: JSON, key: String) -> Decoded<[A]?> {
   return .optional(json <|| key)
+}
+
+// Pull only valid members of array from JSON
+public func <|?| <A where A: Decodable, A == A.DecodedType>(json: JSON, key: String) -> Decoded<[A]> {
+  return json <| key >>- decodeArrayOfOptionals
 }
 
 // Pull embedded array from JSON

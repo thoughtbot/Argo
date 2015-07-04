@@ -62,6 +62,13 @@ public func decodeArray<A where A: Decodable, A == A.DecodedType>(value: JSON) -
   }
 }
 
+public func decodeArrayOfOptionals<A where A: Decodable, A == A.DecodedType>(value: JSON) -> Decoded<[A]> {
+  switch value {
+  case let .Array(a): return sequenceOptionals(A.decode <^> a)
+  default: return typeMismatch("Array", value)
+  }
+}
+
 public func decodeObject<A where A: Decodable, A == A.DecodedType>(value: JSON) -> Decoded<[String: A]> {
   switch value {
   case let .Object(o): return sequence(A.decode <^> o)
