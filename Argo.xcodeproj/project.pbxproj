@@ -21,40 +21,6 @@
 		D03579C01B2B7A14005D26AE /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6991ABC5F1300E3B0AB /* curry.swift */; };
 		D03579C21B2B7A14005D26AE /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87AD8B81AF7DFCD00D6E3FF /* Runes.framework */; };
 		D03579C41B2B7A14005D26AE /* Argo.h in Headers */ = {isa = PBXBuildFile; fileRef = F893356D1A4CE8FC00B88685 /* Argo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D03579D01B2B7A19005D26AE /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAFF19D211630031E006 /* Comment.swift */; };
-		D03579D11B2B7A19005D26AE /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F802D4C21A5EE061005E236C /* NSURL.swift */; };
-		D03579D21B2B7A19005D26AE /* PListFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABDF68D1A9CD4EA00B6CC83 /* PListFileReader.swift */; };
-		D03579D31B2B7A19005D26AE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAFD19D2113C0031E006 /* User.swift */; };
-		D03579D41B2B7A19005D26AE /* EmbeddedJSONDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB1119D30E660031E006 /* EmbeddedJSONDecodingTests.swift */; };
-		D03579D51B2B7A19005D26AE /* PListDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABDF6931A9CD4FC00B6CC83 /* PListDecodingTests.swift */; };
-		D03579D61B2B7A19005D26AE /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB1719D49A3E0031E006 /* TestModel.swift */; };
-		D03579D71B2B7A19005D26AE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB0119D211C10031E006 /* Post.swift */; };
-		D03579D81B2B7A19005D26AE /* DecodedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA47BB521AFC5B76002D2CCD /* DecodedTests.swift */; };
-		D03579D91B2B7A19005D26AE /* OptionalPropertyDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB0D19D215570031E006 /* OptionalPropertyDecodingTests.swift */; };
-		D03579DA1B2B7A19005D26AE /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB0F19D21AF50031E006 /* JSONFileReader.swift */; };
-		D03579DB1B2B7A19005D26AE /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6DD69B1AB383FB00CA3A5B /* PerformanceTests.swift */; };
-		D03579DC1B2B7A19005D26AE /* SwiftDictionaryDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABDF6891A9CD46100B6CC83 /* SwiftDictionaryDecodingTests.swift */; };
-		D03579DD1B2B7A19005D26AE /* TypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA08313019D5EEAF003B90D7 /* TypeTests.swift */; };
-		D03579DE1B2B7A19005D26AE /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA395DC61A52F93B00EB607E /* ExampleTests.swift */; };
-		D03579DF1B2B7A19005D26AE /* EquatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADADCB11A5DB6F600B180EC /* EquatableTests.swift */; };
-		D03579E31B2B7A19005D26AE /* user_with_bad_type.json in Resources */ = {isa = PBXBuildFile; fileRef = EA47BB551AFC5DAC002D2CCD /* user_with_bad_type.json */; };
-		D03579E41B2B7A19005D26AE /* types.json in Resources */ = {isa = PBXBuildFile; fileRef = EA08313419D5EFC0003B90D7 /* types.json */; };
-		D03579E51B2B7A19005D26AE /* types_fail_embedded.json in Resources */ = {isa = PBXBuildFile; fileRef = EA4EAF7219DD96330036AE0D /* types_fail_embedded.json */; };
-		D03579E61B2B7A19005D26AE /* root_object.json in Resources */ = {isa = PBXBuildFile; fileRef = EA395DC91A52FC1400EB607E /* root_object.json */; };
-		D03579E71B2B7A19005D26AE /* root_array.json in Resources */ = {isa = PBXBuildFile; fileRef = F874B7E91A66BF52004CCE5E /* root_array.json */; };
-		D03579E81B2B7A19005D26AE /* post_no_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD9FB1519D30F8D0031E006 /* post_no_comments.json */; };
-		D03579E91B2B7A19005D26AE /* big_data.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6DD69E1AB384C700CA3A5B /* big_data.json */; };
-		D03579EA1B2B7A19005D26AE /* post_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = EA08313219D5EEF2003B90D7 /* post_comments.json */; };
-		D03579EB1B2B7A19005D26AE /* types.plist in Resources */ = {isa = PBXBuildFile; fileRef = EABDF68E1A9CD4EA00B6CC83 /* types.plist */; };
-		D03579EC1B2B7A19005D26AE /* user_without_email.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD9FB0819D214AA0031E006 /* user_without_email.json */; };
-		D03579ED1B2B7A19005D26AE /* user_with_email.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD9FB0419D2143A0031E006 /* user_with_email.json */; };
-		D03579EE1B2B7A19005D26AE /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD9FB0919D214AA0031E006 /* TemplateIcon2x.png */; };
-		D03579EF1B2B7A19005D26AE /* user_without_key.json in Resources */ = {isa = PBXBuildFile; fileRef = EA47BB581AFC5E65002D2CCD /* user_without_key.json */; };
-		D03579F01B2B7A19005D26AE /* array_root.json in Resources */ = {isa = PBXBuildFile; fileRef = EA395DC31A52F8EB00EB607E /* array_root.json */; };
-		D03579F11B2B7A19005D26AE /* post_bad_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = F8E33FA41A51E0C20025A6E5 /* post_bad_comments.json */; };
-		D03579F21B2B7A19005D26AE /* comment.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD9FB1319D30ED00031E006 /* comment.json */; };
-		D03579F31B2B7A19005D26AE /* url.json in Resources */ = {isa = PBXBuildFile; fileRef = F802D4C51A5EE2D5005E236C /* url.json */; };
-		D03579FC1B2B7A68005D26AE /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03579CA1B2B7A14005D26AE /* Argo.framework */; };
 		EA08313119D5EEAF003B90D7 /* TypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA08313019D5EEAF003B90D7 /* TypeTests.swift */; };
 		EA08313319D5EEF2003B90D7 /* post_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = EA08313219D5EEF2003B90D7 /* post_comments.json */; };
 		EA08313519D5EFC0003B90D7 /* types.json in Resources */ = {isa = PBXBuildFile; fileRef = EA08313419D5EFC0003B90D7 /* types.json */; };
@@ -150,13 +116,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D03579FA1B2B7A62005D26AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EAD9FAC619D0EAB50031E006 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D03579B51B2B7A14005D26AE;
-			remoteInfo = "Argo-watchOS";
-		};
 		EA395DC01A51FF5200EB607E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EAD9FAC619D0EAB50031E006 /* Project object */;
@@ -175,15 +134,6 @@
 
 /* Begin PBXCopyFilesBuildPhase section */
 		D03579C61B2B7A14005D26AE /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D03579F41B2B7A19005D26AE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -233,7 +183,6 @@
 /* Begin PBXFileReference section */
 		4D5F6DD81B3832C200D79B25 /* user_with_nested_name.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_with_nested_name.json; sourceTree = "<group>"; };
 		D03579CA1B2B7A14005D26AE /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D03579F81B2B7A19005D26AE /* Argo-watchOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Argo-watchOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA08313019D5EEAF003B90D7 /* TypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeTests.swift; sourceTree = "<group>"; };
 		EA08313219D5EEF2003B90D7 /* post_comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = post_comments.json; sourceTree = "<group>"; };
 		EA08313419D5EFC0003B90D7 /* types.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = types.json; sourceTree = "<group>"; };
@@ -296,14 +245,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D03579C21B2B7A14005D26AE /* Runes.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D03579E01B2B7A19005D26AE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D03579FC1B2B7A68005D26AE /* Argo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +313,6 @@
 				F89335541A4CE83000B88685 /* Argo.framework */,
 				F893355E1A4CE83000B88685 /* Argo-MacTests.xctest */,
 				D03579CA1B2B7A14005D26AE /* Argo.framework */,
-				D03579F81B2B7A19005D26AE /* Argo-watchOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -587,25 +527,6 @@
 			productReference = D03579CA1B2B7A14005D26AE /* Argo.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D03579CC1B2B7A19005D26AE /* Argo-watchOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D03579F51B2B7A19005D26AE /* Build configuration list for PBXNativeTarget "Argo-watchOSTests" */;
-			buildPhases = (
-				D03579CF1B2B7A19005D26AE /* Sources */,
-				D03579E01B2B7A19005D26AE /* Frameworks */,
-				D03579E21B2B7A19005D26AE /* Resources */,
-				D03579F41B2B7A19005D26AE /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D03579FB1B2B7A62005D26AE /* PBXTargetDependency */,
-			);
-			name = "Argo-watchOSTests";
-			productName = "Argo-MacTests";
-			productReference = D03579F81B2B7A19005D26AE /* Argo-watchOSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		EAD9FACE19D0EAB50031E006 /* Argo-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAD9FAE219D0EAB60031E006 /* Build configuration list for PBXNativeTarget "Argo-iOS" */;
@@ -724,7 +645,6 @@
 				F89335531A4CE83000B88685 /* Argo-Mac */,
 				F893355D1A4CE83000B88685 /* Argo-MacTests */,
 				D03579B51B2B7A14005D26AE /* Argo-watchOS */,
-				D03579CC1B2B7A19005D26AE /* Argo-watchOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -734,30 +654,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D03579E21B2B7A19005D26AE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D03579E31B2B7A19005D26AE /* user_with_bad_type.json in Resources */,
-				D03579E41B2B7A19005D26AE /* types.json in Resources */,
-				D03579E51B2B7A19005D26AE /* types_fail_embedded.json in Resources */,
-				D03579E61B2B7A19005D26AE /* root_object.json in Resources */,
-				D03579E71B2B7A19005D26AE /* root_array.json in Resources */,
-				D03579E81B2B7A19005D26AE /* post_no_comments.json in Resources */,
-				D03579E91B2B7A19005D26AE /* big_data.json in Resources */,
-				D03579EA1B2B7A19005D26AE /* post_comments.json in Resources */,
-				D03579EB1B2B7A19005D26AE /* types.plist in Resources */,
-				D03579EC1B2B7A19005D26AE /* user_without_email.json in Resources */,
-				D03579ED1B2B7A19005D26AE /* user_with_email.json in Resources */,
-				D03579EE1B2B7A19005D26AE /* TemplateIcon2x.png in Resources */,
-				D03579EF1B2B7A19005D26AE /* user_without_key.json in Resources */,
-				D03579F01B2B7A19005D26AE /* array_root.json in Resources */,
-				D03579F11B2B7A19005D26AE /* post_bad_comments.json in Resources */,
-				D03579F21B2B7A19005D26AE /* comment.json in Resources */,
-				D03579F31B2B7A19005D26AE /* url.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -862,29 +758,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D03579CF1B2B7A19005D26AE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D03579D01B2B7A19005D26AE /* Comment.swift in Sources */,
-				D03579D11B2B7A19005D26AE /* NSURL.swift in Sources */,
-				D03579D21B2B7A19005D26AE /* PListFileReader.swift in Sources */,
-				D03579D31B2B7A19005D26AE /* User.swift in Sources */,
-				D03579D41B2B7A19005D26AE /* EmbeddedJSONDecodingTests.swift in Sources */,
-				D03579D51B2B7A19005D26AE /* PListDecodingTests.swift in Sources */,
-				D03579D61B2B7A19005D26AE /* TestModel.swift in Sources */,
-				D03579D71B2B7A19005D26AE /* Post.swift in Sources */,
-				D03579D81B2B7A19005D26AE /* DecodedTests.swift in Sources */,
-				D03579D91B2B7A19005D26AE /* OptionalPropertyDecodingTests.swift in Sources */,
-				D03579DA1B2B7A19005D26AE /* JSONFileReader.swift in Sources */,
-				D03579DB1B2B7A19005D26AE /* PerformanceTests.swift in Sources */,
-				D03579DC1B2B7A19005D26AE /* SwiftDictionaryDecodingTests.swift in Sources */,
-				D03579DD1B2B7A19005D26AE /* TypeTests.swift in Sources */,
-				D03579DE1B2B7A19005D26AE /* ExampleTests.swift in Sources */,
-				D03579DF1B2B7A19005D26AE /* EquatableTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EAD9FACA19D0EAB50031E006 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -968,11 +841,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D03579FB1B2B7A62005D26AE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D03579B51B2B7A14005D26AE /* Argo-watchOS */;
-			targetProxy = D03579FA1B2B7A62005D26AE /* PBXContainerItemProxy */;
-		};
 		EA395DC11A51FF5200EB607E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EAD9FACE19D0EAB50031E006 /* Argo-iOS */;
@@ -1030,39 +898,6 @@
 				PRODUCT_NAME = Argo;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		D03579F61B2B7A19005D26AE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ArgoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.thoughtbot.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-			};
-			name = Debug;
-		};
-		D03579F71B2B7A19005D26AE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = ArgoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.thoughtbot.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
 			};
 			name = Release;
 		};
@@ -1337,15 +1172,6 @@
 			buildConfigurations = (
 				D03579C81B2B7A14005D26AE /* Debug */,
 				D03579C91B2B7A14005D26AE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D03579F51B2B7A19005D26AE /* Build configuration list for PBXNativeTarget "Argo-watchOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D03579F61B2B7A19005D26AE /* Debug */,
-				D03579F71B2B7A19005D26AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

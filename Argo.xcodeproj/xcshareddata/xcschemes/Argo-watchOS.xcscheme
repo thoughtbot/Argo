@@ -28,16 +28,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D03579CC1B2B7A19005D26AE"
-               BuildableName = "Argo-watchOSTests.xctest"
-               BlueprintName = "Argo-watchOSTests"
-               ReferencedContainer = "container:Argo.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
