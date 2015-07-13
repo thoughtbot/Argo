@@ -128,7 +128,7 @@ but the JSON you receive from the server looks like this:
 ```
 
 then ideally, JSON parsing would fail, and you'd get an error state instead of
-a `User` object. In Argo, if JSON parsing succeeds you'll recieve the `User`
+a `User` object. In Argo, if JSON parsing succeeds you'll receive the `User`
 object and you can be sure that it is full and valid. If it fails, you will
 instead be given the reason why the `User` couldn't be constructed.
 
