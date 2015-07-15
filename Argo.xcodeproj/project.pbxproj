@@ -198,9 +198,7 @@
 		F802D4C21A5EE061005E236C /* NSURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURL.swift; sourceTree = "<group>"; };
 		F802D4C51A5EE2D5005E236C /* url.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = url.json; sourceTree = "<group>"; };
 		F874B7E91A66BF52004CCE5E /* root_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = root_array.json; sourceTree = "<group>"; };
-		F87AD8B31AF7DFC500D6E3FF /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = "Carthage/Checkouts/Box/build/Debug-iphoneos/Box.framework"; sourceTree = "<group>"; };
 		F87AD8B41AF7DFC500D6E3FF /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = "Carthage/Checkouts/runes/build/Debug-iphoneos/Runes.framework"; sourceTree = "<group>"; };
-		F87AD8B71AF7DFCD00D6E3FF /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Checkouts/Box/build/Debug/Box.framework; sourceTree = "<group>"; };
 		F87AD8B81AF7DFCD00D6E3FF /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Checkouts/runes/build/Debug/Runes.framework; sourceTree = "<group>"; };
 		F87EB6991ABC5F1300E3B0AB /* curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = curry.swift; sourceTree = "<group>"; };
 		F87EB69A1ABC5F1300E3B0AB /* decode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = decode.swift; sourceTree = "<group>"; };
@@ -402,7 +400,6 @@
 		F87AD8BC1AF7E04500D6E3FF /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				F87AD8B31AF7DFC500D6E3FF /* Box.framework */,
 				F87AD8B41AF7DFC500D6E3FF /* Runes.framework */,
 			);
 			name = iOS;
@@ -411,7 +408,6 @@
 		F87AD8BD1AF7E04B00D6E3FF /* Mac */ = {
 			isa = PBXGroup;
 			children = (
-				F87AD8B71AF7DFCD00D6E3FF /* Box.framework */,
 				F87AD8B81AF7DFCD00D6E3FF /* Runes.framework */,
 			);
 			name = Mac;
