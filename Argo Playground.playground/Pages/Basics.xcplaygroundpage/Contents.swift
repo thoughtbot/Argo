@@ -5,15 +5,14 @@
 */
 import Foundation
 import Argo
-import Runes
 import Curry
 /*:
 **Helper function** – load JSON from a file
 */
 func JSONFromFile(file: String) -> AnyObject? {
   return NSBundle.mainBundle().pathForResource(file, ofType: "json")
-    >>- { NSData(contentsOfFile: $0) }
-    >>- JSONObjectWithData
+    .flatMap { NSData(contentsOfFile: $0) }
+    .flatMap(JSONObjectWithData)
 }
 
 func JSONObjectWithData(data: NSData) -> AnyObject? {
@@ -50,6 +49,6 @@ extension User: Decodable  {
 /*:
 * * *
 */
-let user: User? = JSONFromFile("user_with_email") >>- decode
+let user: User? = JSONFromFile("user_with_email").flatMap(decode)
 print(user!)
 
