@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'Argo'
-  spec.version = '1.0.3'
+  spec.version = '1.0.4'
   spec.summary = 'Functional JSON parsing library for Swift.'
   spec.homepage = 'https://github.com/thoughtbot/Argo'
   spec.license = { :type => 'MIT', :file => 'LICENSE' }
