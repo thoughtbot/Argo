@@ -1,5 +1,4 @@
 import Foundation
-import Runes
 
 extension String: Decodable {
   public static func decode(j: JSON) -> Decoded<String> {
@@ -64,7 +63,7 @@ public extension Optional where T: Decodable, T == T.DecodedType {
 public extension Array where Element: Decodable, Element == Element.DecodedType {
   static func decode(j: JSON) -> Decoded<[Element]> {
     switch j {
-    case let .Array(a): return sequence(Element.decode <^> a)
+    case let .Array(a): return sequence(a.map(Element.decode))
     default: return typeMismatch("Array", forObject: j)
     }
   }

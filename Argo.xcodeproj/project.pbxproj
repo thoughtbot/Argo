@@ -65,9 +65,9 @@
 		F862E0AE1A519D5C0093B028 /* types_fail_embedded.json in Resources */ = {isa = PBXBuildFile; fileRef = EA4EAF7219DD96330036AE0D /* types_fail_embedded.json */; };
 		F874B7EA1A66BF52004CCE5E /* root_array.json in Resources */ = {isa = PBXBuildFile; fileRef = F874B7E91A66BF52004CCE5E /* root_array.json */; };
 		F874B7EB1A66C221004CCE5E /* root_array.json in Resources */ = {isa = PBXBuildFile; fileRef = F874B7E91A66BF52004CCE5E /* root_array.json */; };
+		F876F1D71B56FBB300B38589 /* Runes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F876F1D61B56FBB300B38589 /* Runes.swift */; };
+		F876F1D81B56FBB300B38589 /* Runes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F876F1D61B56FBB300B38589 /* Runes.swift */; };
 		F87897EF1A927864009316A5 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD9FACF19D0EAB50031E006 /* Argo.framework */; };
-		F87AD8B61AF7DFC500D6E3FF /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87AD8B41AF7DFC500D6E3FF /* Runes.framework */; };
-		F87AD8BA1AF7DFCD00D6E3FF /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87AD8B81AF7DFCD00D6E3FF /* Runes.framework */; };
 		F87EB6A21ABC5F1300E3B0AB /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6991ABC5F1300E3B0AB /* curry.swift */; };
 		F87EB6A31ABC5F1300E3B0AB /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6991ABC5F1300E3B0AB /* curry.swift */; };
 		F87EB6A41ABC5F1300E3B0AB /* decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69A1ABC5F1300E3B0AB /* decode.swift */; };
@@ -202,8 +202,7 @@
 		F84290281B57EFAE008F57B4 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = "Carthage/Checkouts/Curry/build/Debug-iphoneos/Curry.framework"; sourceTree = "<group>"; };
 		F842902A1B57EFB5008F57B4 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Checkouts/Curry/build/Debug/Curry.framework; sourceTree = "<group>"; };
 		F874B7E91A66BF52004CCE5E /* root_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = root_array.json; sourceTree = "<group>"; };
-		F87AD8B41AF7DFC500D6E3FF /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = "Carthage/Checkouts/runes/build/Debug-iphoneos/Runes.framework"; sourceTree = "<group>"; };
-		F87AD8B81AF7DFCD00D6E3FF /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Checkouts/runes/build/Debug/Runes.framework; sourceTree = "<group>"; };
+		F876F1D61B56FBB300B38589 /* Runes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Runes.swift; path = Carthage/Checkouts/Runes/Source/Runes.swift; sourceTree = SOURCE_ROOT; };
 		F87EB6991ABC5F1300E3B0AB /* curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = curry.swift; sourceTree = "<group>"; };
 		F87EB69A1ABC5F1300E3B0AB /* decode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = decode.swift; sourceTree = "<group>"; };
 		F87EB69B1ABC5F1300E3B0AB /* flatReduce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = flatReduce.swift; sourceTree = "<group>"; };
@@ -224,7 +223,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F87AD8B61AF7DFC500D6E3FF /* Runes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +239,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F87AD8BA1AF7DFCD00D6E3FF /* Runes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +333,7 @@
 		EAD9FAE919D0F6480031E006 /* Operators */ = {
 			isa = PBXGroup;
 			children = (
+				F876F1D61B56FBB300B38589 /* Runes.swift */,
 				EAD9FAF519D0F7900031E006 /* Operators.swift */,
 			);
 			path = Operators;
@@ -408,7 +406,6 @@
 		F87AD8BC1AF7E04500D6E3FF /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				F87AD8B41AF7DFC500D6E3FF /* Runes.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -416,7 +413,6 @@
 		F87AD8BD1AF7E04B00D6E3FF /* Mac */ = {
 			isa = PBXGroup;
 			children = (
-				F87AD8B81AF7DFCD00D6E3FF /* Runes.framework */,
 			);
 			name = Mac;
 			sourceTree = "<group>";
@@ -689,6 +685,7 @@
 				F87EB6AC1ABC5F1300E3B0AB /* JSON.swift in Sources */,
 				F87EB6A61ABC5F1300E3B0AB /* flatReduce.swift in Sources */,
 				F87EB6A81ABC5F1300E3B0AB /* sequence.swift in Sources */,
+				F876F1D71B56FBB300B38589 /* Runes.swift in Sources */,
 				F8CBE6671A64521000316FBC /* Dictionary.swift in Sources */,
 				EAD9FAF619D0F7900031E006 /* Operators.swift in Sources */,
 				F87EB6B01ABC5F1300E3B0AB /* StandardTypes.swift in Sources */,
@@ -729,6 +726,7 @@
 				F87EB6AD1ABC5F1300E3B0AB /* JSON.swift in Sources */,
 				F87EB6A71ABC5F1300E3B0AB /* flatReduce.swift in Sources */,
 				F87EB6A91ABC5F1300E3B0AB /* sequence.swift in Sources */,
+				F876F1D81B56FBB300B38589 /* Runes.swift in Sources */,
 				F8CBE6681A64526300316FBC /* Dictionary.swift in Sources */,
 				F89335761A4CE93600B88685 /* Operators.swift in Sources */,
 				F87EB6B11ABC5F1300E3B0AB /* StandardTypes.swift in Sources */,

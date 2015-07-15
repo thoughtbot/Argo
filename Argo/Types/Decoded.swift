@@ -1,5 +1,3 @@
-import Runes
-
 public enum Decoded<T> {
   case Success(T)
   case TypeMismatch(String)

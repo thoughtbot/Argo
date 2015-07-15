@@ -1,5 +1,3 @@
-import Runes
-
 // pure merge for Dictionaries
 func + <T, V>(var lhs: [T: V], rhs: [T: V]) -> [T: V] {
   for (key, val) in rhs {
