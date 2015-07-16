@@ -1,10 +1,9 @@
 import XCTest
 import Argo
-import Runes
 
 class PListDecodingTests: XCTestCase {
   func testDecodingAllTypesFromPList() {
-    let model: TestModel? = PListFileReader.plist(fromFile: "types") >>- decode
+    let model: TestModel? = PListFileReader.plist(fromFile: "types").flatMap(decode)
 
     XCTAssert(model != nil)
     XCTAssert(model?.numerics.int == 5)
