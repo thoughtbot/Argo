@@ -1,6 +1,5 @@
 import XCTest
 import Argo
-import Runes
 
 class PerformanceTests: XCTestCase {
   func testParsePerformance() {
