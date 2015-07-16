@@ -6,6 +6,7 @@
 import Foundation
 import Argo
 import Runes
+import Curry
 /*:
 **Helper function** – load JSON from a file
 */
@@ -51,12 +52,8 @@ extension App: CustomStringConvertible {
 }
 
 extension App: Decodable  {
-  static func create(name: String)(formattedPrice: String)(averageUserRating: Float?)(releaseDate: NSDate) -> App {
-    return App(name: name, formattedPrice: formattedPrice, averageUserRating: averageUserRating, releaseDate: releaseDate)
-  }
-  
   static func decode(j: JSON) -> Decoded<App> {
-    return create
+    return curry(self.init)
       <^> j <| "trackName"
       <*> j <| "formattedPrice"
       <*> j <|? "averageUserRating"
