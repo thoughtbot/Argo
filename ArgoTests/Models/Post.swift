@@ -10,7 +10,7 @@ struct Post {
 
 extension Post: Decodable {
   static func decode(j: JSON) -> Decoded<Post> {
-    return curry(Post.init)
+    return curry(self.init)
       <^> j <| "id"
       <*> j <| "text"
       <*> j <| "author"

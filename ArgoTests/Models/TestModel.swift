@@ -14,13 +14,11 @@ struct TestModel {
 
 extension TestModel: Decodable {
   static func decode(j: JSON) -> Decoded<TestModel> {
-//    let a = curry(TestModel.init)
-    return curry(TestModel.init)
+    return curry(self.init)
       <^> j <| "numerics"
       <*> j <| ["user_opt", "name"]
       <*> j <| "bool"
       <*> j <|| "string_array"
-//    return a
       <*> j <||? "string_array_opt"
       <*> j <|| ["embedded", "string_array"]
       <*> j <||? ["embedded", "string_array_opt"]
@@ -38,12 +36,10 @@ struct TestModelNumerics {
 
 extension TestModelNumerics: Decodable {
   static func decode(j: JSON) -> Decoded<TestModelNumerics> {
-//    let a = curry(TestModelNumerics.init)
-    return curry(TestModelNumerics.init)
+    return curry(self.init)
       <^> j <| "int"
       <*> j <| "int64"
       <*> j <| "double"
-//    return a
       <*> j <| "float"
       <*> j <|? "int_opt"
   }
