@@ -9,7 +9,7 @@ struct Comment {
 
 extension Comment: Decodable {
   static func decode(j: JSON) -> Decoded<Comment> {
-    return curry(Comment.init)
+    return curry(self.init)
       <^> j <| "id"
       <*> j <| "text"
       <*> j <| ["author", "name"]
