@@ -1,5 +1,6 @@
 import Argo
 import Runes
+import Curry
 
 struct Comment {
   let id: Int
