@@ -1,5 +1,6 @@
 import Argo
 import Runes
+import Curry
 
 struct User {
   let id: Int
