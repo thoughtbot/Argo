@@ -67,6 +67,7 @@ You'll also need to add [Runes] to your project the same way.
 ```swift
 import Argo
 import Runes
+import Curry
 
 struct User {
   let id: Int
@@ -78,12 +79,8 @@ struct User {
 }
 
 extension User: Decodable {
-  static func create(id: Int)(name: String)(email: String?)(role: Role)(companyName: String)(friends: [User]) -> User {
-    return User(id: id, name: name, email: email, role: role, companyName: companyName, friends: friends)
-  }
-
   static func decode(j: JSON) -> Decoded<User> {
-    return User.create
+    return curry(User.init)
       <^> j <| "id"
       <*> j <| "name"
       <*> j <|? "email" // Use ? for parsing optional values
@@ -243,9 +240,8 @@ struct User {
 }
 ```
 
-You will also want to create a curried creation function. This is needed
-because of a deficiency in Swift that doesn't allow us to pass `init`
-functions around like other functions.
+You will also need a curried function used to construct your model object. If
+you'd like to do this manually, it would look like so:
 
 ```swift
 extension User {
@@ -254,6 +250,18 @@ extension User {
   }
 }
 ```
+
+Alternatively, you can use a `curry` function to curry the object's normal
+initializer:
+
+```swift
+curry(User.init)
+```
+
+We recommend using a shared dependency such as [Curry.framework] to introduce
+this function to avoid collisions.
+
+[Curry.framework]: https://github.com/thoughtbot/Curry
 
 Using this curried syntax will allow us to partially apply the function over
 the course of the decoding process. If you'd like to learn more about
@@ -268,13 +276,13 @@ required `decode` function. We will implement this function by using `map`
 the curried creation function. The common pattern will look like:
 
 ```swift
-return Model.create <^> paramOne <*> paramTwo <*> paramThree
+return curry(Model.init) <^> paramOne <*> paramTwo <*> paramThree
 ```
 
 and so on. If any of those parameters are an error, the entire creation process
 will fail, and the function will return the first error. If all of the
 parameters are successful, the value will be unwrapped and passed to the
-`create` function.
+constructor function.
 
 In order to help with the decoding process, Argo introduces two new operators
 for parsing a value out of the JSON:
@@ -310,7 +318,7 @@ conjunction with `map` and `apply`:
 ```swift
 extension User: Decodable {
   static func decode(j: JSON) -> Decoded<User> {
-    return User.create
+    return curry(User.init)
       <^> j <| "id"
       <*> j <| "name"
   }
@@ -322,8 +330,8 @@ For comparison, this same function without Argo would look like so:
 ```swift
 extension User {
   static func decode(j: NSDictionary) -> User? {
-    if let id = j["id"] as Int,
-       let name = j["name"] as String
+    if let id = j["id"] as! Int,
+       let name = j["name"] as! String
     {
       return User(id: id, name: name)
     }
