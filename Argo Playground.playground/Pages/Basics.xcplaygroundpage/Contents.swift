@@ -6,6 +6,7 @@
 import Foundation
 import Argo
 import Runes
+import Curry
 /*:
 **Helper function** – load JSON from a file
 */
@@ -39,12 +40,8 @@ extension User: CustomStringConvertible {
 }
 
 extension User: Decodable  {
-  static func create(id: Int)(name: String)(email: String?) -> User {
-    return User(id: id, name: name, email: email)
-  }
-  
   static func decode(j: JSON) -> Decoded<User> {
-    return create
+    return curry(self.init)
       <^> j <| "id"
       <*> j <| "name"
       <*> j <|? "email"
