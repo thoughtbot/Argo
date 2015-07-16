@@ -1,10 +1,9 @@
 import XCTest
 import Argo
-import Runes
 
 class EmbeddedJSONDecodingTests: XCTestCase {
   func testCommentDecodingWithEmbeddedUserName() {
-    let comment: Comment? = JSONFromFile("comment") >>- decode
+    let comment: Comment? = JSONFromFile("comment").flatMap(decode)
 
     XCTAssert(comment != nil)
     XCTAssert(comment?.id == 6)
@@ -13,7 +12,7 @@ class EmbeddedJSONDecodingTests: XCTestCase {
   }
 
   func testPostDecodingWithEmbeddedUserModel() {
-    let post: Post? = JSONFromFile("post_no_comments") >>- decode
+    let post: Post? = JSONFromFile("post_no_comments").flatMap(decode)
 
     XCTAssert(post != nil)
     XCTAssert(post?.id == 3)
@@ -23,7 +22,7 @@ class EmbeddedJSONDecodingTests: XCTestCase {
   }
 
   func testPostDecodingWithEmbeddedUserModelAndComments() {
-    let post: Post? = JSONFromFile("post_comments") >>- decode
+    let post: Post? = JSONFromFile("post_comments").flatMap(decode)
 
     XCTAssert(post != nil)
     XCTAssert(post?.id == 3)
@@ -33,7 +32,7 @@ class EmbeddedJSONDecodingTests: XCTestCase {
   }
 
   func testPostDecodingWithBadComments() {
-    let post: Post? = JSONFromFile("post_bad_comments") >>- decode
+    let post: Post? = JSONFromFile("post_bad_comments").flatMap(decode)
 
     XCTAssert(post == nil)
   }
