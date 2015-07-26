@@ -78,7 +78,7 @@ public extension Dictionary where Value: Decodable, Value == Value.DecodedType {
   }
 }
 
-func decodedJSON(json: JSON, forKey key: String) -> Decoded<JSON> {
+public func decodedJSON(json: JSON, forKey key: String) -> Decoded<JSON> {
   switch json {
   case let .Object(o): return guardNull(key, j: o[key] ?? .Null)
   default: return typeMismatch("Object", forObject: json)
