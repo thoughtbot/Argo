@@ -5,8 +5,9 @@ while contributing.
 
 ## Dependencies
 
-Argo uses [Carthage][] for dependency management. Once you have it installed,
-simply run `carthage bootstrap` to install the dependencies.
+Argo uses [Carthage][] for dependency management. Running `bin/setup` will
+install Carthage if it isn't already installed, then download the
+dependencies.
 
 [Carthage]: https://github.com/Carthage/Carthage
 
