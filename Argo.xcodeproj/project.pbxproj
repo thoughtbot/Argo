@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		4D5F6DD91B3832C200D79B25 /* user_with_nested_name.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D5F6DD81B3832C200D79B25 /* user_with_nested_name.json */; };
 		4D5F6DDA1B3832C200D79B25 /* user_with_nested_name.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D5F6DD81B3832C200D79B25 /* user_with_nested_name.json */; };
+		D0592EBE1B77DD8E00EFEF39 /* Decoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69E1ABC5F1300E3B0AB /* Decoded.swift */; };
+		D0592EBF1B77DD8E00EFEF39 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69F1ABC5F1300E3B0AB /* JSON.swift */; };
+		D0592EC01B77DD8E00EFEF39 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6A01ABC5F1300E3B0AB /* Decodable.swift */; };
+		D0592EC11B77DD8E00EFEF39 /* StandardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6A11ABC5F1300E3B0AB /* StandardTypes.swift */; };
+		D0592EC21B77DD9300EFEF39 /* Runes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F876F1D61B56FBB300B38589 /* Runes.swift */; };
+		D0592EC31B77DD9300EFEF39 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* Operators.swift */; };
+		D0592EC41B77DD9A00EFEF39 /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6991ABC5F1300E3B0AB /* curry.swift */; };
+		D0592EC51B77DD9A00EFEF39 /* decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69A1ABC5F1300E3B0AB /* decode.swift */; };
+		D0592EC61B77DD9A00EFEF39 /* flatReduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69B1ABC5F1300E3B0AB /* flatReduce.swift */; };
+		D0592EC71B77DD9A00EFEF39 /* sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69C1ABC5F1300E3B0AB /* sequence.swift */; };
+		D0592EC81B77DD9A00EFEF39 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBE6661A64521000316FBC /* Dictionary.swift */; };
 		EA08313119D5EEAF003B90D7 /* TypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA08313019D5EEAF003B90D7 /* TypeTests.swift */; };
 		EA08313319D5EEF2003B90D7 /* post_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = EA08313219D5EEF2003B90D7 /* post_comments.json */; };
 		EA08313519D5EFC0003B90D7 /* types.json in Resources */ = {isa = PBXBuildFile; fileRef = EA08313419D5EFC0003B90D7 /* types.json */; };
@@ -163,6 +174,7 @@
 
 /* Begin PBXFileReference section */
 		4D5F6DD81B3832C200D79B25 /* user_with_nested_name.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_with_nested_name.json; sourceTree = "<group>"; };
+		D0592EB61B77DD7800EFEF39 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA08313019D5EEAF003B90D7 /* TypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeTests.swift; sourceTree = "<group>"; };
 		EA08313219D5EEF2003B90D7 /* post_comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = post_comments.json; sourceTree = "<group>"; };
 		EA08313419D5EFC0003B90D7 /* types.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = types.json; sourceTree = "<group>"; };
@@ -219,6 +231,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D0592EB21B77DD7800EFEF39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAD9FACB19D0EAB50031E006 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -283,6 +302,7 @@
 				EAD9FADA19D0EAB60031E006 /* ArgoTests.xctest */,
 				F89335541A4CE83000B88685 /* Argo.framework */,
 				F893355E1A4CE83000B88685 /* Argo-MacTests.xctest */,
+				D0592EB61B77DD7800EFEF39 /* Argo.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -450,6 +470,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		D0592EB31B77DD7800EFEF39 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAD9FACC19D0EAB50031E006 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -469,6 +496,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		D0592EB51B77DD7800EFEF39 /* Argo-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0592EBD1B77DD7800EFEF39 /* Build configuration list for PBXNativeTarget "Argo-watchOS" */;
+			buildPhases = (
+				D0592EB11B77DD7800EFEF39 /* Sources */,
+				D0592EB21B77DD7800EFEF39 /* Frameworks */,
+				D0592EB31B77DD7800EFEF39 /* Headers */,
+				D0592EB41B77DD7800EFEF39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Argo-watchOS";
+			productName = "Argo-watchOS";
+			productReference = D0592EB61B77DD7800EFEF39 /* Argo.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		EAD9FACE19D0EAB50031E006 /* Argo-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAD9FAE219D0EAB60031E006 /* Build configuration list for PBXNativeTarget "Argo-iOS" */;
@@ -556,6 +601,9 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = thoughtbot;
 				TargetAttributes = {
+					D0592EB51B77DD7800EFEF39 = {
+						CreatedOnToolsVersion = 7.0;
+					};
 					EAD9FACE19D0EAB50031E006 = {
 						CreatedOnToolsVersion = 6.0.1;
 					};
@@ -586,11 +634,19 @@
 				EAD9FAD919D0EAB60031E006 /* ArgoTests */,
 				F89335531A4CE83000B88685 /* Argo-Mac */,
 				F893355D1A4CE83000B88685 /* Argo-MacTests */,
+				D0592EB51B77DD7800EFEF39 /* Argo-watchOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D0592EB41B77DD7800EFEF39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAD9FACD19D0EAB50031E006 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -675,6 +731,24 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D0592EB11B77DD7800EFEF39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0592EC41B77DD9A00EFEF39 /* curry.swift in Sources */,
+				D0592EC11B77DD8E00EFEF39 /* StandardTypes.swift in Sources */,
+				D0592EC01B77DD8E00EFEF39 /* Decodable.swift in Sources */,
+				D0592EC51B77DD9A00EFEF39 /* decode.swift in Sources */,
+				D0592EC81B77DD9A00EFEF39 /* Dictionary.swift in Sources */,
+				D0592EBE1B77DD8E00EFEF39 /* Decoded.swift in Sources */,
+				D0592EBF1B77DD8E00EFEF39 /* JSON.swift in Sources */,
+				D0592EC21B77DD9300EFEF39 /* Runes.swift in Sources */,
+				D0592EC31B77DD9300EFEF39 /* Operators.swift in Sources */,
+				D0592EC71B77DD9A00EFEF39 /* sequence.swift in Sources */,
+				D0592EC61B77DD9A00EFEF39 /* flatReduce.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAD9FACA19D0EAB50031E006 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -773,6 +847,51 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		D0592EBB1B77DD7800EFEF39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				INFOPLIST_FILE = "$(SRCROOT)/Argo/Resources/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thoughtbot.$(PRODUCT_NAME)";
+				PRODUCT_NAME = Argo;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		D0592EBC1B77DD7800EFEF39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				INFOPLIST_FILE = "$(SRCROOT)/Argo/Resources/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thoughtbot.$(PRODUCT_NAME)";
+				PRODUCT_NAME = Argo;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 		EAD9FAE019D0EAB60031E006 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1039,6 +1158,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D0592EBD1B77DD7800EFEF39 /* Build configuration list for PBXNativeTarget "Argo-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0592EBB1B77DD7800EFEF39 /* Debug */,
+				D0592EBC1B77DD7800EFEF39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		EAD9FAC919D0EAB50031E006 /* Build configuration list for PBXProject "Argo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
