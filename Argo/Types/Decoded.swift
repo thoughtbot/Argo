@@ -76,8 +76,8 @@ public func pure<A>(a: A) -> Decoded<A> {
   - If the value is a failing case (`.TypeMismatch`, `.MissingKey`), the function will not be evaluated and this will return the value
   - If the value is `.Success`, the function will be applied to the unwrapped value
 
-  - parameter a: A value of type `Decoded<T>`
-  - parameter f: A transformation function from type `T` to type `Decoded<U>`
+  - parameter a: A value of type `Decoded<A>`
+  - parameter f: A transformation function from type `A` to type `Decoded<B>`
 
   - returns: A value of type `Decoded<U>`
 */
@@ -91,10 +91,10 @@ public func >>- <A, B>(a: Decoded<A>, f: A -> Decoded<B>) -> Decoded<B> {
   - If the value is is a failing case (`.TypeMismatch`, `.MissingKey`), the function will not be evaluated and this will return the value
   - If the value is `.Success`, the function will be applied to the unwrapped value
 
-  - parameter f: A transformation function from type `T` to type `U`
-  - parameter a: A value of type `Decoded<T>`
+  - parameter f: A transformation function from type `A` to type `B`
+  - parameter a: A value of type `Decoded<A>`
 
-  - returns: A value of type `Decoded<U>`
+  - returns: A value of type `Decoded<B>`
 */
 public func <^> <A, B>(f: A -> B, a: Decoded<A>) -> Decoded<B> {
   return a.map(f)
@@ -106,9 +106,9 @@ public func <^> <A, B>(f: A -> B, a: Decoded<A>) -> Decoded<B> {
   - If the function is a `.Success` case and the value is a failure case, return the value
   - If both self and the function are `.Success`, the function will be applied to the unwrapped value
 
-  - parameter f: A Decoded transformation function from type `T` to type `U`
+  - parameter f: A Decoded transformation function from type `A` to type `B`
 
-  - returns: A value of type `Decoded<U>`
+  - returns: A value of type `Decoded<B>`
 */
 public func <*> <A, B>(f: Decoded<A -> B>, a: Decoded<A>) -> Decoded<B> {
   return a.apply(f)
