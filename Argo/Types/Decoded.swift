@@ -106,7 +106,7 @@ public func <^> <A, B>(f: A -> B, a: Decoded<A>) -> Decoded<B> {
   - If the function is a `.Success` case and the value is a failure case, this will return the value
   - If both self and the function are `.Success`, the function will be applied to the unwrapped value
 
-  - parameter f: A Decoded transformation function from type `A` to type `B`
+  - parameter f: A `Decoded` transformation function from type `A` to type `B`
 
   - returns: A value of type `Decoded<B>`
 */
