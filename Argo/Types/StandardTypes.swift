@@ -54,9 +54,9 @@ extension Float: Decodable {
   }
 }
 
-public extension Optional where T: Decodable, T == T.DecodedType {
-  static func decode(j: JSON) -> Decoded<T?> {
-    return .optional(T.decode(j))
+public extension Optional where Wrapped: Decodable, Wrapped == Wrapped.DecodedType {
+  static func decode(j: JSON) -> Decoded<Wrapped?> {
+    return .optional(Wrapped.decode(j))
   }
 }
 
