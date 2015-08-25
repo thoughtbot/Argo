@@ -35,3 +35,4 @@ Carthage/Build
 *.iml
 
 Argo.framework.zip
+*.xcscmblueprint
