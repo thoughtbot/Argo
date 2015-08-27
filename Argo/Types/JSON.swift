@@ -16,8 +16,7 @@ public extension JSON {
 
     case let v as [Swift.String: AnyObject]:
       return .Object(reduce(v, [:]) { (var accum, elem) in
-        let parsedValue = (self.parse <^> elem.1) ?? .Null
-        accum[elem.0] = parsedValue
+        accum[elem.0] = self.parse(elem.1)
         return accum
       })
 
