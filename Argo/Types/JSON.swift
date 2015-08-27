@@ -13,10 +13,7 @@ public extension JSON {
   static func parse(json: AnyObject) -> JSON {
     switch json {
     case let v as [AnyObject]: return .Array(v.map(parse))
-
-    case let v as [Swift.String: AnyObject]:
-      return .Object(parse <^> v)
-
+    case let v as [Swift.String: AnyObject]: return .Object(parse <^> v)
     case let v as Swift.String: return .String(v)
     case let v as NSNumber: return .Number(v)
     default: return .Null
