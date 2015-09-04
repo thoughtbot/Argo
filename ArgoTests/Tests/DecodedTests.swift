@@ -15,7 +15,7 @@ class DecodedTests: XCTestCase {
     let user: Decoded<User> = decode(JSONFromFile("user_with_bad_type")!)
 
     switch user {
-    case let .Failure(.TypeMismatch(s)): XCTAssert(user.description == "Failure(TypeMismatch(\(s)))")
+    case let .Failure(.TypeMismatch(expected, actual)): XCTAssert(user.description == "Failure(TypeMismatch(Expected \(expected), got \(actual)))")
     default: XCTFail("Unexpected Case Occurred")
     }
   }
