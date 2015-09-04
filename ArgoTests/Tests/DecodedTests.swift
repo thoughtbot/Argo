@@ -15,7 +15,7 @@ class DecodedTests: XCTestCase {
     let user: Decoded<User> = decode(JSONFromFile("user_with_bad_type")!)
 
     switch user {
-    case let .TypeMismatch(s): XCTAssert(user.description == "TypeMismatch(\(s))")
+    case let .Failure(.TypeMismatch(s)): XCTAssert(user.description == "Failure(TypeMismatch(\(s)))")
     default: XCTFail("Unexpected Case Occurred")
     }
   }
@@ -24,7 +24,7 @@ class DecodedTests: XCTestCase {
     let user: Decoded<User> = decode(JSONFromFile("user_without_key")!)
 
     switch user {
-    case let .MissingKey(s): XCTAssert(user.description == "MissingKey(\(s))")
+    case let .Failure(.MissingKey(s)): XCTAssert(user.description == "Failure(MissingKey(\(s)))")
     default: XCTFail("Unexpected Case Occurred")
     }
   }

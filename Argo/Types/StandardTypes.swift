@@ -86,12 +86,12 @@ public func decodedJSON(json: JSON, forKey key: String) -> Decoded<JSON> {
 }
 
 private func typeMismatch<T>(expectedType: String, forObject object: JSON) -> Decoded<T> {
-  return .TypeMismatch("\(object) is not a \(expectedType)")
+  return .Failure(.TypeMismatch("\(object) is not a \(expectedType)"))
 }
 
 private func guardNull(key: String, j: JSON) -> Decoded<JSON> {
   switch j {
-  case .Null: return .MissingKey(key)
+  case .Null: return .Failure(.MissingKey(key))
   default: return pure(j)
   }
 }
