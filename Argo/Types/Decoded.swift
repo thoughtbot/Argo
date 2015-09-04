@@ -1,12 +1,12 @@
 public enum DecodeError: ErrorType {
-  case TypeMismatch(String)
+  case TypeMismatch(expected: String, actual: String)
   case MissingKey(String)
 }
 
 extension DecodeError: CustomStringConvertible {
   public var description: String {
     switch self {
-    case let .TypeMismatch(s): return "TypeMismatch(\(s))"
+    case let .TypeMismatch(expected, actual): return "TypeMismatch(Expected \(expected), got \(actual))"
     case let .MissingKey(s): return "MissingKey(\(s))"
     }
   }
@@ -29,15 +29,29 @@ public extension Decoded {
     switch x {
     case let .Success(value): return .Success(.Some(value))
     case .Failure(.MissingKey): return .Success(.None)
-    case let .Failure(.TypeMismatch(string)): return .Failure(.TypeMismatch(string))
+    case let .Failure(.TypeMismatch(x)): return .Failure(.TypeMismatch(x))
     }
   }
 
   static func fromOptional<T>(x: T?) -> Decoded<T> {
     switch x {
     case let .Some(value): return .Success(value)
-    case .None: return .Failure(.TypeMismatch("Expected .Some(\(T.self)), got .None"))
+    case .None: return .typeMismatch(".Some(\(T.self))", actual: ".None")
     }
+  }
+}
+
+public extension Decoded {
+  static func typeMismatch<T, U: CustomStringConvertible>(expected: String, actual: U) -> Decoded<T> {
+    return .typeMismatch(expected, actual: "\(actual)")
+  }
+
+  static func typeMismatch<T>(expected: String, actual: String) -> Decoded<T> {
+    return .Failure(.TypeMismatch(expected: expected, actual: "\(actual)"))
+  }
+
+  static func missingKey<T>(name: String) -> Decoded<T> {
+    return .Failure(.MissingKey(name))
   }
 }
 
