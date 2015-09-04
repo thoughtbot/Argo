@@ -73,6 +73,9 @@
 		F802D4C71A5EE2D5005E236C /* url.json in Resources */ = {isa = PBXBuildFile; fileRef = F802D4C51A5EE2D5005E236C /* url.json */; };
 		F84290291B57EFAE008F57B4 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84290281B57EFAE008F57B4 /* Curry.framework */; };
 		F842902B1B57EFB5008F57B4 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F842902A1B57EFB5008F57B4 /* Curry.framework */; };
+		F84318A81B9A2D7A00165216 /* DecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84318A71B9A2D7A00165216 /* DecodeError.swift */; settings = {ASSET_TAGS = (); }; };
+		F84318A91B9A2D7A00165216 /* DecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84318A71B9A2D7A00165216 /* DecodeError.swift */; settings = {ASSET_TAGS = (); }; };
+		F84318AA1B9A2D7A00165216 /* DecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84318A71B9A2D7A00165216 /* DecodeError.swift */; settings = {ASSET_TAGS = (); }; };
 		F862E0AB1A519D470093B028 /* TypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA08313019D5EEAF003B90D7 /* TypeTests.swift */; };
 		F862E0AC1A519D520093B028 /* post_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = EA08313219D5EEF2003B90D7 /* post_comments.json */; };
 		F862E0AD1A519D560093B028 /* types.json in Resources */ = {isa = PBXBuildFile; fileRef = EA08313419D5EFC0003B90D7 /* types.json */; };
@@ -217,6 +220,7 @@
 		F802D4C51A5EE2D5005E236C /* url.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = url.json; sourceTree = "<group>"; };
 		F84290281B57EFAE008F57B4 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = "Carthage/Checkouts/Curry/build/Debug-iphoneos/Curry.framework"; sourceTree = "<group>"; };
 		F842902A1B57EFB5008F57B4 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Checkouts/Curry/build/Debug/Curry.framework; sourceTree = "<group>"; };
+		F84318A71B9A2D7A00165216 /* DecodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodeError.swift; sourceTree = "<group>"; };
 		F874B7E91A66BF52004CCE5E /* root_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = root_array.json; sourceTree = "<group>"; };
 		F876F1D61B56FBB300B38589 /* Runes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Runes.swift; path = Carthage/Checkouts/Runes/Source/Runes.swift; sourceTree = SOURCE_ROOT; };
 		F87EB6991ABC5F1300E3B0AB /* curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = curry.swift; sourceTree = "<group>"; };
@@ -460,6 +464,7 @@
 				F87EB69F1ABC5F1300E3B0AB /* JSON.swift */,
 				F87EB6A01ABC5F1300E3B0AB /* Decodable.swift */,
 				F87EB6A11ABC5F1300E3B0AB /* StandardTypes.swift */,
+				F84318A71B9A2D7A00165216 /* DecodeError.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -746,6 +751,7 @@
 				D0592EC51B77DD9A00EFEF39 /* decode.swift in Sources */,
 				D0592EC81B77DD9A00EFEF39 /* Dictionary.swift in Sources */,
 				D0592EBE1B77DD8E00EFEF39 /* Decoded.swift in Sources */,
+				F84318AA1B9A2D7A00165216 /* DecodeError.swift in Sources */,
 				D0592EBF1B77DD8E00EFEF39 /* JSON.swift in Sources */,
 				D0592EC21B77DD9300EFEF39 /* Runes.swift in Sources */,
 				E5DF09021BAA174600704741 /* DecodedOperators.swift in Sources */,
@@ -765,6 +771,7 @@
 				F87EB6AC1ABC5F1300E3B0AB /* JSON.swift in Sources */,
 				F87EB6A61ABC5F1300E3B0AB /* flatReduce.swift in Sources */,
 				F87EB6A81ABC5F1300E3B0AB /* sequence.swift in Sources */,
+				F84318A81B9A2D7A00165216 /* DecodeError.swift in Sources */,
 				F876F1D71B56FBB300B38589 /* Runes.swift in Sources */,
 				F8CBE6671A64521000316FBC /* Dictionary.swift in Sources */,
 				E5DF09001BAA174600704741 /* DecodedOperators.swift in Sources */,
@@ -807,6 +814,7 @@
 				F87EB6AD1ABC5F1300E3B0AB /* JSON.swift in Sources */,
 				F87EB6A71ABC5F1300E3B0AB /* flatReduce.swift in Sources */,
 				F87EB6A91ABC5F1300E3B0AB /* sequence.swift in Sources */,
+				F84318A91B9A2D7A00165216 /* DecodeError.swift in Sources */,
 				F876F1D81B56FBB300B38589 /* Runes.swift in Sources */,
 				F8CBE6681A64526300316FBC /* Dictionary.swift in Sources */,
 				E5DF09011BAA174600704741 /* DecodedOperators.swift in Sources */,
