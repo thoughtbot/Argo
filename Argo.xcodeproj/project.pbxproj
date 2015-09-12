@@ -850,6 +850,7 @@
 		D0592EBB1B77DD7800EFEF39 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -873,6 +874,7 @@
 		D0592EBC1B77DD7800EFEF39 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1169,6 +1171,7 @@
 				D0592EBC1B77DD7800EFEF39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAD9FAC919D0EAB50031E006 /* Build configuration list for PBXProject "Argo" */ = {
 			isa = XCConfigurationList;
