@@ -33,6 +33,9 @@
 		EA395DC81A52FA5300EB607E /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA395DC61A52F93B00EB607E /* ExampleTests.swift */; };
 		EA395DCA1A52FC1400EB607E /* root_object.json in Resources */ = {isa = PBXBuildFile; fileRef = EA395DC91A52FC1400EB607E /* root_object.json */; };
 		EA395DCB1A52FC1400EB607E /* root_object.json in Resources */ = {isa = PBXBuildFile; fileRef = EA395DC91A52FC1400EB607E /* root_object.json */; };
+		EA4678661BA8930E004488D2 /* OptionalOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4678651BA8930E004488D2 /* OptionalOperators.swift */; settings = {ASSET_TAGS = (); }; };
+		EA4678671BA8930E004488D2 /* OptionalOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4678651BA8930E004488D2 /* OptionalOperators.swift */; settings = {ASSET_TAGS = (); }; };
+		EA4678681BA8930E004488D2 /* OptionalOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4678651BA8930E004488D2 /* OptionalOperators.swift */; settings = {ASSET_TAGS = (); }; };
 		EA47BB531AFC5B76002D2CCD /* DecodedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA47BB521AFC5B76002D2CCD /* DecodedTests.swift */; };
 		EA47BB541AFC5B76002D2CCD /* DecodedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA47BB521AFC5B76002D2CCD /* DecodedTests.swift */; };
 		EA47BB561AFC5DAC002D2CCD /* user_with_bad_type.json in Resources */ = {isa = PBXBuildFile; fileRef = EA47BB551AFC5DAC002D2CCD /* user_with_bad_type.json */; };
@@ -188,6 +191,7 @@
 		EA395DC31A52F8EB00EB607E /* array_root.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = array_root.json; sourceTree = "<group>"; };
 		EA395DC61A52F93B00EB607E /* ExampleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		EA395DC91A52FC1400EB607E /* root_object.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = root_object.json; sourceTree = "<group>"; };
+		EA4678651BA8930E004488D2 /* OptionalOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalOperators.swift; sourceTree = "<group>"; };
 		EA47BB521AFC5B76002D2CCD /* DecodedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodedTests.swift; sourceTree = "<group>"; };
 		EA47BB551AFC5DAC002D2CCD /* user_with_bad_type.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_with_bad_type.json; sourceTree = "<group>"; };
 		EA47BB581AFC5E65002D2CCD /* user_without_key.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_without_key.json; sourceTree = "<group>"; };
@@ -364,6 +368,7 @@
 				F876F1D61B56FBB300B38589 /* Runes.swift */,
 				EAD9FAF519D0F7900031E006 /* Operators.swift */,
 				E5DF08FF1BAA174600704741 /* DecodedOperators.swift */,
+				EA4678651BA8930E004488D2 /* OptionalOperators.swift */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -748,6 +753,7 @@
 				D0592EC41B77DD9A00EFEF39 /* curry.swift in Sources */,
 				D0592EC11B77DD8E00EFEF39 /* StandardTypes.swift in Sources */,
 				D0592EC01B77DD8E00EFEF39 /* Decodable.swift in Sources */,
+				EA4678681BA8930E004488D2 /* OptionalOperators.swift in Sources */,
 				D0592EC51B77DD9A00EFEF39 /* decode.swift in Sources */,
 				D0592EC81B77DD9A00EFEF39 /* Dictionary.swift in Sources */,
 				D0592EBE1B77DD8E00EFEF39 /* Decoded.swift in Sources */,
@@ -768,6 +774,7 @@
 				F87EB6AA1ABC5F1300E3B0AB /* Decoded.swift in Sources */,
 				F87EB6AE1ABC5F1300E3B0AB /* Decodable.swift in Sources */,
 				F87EB6A41ABC5F1300E3B0AB /* decode.swift in Sources */,
+				EA4678661BA8930E004488D2 /* OptionalOperators.swift in Sources */,
 				F87EB6AC1ABC5F1300E3B0AB /* JSON.swift in Sources */,
 				F87EB6A61ABC5F1300E3B0AB /* flatReduce.swift in Sources */,
 				F87EB6A81ABC5F1300E3B0AB /* sequence.swift in Sources */,
@@ -811,6 +818,7 @@
 				F87EB6AB1ABC5F1300E3B0AB /* Decoded.swift in Sources */,
 				F87EB6AF1ABC5F1300E3B0AB /* Decodable.swift in Sources */,
 				F87EB6A51ABC5F1300E3B0AB /* decode.swift in Sources */,
+				EA4678671BA8930E004488D2 /* OptionalOperators.swift in Sources */,
 				F87EB6AD1ABC5F1300E3B0AB /* JSON.swift in Sources */,
 				F87EB6A71ABC5F1300E3B0AB /* flatReduce.swift in Sources */,
 				F87EB6A91ABC5F1300E3B0AB /* sequence.swift in Sources */,

@@ -11,7 +11,7 @@ class ExampleTests: XCTestCase {
 
   func testJSONWithRootObject() {
     let json = JSONFromFile("root_object").map(JSON.parse)
-    let user: User? = json.flatMap { ($0 <| "user").value }
+    let user: User? = json.flatMap { $0 <| "user" }
 
     XCTAssert(user != nil)
     XCTAssert(user?.id == 1)
@@ -22,7 +22,7 @@ class ExampleTests: XCTestCase {
 
   func testDecodingNonFinalClass() {
     let json = JSONFromFile("url").map(JSON.parse)
-    let url: NSURL? = json.flatMap { ($0 <| "url").value }
+    let url: NSURL? = json.flatMap { $0 <| "url" }
 
     XCTAssert(url != nil)
     XCTAssert(url?.absoluteString == "http://example.com")
