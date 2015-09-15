@@ -20,6 +20,9 @@
 		D0592EC61B77DD9A00EFEF39 /* flatReduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69B1ABC5F1300E3B0AB /* flatReduce.swift */; };
 		D0592EC71B77DD9A00EFEF39 /* sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69C1ABC5F1300E3B0AB /* sequence.swift */; };
 		D0592EC81B77DD9A00EFEF39 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBE6661A64521000316FBC /* Dictionary.swift */; };
+		E5DF09001BAA174600704741 /* DecodedOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DF08FF1BAA174600704741 /* DecodedOperators.swift */; settings = {ASSET_TAGS = (); }; };
+		E5DF09011BAA174600704741 /* DecodedOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DF08FF1BAA174600704741 /* DecodedOperators.swift */; settings = {ASSET_TAGS = (); }; };
+		E5DF09021BAA174600704741 /* DecodedOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DF08FF1BAA174600704741 /* DecodedOperators.swift */; settings = {ASSET_TAGS = (); }; };
 		EA08313119D5EEAF003B90D7 /* TypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA08313019D5EEAF003B90D7 /* TypeTests.swift */; };
 		EA08313319D5EEF2003B90D7 /* post_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = EA08313219D5EEF2003B90D7 /* post_comments.json */; };
 		EA08313519D5EFC0003B90D7 /* types.json in Resources */ = {isa = PBXBuildFile; fileRef = EA08313419D5EFC0003B90D7 /* types.json */; };
@@ -175,6 +178,7 @@
 /* Begin PBXFileReference section */
 		4D5F6DD81B3832C200D79B25 /* user_with_nested_name.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_with_nested_name.json; sourceTree = "<group>"; };
 		D0592EB61B77DD7800EFEF39 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5DF08FF1BAA174600704741 /* DecodedOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodedOperators.swift; sourceTree = "<group>"; };
 		EA08313019D5EEAF003B90D7 /* TypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeTests.swift; sourceTree = "<group>"; };
 		EA08313219D5EEF2003B90D7 /* post_comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = post_comments.json; sourceTree = "<group>"; };
 		EA08313419D5EFC0003B90D7 /* types.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = types.json; sourceTree = "<group>"; };
@@ -355,6 +359,7 @@
 			children = (
 				F876F1D61B56FBB300B38589 /* Runes.swift */,
 				EAD9FAF519D0F7900031E006 /* Operators.swift */,
+				E5DF08FF1BAA174600704741 /* DecodedOperators.swift */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -743,6 +748,7 @@
 				D0592EBE1B77DD8E00EFEF39 /* Decoded.swift in Sources */,
 				D0592EBF1B77DD8E00EFEF39 /* JSON.swift in Sources */,
 				D0592EC21B77DD9300EFEF39 /* Runes.swift in Sources */,
+				E5DF09021BAA174600704741 /* DecodedOperators.swift in Sources */,
 				D0592EC31B77DD9300EFEF39 /* Operators.swift in Sources */,
 				D0592EC71B77DD9A00EFEF39 /* sequence.swift in Sources */,
 				D0592EC61B77DD9A00EFEF39 /* flatReduce.swift in Sources */,
@@ -761,6 +767,7 @@
 				F87EB6A81ABC5F1300E3B0AB /* sequence.swift in Sources */,
 				F876F1D71B56FBB300B38589 /* Runes.swift in Sources */,
 				F8CBE6671A64521000316FBC /* Dictionary.swift in Sources */,
+				E5DF09001BAA174600704741 /* DecodedOperators.swift in Sources */,
 				EAD9FAF619D0F7900031E006 /* Operators.swift in Sources */,
 				F87EB6B01ABC5F1300E3B0AB /* StandardTypes.swift in Sources */,
 				F87EB6A21ABC5F1300E3B0AB /* curry.swift in Sources */,
@@ -802,6 +809,7 @@
 				F87EB6A91ABC5F1300E3B0AB /* sequence.swift in Sources */,
 				F876F1D81B56FBB300B38589 /* Runes.swift in Sources */,
 				F8CBE6681A64526300316FBC /* Dictionary.swift in Sources */,
+				E5DF09011BAA174600704741 /* DecodedOperators.swift in Sources */,
 				F89335761A4CE93600B88685 /* Operators.swift in Sources */,
 				F87EB6B11ABC5F1300E3B0AB /* StandardTypes.swift in Sources */,
 				F87EB6A31ABC5F1300E3B0AB /* curry.swift in Sources */,
