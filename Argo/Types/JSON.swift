@@ -30,18 +30,6 @@ extension JSON: Decodable {
   }
 }
 
-extension JSON: CustomStringConvertible {
-  public var description: Swift.String {
-    switch self {
-    case let .String(v): return "String(\(v))"
-    case let .Number(v): return "Number(\(v))"
-    case let .Array(a): return "Array(\(a.description))"
-    case let .Object(o): return "Object(\(o.description))"
-    case .Null: return "Null"
-    }
-  }
-}
-
 extension JSON: Equatable { }
 
 public func == (lhs: JSON, rhs: JSON) -> Bool {
