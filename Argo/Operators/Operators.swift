@@ -8,7 +8,6 @@ infix operator <|> { associativity left precedence 140 }
 
 // Pull value from JSON
 public func <| <A where A: Decodable, A == A.DecodedType>(json: JSON, key: String) -> Decoded<A> {
-//  return decodedJSON(json, forKey: key) >>- A.decode
   return json <| [key]
 }
 
