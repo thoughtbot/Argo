@@ -33,7 +33,7 @@ public extension Decoded {
   }
 
   static func typeMismatch<T>(expected: String, actual: String) -> Decoded<T> {
-    return .Failure(.TypeMismatch(expected: expected, actual: "\(actual)"))
+    return .Failure(.TypeMismatch(expected: expected, actual: actual))
   }
 
   static func missingKey<T>(name: String) -> Decoded<T> {
