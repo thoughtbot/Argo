@@ -64,7 +64,7 @@ public extension Array where Element: Decodable, Element == Element.DecodedType 
   static func decode(j: JSON) -> Decoded<[Element]> {
     switch j {
     case let .Array(a): return sequence(a.map(Element.decode))
-    default: return .typeMismatch("Array", actual: "\(j)")
+    default: return .typeMismatch("Array", actual: j)
     }
   }
 }
@@ -73,7 +73,7 @@ public extension Dictionary where Value: Decodable, Value == Value.DecodedType {
   static func decode(j: JSON) -> Decoded<[String: Value]> {
     switch j {
     case let .Object(o): return sequence(Value.decode <^> o)
-    default: return .typeMismatch("Object", actual: "\(j)")
+    default: return .typeMismatch("Object", actual: j)
     }
   }
 }
@@ -81,7 +81,7 @@ public extension Dictionary where Value: Decodable, Value == Value.DecodedType {
 public func decodedJSON(json: JSON, forKey key: String) -> Decoded<JSON> {
   switch json {
   case let .Object(o): return guardNull(key, j: o[key] ?? .Null)
-  default: return .typeMismatch("Object", actual: "\(json)")
+  default: return .typeMismatch("Object", actual: json)
   }
 }
 
