@@ -7,8 +7,7 @@ func JSONFromFile(file: String) -> AnyObject? {
 }
 
 private func JSONObjectWithData(data: NSData) -> AnyObject? {
-  do { return try NSJSONSerialization.JSONObjectWithData(data, options: []) }
-  catch { return .None }
+  return try? NSJSONSerialization.JSONObjectWithData(data, options: [])
 }
 
 private class JSONFileReader { }
