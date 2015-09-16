@@ -84,7 +84,7 @@ extension User: Decodable {
 
 // Wherever you receive JSON data:
 
-let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: nil)
+let json: AnyObject? = try? NSJSONSerialization.JSONObjectWithData(data, options: [])
 
 if let j: AnyObject = json {
   let user: User? = decode(j)
@@ -93,24 +93,21 @@ if let j: AnyObject = json {
 
 For more information, see the [Documentation](Documentation/)
 
-Contributing
-------------
+## Contributing
 
 See the [CONTRIBUTING] document. Thank you, [contributors]!
 
 [CONTRIBUTING]: CONTRIBUTING.md
 [contributors]: https://github.com/thoughtbot/Argo/graphs/contributors
 
-License
--------
+## License
 
 Argo is Copyright (c) 2015 thoughtbot, inc. It is free software, and may be
 redistributed under the terms specified in the [LICENSE] file.
 
 [LICENSE]: /LICENSE
 
-About
------
+## About
 
 ![thoughtbot](https://thoughtbot.com/logo.png)
 

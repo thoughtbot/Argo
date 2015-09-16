@@ -3,8 +3,8 @@
 Argo allows you to easily decode loosely typed structures into strongly typed
 models. When paired with functional programming concepts, Argo becomes a
 beautiful way to decode JSON from network responses into your application
-models. The following guides will teach you how to use Argo and how powerful
-it can be.
+models. The following guides will teach you how to use Argo and how powerful it
+can be.
 
 ## High Level Concepts ##
 
@@ -13,8 +13,8 @@ it can be.
 
 ## Basic Usage ##
 
-- Decoding your first model // TODO
-- Using functional concepts to simplify the decoder // TODO
+- [Decoding your first model](Basic-Usage.md)
+- Relationships // TODO
 
 ## Advanced Usage ##
 
