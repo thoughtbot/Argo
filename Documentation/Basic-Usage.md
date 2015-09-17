@@ -185,4 +185,9 @@ properties in your model, and then the Swift compiler will infer the types that
 need to be sent to the curried `decode` function and therefore the types that
 need to be found in the JSON structure.
 
+You can decode custom types the same way, as long as the type also conforms to
+`Decodable`. This is how we implement [relationships].
+
+[relationships]: Relationships.md
+
 For more Argo usage examples, see our [test suite](../ArgoTests).
