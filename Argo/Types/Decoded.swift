@@ -76,3 +76,12 @@ public extension Decoded {
 public func pure<A>(a: A) -> Decoded<A> {
   return .Success(a)
 }
+
+public extension Decoded {
+  func dematerialize() throws -> T {
+    switch self {
+    case let .Success(value): return value
+    case let .Failure(error): throw error
+    }
+  }
+}

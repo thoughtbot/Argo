@@ -28,4 +28,45 @@ class DecodedTests: XCTestCase {
     default: XCTFail("Unexpected Case Occurred")
     }
   }
+  
+  func testDecodedDematerializeSuccess() {
+    let user: Decoded<User> = decode(JSONFromFile("user_with_email")!)
+    
+    do {
+      try user.dematerialize()
+      XCTAssert(true)
+    } catch {
+      XCTFail("Unexpected Error Occurred")
+    }
+  }
+  
+  func testDecodedDematerializeTypeMismatch() {
+    let user: Decoded<User> = decode(JSONFromFile("user_with_bad_type")!)
+    
+    do {
+      try user.dematerialize()
+      XCTFail("Unexpected Success")
+    } catch DecodeError.TypeMismatch {
+      XCTAssert(true)
+    } catch DecodeError.MissingKey {
+      XCTFail("Unexpected Error Occurred")
+    } catch {
+      XCTFail("Unexpected Error Occurred")
+    }
+  }
+  
+  func testDecodedDematerializeMissingKey() {
+    let user: Decoded<User> = decode(JSONFromFile("user_without_key")!)
+    
+    do {
+      try user.dematerialize()
+      XCTFail("Unexpected Success")
+    } catch DecodeError.MissingKey {
+      XCTAssert(true)
+    } catch DecodeError.TypeMismatch {
+      XCTFail("Unexpected Error Occurred")
+    } catch {
+      XCTFail("Unexpected Error Occurred")
+    }
+  }
 }
