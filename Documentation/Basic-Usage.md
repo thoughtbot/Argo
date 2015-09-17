@@ -131,7 +131,7 @@ extension User {
 You could see how this would get much worse with a more complex model.
 
 You can decode custom types the same way, as long as the type also conforms to
-`Decodable`.
+`Decodable`. This is how we implement [relationships].
 
-For more examples on how to use Argo, please check out the tests.
+[relationships]: Relationships.md
 
