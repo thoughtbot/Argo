@@ -34,27 +34,9 @@ public protocol Decodable {
 ```
 
 You will need to implement the `decode` function to perform any kinds of
-transformations you need to transform your model from a JSON value. A simple
-implementation for an enum value might look like:
-
-```swift
-enum RoleType: String {
-  case Admin = "Admin"
-  case User = "User"
-}
-
-extension RoleType: Decodable {
-  static func decode(j: JSON) -> Decoded<RoleType> {
-    switch j {
-    case let .String(s): return .fromOptional(RoleType(rawValue: s))
-    default: return .TypeMismatch("\(j) is not a String") // Provide an Error message for a string type mismatch
-    }
-  }
-}
-```
-
-The real power of Argo can be seen when decoding actual model objects. To
-illustrate this, we will decode the simple `User` object.
+transformations you need to transform your model from a JSON value. The power
+of Argo can be seen when decoding actual model objects. To illustrate this, we
+will decode the simple `User` object.
 
 Create your `User` model:
 
