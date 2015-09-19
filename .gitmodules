@@ -3,4 +3,4 @@
 	url = https://github.com/thoughtbot/Runes.git
 [submodule "Carthage/Checkouts/Curry"]
 	path = Carthage/Checkouts/Curry
-	url = https://github.com/thoughtbot/Curry.git
+	url = https://github.com/nickygerritsen/Curry.git
