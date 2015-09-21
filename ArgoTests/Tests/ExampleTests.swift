@@ -1,5 +1,6 @@
 import XCTest
 import Argo
+import Curry
 
 class ExampleTests: XCTestCase {
   func testJSONWithRootArray() {
@@ -10,8 +11,7 @@ class ExampleTests: XCTestCase {
   }
 
   func testJSONWithRootObject() {
-    let json = JSONFromFile("root_object").map(JSON.parse)
-    let user: User? = json.flatMap { $0 <| "user" }
+    let user: User? = JSONFromFile("root_object").flatMap(curry(decodeWithRootKey)("user"))
 
     XCTAssert(user != nil)
     XCTAssert(user?.id == 1)
@@ -21,8 +21,7 @@ class ExampleTests: XCTestCase {
   }
 
   func testDecodingNonFinalClass() {
-    let json = JSONFromFile("url").map(JSON.parse)
-    let url: NSURL? = json.flatMap { $0 <| "url" }
+    let url: NSURL? = JSONFromFile("url").flatMap(curry(decodeWithRootKey)("url"))
 
     XCTAssert(url != nil)
     XCTAssert(url?.absoluteString == "http://example.com")
