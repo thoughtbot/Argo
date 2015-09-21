@@ -16,6 +16,7 @@ public extension Decoded {
     case let .Success(value): return .Success(.Some(value))
     case .Failure(.MissingKey): return .Success(.None)
     case let .Failure(.TypeMismatch(x)): return .Failure(.TypeMismatch(x))
+    case let .Failure(.Custom(x)): return .Failure(.Custom(x))
     }
   }
 
@@ -38,6 +39,10 @@ public extension Decoded {
 
   static func missingKey<T>(name: String) -> Decoded<T> {
     return .Failure(.MissingKey(name))
+  }
+
+  static func customError<T>(message: String) -> Decoded<T> {
+    return .Failure(.Custom(message))
   }
 }
 

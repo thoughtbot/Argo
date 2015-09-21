@@ -28,6 +28,15 @@ class DecodedTests: XCTestCase {
     default: XCTFail("Unexpected Case Occurred")
     }
   }
+
+  func testDecodedCustomError() {
+    let customError: Decoded<Dummy> = decode([:])
+
+    switch customError {
+    case let .Failure(e): XCTAssert(e.description == "Custom(My Custom Error)")
+    default: XCTFail("Unexpected Case Occurred")
+    }
+  }
   
   func testDecodedDematerializeSuccess() {
     let user: Decoded<User> = decode(JSONFromFile("user_with_email")!)
@@ -68,5 +77,11 @@ class DecodedTests: XCTestCase {
     } catch {
       XCTFail("Unexpected Error Occurred")
     }
+  }
+}
+
+private struct Dummy: Decodable {
+  static func decode(json: JSON) -> Decoded<Dummy> {
+    return .Failure(.Custom("My Custom Error"))
   }
 }
