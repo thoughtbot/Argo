@@ -10,16 +10,12 @@ public enum JSON {
 
 public extension JSON {
   static func parse(json: AnyObject) -> JSON {
-    if let v = json as? [AnyObject] {
-      return .Array(v.map(parse))
-    } else if let v = json as? [Swift.String: AnyObject] {
-      return .Object(v.map(parse))
-    } else if let v = json as? Swift.String {
-      return .String(v)
-    } else if let v = json as? NSNumber {
-      return .Number(v)
-    } else {
-      return .Null
+    switch json {
+    case let v as [AnyObject]: return .Array(v.map(parse))
+    case let v as [Swift.String: AnyObject]: return .Object(v.map(parse))
+    case let v as Swift.String: return .String(v)
+    case let v as NSNumber: return .Number(v)
+    default: return .Null
     }
   }
 }
