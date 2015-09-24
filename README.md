@@ -2,12 +2,19 @@
 
 # Argo [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-The Greek word for _swift_ and the ship used by Jason, son of Aeson, of the
-Argonauts. Aeson is the JSON parsing library in Haskell that inspired Argo,
-much like Aeson inspired his son Jason.
+Argo is a library used for extracting models from JSON or similar structures in
+a way that's concise, type-safe, and easy to extend. Using Argo, you won't need
+to write validation code to ensure that incoming data is of the right type, or
+to make sure required data fields aren't turning up empty. Argo does that for
+you, and reports back explicit failure states in case it doesn't find what
+you've told it to expect.
 
-NOTE: For Swift 1.1 support, use the versions tagged 0.3.x, which you can read
-about in the [releases].
+_Argo_ is the Greek word for _swift_ and the name of the ship used by Jason, son
+of Aeson, of the Argonauts. Aeson is the JSON parsing library in Haskell that
+inspired Argo, much like Aeson inspired his son Jason.
+
+NOTE: For Swift 1.2 support, use the versions tagged 1.x.x. For Swift 1.1
+support, use the versions tagged 0.3.x. You can find those in the [releases].
 
 [releases]: https://github.com/thoughtbot/Argo/releases
 
