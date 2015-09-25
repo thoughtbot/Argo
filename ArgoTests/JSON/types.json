@@ -22,5 +22,8 @@
   "user_opt": {
     "id": 6,
     "name": "Cooler User"
+  },
+  "dict": {
+    "foo": "bar"
   }
 }

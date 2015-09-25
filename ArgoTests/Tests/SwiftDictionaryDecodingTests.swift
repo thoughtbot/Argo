@@ -20,6 +20,9 @@ class SwiftDictionaryDecodingTests: XCTestCase {
       "user_opt": [
         "id": 6,
         "name": "Cooler User"
+      ],
+      "dict": [
+        "foo": "bar"
       ]
     ]
 
@@ -41,5 +44,6 @@ class SwiftDictionaryDecodingTests: XCTestCase {
     XCTAssert(model?.eStringArrayOpt?.count == 0)
     XCTAssert(model?.userOpt != nil)
     XCTAssert(model?.userOpt?.id == 6)
+    XCTAssert(model!.dict == ["foo": "bar"])
   }
 }
