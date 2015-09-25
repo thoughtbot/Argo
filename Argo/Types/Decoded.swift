@@ -8,6 +8,13 @@ public enum Decoded<T> {
     default: return .None
     }
   }
+  
+  public var error: DecodeError? {
+    switch self {
+    case let .Failure(error): return error
+    default: return .None
+    }
+  }
 }
 
 public extension Decoded {
