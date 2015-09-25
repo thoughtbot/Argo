@@ -1,44 +1,58 @@
 ## Usage
 
-The first thing you need to do when you receive JSON data is convert it from
-`NSData` to an `AnyObject` using `Foundation`'s `NSJSONSerialization` API.
-Once you have the `AnyObject`, you can call the global `decode` function to get
-back the decoded model.
+Argo uses Swift's type system along with concepts from functional programming to
+let you smoothly transform JSON data into Swift model objects or structs. Argo's
+approach does this with a minimum of syntax, while at the same time improving
+type safety and data integrity compared to other approaches.
+
+You may need to learn a few things in order to learn Argo effectively, but once
+you do so, you'll have a powerful new tool to hang on your belt!
+
+### Decoding basics
+
+Argo's whole purpose is to let you easily pick apart structured data (normally
+in the form of a dictionary created from JSON data) and create Swift objects or
+structs based on the decoded content. Typically, you'll want to do this with
+JSON data received from a server or elsewhere. The first thing you need to do is
+convert the JSON data from `NSData` to an `AnyObject` using `Foundation`'s
+`NSJSONSerialization` API.  Once you have the `AnyObject`, you can call Argo's
+global `decode` function to get back the decoded model.
 
 ```swift
 let json: AnyObject? = try? NSJSONSerialization.JSONObjectWithData(responseData, options: [])
 
 if let j: AnyObject = json {
-  let user: User? = decode(j) // ignore error info or
-  let decodedUser: Decoded<User> = decode(j) // preserve error info
+  let user: User? = decode(j)                  // ignore failure info or
+  let decodedUser: Decoded<User> = decode(j)   // preserve failure info
 }
 ```
 
-Argo 1.0 introduces a new type: `Decoded<T>`. This is the type returned from
-the `decode` function that you implement as part of the `Decodable` protocol.
-This new type allows you to preserve information about why a decoding failed.
-You can choose to either ignore the `Decoded` type and just get back the
-optional value or keep the `Decoded` type and use it to debug decoding errors.
-When you decode an `AnyObject` into a model using the global `decode` function,
-you can specify whether you want an `Optional` model or a `Decoded` model by
-specifying the return type as seen in the code block above.
+As you see in this example, Argo introduces a new type: `Decoded<T>`.  This new
+type contains either a successfully decoded object or a failure state that
+preserves information about why a decoding failed. You can choose to either
+ignore the `Decoded` type and just get back the optional value or keep the
+`Decoded` type and use it to debug or report decoding failures.  When you decode
+an `AnyObject` into a model using the global `decode` function, you can specify
+whether you want an `Optional` model or a `Decoded` model by specifying the
+return type as seen in the code block above.
 
-Next, you need to make sure that models that you wish to decode from JSON
-conform to the `Decodable` protocol:
+### Implementing `Decodable`
+
+In order for this to work with your own model classes or structs, you need to make
+sure that models that you wish to decode from JSON conform to the `Decodable`
+protocol:
 
 ```swift
 public protocol Decodable {
   typealias DecodedType = Self
-  class func decode(JSON) -> Decoded<DecodedType>
+  static func decode(json: JSON) -> Decoded<DecodedType>
 }
 ```
 
-You will need to implement the `decode` function to perform any kinds of
-transformations you need to transform your model from a JSON value. The power
-of Argo can be seen when decoding actual model objects. To illustrate this, we
-will decode the simple `User` object.
-
-Create your `User` model:
+In your model, you need to implement the `decode` function to perform whatever
+transformations are needed in order to create your model from the given JSON
+structure.  To illustrate this, we will decode a simple model object called
+`User`. Start by creating this `User` model:
 
 ```swift
 struct User {
@@ -47,57 +61,88 @@ struct User {
 }
 ```
 
-We will be using [`Curry`] to help with decoding our `User` model. Currying
-allows us to partially apply the `init` function over the course of the
-decoding process. If you'd like to learn more about currying, we recommend the
-following articles:
+### Currying `User.init`
+
+We will be using another small library called [`Curry`] to help with decoding
+our `User` model. Currying allows us to partially apply the `init` function over
+the course of the decoding process. This basically means that we can build up
+the `init` function call bit by bit, adding one parameter at a time, if and only
+if Argo can successfully decode them. If any of the parameters don't meet our
+expectations, Argo will skip the `init` call and return a special failure state. 
 
 [`Curry`]: https://github.com/thoughtbot/Curry
 
-- [Apple's documentation of curried functions](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Declarations.html#//apple_ref/doc/uid/TP40014097-CH34-XID_615)
-- [Introduction to Function Currying in Swift](http://robots.thoughtbot.com/introduction-to-function-currying-in-swift)
+> If you'd like to learn more about currying, we recommend the following articles:
+> 
+> 
+> - [Apple's documentation of curried functions](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Declarations.html#//apple_ref/doc/uid/TP40014097-CH34-XID_615)
+> - [Introduction to Function Currying in Swift](http://robots.thoughtbot.com/introduction-to-function-currying-in-swift)
 
 Now, we make `User` conform to `Decodable` and implement the required `decode`
-function. We will implement this function by using `map` (`<^>`) and `apply`
-(`<*>`) to conditionally pass the required parameters to the curried init
-function. The common pattern will look like:
+function. We will implement this function by using some [functional
+concepts](functional_concepts),
+specifically the `map` (`<^>`) and `apply` (`<*>`) operators, to conditionally
+pass the required parameters to the curried init function. The common pattern
+will look like this:
+
+[functional_concepts]: https://github.com/thoughtbot/Argo/blob/master/Documentation/Functional-Concepts.md
 
 ```swift
-return curry(Model.init) <^> paramOne <*> paramTwo <*> paramThree
+  static func decode(json: JSON) -> Decoded<DecodedType> {
+    return curry(Model.init) <^> paramOne <*> paramTwo <*> paramThree
+  }
 ```
 
-and so on. If any of those parameters are an error, the entire creation process
-will fail, and the function will return the first error. If all of the
-parameters are successful, the value will be unwrapped and passed to the
-`init` function.
+and so on. If any of those parameters are a failure state, then the entire
+creation process will fail, and the function will return the first failure
+state. If all of the parameters are successful, the value will be unwrapped and
+passed to the `init` function.
 
-In order to help with the decoding process, Argo introduces two new operators
-for parsing a value out of the JSON:
+### Safely pulling values from JSON
+
+In the example above, we showed some non-existent parameters (`paramOne`, etc), but
+one of Argo's main features is the ability to help you grab the real parameters
+from the JSON structure in a way that is type-safe and concise. You don't need
+to manually check to make sure that a value is non-nil, or that it's of the
+right type. Argo leverages Swift's expressive type system to do that leaving
+lifting for you. To help with the decoding process, Argo introduces two new
+operators for parsing a value out of the JSON:
 
 - `<|` will attempt to parse a single value from the JSON
 - `<||` will attempt to parse an array of values from the JSON
 
-The usage of these operators is the same regardless:
+The usage of these operators is simple:
 
-- `json <| "key"` is analogous to `json["key"]`
-- `json <| ["key", "nested"]` is analogous to `json["key"]["nested"]`
+- `json <| "name"` is analogous to `json["name"]`
+- `json <|| "posts"` is analogous to `json["posts"]`
 
-Both operators will attempt to parse the value from the JSON and will also
-attempt to cast the value to the expected type. If it can't find a value, the
-function will return a `Decoded.MissingKey(message: String)` error. If the
-value it finds is the wrong type, the function will return a
-`Decoded.TypeMismatch(message: String)` error.
+As a bonus, if your JSON contains nested data whose intermediate elements are
+also `Decodable`, then you can retrieve a nested value by using an array of
+strings:
+
+- `json <| ["location", "city"]` is analogous to `json["location"]["city"]`
+
+Each of these operators will attempt to extract the specified value from the
+JSON structure and if a value is found, the operator will also attempt to cast
+the value to the expected type. If it can't find a value, the function will
+return a `Decoded.MissingKey(message: String)` failure state. If the value it
+finds is of the wrong type, the function will return a
+`Decoded.TypeMismatch(message: String)` failure state.
 
 There are also Optional versions of these operators:
 
 - `<|?` will attempt to parse an optional value from the JSON
 - `<||?` will attempt to parse an optional array of values from the JSON
 
-Usage is the same as the non-optionals. The difference is that if these fail
-parsing, the parsing continues. This is useful for including parameters that
-truly are optional values. For example, if your system doesn't require someone
-to supply an email address, you could have an optional property on `User`: `let
-email: String?` and parse it with `json <|? "email"`.
+Usage is the same as for the non-optional variants. The difference is that if
+these operators happen to pull a `nil` value from the JSON, they will consider
+this a success and continue on, rather than returning a failure state.  This is
+useful for including parameters that truly are optional values. For example, if
+your system doesn't require someone to supply an email address, you could have
+an optional property on `User` such as `let email: String?` and use `json <|?
+"email"` to decode either an email string or a `nil` value.
+
+### Finally implementing your `decode` function
 
 So to implement our `decode` function, we can use the JSON parsing operator in
 conjunction with `map` and `apply`:
@@ -112,13 +157,14 @@ extension User: Decodable {
 }
 ```
 
-For comparison, this same function without Argo would look like so:
+For comparison, an implementation of a similar function without Argo could look
+like this:
 
 ```swift
 extension User {
   static func decode(j: NSDictionary) -> User? {
-    if let id = j["id"] as Int,
-       let name = j["name"] as String
+    if let id = j["id"] as! Int?,
+       let name = j["name"] as! String?
     {
       return User(id: id, name: name)
     }
@@ -128,7 +174,13 @@ extension User {
 }
 ```
 
-You could see how this would get much worse with a more complex model.
+Not only is that code much more verbose than the equivalent code using Argo,
+it's also not as safe. It does check to make sure that `id` and `name` are
+non-nil, but it's not checking to see that their types are correct. If that code
+encountered JSON where the `"id"` key returned, say a `String` instead of an
+`Int`, this would lead to a crash.
+
+With a more complex model, this would just get worse.
 
 You can decode custom types the same way, as long as the type also conforms to
 `Decodable`.
