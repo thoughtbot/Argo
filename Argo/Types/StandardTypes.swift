@@ -69,7 +69,7 @@ public extension CollectionType where Generator.Element: Decodable, Generator.El
   }
 }
 
-public extension Dictionary where Value: Decodable, Value == Value.DecodedType {
+public extension DictionaryLiteralConvertible where Value: Decodable, Value == Value.DecodedType {
   static func decode(j: JSON) -> Decoded<[String: Value]> {
     switch j {
     case let .Object(o): return sequence(Value.decode <^> o)
