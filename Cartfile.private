@@ -1,2 +1,2 @@
-github "nickygerritsen/Curry" "24c9af4fd52aebc355f1a7ad4ce8b4b087281d71"
+github "thoughtbot/Curry" "tvos"
 github "thoughtbot/Runes" >= 3.0.0
