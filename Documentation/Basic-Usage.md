@@ -1,9 +1,9 @@
 ## Usage
 
 Argo uses Swift's type system along with concepts from functional programming to
-let you smoothly transform JSON data into Swift model objects or structs. Argo's
-approach does this with a minimum of syntax, while at the same time improving
-type safety and data integrity compared to other approaches.
+let you smoothly transform JSON data into Swift model types. Argo does this with
+a minimum of syntax, while at the same time improving type safety and data
+integrity compared to other approaches.
 
 You may need to learn a few things in order to learn Argo effectively, but once
 you do so, you'll have a powerful new tool to hang on your belt!
@@ -11,10 +11,10 @@ you do so, you'll have a powerful new tool to hang on your belt!
 ### Decoding basics
 
 Argo's whole purpose is to let you easily pick apart structured data (normally
-in the form of a dictionary created from JSON data) and create Swift objects or
-structs based on the decoded content. Typically, you'll want to do this with
-JSON data received from a server or elsewhere. The first thing you need to do is
-convert the JSON data from `NSData` to an `AnyObject` using `Foundation`'s
+in the form of a dictionary created from JSON data) and create Swift objects
+based on the decoded content. Typically, you'll want to do this with JSON data
+received from a server or elsewhere. The first thing you need to do is convert
+the JSON data from `NSData` to an `AnyObject` using `Foundation`'s
 `NSJSONSerialization` API.  Once you have the `AnyObject`, you can call Argo's
 global `decode` function to get back the decoded model.
 
@@ -38,9 +38,8 @@ return type as seen in the code block above.
 
 ### Implementing `Decodable`
 
-In order for this to work with your own model classes or structs, you need to make
-sure that models that you wish to decode from JSON conform to the `Decodable`
-protocol:
+In order for this to work with your own model types, you need to make sure that
+models that you wish to decode from JSON conform to the `Decodable` protocol:
 
 ```swift
 public protocol Decodable {
@@ -51,7 +50,7 @@ public protocol Decodable {
 
 In your model, you need to implement the `decode` function to perform whatever
 transformations are needed in order to create your model from the given JSON
-structure.  To illustrate this, we will decode a simple model object called
+structure.  To illustrate this, we will decode a simple model type called
 `User`. Start by creating this `User` model:
 
 ```swift
@@ -104,30 +103,33 @@ In the example above, we showed some non-existent parameters (`paramOne`, etc), 
 one of Argo's main features is the ability to help you grab the real parameters
 from the JSON structure in a way that is type-safe and concise. You don't need
 to manually check to make sure that a value is non-nil, or that it's of the
-right type. Argo leverages Swift's expressive type system to do that leaving
+right type. Argo leverages Swift's expressive type system to do that heavy
 lifting for you. To help with the decoding process, Argo introduces two new
 operators for parsing a value out of the JSON:
 
 - `<|` will attempt to parse a single value from the JSON
 - `<||` will attempt to parse an array of values from the JSON
 
-The usage of these operators is simple:
+These are infix operators that correspond to familiar operations:
 
-- `json <| "name"` is analogous to `json["name"]`
-- `json <|| "posts"` is analogous to `json["posts"]`
+- `json <| "name"` is analogous to `json["name"]`, in cases where a single item
+  is associated with the `"name"` key
+- `json <|| "posts"` is analogous to `json["posts"]`, in cases where an array of
+  items is associated with the `"posts"` key
 
-As a bonus, if your JSON contains nested data whose intermediate elements are
-also `Decodable`, then you can retrieve a nested value by using an array of
-strings:
+As a bonus, if your JSON contains nested data whose elements are also
+`Decodable`, then you can retrieve a nested value by using an array of strings:
 
 - `json <| ["location", "city"]` is analogous to `json["location"]["city"]`
 
 Each of these operators will attempt to extract the specified value from the
-JSON structure and if a value is found, the operator will also attempt to cast
-the value to the expected type. If it can't find a value, the function will
-return a `Decoded.MissingKey(message: String)` failure state. If the value it
-finds is of the wrong type, the function will return a
-`Decoded.TypeMismatch(message: String)` failure state.
+JSON structure. If a value is found, the operator will then attempt to cast the
+value to the expected type. If that all works out, the operator will return the
+decoded object wrapped inside a `Decoded<T>.Success(.Some(value))`. If the value
+it finds is of the wrong type, the function will return a
+`Decoded<T>.Failure(.TypeMismatch(expected: String, actual: String))` failure state. If
+it can't find any value at all for the specified key, the function will return a
+`Decoded<T>.Failure(.MissingKey(name: String))` failure state. 
 
 There are also Optional versions of these operators:
 
@@ -144,7 +146,7 @@ an optional property on `User` such as `let email: String?` and use `json <|?
 
 ### Finally implementing your `decode` function
 
-So to implement our `decode` function, we can use the JSON parsing operator in
+So, to implement our `decode` function, we can use the JSON parsing operator in
 conjunction with `map` and `apply`:
 
 ```swift
@@ -163,8 +165,8 @@ like this:
 ```swift
 extension User {
   static func decode(j: NSDictionary) -> User? {
-    if let id = j["id"] as! Int?,
-       let name = j["name"] as! String?
+    if let id = j["id"] as? Int,
+       let name = j["name"] as? String
     {
       return User(id: id, name: name)
     }
@@ -174,16 +176,17 @@ extension User {
 }
 ```
 
-Not only is that code much more verbose than the equivalent code using Argo,
-it's also not as safe. It does check to make sure that `id` and `name` are
-non-nil, but it's not checking to see that their types are correct. If that code
-encountered JSON where the `"id"` key returned, say a `String` instead of an
-`Int`, this would lead to a crash.
+Not only is that code much more verbose than the equivalent code using Argo, it
+also doesn't return to the caller any indication of where or why any failures
+occur. This technique also requires you to specify the type of
+each value in multiple places, which means that if the type of one of your
+values changes, you'll have to change it at multiple places in your code. If
+you're using Argo, however, you just need to declare the types of your
+properties in your model, and then the Swift compiler will infer the types that
+need to be sent to the curried `decode` function and therefore the types that
+need to be found in the JSON structure.
 
-With a more complex model, this would just get worse.
+For more Argo usage examples, see our [test suite](test_suite).
 
-You can decode custom types the same way, as long as the type also conforms to
-`Decodable`.
 
-For more examples on how to use Argo, please check out the tests.
-
+[test_suite]: https://github.com/thoughtbot/Argo/tree/master/ArgoTests
