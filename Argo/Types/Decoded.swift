@@ -90,10 +90,3 @@ public extension Decoded {
     }
   }
 }
-
-public func ?? <T>(lhs: Decoded<T>, rhs: T) -> T {
-  switch lhs {
-  case let .Success(x): return x
-  case .Failure: return rhs
-  }
-}
