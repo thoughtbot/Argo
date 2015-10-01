@@ -1,2 +1,2 @@
-github "thoughtbot/Curry"
+github "thoughtbot/Curry" "tvos"
 github "thoughtbot/Runes" >= 3.0.0
