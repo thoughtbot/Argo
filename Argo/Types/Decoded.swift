@@ -15,10 +15,6 @@ public enum Decoded<T> {
     default: return .None
     }
   }
-    
-  public var errorString: String? {
-    return error?.description
-  }
 }
 
 public extension Decoded {
