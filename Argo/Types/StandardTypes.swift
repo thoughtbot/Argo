@@ -69,10 +69,10 @@ public extension Array where Element: Decodable, Element == Element.DecodedType 
   }
 }
 
-public extension CollectionType where Self: DictionaryLiteralConvertible, Self.Value: Decodable, Self.Value == Self.Value.DecodedType {
-  static func decode(j: JSON) -> Decoded<[String: Self.Value]> {
+public extension DictionaryLiteralConvertible where Value: Decodable, Value == Value.DecodedType {
+  static func decode(j: JSON) -> Decoded<[String: Value]> {
     switch j {
-    case let .Object(o): return sequence(Self.Value.decode <^> o)
+    case let .Object(o): return sequence(Value.decode <^> o)
     default: return .typeMismatch("Object", actual: j)
     }
   }
