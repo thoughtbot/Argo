@@ -1,8 +1,3 @@
-infix operator <| { associativity left precedence 150 }
-infix operator <|? { associativity left precedence 150 }
-infix operator <|| { associativity left precedence 150 }
-infix operator <||? { associativity left precedence 150 }
-
 // MARK: Values
 
 // Pull value from JSON

@@ -63,33 +63,6 @@ extension Decoded: CustomStringConvertible {
 }
 
 public extension Decoded {
-  func map<U>(f: T -> U) -> Decoded<U> {
-    switch self {
-    case let .Success(value): return .Success(f(value))
-    case let .Failure(error): return .Failure(error)
-    }
-  }
-
-  func apply<U>(f: Decoded<T -> U>) -> Decoded<U> {
-    switch f {
-    case let .Success(function): return self.map(function)
-    case let .Failure(error): return .Failure(error)
-    }
-  }
-
-  func flatMap<U>(f: T -> Decoded<U>) -> Decoded<U> {
-    switch self {
-    case let .Success(value): return f(value)
-    case let .Failure(error): return .Failure(error)
-    }
-  }
-}
-
-public func pure<T>(x: T) -> Decoded<T> {
-  return .Success(x)
-}
-
-public extension Decoded {
   func dematerialize() throws -> T {
     switch self {
     case let .Success(value): return value
