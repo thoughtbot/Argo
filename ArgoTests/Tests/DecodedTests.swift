@@ -10,6 +10,24 @@ class DecodedTests: XCTestCase {
     default: XCTFail("Unexpected Case Occurred")
     }
   }
+  
+  func testDecodedWithError() {
+    let user: Decoded<User> = decode(JSONFromFile("user_with_bad_type")!)
+    
+    switch user.error {
+    case .Some: XCTAssert(true)
+    case .None: XCTFail("Unexpected Success")
+    }
+  }
+  
+  func testDecodedWithNoError() {
+    let user: Decoded<User> = decode(JSONFromFile("user_with_email")!)
+    
+    switch user.error {
+    case .Some: XCTFail("Unexpected Error Occurred")
+    case .None: XCTAssert(true)
+    }
+  }
 
   func testDecodedTypeMissmatch() {
     let user: Decoded<User> = decode(JSONFromFile("user_with_bad_type")!)
