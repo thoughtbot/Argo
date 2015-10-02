@@ -83,9 +83,9 @@ public func <|><A>(lhs: Decoded<A>, rhs: Decoded<A>) -> Decoded<A> {
   - returns: A value of type `A`
 */
 
-public func ?? <A>(lhs: Decoded<A>, rhs: A) -> A {
+public func ?? <A>(lhs: Decoded<A>, @autoclosure rhs: () -> A) -> A {
   switch lhs {
   case let .Success(x): return x
-  case .Failure: return rhs
+  case .Failure: return rhs()
   }
 }
