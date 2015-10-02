@@ -1,3 +1,3 @@
-func curry<A, B, C>(f : (A, B) -> C) -> A -> B -> C {
-  return { a in { b in f(a, b) } }
+func curry<T, U, V>(f : (T, U) -> V) -> T -> U -> V {
+  return { x in { y in f(x, y) } }
 }

@@ -85,8 +85,8 @@ public extension Decoded {
   }
 }
 
-public func pure<A>(a: A) -> Decoded<A> {
-  return .Success(a)
+public func pure<T>(x: T) -> Decoded<T> {
+  return .Success(x)
 }
 
 public extension Decoded {

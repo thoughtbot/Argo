@@ -6,13 +6,13 @@
   - If the value is a failing case (`.TypeMismatch`, `.MissingKey`), the function will not be evaluated and this will return the value
   - If the value is `.Success`, the function will be applied to the unwrapped value
 
-  - parameter a: A value of type `Decoded<A>`
-  - parameter f: A transformation function from type `A` to type `Decoded<B>`
+  - parameter x: A value of type `Decoded<T>`
+  - parameter f: A transformation function from type `T` to type `Decoded<U>`
 
-  - returns: A value of type `Decoded<B>`
+  - returns: A value of type `Decoded<U>`
 */
-public func >>- <A, B>(a: Decoded<A>, f: A -> Decoded<B>) -> Decoded<B> {
-  return a.flatMap(f)
+public func >>- <T, U>(x: Decoded<T>, f: T -> Decoded<U>) -> Decoded<U> {
+  return x.flatMap(f)
 }
 
 /**
@@ -21,13 +21,13 @@ public func >>- <A, B>(a: Decoded<A>, f: A -> Decoded<B>) -> Decoded<B> {
   - If the value is is a failing case (`.TypeMismatch`, `.MissingKey`), the function will not be evaluated and this will return the value
   - If the value is `.Success`, the function will be applied to the unwrapped value
 
-  - parameter f: A transformation function from type `A` to type `B`
-  - parameter a: A value of type `Decoded<A>`
+  - parameter f: A transformation function from type `T` to type `U`
+  - parameter x: A value of type `Decoded<T>`
 
-  - returns: A value of type `Decoded<B>`
+  - returns: A value of type `Decoded<U>`
 */
-public func <^> <A, B>(f: A -> B, a: Decoded<A>) -> Decoded<B> {
-  return a.map(f)
+public func <^> <T, U>(f: T -> U, x: Decoded<T>) -> Decoded<U> {
+  return x.map(f)
 }
 
 /**
@@ -37,13 +37,13 @@ public func <^> <A, B>(f: A -> B, a: Decoded<A>) -> Decoded<B> {
   - If the function is a `.Success` case and the value is a failure case, this will return the value
   - If both self and the function are `.Success`, the function will be applied to the unwrapped value
 
-  - parameter f: A `Decoded` transformation function from type `A` to type `B`
-  - parameter a: A value of type `Decoded<A>`
+  - parameter f: A `Decoded` transformation function from type `T` to type `U`
+  - parameter x: A value of type `Decoded<T>`
 
-  - returns: A value of type `Decoded<B>`
+  - returns: A value of type `Decoded<U>`
 */
-public func <*> <A, B>(f: Decoded<A -> B>, a: Decoded<A>) -> Decoded<B> {
-  return a.apply(f)
+public func <*> <T, U>(f: Decoded<T -> U>, x: Decoded<T>) -> Decoded<U> {
+  return x.apply(f)
 }
 
 // MARK: Alternative operator
@@ -54,15 +54,15 @@ public func <*> <A, B>(f: Decoded<A -> B>, a: Decoded<A>) -> Decoded<B> {
   - If the left hand side is successful, this will return the left hand side
   - If the left hand side is unsuccesful, this will return the right hand side
 
-  - parameter lhs: A value of type `Decoded<A>`
-  - parameter rhs: A value of type `Decoded<A>`
+  - parameter lhs: A value of type `Decoded<T>`
+  - parameter rhs: A value of type `Decoded<T>`
 
-  - returns: A value of type `Decoded<A>`
+  - returns: A value of type `Decoded<T>`
 */
 
 infix operator <|> { associativity left precedence 140 }
 
-public func <|><A>(lhs: Decoded<A>, rhs: Decoded<A>) -> Decoded<A> {
+public func <|><T>(lhs: Decoded<T>, rhs: Decoded<T>) -> Decoded<T> {
   if case .Success = lhs {
     return lhs
   }
@@ -77,13 +77,13 @@ public func <|><A>(lhs: Decoded<A>, rhs: Decoded<A>) -> Decoded<A> {
   - If the left hand side is successful, this will return the unwrapped value from the left hand side argument
   - If the left hand side is unsuccesful, this will return the default value on the right hand side
 
-  - parameter lhs: A value of type `Decoded<A>`
-  - parameter rhs: An autoclosure returning a value of type `A`
+  - parameter lhs: A value of type `Decoded<T>`
+  - parameter rhs: An autoclosure returning a value of type `T`
 
-  - returns: A value of type `A`
+  - returns: A value of type `T`
 */
 
-public func ?? <A>(lhs: Decoded<A>, @autoclosure rhs: () -> A) -> A {
+public func ?? <T>(lhs: Decoded<T>, @autoclosure rhs: () -> T) -> T {
   switch lhs {
   case let .Success(x): return x
   case .Failure: return rhs()
