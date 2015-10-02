@@ -1,10 +1,11 @@
 ## Functional Concepts
 
 Argo really wants to be used with patterns borrowed from functional programming
-such as `map` and `apply`. We feel that these patterns greatly reduce the pain
-felt in trying to use JSON (an inherently loosely typed format) with Swift (a
-strictly typed language). It also gives us a way to succinctly maintain Argo's
-core concept, and short circuit the decoding process if any part of it fails.
+such as `map` (`<^>`) and `apply` (`<*>`). We feel that these patterns greatly
+reduce the pain felt in trying to use JSON (an inherently loosely typed format)
+with Swift (a strictly typed language). It also gives us a way to succinctly
+maintain Argo's core concept, and short circuit the decoding process if any part
+of it fails.
 
 Additionally, we feel that the use of operators for these functions greatly
 improves the readability of the code we're suggesting. Using named functions
