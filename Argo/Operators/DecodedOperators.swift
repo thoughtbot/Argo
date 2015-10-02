@@ -78,7 +78,7 @@ public func <|><A>(lhs: Decoded<A>, rhs: Decoded<A>) -> Decoded<A> {
   - If the left hand side is unsuccesful, this will return the default value on the right hand side
 
   - parameter lhs: A value of type `Decoded<A>`
-  - parameter rhs: A value of type `A`
+  - parameter rhs: An autoclosure returning a value of type `A`
 
   - returns: A value of type `A`
 */
