@@ -10,10 +10,19 @@ struct TestModel {
   let eStringArray: [String]
   let eStringArrayOpt: [String]?
   let userOpt: User?
+  let dict: [String: String]
 }
 
 extension TestModel: Decodable {
   static func decode(j: JSON) -> Decoded<TestModel> {
+    let json: Decoded<JSON> = j <| "dict"
+    let dict: Decoded<[String: String]>
+
+    switch json {
+    case let .Success(js): dict = [String: String].decode(js)
+    case let .Failure(e): dict = .Failure(e)
+    }
+
     return curry(self.init)
       <^> j <| "numerics"
       <*> j <| ["user_opt", "name"]
@@ -23,6 +32,7 @@ extension TestModel: Decodable {
       <*> j <|| ["embedded", "string_array"]
       <*> j <||? ["embedded", "string_array_opt"]
       <*> j <|? "user_opt"
+      <*> dict
   }
 }
 

@@ -37,5 +37,10 @@
 		<key>name</key>
 		<string>Cooler User</string>
 	</dict>
+	<key>dict</key>
+	<dict>
+		<key>foo</key>
+		<string>bar</string>
+	</dict>
 </dict>
 </plist>
