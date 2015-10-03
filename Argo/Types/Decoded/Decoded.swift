@@ -70,3 +70,11 @@ public extension Decoded {
     }
   }
 }
+
+public func materialize<T>(f: () throws -> T) -> Decoded<T> {
+  do {
+    return .Success(try f())
+  } catch {
+    return .customError("\(error)")
+  }
+}

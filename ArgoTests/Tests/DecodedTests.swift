@@ -56,6 +56,26 @@ class DecodedTests: XCTestCase {
     }
   }
   
+  func testDecodedMaterializeSuccess() {
+    let user: Decoded<User> = decode(JSONFromFile("user_with_email")!)
+    let materialized = materialize { user.value! }
+    
+    switch materialized {
+    case let .Success(x): XCTAssert(user.description == "Success(\(x))")
+    default: XCTFail("Unexpected Case Occurred")
+    }
+  }
+  
+  func testDecodedMaterializeFailure() {
+    let error = NSError(domain: "com.thoughtbot.Argo", code: 0, userInfo: nil)
+    let materialized = materialize { throw error }
+    
+    switch materialized {
+    case let .Failure(e): XCTAssert(e.description == "Custom(\(error.description))")
+    default: XCTFail("Unexpected Case Occurred")
+    }
+  }
+  
   func testDecodedDematerializeSuccess() {
     let user: Decoded<User> = decode(JSONFromFile("user_with_email")!)
     
