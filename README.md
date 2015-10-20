@@ -64,6 +64,8 @@ can then link against `Argo.framework` for your application target.
 
 ## Usage tl;dr:
 
+Please note: the example below requires an additional, external module named [Curry](https://github.com/thoughtbot/Curry) which lets us use the `curry` function to curry `User.init`.
+
 ```swift
 import Argo
 import Curry
