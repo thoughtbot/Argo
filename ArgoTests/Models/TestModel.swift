@@ -15,15 +15,8 @@ struct TestModel {
 
 extension TestModel: Decodable {
   static func decode(j: JSON) -> Decoded<TestModel> {
-    let json: Decoded<JSON> = j <| "dict"
-    let dict: Decoded<[String: String]>
-
-    switch json {
-    case let .Success(js): dict = [String: String].decode(js)
-    case let .Failure(e): dict = .Failure(e)
-    }
-
-    return curry(self.init)
+    let curriedInit = curry(self.init)
+    return curriedInit
       <^> j <| "numerics"
       <*> j <| ["user_opt", "name"]
       <*> j <| "bool"
@@ -32,7 +25,7 @@ extension TestModel: Decodable {
       <*> j <|| ["embedded", "string_array"]
       <*> j <||? ["embedded", "string_array_opt"]
       <*> j <|? "user_opt"
-      <*> dict
+      <*> (j <| "dict" >>- { [String: String].decode($0) })
   }
 }
 
