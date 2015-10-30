@@ -1,5 +1,11 @@
 machine:
-  environment:
-    XCODE_SCHEME: Argo-Mac
   xcode:
-    version: 6.3.1
+    version: "7.1"
+
+dependencies:
+  override:
+    - git submodule update --init --recursive
+
+test:
+  override:
+    - bin/test

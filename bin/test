@@ -1,3 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
-xctool -project Argo.xcodeproj -scheme Argo-Mac -sdk macosx clean test
+set -o pipefail
+
+xcrun xcodebuild \
+  -workspace Argo.xcworkspace \
+  -scheme Argo-Mac \
+  test \
+  | xcpretty --color
+
