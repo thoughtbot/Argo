@@ -1,6 +1,9 @@
 machine:
   xcode:
     version: "7.1"
+  environment:
+    XCODE_SCHEME: nonce
+    XCODE_WORKSPACE: nonce.xcworkspace
 
 dependencies:
   override:
