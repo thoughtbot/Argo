@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D8690D31BEB937B00E5FBE8 /* EstablishmentPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8690D11BEB932200E5FBE8 /* EstablishmentPerformanceTests.swift */; settings = {ASSET_TAGS = (); }; };
+		3D8690D41BEB93F000E5FBE8 /* EstablishmentTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8690CD1BEB8EE000E5FBE8 /* EstablishmentTestModel.swift */; settings = {ASSET_TAGS = (); }; };
+		3D8690D51BECB02100E5FBE8 /* establishments.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D8690CF1BEB8EFD00E5FBE8 /* establishments.json */; settings = {ASSET_TAGS = (); }; };
 		4D5F6DD91B3832C200D79B25 /* user_with_nested_name.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D5F6DD81B3832C200D79B25 /* user_with_nested_name.json */; };
 		4D5F6DDA1B3832C200D79B25 /* user_with_nested_name.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D5F6DD81B3832C200D79B25 /* user_with_nested_name.json */; };
 		809586051BB84CEE004F9319 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809586041BB84CE7004F9319 /* Curry.framework */; };
@@ -272,6 +275,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D8690CD1BEB8EE000E5FBE8 /* EstablishmentTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstablishmentTestModel.swift; sourceTree = "<group>"; };
+		3D8690CF1BEB8EFD00E5FBE8 /* establishments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = establishments.json; sourceTree = "<group>"; };
+		3D8690D11BEB932200E5FBE8 /* EstablishmentPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstablishmentPerformanceTests.swift; sourceTree = "<group>"; };
 		4D5F6DD81B3832C200D79B25 /* user_with_nested_name.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_with_nested_name.json; sourceTree = "<group>"; };
 		809586041BB84CE7004F9319 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = "Carthage/Checkouts/Curry/build/Debug-appletvos/Curry.framework"; sourceTree = "<group>"; };
 		809754C11BADF34100C409E6 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -513,6 +519,7 @@
 				EAD9FB0119D211C10031E006 /* Post.swift */,
 				EAD9FB1719D49A3E0031E006 /* TestModel.swift */,
 				F802D4C21A5EE061005E236C /* NSURL.swift */,
+				3D8690CD1BEB8EE000E5FBE8 /* EstablishmentTestModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -538,6 +545,7 @@
 				EA6DD69E1AB384C700CA3A5B /* big_data.json */,
 				EA47BB551AFC5DAC002D2CCD /* user_with_bad_type.json */,
 				EA47BB581AFC5E65002D2CCD /* user_without_key.json */,
+				3D8690CF1BEB8EFD00E5FBE8 /* establishments.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -555,6 +563,7 @@
 				EA6DD69B1AB383FB00CA3A5B /* PerformanceTests.swift */,
 				EA47BB521AFC5B76002D2CCD /* DecodedTests.swift */,
 				EA1200CA1BAB5CBA006DDBD8 /* RawRepresentableTests.swift */,
+				3D8690D11BEB932200E5FBE8 /* EstablishmentPerformanceTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -925,6 +934,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D8690D51BECB02100E5FBE8 /* establishments.json in Resources */,
 				EA47BB571AFC5DAC002D2CCD /* user_with_bad_type.json in Resources */,
 				F862E0AD1A519D560093B028 /* types.json in Resources */,
 				F862E0AE1A519D5C0093B028 /* types_fail_embedded.json in Resources */,
@@ -1139,12 +1149,14 @@
 				EABDF6951A9CD4FC00B6CC83 /* PListDecodingTests.swift in Sources */,
 				F8EF75751A4CEC7800BDCC2D /* TestModel.swift in Sources */,
 				F8EF75741A4CEC7800BDCC2D /* Post.swift in Sources */,
+				3D8690D41BEB93F000E5FBE8 /* EstablishmentTestModel.swift in Sources */,
 				EA47BB541AFC5B76002D2CCD /* DecodedTests.swift in Sources */,
 				F8EF756A1A4CEC6100BDCC2D /* OptionalPropertyDecodingTests.swift in Sources */,
 				F8EF756C1A4CEC7100BDCC2D /* JSONFileReader.swift in Sources */,
 				EA6DD69D1AB383FB00CA3A5B /* PerformanceTests.swift in Sources */,
 				EA1200CC1BAB5CBA006DDBD8 /* RawRepresentableTests.swift in Sources */,
 				EABDF68B1A9CD46400B6CC83 /* SwiftDictionaryDecodingTests.swift in Sources */,
+				3D8690D31BEB937B00E5FBE8 /* EstablishmentPerformanceTests.swift in Sources */,
 				F862E0AB1A519D470093B028 /* TypeTests.swift in Sources */,
 				EA395DC81A52FA5300EB607E /* ExampleTests.swift in Sources */,
 				EADADCB41A5DB7F800B180EC /* EquatableTests.swift in Sources */,
