@@ -1,5 +1,14 @@
 machine:
-  environment:
-    XCODE_SCHEME: Argo-Mac
   xcode:
-    version: 6.3.1
+    version: "7.0"
+  environment:
+    XCODE_SCHEME: nonce
+    XCODE_WORKSPACE: nonce.xcworkspace
+
+dependencies:
+  override:
+    - git submodule update --init --recursive
+
+test:
+  override:
+    - bin/test
