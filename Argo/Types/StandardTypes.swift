@@ -72,6 +72,10 @@ public extension CollectionType where Generator.Element: Decodable, Generator.El
   }
 }
 
+public func decodeArray<T: Decodable where T.DecodedType == T>(j: JSON) -> Decoded<[T]> {
+  return [T].decode(j)
+}
+
 public extension DictionaryLiteralConvertible where Value: Decodable, Value == Value.DecodedType {
   static func decode(j: JSON) -> Decoded<[String: Value]> {
     switch j {
@@ -79,6 +83,10 @@ public extension DictionaryLiteralConvertible where Value: Decodable, Value == V
     default: return .typeMismatch("Object", actual: j)
     }
   }
+}
+
+public func decodeObject<T: Decodable where T.DecodedType == T>(j: JSON) -> Decoded<[String: T]> {
+  return [String: T].decode(j)
 }
 
 public func decodedJSON(json: JSON, forKey key: String) -> Decoded<JSON> {
