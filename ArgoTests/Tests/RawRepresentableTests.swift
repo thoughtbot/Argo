@@ -21,8 +21,8 @@ class RawRepresentable: XCTestCase {
       "another": JSON.String("NotCoolStringBro")
       ])
 
-    let string: TestRawString? = json <| "string"
-    let another: TestRawString? = json <| "another"
+    let string: TestRawString? = (json <| "string").value
+    let another: TestRawString? = (json <| "another").value
     XCTAssert(TestRawString.CoolString == string)
     XCTAssert(TestRawString.NotCoolStringBro == another)
   }
@@ -33,8 +33,8 @@ class RawRepresentable: XCTestCase {
       "one": JSON.Number(1)
       ])
 
-    let zero: TestRawInt? = json <| "zero"
-    let one: TestRawInt? = json <| "one"
+    let zero: TestRawInt? = (json <| "zero").value
+    let one: TestRawInt? = (json <| "one").value
     XCTAssert(TestRawInt.Zero == zero)
     XCTAssert(TestRawInt.One == one)
   }
