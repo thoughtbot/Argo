@@ -26,7 +26,7 @@ extension Int64: Decodable {
       if let i = Int64(s) {
         return pure(i)
       } else {
-        return .typeMismatch("Int64", actual: s)
+        fallthrough
       }
     default: return .typeMismatch("Int64", actual: j)
     }
