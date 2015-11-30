@@ -8,6 +8,8 @@
 		<integer>5</integer>
 		<key>int64</key>
 		<integer>9007199254740992</integer>
+		<key>int64_string</key>
+		<string>1076543210012345678</string>
 		<key>double</key>
 		<real>3.4</real>
 		<key>float</key>

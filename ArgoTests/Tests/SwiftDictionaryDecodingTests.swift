@@ -7,6 +7,7 @@ class SwiftDictionaryDecodingTests: XCTestCase {
        "numerics": [
         "int": 5,
         "int64": 900719,//9254740992, Dictionaries can't handle 64bit ints (iOS only, Mac works)
+        "int64_string": "1076543210012345678",
         "double": 3.4,
         "float": 1.1,
         "int_opt": 4
