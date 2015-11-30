@@ -32,6 +32,7 @@ extension TestModel: Decodable {
 struct TestModelNumerics {
   let int: Int
   let int64: Int64
+  let int64String: Int64
   let double: Double
   let float: Float
   let intOpt: Int?
@@ -42,6 +43,7 @@ extension TestModelNumerics: Decodable {
     return curry(self.init)
       <^> j <| "int"
       <*> j <| "int64"
+      <*> j <| "int64_string"
       <*> j <| "double"
       <*> j <| "float"
       <*> j <|? "int_opt"

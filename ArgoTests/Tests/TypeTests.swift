@@ -8,6 +8,7 @@ class TypeTests: XCTestCase {
     XCTAssert(model != nil)
     XCTAssert(model?.numerics.int == 5)
     XCTAssert(model?.numerics.int64 == 9007199254740992)
+    XCTAssert(model?.numerics.int64String == 1076543210012345678)
     XCTAssert(model?.numerics.double == 3.4)
     XCTAssert(model?.numerics.float == 1.1)
     XCTAssert(model?.numerics.intOpt != nil)

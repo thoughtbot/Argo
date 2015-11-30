@@ -22,6 +22,9 @@ extension Int64: Decodable {
   public static func decode(j: JSON) -> Decoded<Int64> {
     switch j {
     case let .Number(n): return pure(n.longLongValue)
+    case let .String(s):
+      guard let i = Int64(s) else { fallthrough }
+      return pure(i)
     default: return .typeMismatch("Int64", actual: j)
     }
   }
