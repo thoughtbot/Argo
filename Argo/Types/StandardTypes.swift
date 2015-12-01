@@ -23,11 +23,8 @@ extension Int64: Decodable {
     switch j {
     case let .Number(n): return pure(n.longLongValue)
     case let .String(s):
-      if let i = Int64(s) {
-        return pure(i)
-      } else {
-        fallthrough
-      }
+      guard let i = Int64(s) else { fallthrough }
+      return pure(i)
     default: return .typeMismatch("Int64", actual: j)
     }
   }
