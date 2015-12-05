@@ -5,14 +5,14 @@ public enum Decoded<T> {
   public var value: T? {
     switch self {
     case let .Success(value): return value
-    default: return .None
+    case .Failure: return .None
     }
   }
   
   public var error: DecodeError? {
     switch self {
+    case .Success: return .None
     case let .Failure(error): return error
-    default: return .None
     }
   }
 }
@@ -36,12 +36,8 @@ public extension Decoded {
 }
 
 public extension Decoded {
-  static func typeMismatch<T, U: CustomStringConvertible>(expected: String, actual: U) -> Decoded<T> {
-    return .typeMismatch(expected, actual: "\(actual)")
-  }
-
-  static func typeMismatch<T>(expected: String, actual: String) -> Decoded<T> {
-    return .Failure(.TypeMismatch(expected: expected, actual: actual))
+  static func typeMismatch<T, U>(expected: String, actual: U) -> Decoded<T> {
+    return .Failure(.TypeMismatch(expected: expected, actual: String(actual)))
   }
 
   static func missingKey<T>(name: String) -> Decoded<T> {
