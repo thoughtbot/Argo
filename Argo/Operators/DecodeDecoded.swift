@@ -127,7 +127,7 @@ public func <||? <T where T: Decodable, T == T.DecodedType>(json: JSON, key: Str
              the decode operation
 */
 public func <|| <T where T: Decodable, T == T.DecodedType>(json: JSON, keys: [String]) -> Decoded<[T]> {
-  return flatReduce(keys, initial: json, combine: decodedJSON) >>- Trray<T>.decode
+  return flatReduce(keys, initial: json, combine: decodedJSON) >>- Array<T>.decode
 }
 
 /**
