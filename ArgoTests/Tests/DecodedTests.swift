@@ -116,6 +116,30 @@ class DecodedTests: XCTestCase {
       XCTFail("Unexpected Error Occurred")
     }
   }
+
+  func testDecodedOrWithSuccess() {
+    let successUser: Decoded<User> = decode(JSONFromFile("user_with_email")!)
+    let failedUser: Decoded<User> = decode(JSONFromFile("user_with_bad_type")!)
+
+    let result = successUser.or(failedUser)
+
+    switch result {
+    case .Success: XCTAssert(result.description == successUser.description)
+    default: XCTFail("Unexpected Case Occurred")
+    }
+  }
+
+  func testDecodedOrWithError() {
+    let successUser: Decoded<User> = decode(JSONFromFile("user_with_email")!)
+    let failedUser: Decoded<User> = decode(JSONFromFile("user_with_bad_type")!)
+
+    let result = failedUser.or(successUser)
+
+    switch result {
+    case .Success: XCTAssert(result.description == successUser.description)
+    default: XCTFail("Unexpected Case Occurred")
+    }
+  }
 }
 
 private struct Dummy: Decodable {

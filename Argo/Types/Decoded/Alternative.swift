@@ -13,8 +13,14 @@
 infix operator <|> { associativity left precedence 140 }
 
 public func <|> <T>(lhs: Decoded<T>, @autoclosure rhs: () -> Decoded<T>) -> Decoded<T> {
-  if case .Success = lhs {
-    return lhs
+  return lhs.or(rhs)
+}
+
+public extension Decoded {
+  func or(@autoclosure other: () -> Decoded<T>) -> Decoded<T> {
+    switch self {
+      case .Success: return self
+      case .Failure: return other()
+    }
   }
-  return rhs()
 }
