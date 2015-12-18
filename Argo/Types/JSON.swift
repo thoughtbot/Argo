@@ -1,5 +1,6 @@
 import Foundation
 
+/// A type safe representation of JSON
 public enum JSON {
   case Object([Swift.String: JSON])
   case Array([JSON])
@@ -9,6 +10,16 @@ public enum JSON {
 }
 
 public extension JSON {
+  /**
+    Transform from `AnyObject` into `JSON`
+
+    This is used to move from the loosly types arrays and dictionaries returned
+    from `NSJSONSerialization` to the stongly typed `JSON` tree struction.
+
+    - parameter json: The return value from `NSJSONSerialization`
+
+    - returns: A parsed instance of `JSON`
+  */
   static func parse(json: AnyObject) -> JSON {
     switch json {
     case let v as [AnyObject]: return .Array(v.map(parse))
@@ -21,6 +32,17 @@ public extension JSON {
 }
 
 extension JSON: Decodable {
+  /**
+    Decode `JSON` into `Decoded<JSON>`
+
+    This simply wraps the provided `JSON` in `Success`. This is useful because
+    it means we can use `JSON` values with the `<|` family of operators to pull
+    out sub-keys.
+
+    - parameter j: The `JSON` value to decode
+
+    - returns: The provided `JSON` wrapped in `Success`
+  */
   public static func decode(j: JSON) -> Decoded<JSON> {
     return pure(j)
   }
