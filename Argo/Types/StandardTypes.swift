@@ -66,7 +66,7 @@ public extension Optional where Wrapped: Decodable, Wrapped == Wrapped.DecodedTy
 public extension CollectionType where Generator.Element: Decodable, Generator.Element == Generator.Element.DecodedType {
   static func decode(j: JSON) -> Decoded<[Generator.Element]> {
     switch j {
-    case let .Array(a): return sequence(a.map(Generator.Element.decode))
+    case let .Array(a): return sequence(a.map(JSON.parse).map(Generator.Element.decode))
     default: return .typeMismatch("Array", actual: j)
     }
   }
@@ -79,7 +79,7 @@ public func decodeArray<T: Decodable where T.DecodedType == T>(j: JSON) -> Decod
 public extension DictionaryLiteralConvertible where Value: Decodable, Value == Value.DecodedType {
   static func decode(j: JSON) -> Decoded<[String: Value]> {
     switch j {
-    case let .Object(o): return sequence(Value.decode <^> o)
+    case let .Object(o): return sequence(Value.decode <^> o.map(JSON.parse))
     default: return .typeMismatch("Object", actual: j)
     }
   }
@@ -91,7 +91,7 @@ public func decodeObject<T: Decodable where T.DecodedType == T>(j: JSON) -> Deco
 
 public func decodedJSON(json: JSON, forKey key: String) -> Decoded<JSON> {
   switch json {
-  case let .Object(o): return guardNull(key, j: o[key] ?? .Null)
+  case let .Object(o): return guardNull(key, j: o[key].map(JSON.parse) ?? .Null)
   default: return .typeMismatch("Object", actual: json)
   }
 }
