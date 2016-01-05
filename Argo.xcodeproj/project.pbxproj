@@ -154,6 +154,7 @@
 		F802D4C41A5EE172005E236C /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F802D4C21A5EE061005E236C /* NSURL.swift */; };
 		F802D4C61A5EE2D5005E236C /* url.json in Resources */ = {isa = PBXBuildFile; fileRef = F802D4C51A5EE2D5005E236C /* url.json */; };
 		F802D4C71A5EE2D5005E236C /* url.json in Resources */ = {isa = PBXBuildFile; fileRef = F802D4C51A5EE2D5005E236C /* url.json */; };
+		F82D15F31C3C82730079FFB5 /* NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82D15F21C3C82730079FFB5 /* NSNumber.swift */; };
 		F84290291B57EFAE008F57B4 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84290281B57EFAE008F57B4 /* Curry.framework */; };
 		F842902B1B57EFB5008F57B4 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F842902A1B57EFB5008F57B4 /* Curry.framework */; };
 		F84318A81B9A2D7A00165216 /* DecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84318A71B9A2D7A00165216 /* DecodeError.swift */; };
@@ -188,6 +189,9 @@
 		F893356E1A4CE8FC00B88685 /* Argo.h in Headers */ = {isa = PBXBuildFile; fileRef = F893356D1A4CE8FC00B88685 /* Argo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F893356F1A4CE8FC00B88685 /* Argo.h in Headers */ = {isa = PBXBuildFile; fileRef = F893356D1A4CE8FC00B88685 /* Argo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F89335761A4CE93600B88685 /* DecodeDecoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* DecodeDecoded.swift */; };
+		F8C2561A1C3C855B00B70968 /* NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82D15F21C3C82730079FFB5 /* NSNumber.swift */; };
+		F8C2561B1C3C855C00B70968 /* NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82D15F21C3C82730079FFB5 /* NSNumber.swift */; };
+		F8C2561C1C3C855C00B70968 /* NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82D15F21C3C82730079FFB5 /* NSNumber.swift */; };
 		F8CBE6671A64521000316FBC /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBE6661A64521000316FBC /* Dictionary.swift */; };
 		F8CBE6681A64526300316FBC /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBE6661A64521000316FBC /* Dictionary.swift */; };
 		F8E33FA51A51E0C20025A6E5 /* post_bad_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = F8E33FA41A51E0C20025A6E5 /* post_bad_comments.json */; };
@@ -322,6 +326,7 @@
 		EADADCB11A5DB6F600B180EC /* EquatableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableTests.swift; sourceTree = "<group>"; };
 		F802D4C21A5EE061005E236C /* NSURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURL.swift; sourceTree = "<group>"; };
 		F802D4C51A5EE2D5005E236C /* url.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = url.json; sourceTree = "<group>"; };
+		F82D15F21C3C82730079FFB5 /* NSNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNumber.swift; sourceTree = "<group>"; };
 		F84290281B57EFAE008F57B4 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = "Carthage/Checkouts/Curry/build/Debug-iphoneos/Curry.framework"; sourceTree = "<group>"; };
 		F842902A1B57EFB5008F57B4 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Checkouts/Curry/build/Debug/Curry.framework; sourceTree = "<group>"; };
 		F84318A71B9A2D7A00165216 /* DecodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodeError.swift; sourceTree = "<group>"; };
@@ -612,6 +617,7 @@
 		F8CBE6651A6451F800316FBC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F82D15F21C3C82730079FFB5 /* NSNumber.swift */,
 				F8CBE6661A64521000316FBC /* Dictionary.swift */,
 				BF92789C1B9365900038A7E1 /* RawRepresentable.swift */,
 			);
@@ -989,6 +995,7 @@
 				809754E51BADF36D00C409E6 /* Dictionary.swift in Sources */,
 				809754E61BADF36D00C409E6 /* RawRepresentable.swift in Sources */,
 				809754D91BADF36D00C409E6 /* JSON.swift in Sources */,
+				F8C2561C1C3C855C00B70968 /* NSNumber.swift in Sources */,
 				EA9159F61BDE74BC00D85292 /* Argo.swift in Sources */,
 				EA9159FB1BDE74F800D85292 /* Alternative.swift in Sources */,
 				809754E11BADF36D00C409E6 /* curry.swift in Sources */,
@@ -1030,6 +1037,7 @@
 				D0592EC01B77DD8E00EFEF39 /* Decodable.swift in Sources */,
 				EA4678681BA8930E004488D2 /* DecodeOptional.swift in Sources */,
 				D0592EC51B77DD9A00EFEF39 /* decode.swift in Sources */,
+				F8C2561B1C3C855C00B70968 /* NSNumber.swift in Sources */,
 				D0592EC81B77DD9A00EFEF39 /* Dictionary.swift in Sources */,
 				EA04D5A31BBF2021001DE23B /* FailureCoalescing.swift in Sources */,
 				D0592EBE1B77DD8E00EFEF39 /* Decoded.swift in Sources */,
@@ -1058,6 +1066,7 @@
 				F87EB6AE1ABC5F1300E3B0AB /* Decodable.swift in Sources */,
 				F87EB6A41ABC5F1300E3B0AB /* decode.swift in Sources */,
 				EA4678661BA8930E004488D2 /* DecodeOptional.swift in Sources */,
+				F82D15F31C3C82730079FFB5 /* NSNumber.swift in Sources */,
 				F87EB6AC1ABC5F1300E3B0AB /* JSON.swift in Sources */,
 				EA04D5A11BBF2021001DE23B /* FailureCoalescing.swift in Sources */,
 				F87EB6A61ABC5F1300E3B0AB /* flatReduce.swift in Sources */,
@@ -1110,6 +1119,7 @@
 				F87EB6A51ABC5F1300E3B0AB /* decode.swift in Sources */,
 				EA4678671BA8930E004488D2 /* DecodeOptional.swift in Sources */,
 				F87EB6AD1ABC5F1300E3B0AB /* JSON.swift in Sources */,
+				F8C2561A1C3C855B00B70968 /* NSNumber.swift in Sources */,
 				F87EB6A71ABC5F1300E3B0AB /* flatReduce.swift in Sources */,
 				EA04D5A21BBF2021001DE23B /* FailureCoalescing.swift in Sources */,
 				F87EB6A91ABC5F1300E3B0AB /* sequence.swift in Sources */,

@@ -79,25 +79,6 @@ extension Double: Decodable {
   }
 }
 
-extension Bool: Decodable {
-  /**
-    Decode `JSON` into `Decoded<Bool>`.
-
-    Succeeds if the value is a number that can be converted to a `Bool`,
-    otherwise it returns a type mismatch.
-
-    - parameter j: The `JSON` value to decode
-
-    - returns: A decoded `Bool` value
-  */
-  public static func decode(j: JSON) -> Decoded<Bool> {
-    switch j {
-    case let .Number(n): return pure(n as Bool)
-    default: return .typeMismatch("Bool", actual: j)
-    }
-  }
-}
-
 extension Float: Decodable {
   /**
     Decode `JSON` into `Decoded<Float>`.
@@ -113,6 +94,24 @@ extension Float: Decodable {
     switch j {
     case let .Number(n): return pure(n as Float)
     default: return .typeMismatch("Float", actual: j)
+    }
+  }
+}
+
+extension Bool: Decodable {
+  /**
+    Decode `JSON` into `Decoded<Bool>`.
+
+    Succeeds if the value is a boolean, otherwise it returns a type mismatch.
+
+    - parameter j: The `JSON` value to decode
+
+    - returns: A decoded `Bool` value
+  */
+  public static func decode(j: JSON) -> Decoded<Bool> {
+    switch j {
+    case let .Bool(n): return pure(n)
+    default: return .typeMismatch("Bool", actual: j)
     }
   }
 }

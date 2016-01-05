@@ -6,6 +6,7 @@ public enum JSON {
   case Array([JSON])
   case String(Swift.String)
   case Number(NSNumber)
+  case Bool(Swift.Bool)
   case Null
 }
 
@@ -31,7 +32,11 @@ public extension JSON {
       self = .String(v)
 
     case let v as NSNumber:
-      self = .Number(v)
+      if v.isBool {
+        self = .Bool(v as Swift.Bool)
+      } else {
+        self = .Number(v)
+      }
 
     default:
       self = .Null
@@ -61,6 +66,7 @@ extension JSON: CustomStringConvertible {
     switch self {
     case let .String(v): return "String(\(v))"
     case let .Number(v): return "Number(\(v))"
+    case let .Bool(v): return "Bool(\(v))"
     case let .Array(a): return "Array(\(a.description))"
     case let .Object(o): return "Object(\(o.description))"
     case .Null: return "Null"
@@ -74,6 +80,7 @@ public func == (lhs: JSON, rhs: JSON) -> Bool {
   switch (lhs, rhs) {
   case let (.String(l), .String(r)): return l == r
   case let (.Number(l), .Number(r)): return l == r
+  case let (.Bool(l), .Bool(r)): return l == r
   case let (.Array(l), .Array(r)): return l == r
   case let (.Object(l), .Object(r)): return l == r
   case (.Null, .Null): return true
