@@ -16,10 +16,10 @@ extension TestRawInt: Decodable { }
 
 class RawRepresentable: XCTestCase {
   func testStringEnum() {
-    let json = JSON.Object({[
-      "string": JSON.String("CoolString"),
-      "another": JSON.String("NotCoolStringBro")
-      ]})
+    let json = JSON.Object([
+      "string": LazyJSON("CoolString"),
+      "another": LazyJSON("NotCoolStringBro")
+      ])
 
     let string: TestRawString? = json <| "string"
     let another: TestRawString? = json <| "another"
@@ -28,10 +28,10 @@ class RawRepresentable: XCTestCase {
   }
 
   func testIntEnum() {
-    let json = JSON.Object({[
-      "zero": JSON.Number(0),
-      "one": JSON.Number(1)
-      ]})
+    let json = JSON.Object([
+      "zero": LazyJSON(0),
+      "one": LazyJSON(1)
+      ])
 
     let zero: TestRawInt? = json <| "zero"
     let one: TestRawInt? = json <| "one"
