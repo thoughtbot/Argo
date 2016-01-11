@@ -16,7 +16,7 @@ public func sequence<T>(xs: [Decoded<T>]) -> Decoded<[T]> {
 
 public func sequence<T>(xs: [String: Decoded<T>]) -> Decoded<[String: T]> {
   var accum: [String: T] = [:]
-  
+
   for (key, value) in xs {
     switch value {
     case let .Success(unwrapped):
