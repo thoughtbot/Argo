@@ -8,3 +8,24 @@ xcrun xcodebuild \
   test \
   | xcpretty --color
 
+xcrun xcodebuild \
+  -workspace Argo.xcworkspace \
+  -scheme Argo-iOS \
+  -destination "platform=iOS Simulator,name=iPhone 6" \
+  test \
+  | xcpretty --color
+
+xcrun xcodebuild \
+  -workspace Argo.xcworkspace \
+  -scheme Argo-watchOS \
+  -destination "generic/platform=watchOS" \
+  CODE_SIGNING_REQUIRED=NO \
+  CODE_SIGN_IDENTITY="" \
+  | xcpretty --color
+
+xcrun xcodebuild \
+  -workspace Argo.xcworkspace \
+  -scheme Argo-tvOS \
+  -destination "platform=tvOS Simulator,name=Apple TV 1080p" \
+  test \
+  | xcpretty --color
