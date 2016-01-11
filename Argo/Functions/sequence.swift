@@ -1,7 +1,7 @@
 public func sequence<T>(xs: [Decoded<T>]) -> Decoded<[T]> {
   var accum: [T] = []
   accum.reserveCapacity(xs.count)
-  
+
   for elem in xs {
     switch elem {
     case let .Success(value):
@@ -10,7 +10,7 @@ public func sequence<T>(xs: [Decoded<T>]) -> Decoded<[T]> {
       return .Failure(error)
     }
   }
-  
+
   return pure(accum)
 }
 
@@ -25,6 +25,6 @@ public func sequence<T>(xs: [String: Decoded<T>]) -> Decoded<[String: T]> {
       return .Failure(error)
     }
   }
-  
+
   return pure(accum)
 }

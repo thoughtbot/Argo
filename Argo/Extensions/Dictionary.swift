@@ -10,11 +10,11 @@ func + <T, U>(var lhs: [T: U], rhs: [T: U]) -> [T: U] {
 extension Dictionary {
   func map<T>(@noescape f: Value -> T) -> [Key: T] {
     var accum = Dictionary<Key, T>(minimumCapacity: self.count)
-    
+
     for (key, value) in self {
       accum[key] = f(value)
     }
-    
+
     return accum
   }
 }
