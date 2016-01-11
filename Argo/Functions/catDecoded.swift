@@ -15,8 +15,8 @@ public func catDecoded<T>(xs: [Decoded<T>]) -> [T] {
 public func catDecoded<T>(xs: [String: Decoded<T>]) -> [String: T] {
   var accum = Dictionary<String, T>(minimumCapacity: xs.count)
 
-  for (key, decodedValue) in xs {
-    switch decodedValue {
+  for (key, x) in xs {
+    switch x {
     case let .Success(value): accum[key] = value
     case .Failure: continue
     }

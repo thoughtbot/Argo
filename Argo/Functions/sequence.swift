@@ -2,12 +2,10 @@ public func sequence<T>(xs: [Decoded<T>]) -> Decoded<[T]> {
   var accum: [T] = []
   accum.reserveCapacity(xs.count)
 
-  for elem in xs {
-    switch elem {
-    case let .Success(value):
-      accum.append(value)
-    case let .Failure(error):
-      return .Failure(error)
+  for x in xs {
+    switch x {
+    case let .Success(value): accum.append(value)
+    case let .Failure(error): return .Failure(error)
     }
   }
 
@@ -15,14 +13,12 @@ public func sequence<T>(xs: [Decoded<T>]) -> Decoded<[T]> {
 }
 
 public func sequence<T>(xs: [String: Decoded<T>]) -> Decoded<[String: T]> {
-  var accum: [String: T] = [:]
+  var accum = Dictionary<String, T>(minimumCapacity: xs.count)
 
-  for (key, value) in xs {
-    switch value {
-    case let .Success(unwrapped):
-      accum[key] = unwrapped
-    case let .Failure(error):
-      return .Failure(error)
+  for (key, x) in xs {
+    switch x {
+    case let .Success(value): accum[key] = value
+    case let .Failure(error): return .Failure(error)
     }
   }
 
