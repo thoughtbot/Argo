@@ -13,6 +13,21 @@ public func >>- <T, U>(x: Decoded<T>, @noescape f: T -> Decoded<U>) -> Decoded<U
   return x.flatMap(f)
 }
 
+/**
+  flatMap a function over a `Decoded` value (left associative)
+
+  - If the value is a failing case (`.TypeMismatch`, `.MissingKey`), the function will not be evaluated and this will return the value
+  - If the value is `.Success`, the function will be applied to the unwrapped value
+
+  - parameter x: A value of type `Decoded<T>`
+  - parameter f: A transformation function from type `T` to type `Decoded<U>`
+
+  - returns: A value of type `Decoded<U>`
+*/
+public func -<< <T, U>(@noescape f: T -> Decoded<U>, x: Decoded<T>) -> Decoded<U> {
+  return x.flatMap(f)
+}
+
 public extension Decoded {
   func flatMap<U>(@noescape f: T -> Decoded<U>) -> Decoded<U> {
     switch self {
