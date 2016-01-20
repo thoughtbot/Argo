@@ -13,9 +13,9 @@ class PerformanceTests: XCTestCase {
   func testDecodePerformance() {
     let json: AnyObject = JSONFromFile("big_data")!
     let j = JSON.parse(json)
-
+    
     measureBlock {
-      j <|| "types" as Decoded<[TestModel]>
+      [TestModel].decode(j)
     }
   }
 }
