@@ -15,7 +15,14 @@ class PerformanceTests: XCTestCase {
     let j = JSON.parse(json)
 
     measureBlock {
-      j <|| "types" as Decoded<[TestModel]>
+      [TestModel].decode(j)
     }
+  }
+
+  func testBigDataDecodesCorrectly() {
+    let json: AnyObject = JSONFromFile("big_data")!
+    let j = JSON.parse(json)
+    let models = [TestModel].decode(j)
+    XCTAssertEqual(models.value!.count, 10_000, "Decoded big_data should have 10_000 results.")
   }
 }
