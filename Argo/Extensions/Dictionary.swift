@@ -1,10 +1,11 @@
 // pure merge for Dictionaries
-func + <T, U>(var lhs: [T: U], rhs: [T: U]) -> [T: U] {
+func + <T, U>(lhs: [T: U], rhs: [T: U]) -> [T: U] {
+  var merged = lhs
   for (key, val) in rhs {
-    lhs[key] = val
+    merged[key] = val
   }
 
-  return lhs
+  return merged
 }
 
 extension Dictionary {
