@@ -111,11 +111,10 @@ public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject) -> 
 }
 
 /**
-  Attempt to transform `AnyObject` into a `Decodable` value using a specified root key.
+  Attempt to transform `AnyObject` into a `Decodable` value using a specified
+  root key.
 
-  This function expects the object to be a dictionary of the type `[String: JSON]`.
-
-  This function attpemts to extract the embedded JSON object from the
+  This function attempts to extract the embedded `JSON` object from the
   dictionary at the specified key and transform it into a `Decodable` value.
   This works based on the type you ask for.
 
@@ -124,29 +123,28 @@ public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject) -> 
 
   ```
   do {
-    let object = try NSJSONSerialization.JSONObjectWithData(data, options: nil)
-    let str: Decoded<String> = decode(object, rootKey: "value")
+    let dict = try NSJSONSerialization.JSONObjectWithData(data, options: nil) as? [String: AnyObject] ?? [:]
+    let str: Decoded<String> = decode(dict, rootKey: "value")
   } catch {
     // handle error
   }
   ```
 
-  - parameter object: The `AnyObject` instance to attempt to decode
+  - parameter dict: The dictionary containing the `AnyObject` instance to
+                    attempt to decode
   - parameter rootKey: The root key that contains the object to decode
 
   - returns: A `Decoded<T>` value where `T` is `Decodable`
 */
-public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject, rootKey: String) -> Decoded<T> {
-  return JSON(object) <| rootKey
+public func decode<T: Decodable where T == T.DecodedType>(dict: [String: AnyObject], rootKey: String) -> Decoded<T> {
+  return JSON(dict) <| rootKey
 }
 
 /**
   Attempt to transform `AnyObject` into an `Array` of `Decodable` value using a
   specified root key.
 
-  This function expects the object to be a dictionary of the type `[String: JSON]`.
-
-  This function attpemts to extract the embedded JSON object from the
+  This function attempts to extract the embedded `JSON` object from the
   dictionary at the specified key and transform it into an `Array` of
   `Decodable` values. This works based on the type you ask for.
 
@@ -155,29 +153,28 @@ public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject, roo
 
   ```
   do {
-    let object = try NSJSONSerialization.JSONObjectWithData(data, options: nil)
-    let str: Decoded<[String]> = decode(object, rootKey: "value")
+    let dict = try NSJSONSerialization.JSONObjectWithData(data, options: nil) as? [String: AnyObject] ?? [:]
+    let str: Decoded<[String]> = decode(dict, rootKey: "value")
   } catch {
     // handle error
   }
   ```
 
-  - parameter object: The `AnyObject` instance to attempt to decode
+  - parameter dict: The dictionary containing the `AnyObject` instance to
+                    attempt to decode
   - parameter rootKey: The root key that contains the object to decode
 
   - returns: A `Decoded<[T]>` value where `T` is `Decodable`
 */
-public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject, rootKey: String) -> Decoded<[T]> {
-  return JSON(object) <|| rootKey
+public func decode<T: Decodable where T == T.DecodedType>(dict: [String: AnyObject], rootKey: String) -> Decoded<[T]> {
+  return JSON(dict) <|| rootKey
 }
 
 /**
   Attempt to transform `AnyObject` into a `Decodable` value using a specified
   root key and return an `Optional`.
 
-  This function expects the object to be a dictionary of the type `[String: JSON]`.
-
-  This function attpemts to extract the embedded JSON object from the
+  This function attempts to extract the embedded `JSON` object from the
   dictionary at the specified key and transform it into a `Decodable` value,
   returning an `Optional`. This works based on the type you ask for.
 
@@ -186,31 +183,30 @@ public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject, roo
 
   ```
   do {
-    let object = try NSJSONSerialization.JSONObjectWithData(data, options: nil)
-    let str: String? = decode(object, rootKey: "value")
+    let dict = try NSJSONSerialization.JSONObjectWithData(data, options: nil) as? [String: AnyObject] ?? [:]
+    let str: String? = decode(dict, rootKey: "value")
   } catch {
     // handle error
   }
   ```
 
-  - parameter object: The `AnyObject` instance to attempt to decode
+  - parameter dict: The dictionary containing the `AnyObject` instance to
+                    attempt to decode
   - parameter rootKey: The root key that contains the object to decode
 
   - returns: A `Decoded<T>` value where `T` is `Decodable`
 */
-public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject, rootKey: String) -> T? {
-  return decode(object, rootKey: rootKey).value
+public func decode<T: Decodable where T == T.DecodedType>(dict: [String: AnyObject], rootKey: String) -> T? {
+  return decode(dict, rootKey: rootKey).value
 }
 
 /**
   Attempt to transform `AnyObject` into an `Array` of `Decodable` value using a
   specified root key and return an `Optional`
 
-  This function expects the object to be a dictionary of the type `[String: JSON]`.
-
-  This function attpemts to extract the embedded JSON object from the
+  This function attempts to extract the embedded `JSON` object from the
   dictionary at the specified key and transform it into an `Array` of
-  `Decodable` values, returninh an `Optional`. This works based on the type you
+  `Decodable` values, returning an `Optional`. This works based on the type you
   ask for.
 
   For example, the following code attempts to decode to `Optional<[String]>`,
@@ -218,19 +214,19 @@ public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject, roo
 
   ```
   do {
-    let object = try NSJSONSerialization.JSONObjectWithData(data, options: nil)
-    let str: [String]? = decode(object, rootKey: "value")
+    let dict = try NSJSONSerialization.JSONObjectWithData(data, options: nil) as? [String: AnyObject] ?? [:]
+    let str: [String]? = decode(dict, rootKey: "value")
   } catch {
     // handle error
   }
   ```
 
-  - parameter object: The `AnyObject` instance to attempt to decode
+  - parameter dict: The dictionary containing the `AnyObject` instance to
+                    attempt to decode
   - parameter rootKey: The root key that contains the object to decode
 
   - returns: A `Decoded<[T]>` value where `T` is `Decodable`
 */
-public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject, rootKey: String) -> [T]? {
-  return decode(object, rootKey: rootKey).value
+public func decode<T: Decodable where T == T.DecodedType>(dict: [String: AnyObject], rootKey: String) -> [T]? {
+  return decode(dict, rootKey: rootKey).value
 }
-
