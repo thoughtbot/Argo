@@ -125,18 +125,18 @@ public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject) -> 
   ```
   do {
     let object = try NSJSONSerialization.JSONObjectWithData(data, options: nil)
-    let str: Decoded<String> = decodeWithRootKey("value", object)
+    let str: Decoded<String> = decode(object, rootKey: "value")
   } catch {
     // handle error
   }
   ```
 
-  - parameter rootKey: The root key that contains the object to decode
   - parameter object: The `AnyObject` instance to attempt to decode
+  - parameter rootKey: The root key that contains the object to decode
 
   - returns: A `Decoded<T>` value where `T` is `Decodable`
 */
-public func decodeWithRootKey<T: Decodable where T == T.DecodedType>(rootKey: String, _ object: AnyObject) -> Decoded<T> {
+public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject, rootKey: String) -> Decoded<T> {
   return JSON(object) <| rootKey
 }
 
@@ -156,18 +156,18 @@ public func decodeWithRootKey<T: Decodable where T == T.DecodedType>(rootKey: St
   ```
   do {
     let object = try NSJSONSerialization.JSONObjectWithData(data, options: nil)
-    let str: Decoded<[String]> = decodeWithRootKey("value", object)
+    let str: Decoded<[String]> = decode(object, rootKey: "value")
   } catch {
     // handle error
   }
   ```
 
-  - parameter rootKey: The root key that contains the object to decode
   - parameter object: The `AnyObject` instance to attempt to decode
+  - parameter rootKey: The root key that contains the object to decode
 
   - returns: A `Decoded<[T]>` value where `T` is `Decodable`
 */
-public func decodeWithRootKey<T: Decodable where T == T.DecodedType>(rootKey: String, _ object: AnyObject) -> Decoded<[T]> {
+public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject, rootKey: String) -> Decoded<[T]> {
   return JSON(object) <|| rootKey
 }
 
@@ -187,19 +187,19 @@ public func decodeWithRootKey<T: Decodable where T == T.DecodedType>(rootKey: St
   ```
   do {
     let object = try NSJSONSerialization.JSONObjectWithData(data, options: nil)
-    let str: String? = decodeWithRootKey("value", object)
+    let str: String? = decode(object, rootKey: "value")
   } catch {
     // handle error
   }
   ```
 
-  - parameter rootKey: The root key that contains the object to decode
   - parameter object: The `AnyObject` instance to attempt to decode
+  - parameter rootKey: The root key that contains the object to decode
 
   - returns: A `Decoded<T>` value where `T` is `Decodable`
 */
-public func decodeWithRootKey<T: Decodable where T == T.DecodedType>(rootKey: String, _ object: AnyObject) -> T? {
-  return decodeWithRootKey(rootKey, object).value
+public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject, rootKey: String) -> T? {
+  return decode(object, rootKey: rootKey).value
 }
 
 /**
@@ -219,18 +219,18 @@ public func decodeWithRootKey<T: Decodable where T == T.DecodedType>(rootKey: St
   ```
   do {
     let object = try NSJSONSerialization.JSONObjectWithData(data, options: nil)
-    let str: [String]? = decodeWithRootKey("value", object)
+    let str: [String]? = decode(object, rootKey: "value")
   } catch {
     // handle error
   }
   ```
 
-  - parameter rootKey: The root key that contains the object to decode
   - parameter object: The `AnyObject` instance to attempt to decode
+  - parameter rootKey: The root key that contains the object to decode
 
   - returns: A `Decoded<[T]>` value where `T` is `Decodable`
 */
-public func decodeWithRootKey<T: Decodable where T == T.DecodedType>(rootKey: String, _ object: AnyObject) -> [T]? {
-  return decodeWithRootKey(rootKey, object).value
+public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject, rootKey: String) -> [T]? {
+  return decode(object, rootKey: rootKey).value
 }
 

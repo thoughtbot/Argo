@@ -11,7 +11,7 @@ class ExampleTests: XCTestCase {
   }
 
   func testJSONWithRootObject() {
-    let user: User? = JSONFromFile("root_object").flatMap(curry(decodeWithRootKey)("user"))
+    let user: User? = JSONFromFile("root_object").flatMap { decode($0, rootKey: "user") }
 
     XCTAssert(user != nil)
     XCTAssert(user?.id == 1)
@@ -21,7 +21,7 @@ class ExampleTests: XCTestCase {
   }
 
   func testDecodingNonFinalClass() {
-    let url: NSURL? = JSONFromFile("url").flatMap(curry(decodeWithRootKey)("url"))
+    let url: NSURL? = JSONFromFile("url").flatMap { decode($0, rootKey: "url") }
 
     XCTAssert(url != nil)
     XCTAssert(url?.absoluteString == "http://example.com")
