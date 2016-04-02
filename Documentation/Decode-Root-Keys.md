@@ -14,13 +14,13 @@ JSON for the model is embedded within a root key:
 }
 ```
 
-In this case, you can't use the global `decode` function because it assumes the
-object you're trying to decode is at the root level. To get around this, first
-parse the `AnyObject` into a `JSON` type, then use the `<|` operator to pull
-out the object and decode it into its model.
+In this case, you can't use the global `decode` function because it assumes
+the object you're trying to decode is at the root level. To get around this,
+first transform the `AnyObject` into a `JSON` type, then use the `<|` operator
+to pull out the object and decode it into its model.
 
 ```swift
-let json = JSON.parse(anyObject)
+let json = JSON(anyObject)
 
 let user: Decoded<User> = json <| "user"
 // or

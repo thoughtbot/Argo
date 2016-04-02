@@ -28,8 +28,8 @@ class ExampleTests: XCTestCase {
   }
 
   func testDecodingJSONWithRootArray() {
-    let expected = JSON.parse([["title": "Foo", "age": 21], ["title": "Bar", "age": 32]])
-    let json = JSONFromFile("root_array").map(JSON.parse)
+    let expected = JSON([["title": "Foo", "age": 21], ["title": "Bar", "age": 32]])
+    let json = JSONFromFile("root_array").map(JSON.init)
 
     XCTAssert(.Some(expected) == json)
   }

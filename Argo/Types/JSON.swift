@@ -20,13 +20,23 @@ public extension JSON {
 
     - returns: An instance of the `JSON` tree structure
   */
-  static func parse(json: AnyObject) -> JSON {
+  init(_ json: AnyObject) {
     switch json {
-    case let v as [AnyObject]: return .Array(v.map(parse))
-    case let v as [Swift.String: AnyObject]: return .Object(v.map(parse))
-    case let v as Swift.String: return .String(v)
-    case let v as NSNumber: return .Number(v)
-    default: return .Null
+
+    case let v as [AnyObject]:
+      self = .Array(v.map(JSON.init))
+
+    case let v as [Swift.String: AnyObject]:
+      self = .Object(v.map(JSON.init))
+
+    case let v as Swift.String:
+      self = .String(v)
+
+    case let v as NSNumber:
+      self = .Number(v)
+
+    default:
+      self = .Null
     }
   }
 }
