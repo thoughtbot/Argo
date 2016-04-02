@@ -1,6 +1,12 @@
+/// Possible decoding failure reasons.
 public enum DecodeError: ErrorType {
+  /// The type existing at the key didn't match the type being requested.
   case TypeMismatch(expected: String, actual: String)
+
+  /// The key did not exist in the JSON.
   case MissingKey(String)
+
+  /// A custom error case for adding explicit failure info.
   case Custom(String)
 }
 
