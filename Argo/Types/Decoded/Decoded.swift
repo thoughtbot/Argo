@@ -1,15 +1,17 @@
 public enum Decoded<T> {
   case Success(T)
   case Failure(DecodeError)
+}
 
-  public var value: T? {
+public extension Decoded {
+  var value: T? {
     switch self {
     case let .Success(value): return value
     case .Failure: return .None
     }
   }
-  
-  public var error: DecodeError? {
+
+  var error: DecodeError? {
     switch self {
     case .Success: return .None
     case let .Failure(error): return error
