@@ -1,3 +1,7 @@
+/**
+  Default implementation of `Decodable` for `RawRepresentable` types using
+  `String` as the raw value.
+*/
 public extension Decodable where Self.DecodedType == Self, Self: RawRepresentable, Self.RawValue == String {
   static func decode(json: JSON) -> Decoded<Self> {
     switch json {
@@ -7,6 +11,10 @@ public extension Decodable where Self.DecodedType == Self, Self: RawRepresentabl
   }
 }
 
+/**
+  Default implementation of `Decodable` for `RawRepresentable` types using
+  `Int` as the raw value.
+*/
 public extension Decodable where Self.DecodedType == Self, Self: RawRepresentable, Self.RawValue == Int {
   static func decode(json: JSON) -> Decoded<Self> {
     switch json {
