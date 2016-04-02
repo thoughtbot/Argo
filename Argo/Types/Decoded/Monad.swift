@@ -1,8 +1,10 @@
 /**
-  flatMap a function over a `Decoded` value (right associative)
+  Conditionally map a function over a `Decoded` value, flattening the result.
 
-  - If the value is a failing case (`.TypeMismatch`, `.MissingKey`), the function will not be evaluated and this will return the value
-  - If the value is `.Success`, the function will be applied to the unwrapped value
+  - If the value is `.Failure`, the function will not be evaluated and this
+    will return `.Failure`.
+  - If the value is `.Success`, the function will be applied to the unwrapped
+    value.
 
   - parameter x: A value of type `Decoded<T>`
   - parameter f: A transformation function from type `T` to type `Decoded<U>`
@@ -14,13 +16,15 @@ public func >>- <T, U>(x: Decoded<T>, @noescape f: T -> Decoded<U>) -> Decoded<U
 }
 
 /**
-  flatMap a function over a `Decoded` value (left associative)
+  Conditionally map a function over a `Decoded` value, flattening the result.
 
-  - If the value is a failing case (`.TypeMismatch`, `.MissingKey`), the function will not be evaluated and this will return the value
-  - If the value is `.Success`, the function will be applied to the unwrapped value
+  - If the value is `.Failure`, the function will not be evaluated and this
+    will return `.Failure`.
+  - If the value is `.Success`, the function will be applied to the unwrapped
+    value.
 
-  - parameter x: A value of type `Decoded<T>`
   - parameter f: A transformation function from type `T` to type `Decoded<U>`
+  - parameter x: A value of type `Decoded<T>`
 
   - returns: A value of type `Decoded<U>`
 */
@@ -29,6 +33,18 @@ public func -<< <T, U>(@noescape f: T -> Decoded<U>, x: Decoded<T>) -> Decoded<U
 }
 
 public extension Decoded {
+  /**
+    Conditionally map a function over `self`, flattening the result.
+
+    - If `self` is `.Failure`, the function will not be evaluated and this will
+      return `.Failure`.
+    - If `self` is `.Success`, the function will be applied to the unwrapped
+      value.
+
+    - parameter f: A transformation function from type `T` to type `Decoded<U>`
+
+    - returns: A value of type `Decoded<U>`
+  */
   func flatMap<U>(@noescape f: T -> Decoded<U>) -> Decoded<U> {
     switch self {
     case let .Success(value): return f(value)
