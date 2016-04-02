@@ -42,8 +42,8 @@ public func sequence<T>(xs: [Decoded<T>]) -> Decoded<[T]> {
   - returns: A `Decoded` `Dictionary` of unwrapped `T` values assigned to their
              original keys
 */
-public func sequence<T>(xs: [String: Decoded<T>]) -> Decoded<[String: T]> {
-  var accum = Dictionary<String, T>(minimumCapacity: xs.count)
+public func sequence<Key, Value>(xs: [Key: Decoded<Value>]) -> Decoded<[Key: Value]> {
+  var accum = Dictionary<Key, Value>(minimumCapacity: xs.count)
 
   for (key, x) in xs {
     switch x {
