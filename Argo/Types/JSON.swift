@@ -82,3 +82,12 @@ public func == (lhs: JSON, rhs: JSON) -> Bool {
   default: return false
   }
 }
+
+/// MARK: Deprecations
+
+extension JSON {
+  @available(*, deprecated=3.0, renamed="init")
+  static func parse(json: AnyObject) -> JSON {
+    return JSON(json)
+  }
+}
