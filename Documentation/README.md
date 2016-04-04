@@ -15,6 +15,7 @@ can be.
 
 - [Decoding your first model](Basic-Usage.md)
 - [Relationships](Relationships.md)
+- [Common gotchas](Common-Gotchas.md)
 
 ## Advanced Usage ##
 
