@@ -6,7 +6,7 @@ extension String: Decodable {
 
     Succeeds if the value is a string, otherwise it returns a type mismatch.
 
-    - parameter j: The JSON value to decode
+    - parameter j: The `JSON` value to decode
 
     - returns: A decoded `String` value
   */
@@ -25,7 +25,7 @@ extension Int: Decodable {
     Succeeds if the value is a number that can be converted to an `Int`,
     otherwise it returns a type mismatch.
 
-    - parameter j: The JSON value to decode
+    - parameter j: The `JSON` value to decode
 
     - returns: A decoded `Int` value
   */
@@ -45,7 +45,7 @@ extension Int64: Decodable {
     string that represents a large number, otherwise it returns a type
     mismatch.
 
-    - parameter j: The JSON value to decode
+    - parameter j: The `JSON` value to decode
 
     - returns: A decoded `Int64` value
   */
@@ -67,7 +67,7 @@ extension Double: Decodable {
     Succeeds if the value is a number that can be converted to a `Double`,
     otherwise it returns a type mismatch.
 
-    - parameter j: The JSON value to decode
+    - parameter j: The `JSON` value to decode
 
     - returns: A decoded `Double` value
   */
@@ -86,7 +86,7 @@ extension Bool: Decodable {
     Succeeds if the value is a number that can be converted to a `Bool`,
     otherwise it returns a type mismatch.
 
-    - parameter j: The JSON value to decode
+    - parameter j: The `JSON` value to decode
 
     - returns: A decoded `Bool` value
   */
@@ -105,7 +105,7 @@ extension Float: Decodable {
     Succeeds if the value is a number that can be converted to a `Float`,
     otherwise it returns a type mismatch.
 
-    - parameter j: The JSON value to decode
+    - parameter j: The `JSON` value to decode
 
     - returns: A decoded `Float` value
   */
@@ -124,7 +124,7 @@ public extension Optional where Wrapped: Decodable, Wrapped == Wrapped.DecodedTy
     Returns a decoded optional value from the result of performing `decode` on
     the internal wrapped type.
 
-    - parameter j: The JSON value to decode
+    - parameter j: The `JSON` value to decode
 
     - returns: A decoded optional `Wrapped` value
   */
@@ -140,12 +140,13 @@ public extension CollectionType where Generator.Element: Decodable, Generator.El
 
     If the `JSON` is an array of `JSON` objects, this returns a decoded array
     of values by mapping the element's `decode` function over the `JSON` and
-    then `sequencing` the result. This makes this `Decode` function an
-    all-or-nothing operation (See the documentation for `sequence` for more info).
+    then applying `sequence` to the result. This makes this `decode` function
+    an all-or-nothing operation (See the documentation for `sequence` for more
+    info).
 
     If the `JSON` is not an array, this returns a type mismatch.
 
-    - parameter j: The JSON calue to decode
+    - parameter j: The `JSON` value to decode
 
     - returns: A decoded array of values
   */
@@ -163,8 +164,9 @@ public extension CollectionType where Generator.Element: Decodable, Generator.El
 
   If the `JSON` is an array of `JSON` objects, this returns a decoded array
   of values by mapping the element's `decode` function over the `JSON` and
-  then `sequencing` the result. This makes this `Decode` function an
-  all-or-nothing operation (See the documentation for `sequence` for more info).
+  then applying `sequence` to the result. This makes `decodeArray` an
+  all-or-nothing operation (See the documentation for `sequence` for more
+  info).
 
   If the `JSON` is not an array, this returns a type mismatch.
 
@@ -173,7 +175,7 @@ public extension CollectionType where Generator.Element: Decodable, Generator.El
   full type of the array when calling `decode`. We expect this function to be
   removed in a future version.
 
-  - parameter j: The JSON calue to decode
+  - parameter j: The `JSON` value to decode
 
   - returns: A decoded array of values
 */
@@ -188,12 +190,13 @@ public extension DictionaryLiteralConvertible where Value: Decodable, Value == V
 
     If the `JSON` is a dictionary of `String`/`JSON` pairs, this returns a decoded dictionary
     of key/value pairs by mapping the value's `decode` function over the `JSON` and
-    then `sequencing` the result. This makes this `Decode` function an
-    all-or-nothing operation (See the documentation for `sequence` for more info).
+    then applying `sequence` to the result. This makes this `decode` function
+    an all-or-nothing operation (See the documentation for `sequence` for more
+    info).
 
     If the `JSON` is not a dictionary, this returns a type mismatch.
 
-    - parameter j: The JSON calue to decode
+    - parameter j: The `JSON` value to decode
 
     - returns: A decoded dictionary of key/value pairs
   */
@@ -209,10 +212,11 @@ public extension DictionaryLiteralConvertible where Value: Decodable, Value == V
   Decode `JSON` into a dictionary of keys and values where the keys are
   `String`s and the values are `Decodable`.
 
-  If the `JSON` is a dictionary of `String`/`JSON` pairs, this returns a decoded dictionary
-  of key/value pairs by mapping the value's `decode` function over the `JSON` and
-  then `sequencing` the result. This makes this `Decode` function an
-  all-or-nothing operation (See the documentation for `sequence` for more info).
+  If the `JSON` is a dictionary of `String`/`JSON` pairs, this returns a
+  decoded dictionary of key/value pairs by mapping the value's `decode`
+  function over the `JSON` and then applying `sequence` to the result. This
+  makes `decodeObject` an all-or-nothing operation (See the documentation for
+  `sequence` for more info).
 
   If the `JSON` is not a dictionary, this returns a type mismatch.
 
@@ -221,7 +225,7 @@ public extension DictionaryLiteralConvertible where Value: Decodable, Value == V
   use the full type of the dictionary when calling `decode`. We expect this
   function to be removed in a future version.
 
-  - parameter j: The JSON calue to decode
+  - parameter j: The `JSON` value to decode
 
   - returns: A decoded dictionary of key/value pairs
 */
@@ -240,10 +244,10 @@ public func decodeObject<T: Decodable where T.DecodedType == T>(j: JSON) -> Deco
   This is similar to adding a subscript to `JSON`, except that it returns a
   `Decoded` type.
 
-  - parameter json: The JSON value that contains the key
+  - parameter json: The `JSON` value that contains the key
   - parameter key: The key containing the embedded `JSON` object
 
-  - returns: a decoded `JSON` value representing the success or failure of
+  - returns: A decoded `JSON` value representing the success or failure of
              extracting the value from the object
 */
 public func decodedJSON(json: JSON, forKey key: String) -> Decoded<JSON> {
