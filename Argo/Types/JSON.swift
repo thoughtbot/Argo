@@ -17,8 +17,6 @@ public extension JSON {
     `NSJSONSerialization`) to the strongly typed `JSON` tree structure.
 
     - parameter json: A loosely typed object
-
-    - returns: An instance of the `JSON` tree structure
   */
   init(_ json: AnyObject) {
     switch json {
