@@ -102,7 +102,8 @@ extension Bool: Decodable {
   /**
     Decode `JSON` into `Decoded<Bool>`.
 
-    Succeeds if the value is a boolean, otherwise it returns a type mismatch.
+    Succeeds if the value is a boolean or if the value is a number that is able
+    to be converted to a boolean, otherwise it returns a type mismatch.
 
     - parameter j: The `JSON` value to decode
 
@@ -111,6 +112,7 @@ extension Bool: Decodable {
   public static func decode(j: JSON) -> Decoded<Bool> {
     switch j {
     case let .Bool(n): return pure(n)
+    case let .Number(n): return pure(n as Bool)
     default: return .typeMismatch("Bool", actual: j)
     }
   }
