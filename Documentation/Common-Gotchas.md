@@ -9,7 +9,7 @@ to address some of those situations and set you on the right track!
 
 It is very important to fully curry your model’s `init` in order to use Argo.
 Because of this, `Argo` recommends using
-[`Curry`](https://github.com/thoughtbot/Curry) whichs allows you to change your
+[`Curry`](https://github.com/thoughtbot/Curry) which allows you to change your
 standard `init` functions into fully curried functions. Unfortunately, Swift
 can only compile `curry` for up to 20 arguments in a reasonable amount of time.
 That may sound like a lot, but one can still run up against this limitation
