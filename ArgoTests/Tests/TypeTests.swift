@@ -30,4 +30,12 @@ class TypeTests: XCTestCase {
 
     XCTAssert(model == nil)
   }
+
+  func testBooleanDecoding() {
+    let bools: Booleans? = JSONFromFile("booleans").flatMap(decode)
+
+    XCTAssert(bools != nil)
+    XCTAssert(bools?.bool == true)
+    XCTAssert(bools?.number == true)
+  }
 }

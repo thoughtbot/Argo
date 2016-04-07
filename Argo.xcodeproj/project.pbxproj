@@ -184,11 +184,16 @@
 		F893355F1A4CE83000B88685 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F89335541A4CE83000B88685 /* Argo.framework */; };
 		F893356E1A4CE8FC00B88685 /* Argo.h in Headers */ = {isa = PBXBuildFile; fileRef = F893356D1A4CE8FC00B88685 /* Argo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F893356F1A4CE8FC00B88685 /* Argo.h in Headers */ = {isa = PBXBuildFile; fileRef = F893356D1A4CE8FC00B88685 /* Argo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F89335761A4CE93600B88685 /* DecodeDecoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* DecodeDecoded.swift */; };
+		F89335761A4CE93600B88685 /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* Decode.swift */; };
 		F8C2561A1C3C855B00B70968 /* NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82D15F21C3C82730079FFB5 /* NSNumber.swift */; };
 		F8C2561B1C3C855C00B70968 /* NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82D15F21C3C82730079FFB5 /* NSNumber.swift */; };
 		F8C2561C1C3C855C00B70968 /* NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82D15F21C3C82730079FFB5 /* NSNumber.swift */; };
-		F89335761A4CE93600B88685 /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* Decode.swift */; };
+		F8C5927E1CB726C7007C5ABC /* booleans.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C5927D1CB726C7007C5ABC /* booleans.json */; };
+		F8C5927F1CB726CA007C5ABC /* booleans.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C5927D1CB726C7007C5ABC /* booleans.json */; };
+		F8C592801CB726CB007C5ABC /* booleans.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C5927D1CB726C7007C5ABC /* booleans.json */; };
+		F8C592821CB726FB007C5ABC /* Booleans.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C592811CB726FB007C5ABC /* Booleans.swift */; };
+		F8C592831CB726FE007C5ABC /* Booleans.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C592811CB726FB007C5ABC /* Booleans.swift */; };
+		F8C592841CB726FF007C5ABC /* Booleans.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C592811CB726FB007C5ABC /* Booleans.swift */; };
 		F8CBE6671A64521000316FBC /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBE6661A64521000316FBC /* Dictionary.swift */; };
 		F8CBE6681A64526300316FBC /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CBE6661A64521000316FBC /* Dictionary.swift */; };
 		F8E33FA51A51E0C20025A6E5 /* post_bad_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = F8E33FA41A51E0C20025A6E5 /* post_bad_comments.json */; };
@@ -339,6 +344,8 @@
 		F89335541A4CE83000B88685 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893355E1A4CE83000B88685 /* Argo-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Argo-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893356D1A4CE8FC00B88685 /* Argo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argo.h; sourceTree = "<group>"; };
+		F8C5927D1CB726C7007C5ABC /* booleans.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = booleans.json; sourceTree = "<group>"; };
+		F8C592811CB726FB007C5ABC /* Booleans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Booleans.swift; sourceTree = "<group>"; };
 		F8CBE6661A64521000316FBC /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		F8E33FA41A51E0C20025A6E5 /* post_bad_comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = post_bad_comments.json; sourceTree = "<group>"; };
 		F8EF432E1BBC728A001886BA /* catDecoded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = catDecoded.swift; sourceTree = "<group>"; };
@@ -508,6 +515,7 @@
 		EAD9FAFC19D2110D0031E006 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F8C592811CB726FB007C5ABC /* Booleans.swift */,
 				EAD9FAFD19D2113C0031E006 /* User.swift */,
 				EAD9FAFF19D211630031E006 /* Comment.swift */,
 				EAD9FB0119D211C10031E006 /* Post.swift */,
@@ -520,6 +528,7 @@
 		EAD9FB0319D213F30031E006 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
+				F8C5927D1CB726C7007C5ABC /* booleans.json */,
 				EAD9FB0F19D21AF50031E006 /* JSONFileReader.swift */,
 				EAD9FB0419D2143A0031E006 /* user_with_email.json */,
 				EAD9FB0819D214AA0031E006 /* user_without_email.json */,
@@ -858,6 +867,7 @@
 				809755081BADF3ED00C409E6 /* user_with_bad_type.json in Resources */,
 				809754FA1BADF3ED00C409E6 /* user_without_email.json in Resources */,
 				809755031BADF3ED00C409E6 /* types.json in Resources */,
+				F8C592801CB726CB007C5ABC /* booleans.json in Resources */,
 				809754FD1BADF3ED00C409E6 /* root_array.json in Resources */,
 				809754FE1BADF3ED00C409E6 /* TemplateIcon2x.png in Resources */,
 				809754FB1BADF3ED00C409E6 /* user_with_nested_name.json in Resources */,
@@ -897,6 +907,7 @@
 				EA47BB561AFC5DAC002D2CCD /* user_with_bad_type.json in Resources */,
 				EA08313519D5EFC0003B90D7 /* types.json in Resources */,
 				EA4EAF7319DD96330036AE0D /* types_fail_embedded.json in Resources */,
+				F8C5927E1CB726C7007C5ABC /* booleans.json in Resources */,
 				EA395DCA1A52FC1400EB607E /* root_object.json in Resources */,
 				F874B7EA1A66BF52004CCE5E /* root_array.json in Resources */,
 				EAD9FB1619D30F8D0031E006 /* post_no_comments.json in Resources */,
@@ -929,6 +940,7 @@
 				EA47BB571AFC5DAC002D2CCD /* user_with_bad_type.json in Resources */,
 				F862E0AD1A519D560093B028 /* types.json in Resources */,
 				F862E0AE1A519D5C0093B028 /* types_fail_embedded.json in Resources */,
+				F8C5927F1CB726CA007C5ABC /* booleans.json in Resources */,
 				EA395DCB1A52FC1400EB607E /* root_object.json in Resources */,
 				F874B7EB1A66C221004CCE5E /* root_array.json in Resources */,
 				F8EF75711A4CEC7100BDCC2D /* post_no_comments.json in Resources */,
@@ -1004,6 +1016,7 @@
 				809754F11BADF3E400C409E6 /* RawRepresentableTests.swift in Sources */,
 				809754F31BADF3E400C409E6 /* PListFileReader.swift in Sources */,
 				809754EB1BADF3E400C409E6 /* EmbeddedJSONDecodingTests.swift in Sources */,
+				F8C592841CB726FF007C5ABC /* Booleans.swift in Sources */,
 				809754EA1BADF3E400C409E6 /* OptionalPropertyDecodingTests.swift in Sources */,
 				809754F81BADF3E400C409E6 /* NSURL.swift in Sources */,
 				809754F41BADF3E400C409E6 /* User.swift in Sources */,
@@ -1058,7 +1071,6 @@
 				EA04D59D1BBF1FB9001DE23B /* Alternative.swift in Sources */,
 				F87EB6AE1ABC5F1300E3B0AB /* Decodable.swift in Sources */,
 				F87EB6A41ABC5F1300E3B0AB /* decode.swift in Sources */,
-				EA4678661BA8930E004488D2 /* DecodeOptional.swift in Sources */,
 				F82D15F31C3C82730079FFB5 /* NSNumber.swift in Sources */,
 				F87EB6AC1ABC5F1300E3B0AB /* JSON.swift in Sources */,
 				EA04D5A11BBF2021001DE23B /* FailureCoalescing.swift in Sources */,
@@ -1085,6 +1097,7 @@
 				F802D4C31A5EE061005E236C /* NSURL.swift in Sources */,
 				EABDF68F1A9CD4EA00B6CC83 /* PListFileReader.swift in Sources */,
 				EAD9FB1019D21AF50031E006 /* JSONFileReader.swift in Sources */,
+				F8C592821CB726FB007C5ABC /* Booleans.swift in Sources */,
 				EAD9FB0219D211C10031E006 /* Post.swift in Sources */,
 				EABDF6941A9CD4FC00B6CC83 /* PListDecodingTests.swift in Sources */,
 				EAD9FB1819D49A3E0031E006 /* TestModel.swift in Sources */,
@@ -1137,6 +1150,7 @@
 				F802D4C41A5EE172005E236C /* NSURL.swift in Sources */,
 				EABDF6901A9CD4EA00B6CC83 /* PListFileReader.swift in Sources */,
 				F8EF75721A4CEC7800BDCC2D /* User.swift in Sources */,
+				F8C592831CB726FE007C5ABC /* Booleans.swift in Sources */,
 				F8EF756B1A4CEC6400BDCC2D /* EmbeddedJSONDecodingTests.swift in Sources */,
 				EABDF6951A9CD4FC00B6CC83 /* PListDecodingTests.swift in Sources */,
 				F8EF75751A4CEC7800BDCC2D /* TestModel.swift in Sources */,
