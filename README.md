@@ -127,6 +127,6 @@ We love open source software! See [our other projects][community] or look at
 our product [case studies] and [hire us][hire] to help build your iOS app.
 
 [community]: https://thoughtbot.com/community?utm_source=github
-[case studies]: https://thoughtbot.com/ios?utm_source=github
+[case studies]: https://thoughtbot.com/work?utm_source=github
 [hire]: https://thoughtbot.com/hire-us?utm_source=github
 
