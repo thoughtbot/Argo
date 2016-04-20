@@ -14,6 +14,7 @@ can be.
 ## Basic Usage ##
 
 - [Decoding your first model](Basic-Usage.md)
+- [Common gotchas](Common-Gotchas.md)
 - Relationships // TODO
 
 ## Advanced Usage ##
