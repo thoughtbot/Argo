@@ -13,7 +13,7 @@ public extension Decoded {
   var value: T? {
     switch self {
     case let .Success(value): return value
-    case .Failure: return .None
+    case .Failure: return .none
     }
   }
 
@@ -24,7 +24,7 @@ public extension Decoded {
   */
   var error: DecodeError? {
     switch self {
-    case .Success: return .None
+    case .Success: return .none
     case let .Failure(error): return error
     }
   }
@@ -46,10 +46,10 @@ public extension Decoded {
     - returns: The `Decoded` type with a `.TypeMismatch` failure converted to
                `.Success(.None)`
   */
-  static func optional<T>(x: Decoded<T>) -> Decoded<T?> {
+  static func optional<T>(_ x: Decoded<T>) -> Decoded<T?> {
     switch x {
-    case let .Success(value): return .Success(.Some(value))
-    case .Failure(.MissingKey): return .Success(.None)
+    case let .Success(value): return .Success(.some(value))
+    case .Failure(.MissingKey): return .Success(.none)
     case let .Failure(.TypeMismatch(expected, actual)):
       return .Failure(.TypeMismatch(expected: expected, actual: actual))
     case let .Failure(.Custom(x)): return .Failure(.Custom(x))
@@ -64,10 +64,10 @@ public extension Decoded {
 
     - returns: The provided `Optional` value transformed into a `Decoded` value
   */
-  static func fromOptional<T>(x: T?) -> Decoded<T> {
+  static func fromOptional<T>(_ x: T?) -> Decoded<T> {
     switch x {
-    case let .Some(value): return .Success(value)
-    case .None: return .typeMismatch(".Some(\(T.self))", actual: ".None")
+    case let .some(value): return .Success(value)
+    case .none: return .typeMismatch(expected: ".Some(\(T.self))", actual: ".None")
     }
   }
 }
@@ -156,6 +156,6 @@ public func materialize<T>(f: () throws -> T) -> Decoded<T> {
   do {
     return .Success(try f())
   } catch {
-    return .customError("\(error)")
+    return .customError(message: "\(error)")
   }
 }

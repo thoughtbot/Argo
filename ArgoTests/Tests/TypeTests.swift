@@ -3,7 +3,7 @@ import Argo
 
 class TypeTests: XCTestCase {
   func testAllTheTypes() {
-    let model: TestModel? = JSONFromFile("types").flatMap(decode)
+    let model: TestModel? = JSONFromFile(file: "types").flatMap(decode)
 
     XCTAssert(model != nil)
     XCTAssert(model?.numerics.int == 5)
@@ -26,13 +26,13 @@ class TypeTests: XCTestCase {
   }
 
   func testFailingEmbedded() {
-    let model: TestModel? = JSONFromFile("types_fail_embedded").flatMap(decode)
+    let model: TestModel? = JSONFromFile(file: "types_fail_embedded").flatMap(decode)
 
     XCTAssert(model == nil)
   }
 
   func testBooleanDecoding() {
-    let bools: Booleans? = JSONFromFile("booleans").flatMap(decode)
+    let bools: Booleans? = JSONFromFile(file: "booleans").flatMap(decode)
 
     XCTAssert(bools != nil)
     XCTAssert(bools?.bool == true)

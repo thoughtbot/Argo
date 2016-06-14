@@ -21,7 +21,7 @@
 
   - returns: A `Decoded<T>` value where `T` is `Decodable`
 */
-public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject) -> Decoded<T> {
+public func decode<T: Decodable where T == T.DecodedType>(_ object: AnyObject) -> Decoded<T> {
   return T.decode(JSON(object))
 }
 
@@ -49,7 +49,7 @@ public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject) -> 
 
   - returns: A `Decoded<[T]>` value where `T` is `Decodable`
 */
-public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject) -> Decoded<[T]> {
+public func decode<T: Decodable where T == T.DecodedType>(_ object: AnyObject) -> Decoded<[T]> {
   return Array<T>.decode(JSON(object))
 }
 
@@ -76,7 +76,7 @@ public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject) -> 
 
   - returns: An `Optional<T>` value where `T` is `Decodable`
 */
-public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject) -> T? {
+public func decode<T: Decodable where T == T.DecodedType>(_ object: AnyObject) -> T? {
   return decode(object).value
 }
 
@@ -106,7 +106,7 @@ public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject) -> 
 
   - returns: An `Optional<[T]>` value where `T` is `Decodable`
 */
-public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject) -> [T]? {
+public func decode<T: Decodable where T == T.DecodedType>(_ object: AnyObject) -> [T]? {
   return decode(object).value
 }
 
@@ -136,7 +136,7 @@ public func decode<T: Decodable where T == T.DecodedType>(object: AnyObject) -> 
 
   - returns: A `Decoded<T>` value where `T` is `Decodable`
 */
-public func decode<T: Decodable where T == T.DecodedType>(dict: [String: AnyObject], rootKey: String) -> Decoded<T> {
+public func decode<T: Decodable where T == T.DecodedType>(_ dict: [String: AnyObject], rootKey: String) -> Decoded<T> {
   return JSON(dict) <| rootKey
 }
 
@@ -166,7 +166,7 @@ public func decode<T: Decodable where T == T.DecodedType>(dict: [String: AnyObje
 
   - returns: A `Decoded<[T]>` value where `T` is `Decodable`
 */
-public func decode<T: Decodable where T == T.DecodedType>(dict: [String: AnyObject], rootKey: String) -> Decoded<[T]> {
+public func decode<T: Decodable where T == T.DecodedType>(_ dict: [String: AnyObject], rootKey: String) -> Decoded<[T]> {
   return JSON(dict) <|| rootKey
 }
 
@@ -196,7 +196,7 @@ public func decode<T: Decodable where T == T.DecodedType>(dict: [String: AnyObje
 
   - returns: A `Decoded<T>` value where `T` is `Decodable`
 */
-public func decode<T: Decodable where T == T.DecodedType>(dict: [String: AnyObject], rootKey: String) -> T? {
+public func decode<T: Decodable where T == T.DecodedType>(_ dict: [String: AnyObject], rootKey: String) -> T? {
   return decode(dict, rootKey: rootKey).value
 }
 
@@ -227,6 +227,6 @@ public func decode<T: Decodable where T == T.DecodedType>(dict: [String: AnyObje
 
   - returns: A `Decoded<[T]>` value where `T` is `Decodable`
 */
-public func decode<T: Decodable where T == T.DecodedType>(dict: [String: AnyObject], rootKey: String) -> [T]? {
+public func decode<T: Decodable where T == T.DecodedType>(_ dict: [String: AnyObject], rootKey: String) -> [T]? {
   return decode(dict, rootKey: rootKey).value
 }

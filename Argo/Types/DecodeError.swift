@@ -1,5 +1,5 @@
 /// Possible decoding failure reasons.
-public enum DecodeError: ErrorType {
+public enum DecodeError: ErrorProtocol {
   /// The type existing at the key didn't match the type being requested.
   case TypeMismatch(expected: String, actual: String)
 

@@ -52,12 +52,12 @@ extension JSON: Decodable {
     it means we can use `JSON` values with the `<|` family of operators to pull
     out sub-keys.
 
-    - parameter j: The `JSON` value to decode
+    - parameter json: The `JSON` value to decode
 
     - returns: The provided `JSON` wrapped in `.Success`
   */
-  public static func decode(j: JSON) -> Decoded<JSON> {
-    return pure(j)
+  public static func decode(_ json: JSON) -> Decoded<JSON> {
+    return pure(json)
   }
 }
 
@@ -91,7 +91,7 @@ public func == (lhs: JSON, rhs: JSON) -> Bool {
 /// MARK: Deprecations
 
 extension JSON {
-  @available(*, deprecated=3.0, renamed="init")
+  @available(*, deprecated: 3.0, renamed: "init")
   static func parse(json: AnyObject) -> JSON {
     return JSON(json)
   }

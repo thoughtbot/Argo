@@ -4,14 +4,14 @@ import Curry
 
 class ExampleTests: XCTestCase {
   func testJSONWithRootArray() {
-    let stringArray: [String]? = JSONFromFile("array_root").flatMap(decode)
+    let stringArray: [String]? = JSONFromFile(file: "array_root").flatMap(decode)
 
     XCTAssertNotNil(stringArray)
     XCTAssertEqual(stringArray!, ["foo", "bar", "baz"])
   }
 
   func testJSONWithRootObject() {
-    let object = JSONFromFile("root_object") as? [String: AnyObject]
+    let object = JSONFromFile(file: "root_object") as? [String: AnyObject]
     let user: User? = object.flatMap { decode($0, rootKey: "user") }
 
     XCTAssert(user != nil)
@@ -22,7 +22,7 @@ class ExampleTests: XCTestCase {
   }
 
   func testDecodingNonFinalClass() {
-    let object = JSONFromFile("url") as? [String: AnyObject]
+    let object = JSONFromFile(file: "url") as? [String: AnyObject]
     let url: NSURL? = object.flatMap { decode($0, rootKey: "url") }
 
     XCTAssert(url != nil)
@@ -31,13 +31,13 @@ class ExampleTests: XCTestCase {
 
   func testDecodingJSONWithRootArray() {
     let expected = JSON([["title": "Foo", "age": 21], ["title": "Bar", "age": 32]])
-    let json = JSONFromFile("root_array").map(JSON.init)
+    let json = JSONFromFile(file: "root_array").map(JSON.init)
 
-    XCTAssert(.Some(expected) == json)
+    XCTAssert(.some(expected) == json)
   }
 
   func testFlatMapOptionals() {
-    let json: AnyObject? = JSONFromFile("user_with_email")
+    let json: AnyObject? = JSONFromFile(file: "user_with_email")
     let user: User? = json.flatMap(decode)
 
     XCTAssert(user?.id == 1)
@@ -46,7 +46,7 @@ class ExampleTests: XCTestCase {
   }
   
   func testNilCoalescing() {
-    let json: AnyObject? = JSONFromFile("user_with_nested_name")
+    let json: AnyObject? = JSONFromFile(file: "user_with_nested_name")
     let user: User? = json.flatMap(decode)
 
     XCTAssert(user?.id == 1)
@@ -55,7 +55,7 @@ class ExampleTests: XCTestCase {
   }
 
   func testFlatMapDecoded() {
-    let json: AnyObject? = JSONFromFile("user_with_email")
+    let json: AnyObject? = JSONFromFile(file: "user_with_email")
     let user: Decoded<User> = .fromOptional(json) >>- decode
 
     XCTAssert(user.value?.id == 1)

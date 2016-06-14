@@ -12,7 +12,7 @@
   - parameter xs: An `Array` of `Decoded<T>` values
   - returns: A `Decoded` `Array` of unwrapped `T` values
 */
-public func sequence<T>(xs: [Decoded<T>]) -> Decoded<[T]> {
+public func sequence<T>(_ xs: [Decoded<T>]) -> Decoded<[T]> {
   var accum: [T] = []
   accum.reserveCapacity(xs.count)
 
@@ -42,7 +42,7 @@ public func sequence<T>(xs: [Decoded<T>]) -> Decoded<[T]> {
   - returns: A `Decoded` `Dictionary` of unwrapped `T` values assigned to their
              original keys
 */
-public func sequence<Key, Value>(xs: [Key: Decoded<Value>]) -> Decoded<[Key: Value]> {
+public func sequence<Key, Value>(_ xs: [Key: Decoded<Value>]) -> Decoded<[Key: Value]> {
   var accum = Dictionary<Key, Value>(minimumCapacity: xs.count)
 
   for (key, x) in xs {

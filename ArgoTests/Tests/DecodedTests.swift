@@ -3,7 +3,7 @@ import Argo
 
 class DecodedTests: XCTestCase {
   func testDecodedSuccess() {
-    let user: Decoded<User> = decode(JSONFromFile("user_with_email")!)
+    let user: Decoded<User> = decode(JSONFromFile(file: "user_with_email")!)
 
     switch user {
     case let .Success(x): XCTAssert(user.description == "Success(\(x))")
@@ -12,25 +12,25 @@ class DecodedTests: XCTestCase {
   }
   
   func testDecodedWithError() {
-    let user: Decoded<User> = decode(JSONFromFile("user_with_bad_type")!)
+    let user: Decoded<User> = decode(JSONFromFile(file: "user_with_bad_type")!)
     
     switch user.error {
-    case .Some: XCTAssert(true)
-    case .None: XCTFail("Unexpected Success")
+    case .some: XCTAssert(true)
+    case .none: XCTFail("Unexpected Success")
     }
   }
   
   func testDecodedWithNoError() {
-    let user: Decoded<User> = decode(JSONFromFile("user_with_email")!)
+    let user: Decoded<User> = decode(JSONFromFile(file: "user_with_email")!)
     
     switch user.error {
-    case .Some: XCTFail("Unexpected Error Occurred")
-    case .None: XCTAssert(true)
+    case .some: XCTFail("Unexpected Error Occurred")
+    case .none: XCTAssert(true)
     }
   }
 
   func testDecodedTypeMissmatch() {
-    let user: Decoded<User> = decode(JSONFromFile("user_with_bad_type")!)
+    let user: Decoded<User> = decode(JSONFromFile(file: "user_with_bad_type")!)
 
     switch user {
     case let .Failure(.TypeMismatch(expected, actual)): XCTAssert(user.description == "Failure(TypeMismatch(Expected \(expected), got \(actual)))")
@@ -39,7 +39,7 @@ class DecodedTests: XCTestCase {
   }
 
   func testDecodedMissingKey() {
-    let user: Decoded<User> = decode(JSONFromFile("user_without_key")!)
+    let user: Decoded<User> = decode(JSONFromFile(file: "user_without_key")!)
 
     switch user {
     case let .Failure(.MissingKey(s)): XCTAssert(user.description == "Failure(MissingKey(\(s)))")
@@ -57,7 +57,7 @@ class DecodedTests: XCTestCase {
   }
   
   func testDecodedMaterializeSuccess() {
-    let user: Decoded<User> = decode(JSONFromFile("user_with_email")!)
+    let user: Decoded<User> = decode(JSONFromFile(file: "user_with_email")!)
     let materialized = materialize { user.value! }
     
     switch materialized {
@@ -77,10 +77,10 @@ class DecodedTests: XCTestCase {
   }
   
   func testDecodedDematerializeSuccess() {
-    let user: Decoded<User> = decode(JSONFromFile("user_with_email")!)
+    let user: Decoded<User> = decode(JSONFromFile(file: "user_with_email")!)
     
     do {
-      try user.dematerialize()
+      _ = try user.dematerialize()
       XCTAssert(true)
     } catch {
       XCTFail("Unexpected Error Occurred")
@@ -88,10 +88,10 @@ class DecodedTests: XCTestCase {
   }
   
   func testDecodedDematerializeTypeMismatch() {
-    let user: Decoded<User> = decode(JSONFromFile("user_with_bad_type")!)
+    let user: Decoded<User> = decode(JSONFromFile(file: "user_with_bad_type")!)
     
     do {
-      try user.dematerialize()
+      _ = try user.dematerialize()
       XCTFail("Unexpected Success")
     } catch DecodeError.TypeMismatch {
       XCTAssert(true)
@@ -103,10 +103,10 @@ class DecodedTests: XCTestCase {
   }
   
   func testDecodedDematerializeMissingKey() {
-    let user: Decoded<User> = decode(JSONFromFile("user_without_key")!)
+    let user: Decoded<User> = decode(JSONFromFile(file: "user_without_key")!)
     
     do {
-      try user.dematerialize()
+      _ = try user.dematerialize()
       XCTFail("Unexpected Success")
     } catch DecodeError.MissingKey {
       XCTAssert(true)
@@ -118,8 +118,8 @@ class DecodedTests: XCTestCase {
   }
 
   func testDecodedOrWithSuccess() {
-    let successUser: Decoded<User> = decode(JSONFromFile("user_with_email")!)
-    let failedUser: Decoded<User> = decode(JSONFromFile("user_with_bad_type")!)
+    let successUser: Decoded<User> = decode(JSONFromFile(file: "user_with_email")!)
+    let failedUser: Decoded<User> = decode(JSONFromFile(file: "user_with_bad_type")!)
 
     let result = successUser.or(failedUser)
 
@@ -130,8 +130,8 @@ class DecodedTests: XCTestCase {
   }
 
   func testDecodedOrWithError() {
-    let successUser: Decoded<User> = decode(JSONFromFile("user_with_email")!)
-    let failedUser: Decoded<User> = decode(JSONFromFile("user_with_bad_type")!)
+    let successUser: Decoded<User> = decode(JSONFromFile(file: "user_with_email")!)
+    let failedUser: Decoded<User> = decode(JSONFromFile(file: "user_with_bad_type")!)
 
     let result = failedUser.or(successUser)
 
@@ -143,7 +143,7 @@ class DecodedTests: XCTestCase {
 }
 
 private struct Dummy: Decodable {
-  static func decode(json: JSON) -> Decoded<Dummy> {
+  static func decode(_ json: JSON) -> Decoded<Dummy> {
     return .Failure(.Custom("My Custom Error"))
   }
 }

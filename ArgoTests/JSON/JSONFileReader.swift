@@ -1,13 +1,14 @@
 import Foundation
 
 func JSONFromFile(file: String) -> AnyObject? {
-  return NSBundle(forClass: JSONFileReader.self).pathForResource(file, ofType: "json")
-    .flatMap { NSData(contentsOfFile: $0) }
+  return Bundle(for: JSONFileReader.self).pathForResource(file, ofType: "json")
+    .flatMap { URL(fileURLWithPath: $0) }
+    .flatMap { try? Data(contentsOf: $0) }
     .flatMap(JSONObjectWithData)
 }
 
-private func JSONObjectWithData(data: NSData) -> AnyObject? {
-  return try? NSJSONSerialization.JSONObjectWithData(data, options: [])
+private func JSONObjectWithData(data: Data) -> AnyObject? {
+  return try? JSONSerialization.jsonObject(with: data, options: [])
 }
 
 private class JSONFileReader { }

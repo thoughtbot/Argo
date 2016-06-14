@@ -11,7 +11,7 @@
 
   - returns: A value of type `Decoded<U>`
 */
-public func <^> <T, U>(@noescape f: T -> U, x: Decoded<T>) -> Decoded<U> {
+public func <^> <T, U>(f: @noescape (T) -> U, x: Decoded<T>) -> Decoded<U> {
   return x.map(f)
 }
 
@@ -28,7 +28,7 @@ public extension Decoded {
 
     - returns: A value of type `Decoded<U>`
   */
-  func map<U>(@noescape f: T -> U) -> Decoded<U> {
+  func map<U>(_ f: @noescape (T) -> U) -> Decoded<U> {
     switch self {
     case let .Success(value): return .Success(f(value))
     case let .Failure(error): return .Failure(error)

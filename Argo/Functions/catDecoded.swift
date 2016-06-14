@@ -13,7 +13,7 @@
 
   - returns: An array of unwrapped values of type `T`
 */
-public func catDecoded<T>(xs: [Decoded<T>]) -> [T] {
+public func catDecoded<T>(_ xs: [Decoded<T>]) -> [T] {
   var accum: [T] = []
   accum.reserveCapacity(xs.count)
 
@@ -43,7 +43,7 @@ public func catDecoded<T>(xs: [Decoded<T>]) -> [T] {
 
   - returns: A dictionary of unwrapped values of type `T` assigned to `String` keys
 */
-public func catDecoded<T>(xs: [String: Decoded<T>]) -> [String: T] {
+public func catDecoded<T>(_ xs: [String: Decoded<T>]) -> [String: T] {
   var accum = Dictionary<String, T>(minimumCapacity: xs.count)
 
   for (key, x) in xs {

@@ -30,5 +30,5 @@ public protocol Decodable {
 
     - returns: A decoded instance of the `DecodedType`
   */
-  static func decode(json: JSON) -> Decoded<DecodedType>
+  static func decode(_ json: JSON) -> Decoded<DecodedType>
 }

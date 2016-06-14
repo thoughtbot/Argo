@@ -8,10 +8,10 @@ struct Comment {
 }
 
 extension Comment: Decodable {
-  static func decode(j: JSON) -> Decoded<Comment> {
+  static func decode(_ json: JSON) -> Decoded<Comment> {
     return curry(self.init)
-      <^> j <| "id"
-      <*> j <| "text"
-      <*> j <| ["author", "name"]
+      <^> json <| "id"
+      <*> json <| "text"
+      <*> json <| ["author", "name"]
   }
 }

@@ -19,7 +19,6 @@
 		809754DD1BADF36D00C409E6 /* Runes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F876F1D61B56FBB300B38589 /* Runes.swift */; };
 		809754DE1BADF36D00C409E6 /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* Decode.swift */; };
 		809754DF1BADF36D00C409E6 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		809754E11BADF36D00C409E6 /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6991ABC5F1300E3B0AB /* curry.swift */; };
 		809754E21BADF36D00C409E6 /* decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69A1ABC5F1300E3B0AB /* decode.swift */; };
 		809754E31BADF36D00C409E6 /* flatReduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69B1ABC5F1300E3B0AB /* flatReduce.swift */; };
 		809754E41BADF36D00C409E6 /* sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69C1ABC5F1300E3B0AB /* sequence.swift */; };
@@ -68,7 +67,6 @@
 		D0592EC11B77DD8E00EFEF39 /* StandardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6A11ABC5F1300E3B0AB /* StandardTypes.swift */; };
 		D0592EC21B77DD9300EFEF39 /* Runes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F876F1D61B56FBB300B38589 /* Runes.swift */; };
 		D0592EC31B77DD9300EFEF39 /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* Decode.swift */; };
-		D0592EC41B77DD9A00EFEF39 /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6991ABC5F1300E3B0AB /* curry.swift */; };
 		D0592EC51B77DD9A00EFEF39 /* decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69A1ABC5F1300E3B0AB /* decode.swift */; };
 		D0592EC61B77DD9A00EFEF39 /* flatReduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69B1ABC5F1300E3B0AB /* flatReduce.swift */; };
 		D0592EC71B77DD9A00EFEF39 /* sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69C1ABC5F1300E3B0AB /* sequence.swift */; };
@@ -165,8 +163,6 @@
 		F876F1D71B56FBB300B38589 /* Runes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F876F1D61B56FBB300B38589 /* Runes.swift */; };
 		F876F1D81B56FBB300B38589 /* Runes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F876F1D61B56FBB300B38589 /* Runes.swift */; };
 		F87897EF1A927864009316A5 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD9FACF19D0EAB50031E006 /* Argo.framework */; };
-		F87EB6A21ABC5F1300E3B0AB /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6991ABC5F1300E3B0AB /* curry.swift */; };
-		F87EB6A31ABC5F1300E3B0AB /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6991ABC5F1300E3B0AB /* curry.swift */; };
 		F87EB6A41ABC5F1300E3B0AB /* decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69A1ABC5F1300E3B0AB /* decode.swift */; };
 		F87EB6A51ABC5F1300E3B0AB /* decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69A1ABC5F1300E3B0AB /* decode.swift */; };
 		F87EB6A61ABC5F1300E3B0AB /* flatReduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69B1ABC5F1300E3B0AB /* flatReduce.swift */; };
@@ -333,7 +329,6 @@
 		F84318A71B9A2D7A00165216 /* DecodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodeError.swift; sourceTree = "<group>"; };
 		F874B7E91A66BF52004CCE5E /* root_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = root_array.json; sourceTree = "<group>"; };
 		F876F1D61B56FBB300B38589 /* Runes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Runes.swift; path = Carthage/Checkouts/Runes/Source/Runes.swift; sourceTree = SOURCE_ROOT; };
-		F87EB6991ABC5F1300E3B0AB /* curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = curry.swift; sourceTree = "<group>"; };
 		F87EB69A1ABC5F1300E3B0AB /* decode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = decode.swift; sourceTree = "<group>"; };
 		F87EB69B1ABC5F1300E3B0AB /* flatReduce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = flatReduce.swift; sourceTree = "<group>"; };
 		F87EB69C1ABC5F1300E3B0AB /* sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sequence.swift; sourceTree = "<group>"; };
@@ -598,7 +593,6 @@
 			isa = PBXGroup;
 			children = (
 				F8EF432E1BBC728A001886BA /* catDecoded.swift */,
-				F87EB6991ABC5F1300E3B0AB /* curry.swift */,
 				F87EB69A1ABC5F1300E3B0AB /* decode.swift */,
 				F87EB69B1ABC5F1300E3B0AB /* flatReduce.swift */,
 				F87EB69C1ABC5F1300E3B0AB /* sequence.swift */,
@@ -803,7 +797,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = thoughtbot;
 				TargetAttributes = {
 					809754C01BADF34100C409E6 = {
@@ -1004,7 +998,6 @@
 				F8C2561C1C3C855C00B70968 /* NSNumber.swift in Sources */,
 				EA9159F61BDE74BC00D85292 /* Argo.swift in Sources */,
 				EA9159FB1BDE74F800D85292 /* Alternative.swift in Sources */,
-				809754E11BADF36D00C409E6 /* curry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1037,7 +1030,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0592EC41B77DD9A00EFEF39 /* curry.swift in Sources */,
 				EA04D59B1BBF1FA4001DE23B /* Applicative.swift in Sources */,
 				D0592EC11B77DD8E00EFEF39 /* StandardTypes.swift in Sources */,
 				EA04D59F1BBF1FB9001DE23B /* Alternative.swift in Sources */,
@@ -1083,7 +1075,6 @@
 				F87EB6B01ABC5F1300E3B0AB /* StandardTypes.swift in Sources */,
 				EA04D5911BBF1F40001DE23B /* Monad.swift in Sources */,
 				EA04D5951BBF1F80001DE23B /* Functor.swift in Sources */,
-				F87EB6A21ABC5F1300E3B0AB /* curry.swift in Sources */,
 				EA04D5A51BBF2047001DE23B /* Argo.swift in Sources */,
 				F8EF432F1BBC728A001886BA /* catDecoded.swift in Sources */,
 			);
@@ -1138,7 +1129,6 @@
 				EA04D5961BBF1F80001DE23B /* Functor.swift in Sources */,
 				F87EB6B11ABC5F1300E3B0AB /* StandardTypes.swift in Sources */,
 				EA04D5A61BBF2047001DE23B /* Argo.swift in Sources */,
-				F87EB6A31ABC5F1300E3B0AB /* curry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1351,6 +1341,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1413,6 +1404,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;

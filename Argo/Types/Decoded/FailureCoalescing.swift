@@ -12,7 +12,7 @@
 
   - returns: A value of type `T`
 */
-public func ?? <T>(lhs: Decoded<T>, @autoclosure rhs: () -> T) -> T {
+public func ?? <T>(lhs: Decoded<T>, rhs: @autoclosure () -> T) -> T {
   switch lhs {
   case let .Success(x): return x
   case .Failure: return rhs()
