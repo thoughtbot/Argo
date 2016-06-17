@@ -13,8 +13,21 @@ _Argo_ is the Greek word for _swift_ and the name of the ship used by Jason, son
 of Aeson, of the Argonauts. Aeson is the JSON parsing library in Haskell that
 inspired Argo, much like Aeson inspired his son Jason.
 
-NOTE: For Swift 1.2 support, use the versions tagged 1.x.x. For Swift 1.1
-support, use the versions tagged 0.3.x. You can find those in the [releases].
+## Version Compatibility
+
+Note that we're aggressive about pushing `master` forward along with new
+versions of Swift. Therefor, we highly recommend against pointing at `master`,
+and instead using [one of the releases we've provided][releases].
+
+Here is the current Swift compatibility breakdown:
+
+| Swift Version | Argo Version |
+| ------------- | ------------ |
+| 3.X           | master       |
+| 2.2, 2.3      | 3.X          |
+| 2.0, 2.1      | 2.X          |
+| 1.2 - 2.0     | 1.X          |
+| 1.1           | 0.3.X        |
 
 [releases]: https://github.com/thoughtbot/Argo/releases
 
