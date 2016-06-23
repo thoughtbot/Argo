@@ -158,6 +158,7 @@ public extension Collection where Iterator.Element: Decodable, Iterator.Element 
       if a.count > divider {
         let totalSlices = Int(ceil(Double(a.count) / Double(divider)))
         var final: [Decoded<Generator.Element>] = []
+        final.reserveCapacity(a.count)
         (0..<totalSlices).forEach { _ in group.enter() }
         for i in 0..<totalSlices {
           let d = i*divider+divider

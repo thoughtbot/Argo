@@ -30,6 +30,7 @@ public extension JSON {
       if v.count > divider {
         let totalSlices = Int(ceil(Double(v.count) / Double(divider)))
         var final: [JSON] = []
+        final.reserveCapacity(v.count)
         (0..<totalSlices).forEach { _ in group.enter() }
         for i in 0..<totalSlices {
           let slice: [AnyObject] = [] + v[i*divider..<min(i*divider+divider, v.endIndex)]
