@@ -153,7 +153,27 @@ public extension Collection where Iterator.Element: Decodable, Iterator.Element 
   */
   static func decode(_ json: JSON) -> Decoded<[Generator.Element]> {
     switch json {
-    case let .Array(a): return sequence(a.map(Generator.Element.decode))
+    case let .Array(a):
+      let divider: Int = 100
+      if a.count > divider {
+        let totalSlices = Int(ceil(Double(a.count) / Double(divider)))
+        var final: [Decoded<Generator.Element>] = []
+        (0..<totalSlices).forEach { _ in group.enter() }
+        for i in 0..<totalSlices {
+          let d = i*divider+divider
+          let min = d < a.endIndex ? d : a.endIndex
+          let slice: [JSON] = [] + a[i*divider..<min]
+          queue.async {
+            final += slice.map(Generator.Element.decode)
+            group.leave()
+          }
+        }
+        group.wait()
+        return sequence(final)
+      } else {
+        return sequence(a.map(Generator.Element.decode))
+      }
+
     default: return .typeMismatch(expected: "Array", actual: json)
     }
   }

@@ -1,5 +1,8 @@
 import Foundation
 
+let group = DispatchGroup()
+let queue = DispatchQueue.global(attributes: DispatchQueue.GlobalAttributes.qosUserInitiated)
+
 /// A type safe representation of JSON.
 public enum JSON {
   case Object([Swift.String: JSON])
@@ -23,7 +26,23 @@ public extension JSON {
     switch json {
 
     case let v as [AnyObject]:
-      self = .Array(v.map(JSON.init))
+      let divider: Int = 200
+      if v.count > divider {
+        let totalSlices = Int(ceil(Double(v.count) / Double(divider)))
+        var final: [JSON] = []
+        (0..<totalSlices).forEach { _ in group.enter() }
+        for i in 0..<totalSlices {
+          let slice: [AnyObject] = [] + v[i*divider..<min(i*divider+divider, v.endIndex)]
+          queue.async {
+            final += slice.map(JSON.init)
+            group.leave()
+          }
+        }
+        group.wait()
+        self = .Array(final)
+      } else {
+        self = .Array(v.map(JSON.init))
+      }
 
     case let v as [Swift.String: AnyObject]:
       self = .Object(v.map(JSON.init))
