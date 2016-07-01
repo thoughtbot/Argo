@@ -7,7 +7,4 @@
    <FileRef
       location = "group:Carthage/Checkouts/Curry/Curry.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Argo Playground.playground">
-   </FileRef>
 </Workspace>
