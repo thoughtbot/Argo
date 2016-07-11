@@ -8,6 +8,9 @@ public enum DecodeError: Error {
 
   /// A custom error case for adding explicit failure info.
   case custom(String)
+
+  /// There were multiple errors in the JSON.
+  case multiple([DecodeError])
 }
 
 extension DecodeError: CustomStringConvertible {
@@ -16,6 +19,7 @@ extension DecodeError: CustomStringConvertible {
     case let .typeMismatch(expected, actual): return "TypeMismatch(Expected \(expected), got \(actual))"
     case let .missingKey(s): return "MissingKey(\(s))"
     case let .custom(s): return "Custom(\(s))"
+    case let .multiple(es): return "Multiple(\(es.map { $0.description }.joined(separator: ", ")))"
     }
   }
 }
@@ -29,6 +33,8 @@ extension DecodeError: Hashable {
       return string.hashValue
     case let .custom(string):
       return string.hashValue
+    case let .multiple(es):
+      return es.reduce(0) { $0 ^ $1.hashValue }
     }
   }
 }
@@ -44,7 +50,18 @@ public func == (lhs: DecodeError, rhs: DecodeError) -> Bool {
   case let (.custom(string1), .custom(string2)):
     return string1 == string2
 
+  case let (.multiple(lhs), .multiple(rhs)):
+    return lhs == rhs
+
   default:
     return false
+  }
+}
+
+public func + (lhs: DecodeError, rhs: DecodeError) -> DecodeError {
+  switch (lhs, rhs) {
+  case let (.multiple(es), e): return .multiple(es + [e])
+  case let (e, .multiple(es)): return .multiple([e] + es)
+  case let (le, re): return .multiple([le, re])
   }
 }

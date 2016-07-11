@@ -47,9 +47,10 @@ public extension Decoded {
     - returns: A value of type `Decoded<U>`
   */
   func apply<U>(_ f: Decoded<(T) -> U>) -> Decoded<U> {
-    switch f {
-    case let .success(function): return self.map(function)
-    case let .failure(error): return .failure(error)
+    switch (f, self) {
+    case let (.success(function), _): return self.map(function)
+    case let (.failure(le), .failure(re)): return .failure(le + re)
+    case let (.failure(f), _): return .failure(f)
     }
   }
 }

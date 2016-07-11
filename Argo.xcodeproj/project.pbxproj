@@ -546,8 +546,8 @@
 				EA395DC31A52F8EB00EB607E /* array_root.json */,
 				EA395DC91A52FC1400EB607E /* root_object.json */,
 				EA6DD69E1AB384C700CA3A5B /* big_data.json */,
-				EA47BB551AFC5DAC002D2CCD /* user_with_bad_type.json */,
 				EA47BB581AFC5E65002D2CCD /* user_without_key.json */,
+				EA47BB551AFC5DAC002D2CCD /* user_with_bad_type.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
