@@ -16,7 +16,7 @@ inspired Argo, much like Aeson inspired his son Jason.
 ## Version Compatibility
 
 Note that we're aggressive about pushing `master` forward along with new
-versions of Swift. Therefor, we highly recommend against pointing at `master`,
+versions of Swift. Therefore, we highly recommend against pointing at `master`,
 and instead using [one of the releases we've provided][releases].
 
 Here is the current Swift compatibility breakdown:
