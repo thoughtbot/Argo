@@ -3,16 +3,16 @@ import Argo
 
 class PerformanceTests: XCTestCase {
   func testParsePerformance() {
-    let json: AnyObject = JSONFromFile(file: "big_data")!
+    let obj: AnyObject = json(fromFile: "big_data")!
 
     measure {
-      _ = JSON(json)
+      _ = JSON(obj)
     }
   }
 
   func testDecodePerformance() {
-    let json: AnyObject = JSONFromFile(file: "big_data")!
-    let j = JSON(json)
+    let obj: AnyObject = json(fromFile: "big_data")!
+    let j = JSON(obj)
 
     measure {
       _ = [TestModel].decode(j)
@@ -20,8 +20,8 @@ class PerformanceTests: XCTestCase {
   }
 
   func testBigDataDecodesCorrectly() {
-    let json: AnyObject = JSONFromFile(file: "big_data")!
-    let j = JSON(json)
+    let obj: AnyObject = json(fromFile: "big_data")!
+    let j = JSON(obj)
     let models = [TestModel].decode(j)
     XCTAssertEqual(models.value!.count, 10_000, "Decoded big_data should have 10_000 results.")
   }

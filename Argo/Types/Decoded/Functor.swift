@@ -30,8 +30,8 @@ public extension Decoded {
   */
   func map<U>(_ f: @noescape (T) -> U) -> Decoded<U> {
     switch self {
-    case let .Success(value): return .Success(f(value))
-    case let .Failure(error): return .Failure(error)
+    case let .success(value): return .success(f(value))
+    case let .failure(error): return .failure(error)
     }
   }
 }

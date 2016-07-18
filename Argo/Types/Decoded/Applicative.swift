@@ -25,7 +25,7 @@ public func <*> <T, U>(f: Decoded<(T) -> U>, x: Decoded<T>) -> Decoded<U> {
   - returns: The provided value wrapped in `.Success`
 */
 public func pure<T>(_ x: T) -> Decoded<T> {
-  return .Success(x)
+  return .success(x)
 }
 
 public extension Decoded {
@@ -46,8 +46,8 @@ public extension Decoded {
   */
   func apply<U>(_ f: Decoded<(T) -> U>) -> Decoded<U> {
     switch f {
-    case let .Success(function): return self.map(function)
-    case let .Failure(error): return .Failure(error)
+    case let .success(function): return self.map(function)
+    case let .failure(error): return .failure(error)
     }
   }
 }

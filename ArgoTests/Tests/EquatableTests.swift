@@ -3,16 +3,16 @@ import Argo
 
 class EquatableTests: XCTestCase {
   func testEqualJSONObjects() {
-    let json = JSONFromFile(file: "types").map(JSON.init)
-    let anotherParsed = JSONFromFile(file: "types").map(JSON.init)
+    let j = json(fromFile: "types").map(JSON.init)
+    let anotherParsed = json(fromFile: "types").map(JSON.init)
 
-    XCTAssertEqual(json!, anotherParsed!)
+    XCTAssertEqual(j!, anotherParsed!)
   }
 
   func testNotEqualJSONObjects() {
-    let json = JSONFromFile(file: "types").map(JSON.init)
-    let anotherJSON = JSONFromFile(file: "types_fail_embedded").map(JSON.init)
+    let j = json(fromFile: "types").map(JSON.init)
+    let anotherJSON = json(fromFile: "types_fail_embedded").map(JSON.init)
 
-    XCTAssertNotEqual(json!, anotherJSON!)
+    XCTAssertNotEqual(j!, anotherJSON!)
   }
 }

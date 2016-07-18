@@ -12,7 +12,7 @@ extension String: Decodable {
   */
   public static func decode(_ json: JSON) -> Decoded<String> {
     switch json {
-    case let .String(s): return pure(s)
+    case let .string(s): return pure(s)
     default: return .typeMismatch(expected: "String", actual: json)
     }
   }
@@ -31,7 +31,7 @@ extension Int: Decodable {
   */
   public static func decode(_ json: JSON) -> Decoded<Int> {
     switch json {
-    case let .Number(n): return pure(n as Int)
+    case let .number(n): return pure(n as Int)
     default: return .typeMismatch(expected: "Int", actual: json)
     }
   }
@@ -51,8 +51,8 @@ extension Int64: Decodable {
   */
   public static func decode(_ json: JSON) -> Decoded<Int64> {
     switch json {
-    case let .Number(n): return pure(n.int64Value)
-    case let .String(s):
+    case let .number(n): return pure(n.int64Value)
+    case let .string(s):
       guard let i = Int64(s) else { fallthrough }
       return pure(i)
     default: return .typeMismatch(expected: "Int64", actual: json)
@@ -73,7 +73,7 @@ extension Double: Decodable {
   */
   public static func decode(_ json: JSON) -> Decoded<Double> {
     switch json {
-    case let .Number(n): return pure(n as Double)
+    case let .number(n): return pure(n as Double)
     default: return .typeMismatch(expected: "Double", actual: json)
     }
   }
@@ -92,7 +92,7 @@ extension Float: Decodable {
   */
   public static func decode(_ json: JSON) -> Decoded<Float> {
     switch json {
-    case let .Number(n): return pure(n as Float)
+    case let .number(n): return pure(n as Float)
     default: return .typeMismatch(expected: "Float", actual: json)
     }
   }
@@ -111,8 +111,8 @@ extension Bool: Decodable {
   */
   public static func decode(_ json: JSON) -> Decoded<Bool> {
     switch json {
-    case let .Bool(n): return pure(n)
-    case let .Number(n): return pure(n as Bool)
+    case let .bool(n): return pure(n)
+    case let .number(n): return pure(n as Bool)
     default: return .typeMismatch(expected: "Bool", actual: json)
     }
   }
@@ -153,7 +153,7 @@ public extension Collection where Iterator.Element: Decodable, Iterator.Element 
   */
   static func decode(_ json: JSON) -> Decoded<[Generator.Element]> {
     switch json {
-    case let .Array(a): return sequence(a.map(Generator.Element.decode))
+    case let .array(a): return sequence(a.map(Generator.Element.decode))
     default: return .typeMismatch(expected: "Array", actual: json)
     }
   }
@@ -203,7 +203,7 @@ public extension DictionaryLiteralConvertible where Value: Decodable, Value == V
   */
   static func decode(_ json: JSON) -> Decoded<[String: Value]> {
     switch json {
-    case let .Object(o): return sequence(Value.decode <^> o)
+    case let .object(o): return sequence(Value.decode <^> o)
     default: return .typeMismatch(expected: "Object", actual: json)
     }
   }
@@ -253,14 +253,14 @@ public func decodeObject<T: Decodable where T.DecodedType == T>(_ json: JSON) ->
 */
 public func decodedJSON(_ json: JSON, forKey key: String) -> Decoded<JSON> {
   switch json {
-  case let .Object(o): return guardNull(key, o[key] ?? .Null)
+  case let .object(o): return guardNull(key, o[key] ?? .null)
   default: return .typeMismatch(expected: "Object", actual: json)
   }
 }
 
 private func guardNull(_ key: String, _ json: JSON) -> Decoded<JSON> {
   switch json {
-  case .Null: return .missingKey(name: key)
+  case .null: return .missingKey(key)
   default: return pure(json)
   }
 }

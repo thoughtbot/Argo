@@ -2,12 +2,12 @@ import Foundation
 
 /// A type safe representation of JSON.
 public enum JSON {
-  case Object([Swift.String: JSON])
-  case Array([JSON])
-  case String(Swift.String)
-  case Number(NSNumber)
-  case Bool(Swift.Bool)
-  case Null
+  case object([String: JSON])
+  case array([JSON])
+  case string(String)
+  case number(NSNumber)
+  case bool(Bool)
+  case null
 }
 
 public extension JSON {
@@ -23,23 +23,23 @@ public extension JSON {
     switch json {
 
     case let v as [AnyObject]:
-      self = .Array(v.map(JSON.init))
+      self = .array(v.map(JSON.init))
 
-    case let v as [Swift.String: AnyObject]:
-      self = .Object(v.map(JSON.init))
+    case let v as [String: AnyObject]:
+      self = .object(v.map(JSON.init))
 
-    case let v as Swift.String:
-      self = .String(v)
+    case let v as String:
+      self = .string(v)
 
     case let v as NSNumber:
       if v.isBool {
-        self = .Bool(v as Swift.Bool)
+        self = .bool(v as Bool)
       } else {
-        self = .Number(v)
+        self = .number(v)
       }
 
     default:
-      self = .Null
+      self = .null
     }
   }
 }
@@ -62,14 +62,14 @@ extension JSON: Decodable {
 }
 
 extension JSON: CustomStringConvertible {
-  public var description: Swift.String {
+  public var description: String {
     switch self {
-    case let .String(v): return "String(\(v))"
-    case let .Number(v): return "Number(\(v))"
-    case let .Bool(v): return "Bool(\(v))"
-    case let .Array(a): return "Array(\(a.description))"
-    case let .Object(o): return "Object(\(o.description))"
-    case .Null: return "Null"
+    case let .string(v): return "String(\(v))"
+    case let .number(v): return "Number(\(v))"
+    case let .bool(v): return "Bool(\(v))"
+    case let .array(a): return "Array(\(a.description))"
+    case let .object(o): return "Object(\(o.description))"
+    case .null: return "Null"
     }
   }
 }
@@ -78,12 +78,12 @@ extension JSON: Equatable { }
 
 public func == (lhs: JSON, rhs: JSON) -> Bool {
   switch (lhs, rhs) {
-  case let (.String(l), .String(r)): return l == r
-  case let (.Number(l), .Number(r)): return l == r
-  case let (.Bool(l), .Bool(r)): return l == r
-  case let (.Array(l), .Array(r)): return l == r
-  case let (.Object(l), .Object(r)): return l == r
-  case (.Null, .Null): return true
+  case let (.string(l), .string(r)): return l == r
+  case let (.number(l), .number(r)): return l == r
+  case let (.bool(l), .bool(r)): return l == r
+  case let (.array(l), .array(r)): return l == r
+  case let (.object(l), .object(r)): return l == r
+  case (.null, .null): return true
   default: return false
   }
 }
@@ -92,7 +92,7 @@ public func == (lhs: JSON, rhs: JSON) -> Bool {
 
 extension JSON {
   @available(*, deprecated: 3.0, renamed: "init")
-  static func parse(json: AnyObject) -> JSON {
+  static func parse(_ json: AnyObject) -> JSON {
     return JSON(json)
   }
 }
