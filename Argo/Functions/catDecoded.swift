@@ -19,8 +19,8 @@ public func catDecoded<T>(_ xs: [Decoded<T>]) -> [T] {
 
   for x in xs {
     switch x {
-    case let .Success(value): accum.append(value)
-    case .Failure: continue
+    case let .success(value): accum.append(value)
+    case .failure: continue
     }
   }
 
@@ -48,8 +48,8 @@ public func catDecoded<T>(_ xs: [String: Decoded<T>]) -> [String: T] {
 
   for (key, x) in xs {
     switch x {
-    case let .Success(value): accum[key] = value
-    case .Failure: continue
+    case let .success(value): accum[key] = value
+    case .failure: continue
     }
   }
 

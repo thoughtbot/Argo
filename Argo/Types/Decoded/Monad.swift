@@ -47,8 +47,8 @@ public extension Decoded {
   */
   func flatMap<U>(_ f: @noescape (T) -> Decoded<U>) -> Decoded<U> {
     switch self {
-    case let .Success(value): return f(value)
-    case let .Failure(error): return .Failure(error)
+    case let .success(value): return f(value)
+    case let .failure(error): return .failure(error)
     }
   }
 }

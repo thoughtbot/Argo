@@ -32,8 +32,8 @@ public extension Decoded {
   */
   func or(_ other: @autoclosure () -> Decoded<T>) -> Decoded<T> {
     switch self {
-      case .Success: return self
-      case .Failure: return other()
+      case .success: return self
+      case .failure: return other()
     }
   }
 }

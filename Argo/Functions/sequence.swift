@@ -18,8 +18,8 @@ public func sequence<T>(_ xs: [Decoded<T>]) -> Decoded<[T]> {
 
   for x in xs {
     switch x {
-    case let .Success(value): accum.append(value)
-    case let .Failure(error): return .Failure(error)
+    case let .success(value): accum.append(value)
+    case let .failure(error): return .failure(error)
     }
   }
 
@@ -47,8 +47,8 @@ public func sequence<Key, Value>(_ xs: [Key: Decoded<Value>]) -> Decoded<[Key: V
 
   for (key, x) in xs {
     switch x {
-    case let .Success(value): accum[key] = value
-    case let .Failure(error): return .Failure(error)
+    case let .success(value): accum[key] = value
+    case let .failure(error): return .failure(error)
     }
   }
 

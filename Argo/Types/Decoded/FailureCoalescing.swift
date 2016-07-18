@@ -14,7 +14,7 @@
 */
 public func ?? <T>(lhs: Decoded<T>, rhs: @autoclosure () -> T) -> T {
   switch lhs {
-  case let .Success(x): return x
-  case .Failure: return rhs()
+  case let .success(x): return x
+  case .failure: return rhs()
   }
 }
