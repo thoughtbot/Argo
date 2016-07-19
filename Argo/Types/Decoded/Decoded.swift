@@ -67,7 +67,7 @@ public extension Decoded {
   static func fromOptional<T>(_ x: T?) -> Decoded<T> {
     switch x {
     case let .some(value): return .success(value)
-    case .none: return .typeMismatch(".Some(\(T.self))", actual: ".None")
+    case .none: return .typeMismatch(expected: ".Some(\(T.self))", actual: ".None")
     }
   }
 }
@@ -82,7 +82,7 @@ public extension Decoded {
     - returns: A `Decoded.Failure` with a `.TypeMismatch` error constructed
                from the provided `expected` and `actual` values
   */
-  static func typeMismatch<T, U>(_ expected: String, actual: U) -> Decoded<T> {
+  static func typeMismatch<T, U>(expected: String, actual: U) -> Decoded<T> {
     return .failure(.typeMismatch(expected: expected, actual: String(actual)))
   }
 

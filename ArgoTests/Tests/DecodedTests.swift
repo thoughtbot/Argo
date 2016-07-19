@@ -3,7 +3,7 @@ import Argo
 
 class DecodedTests: XCTestCase {
   func testDecodedSuccess() {
-    let user: Decoded<User> = decode(JSONFromFile("user_with_email")!)
+    let user: Decoded<User> = decode(json(fromFile: "user_with_email")!)
 
     switch user {
     case let .success(x): XCTAssert(user.description == "Success(\(x))")
@@ -12,7 +12,7 @@ class DecodedTests: XCTestCase {
   }
   
   func testDecodedWithError() {
-    let user: Decoded<User> = decode(JSONFromFile("user_with_bad_type")!)
+    let user: Decoded<User> = decode(json(fromFile: "user_with_bad_type")!)
     
     switch user.error {
     case .some: XCTAssert(true)
@@ -21,7 +21,7 @@ class DecodedTests: XCTestCase {
   }
   
   func testDecodedWithNoError() {
-    let user: Decoded<User> = decode(JSONFromFile("user_with_email")!)
+    let user: Decoded<User> = decode(json(fromFile: "user_with_email")!)
     
     switch user.error {
     case .some: XCTFail("Unexpected Error Occurred")
@@ -30,7 +30,7 @@ class DecodedTests: XCTestCase {
   }
 
   func testDecodedTypeMissmatch() {
-    let user: Decoded<User> = decode(JSONFromFile("user_with_bad_type")!)
+    let user: Decoded<User> = decode(json(fromFile: "user_with_bad_type")!)
 
     switch user {
     case let .failure(.typeMismatch(expected, actual)): XCTAssert(user.description == "Failure(TypeMismatch(Expected \(expected), got \(actual)))")
@@ -39,7 +39,7 @@ class DecodedTests: XCTestCase {
   }
 
   func testDecodedMissingKey() {
-    let user: Decoded<User> = decode(JSONFromFile("user_without_key")!)
+    let user: Decoded<User> = decode(json(fromFile: "user_without_key")!)
 
     switch user {
     case let .failure(.missingKey(s)): XCTAssert(user.description == "Failure(MissingKey(\(s)))")
@@ -57,7 +57,7 @@ class DecodedTests: XCTestCase {
   }
   
   func testDecodedMaterializeSuccess() {
-    let user: Decoded<User> = decode(JSONFromFile("user_with_email")!)
+    let user: Decoded<User> = decode(json(fromFile: "user_with_email")!)
     let materialized = materialize { user.value! }
     
     switch materialized {
@@ -77,7 +77,7 @@ class DecodedTests: XCTestCase {
   }
   
   func testDecodedDematerializeSuccess() {
-    let user: Decoded<User> = decode(JSONFromFile("user_with_email")!)
+    let user: Decoded<User> = decode(json(fromFile: "user_with_email")!)
     
     do {
       _ = try user.dematerialize()
@@ -88,7 +88,7 @@ class DecodedTests: XCTestCase {
   }
   
   func testDecodedDematerializeTypeMismatch() {
-    let user: Decoded<User> = decode(JSONFromFile("user_with_bad_type")!)
+    let user: Decoded<User> = decode(json(fromFile: "user_with_bad_type")!)
     
     do {
       _ = try user.dematerialize()
@@ -103,7 +103,7 @@ class DecodedTests: XCTestCase {
   }
   
   func testDecodedDematerializeMissingKey() {
-    let user: Decoded<User> = decode(JSONFromFile("user_without_key")!)
+    let user: Decoded<User> = decode(json(fromFile: "user_without_key")!)
     
     do {
       _ = try user.dematerialize()
@@ -118,8 +118,8 @@ class DecodedTests: XCTestCase {
   }
 
   func testDecodedOrWithSuccess() {
-    let successUser: Decoded<User> = decode(JSONFromFile("user_with_email")!)
-    let failedUser: Decoded<User> = decode(JSONFromFile("user_with_bad_type")!)
+    let successUser: Decoded<User> = decode(json(fromFile: "user_with_email")!)
+    let failedUser: Decoded<User> = decode(json(fromFile: "user_with_bad_type")!)
 
     let result = successUser.or(failedUser)
 
@@ -130,8 +130,8 @@ class DecodedTests: XCTestCase {
   }
 
   func testDecodedOrWithError() {
-    let successUser: Decoded<User> = decode(JSONFromFile("user_with_email")!)
-    let failedUser: Decoded<User> = decode(JSONFromFile("user_with_bad_type")!)
+    let successUser: Decoded<User> = decode(json(fromFile: "user_with_email")!)
+    let failedUser: Decoded<User> = decode(json(fromFile: "user_with_bad_type")!)
 
     let result = failedUser.or(successUser)
 
@@ -144,6 +144,6 @@ class DecodedTests: XCTestCase {
 
 private struct Dummy: Decodable {
   static func decode(_ json: JSON) -> Decoded<Dummy> {
-    return .failure(.custom("My Custom Error"))
+    return .customError("My Custom Error")
   }
 }
