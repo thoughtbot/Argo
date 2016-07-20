@@ -808,24 +808,31 @@
 				TargetAttributes = {
 					809754C01BADF34100C409E6 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 					};
 					809754C91BADF34200C409E6 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 					};
 					D0592EB51B77DD7800EFEF39 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 					};
 					EAD9FACE19D0EAB50031E006 = {
 						CreatedOnToolsVersion = 6.0.1;
+						LastSwiftMigration = 0800;
 					};
 					EAD9FAD919D0EAB60031E006 = {
 						CreatedOnToolsVersion = 6.0.1;
+						LastSwiftMigration = 0800;
 					};
 					F89335531A4CE83000B88685 = {
 						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 0800;
 					};
 					F893355D1A4CE83000B88685 = {
 						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
