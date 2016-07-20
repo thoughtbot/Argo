@@ -23,7 +23,12 @@ public extension JSON {
     switch json {
 
     case let v as [AnyObject]:
-      self = .Array(v.map(JSON.init))
+      if v.count > 100 {
+        let final = divideAndConquer(input: v, transform: JSON.init)
+        self = .Array(final)
+      } else {
+        self = .Array(v.map(JSON.init))
+      }
 
     case let v as [Swift.String: AnyObject]:
       self = .Object(v.map(JSON.init))

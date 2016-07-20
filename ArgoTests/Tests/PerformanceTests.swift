@@ -19,6 +19,14 @@ class PerformanceTests: XCTestCase {
     }
   }
 
+  func testOverAllPerformance() {
+    let json: AnyObject = JSONFromFile(file: "big_data")!
+
+    measure {
+      _ = [TestModel].decode(JSON(json))
+    }
+  }
+
   func testBigDataDecodesCorrectly() {
     let json: AnyObject = JSONFromFile(file: "big_data")!
     let j = JSON(json)
