@@ -44,6 +44,30 @@ public extension JSON {
   }
 }
 
+public extension JSON {
+  var asObject: AnyObject {
+    switch self {
+    case let .string(v): return v
+    case let .number(v): return v
+    case let .bool(v): return v
+    case .null: return NSNull()
+    case let .array(a):
+      return a.map { $0.asObject }
+    case let .object(o):
+      var accum = Dictionary<Swift.String, AnyObject>(
+        minimumCapacity: o.keys.count
+      )
+
+      for (key, value) in o {
+        guard value != .null else { continue }
+        accum[key] = value.asObject
+      }
+
+      return accum
+    }
+  }
+}
+
 extension JSON: Decodable {
   /**
     Decode `JSON` into `Decoded<JSON>`.
