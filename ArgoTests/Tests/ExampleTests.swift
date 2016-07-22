@@ -1,6 +1,7 @@
 import XCTest
 import Argo
 import Curry
+import Runes
 
 class ExampleTests: XCTestCase {
   func testJSONWithRootArray() {

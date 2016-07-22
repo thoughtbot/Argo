@@ -9,14 +9,12 @@
 /* Begin PBXBuildFile section */
 		4D5F6DD91B3832C200D79B25 /* user_with_nested_name.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D5F6DD81B3832C200D79B25 /* user_with_nested_name.json */; };
 		4D5F6DDA1B3832C200D79B25 /* user_with_nested_name.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D5F6DD81B3832C200D79B25 /* user_with_nested_name.json */; };
-		809586051BB84CEE004F9319 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809586041BB84CE7004F9319 /* Curry.framework */; };
 		809754CB1BADF34200C409E6 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809754C11BADF34100C409E6 /* Argo.framework */; };
 		809754D81BADF36D00C409E6 /* Decoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69E1ABC5F1300E3B0AB /* Decoded.swift */; };
 		809754D91BADF36D00C409E6 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69F1ABC5F1300E3B0AB /* JSON.swift */; };
 		809754DA1BADF36D00C409E6 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6A01ABC5F1300E3B0AB /* Decodable.swift */; };
 		809754DB1BADF36D00C409E6 /* StandardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6A11ABC5F1300E3B0AB /* StandardTypes.swift */; };
 		809754DC1BADF36D00C409E6 /* DecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84318A71B9A2D7A00165216 /* DecodeError.swift */; };
-		809754DD1BADF36D00C409E6 /* Runes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F876F1D61B56FBB300B38589 /* Runes.swift */; };
 		809754DE1BADF36D00C409E6 /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* Decode.swift */; };
 		809754DF1BADF36D00C409E6 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		809754E21BADF36D00C409E6 /* decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69A1ABC5F1300E3B0AB /* decode.swift */; };
@@ -65,7 +63,6 @@
 		D0592EBF1B77DD8E00EFEF39 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69F1ABC5F1300E3B0AB /* JSON.swift */; };
 		D0592EC01B77DD8E00EFEF39 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6A01ABC5F1300E3B0AB /* Decodable.swift */; };
 		D0592EC11B77DD8E00EFEF39 /* StandardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6A11ABC5F1300E3B0AB /* StandardTypes.swift */; };
-		D0592EC21B77DD9300EFEF39 /* Runes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F876F1D61B56FBB300B38589 /* Runes.swift */; };
 		D0592EC31B77DD9300EFEF39 /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* Decode.swift */; };
 		D0592EC51B77DD9A00EFEF39 /* decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69A1ABC5F1300E3B0AB /* decode.swift */; };
 		D0592EC61B77DD9A00EFEF39 /* flatReduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69B1ABC5F1300E3B0AB /* flatReduce.swift */; };
@@ -149,19 +146,18 @@
 		F802D4C61A5EE2D5005E236C /* url.json in Resources */ = {isa = PBXBuildFile; fileRef = F802D4C51A5EE2D5005E236C /* url.json */; };
 		F802D4C71A5EE2D5005E236C /* url.json in Resources */ = {isa = PBXBuildFile; fileRef = F802D4C51A5EE2D5005E236C /* url.json */; };
 		F82D15F31C3C82730079FFB5 /* NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82D15F21C3C82730079FFB5 /* NSNumber.swift */; };
-		F84290291B57EFAE008F57B4 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84290281B57EFAE008F57B4 /* Curry.framework */; };
-		F842902B1B57EFB5008F57B4 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F842902A1B57EFB5008F57B4 /* Curry.framework */; };
 		F84318A81B9A2D7A00165216 /* DecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84318A71B9A2D7A00165216 /* DecodeError.swift */; };
 		F84318A91B9A2D7A00165216 /* DecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84318A71B9A2D7A00165216 /* DecodeError.swift */; };
 		F84318AA1B9A2D7A00165216 /* DecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84318A71B9A2D7A00165216 /* DecodeError.swift */; };
+		F85F93421D42C8CE001C8EA7 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85F93411D42C8CE001C8EA7 /* Curry.framework */; };
+		F85F93441D42C8D6001C8EA7 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85F93431D42C8D6001C8EA7 /* Curry.framework */; };
+		F85F93461D42C8DD001C8EA7 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85F93451D42C8DD001C8EA7 /* Curry.framework */; };
 		F862E0AB1A519D470093B028 /* TypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA08313019D5EEAF003B90D7 /* TypeTests.swift */; };
 		F862E0AC1A519D520093B028 /* post_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = EA08313219D5EEF2003B90D7 /* post_comments.json */; };
 		F862E0AD1A519D560093B028 /* types.json in Resources */ = {isa = PBXBuildFile; fileRef = EA08313419D5EFC0003B90D7 /* types.json */; };
 		F862E0AE1A519D5C0093B028 /* types_fail_embedded.json in Resources */ = {isa = PBXBuildFile; fileRef = EA4EAF7219DD96330036AE0D /* types_fail_embedded.json */; };
 		F874B7EA1A66BF52004CCE5E /* root_array.json in Resources */ = {isa = PBXBuildFile; fileRef = F874B7E91A66BF52004CCE5E /* root_array.json */; };
 		F874B7EB1A66C221004CCE5E /* root_array.json in Resources */ = {isa = PBXBuildFile; fileRef = F874B7E91A66BF52004CCE5E /* root_array.json */; };
-		F876F1D71B56FBB300B38589 /* Runes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F876F1D61B56FBB300B38589 /* Runes.swift */; };
-		F876F1D81B56FBB300B38589 /* Runes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F876F1D61B56FBB300B38589 /* Runes.swift */; };
 		F87897EF1A927864009316A5 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD9FACF19D0EAB50031E006 /* Argo.framework */; };
 		F87EB6A41ABC5F1300E3B0AB /* decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69A1ABC5F1300E3B0AB /* decode.swift */; };
 		F87EB6A51ABC5F1300E3B0AB /* decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69A1ABC5F1300E3B0AB /* decode.swift */; };
@@ -181,6 +177,10 @@
 		F893356E1A4CE8FC00B88685 /* Argo.h in Headers */ = {isa = PBXBuildFile; fileRef = F893356D1A4CE8FC00B88685 /* Argo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F893356F1A4CE8FC00B88685 /* Argo.h in Headers */ = {isa = PBXBuildFile; fileRef = F893356D1A4CE8FC00B88685 /* Argo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F89335761A4CE93600B88685 /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* Decode.swift */; };
+		F8ABEBD11D42C67100B4363C /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8ABEBD01D42C67100B4363C /* Runes.framework */; };
+		F8ABEBD31D42C67800B4363C /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8ABEBD21D42C67800B4363C /* Runes.framework */; };
+		F8ABEBD51D42C67E00B4363C /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8ABEBD41D42C67E00B4363C /* Runes.framework */; };
+		F8ABEBD71D42C68200B4363C /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8ABEBD61D42C68200B4363C /* Runes.framework */; };
 		F8C2561A1C3C855B00B70968 /* NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82D15F21C3C82730079FFB5 /* NSNumber.swift */; };
 		F8C2561B1C3C855C00B70968 /* NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82D15F21C3C82730079FFB5 /* NSNumber.swift */; };
 		F8C2561C1C3C855C00B70968 /* NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82D15F21C3C82730079FFB5 /* NSNumber.swift */; };
@@ -275,7 +275,6 @@
 
 /* Begin PBXFileReference section */
 		4D5F6DD81B3832C200D79B25 /* user_with_nested_name.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_with_nested_name.json; sourceTree = "<group>"; };
-		809586041BB84CE7004F9319 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = "Carthage/Checkouts/Curry/build/Debug-appletvos/Curry.framework"; sourceTree = "<group>"; };
 		809754C11BADF34100C409E6 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		809754CA1BADF34200C409E6 /* Argo-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Argo-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF92789C1B9365900038A7E1 /* RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RawRepresentable.swift; path = Argo/Extensions/RawRepresentable.swift; sourceTree = SOURCE_ROOT; };
@@ -324,11 +323,11 @@
 		F802D4C21A5EE061005E236C /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		F802D4C51A5EE2D5005E236C /* url.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = url.json; sourceTree = "<group>"; };
 		F82D15F21C3C82730079FFB5 /* NSNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNumber.swift; sourceTree = "<group>"; };
-		F84290281B57EFAE008F57B4 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = "Carthage/Checkouts/Curry/build/Debug-iphoneos/Curry.framework"; sourceTree = "<group>"; };
-		F842902A1B57EFB5008F57B4 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Checkouts/Curry/build/Debug/Curry.framework; sourceTree = "<group>"; };
 		F84318A71B9A2D7A00165216 /* DecodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodeError.swift; sourceTree = "<group>"; };
+		F85F93411D42C8CE001C8EA7 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = "Carthage/Checkouts/Curry/build/Debug-iphoneos/Curry.framework"; sourceTree = "<group>"; };
+		F85F93431D42C8D6001C8EA7 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Checkouts/Curry/build/Debug/Curry.framework; sourceTree = "<group>"; };
+		F85F93451D42C8DD001C8EA7 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = "Carthage/Checkouts/Curry/build/Debug-appletvos/Curry.framework"; sourceTree = "<group>"; };
 		F874B7E91A66BF52004CCE5E /* root_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = root_array.json; sourceTree = "<group>"; };
-		F876F1D61B56FBB300B38589 /* Runes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Runes.swift; path = Carthage/Checkouts/Runes/Source/Runes.swift; sourceTree = SOURCE_ROOT; };
 		F87EB69A1ABC5F1300E3B0AB /* decode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = decode.swift; sourceTree = "<group>"; };
 		F87EB69B1ABC5F1300E3B0AB /* flatReduce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = flatReduce.swift; sourceTree = "<group>"; };
 		F87EB69C1ABC5F1300E3B0AB /* sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sequence.swift; sourceTree = "<group>"; };
@@ -339,6 +338,10 @@
 		F89335541A4CE83000B88685 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893355E1A4CE83000B88685 /* Argo-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Argo-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F893356D1A4CE8FC00B88685 /* Argo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argo.h; sourceTree = "<group>"; };
+		F8ABEBD01D42C67100B4363C /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = "Carthage/Checkouts/Runes/build/Debug-iphoneos/Runes.framework"; sourceTree = "<group>"; };
+		F8ABEBD21D42C67800B4363C /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Checkouts/Runes/build/Debug/Runes.framework; sourceTree = "<group>"; };
+		F8ABEBD41D42C67E00B4363C /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = "Carthage/Checkouts/Runes/build/Debug-watchos/Runes.framework"; sourceTree = "<group>"; };
+		F8ABEBD61D42C68200B4363C /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = "Carthage/Checkouts/Runes/build/Debug-appletvos/Runes.framework"; sourceTree = "<group>"; };
 		F8C5927D1CB726C7007C5ABC /* booleans.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = booleans.json; sourceTree = "<group>"; };
 		F8C592811CB726FB007C5ABC /* Booleans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Booleans.swift; sourceTree = "<group>"; };
 		F8CBE6661A64521000316FBC /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
@@ -351,6 +354,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8ABEBD71D42C68200B4363C /* Runes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +362,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				809586051BB84CEE004F9319 /* Curry.framework in Frameworks */,
+				F85F93461D42C8DD001C8EA7 /* Curry.framework in Frameworks */,
 				809754CB1BADF34200C409E6 /* Argo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,6 +371,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8ABEBD51D42C67E00B4363C /* Runes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +379,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8ABEBD11D42C67100B4363C /* Runes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +387,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F84290291B57EFAE008F57B4 /* Curry.framework in Frameworks */,
+				F85F93421D42C8CE001C8EA7 /* Curry.framework in Frameworks */,
 				F87897EF1A927864009316A5 /* Argo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +396,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8ABEBD31D42C67800B4363C /* Runes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +404,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F842902B1B57EFB5008F57B4 /* Curry.framework in Frameworks */,
+				F85F93441D42C8D6001C8EA7 /* Curry.framework in Frameworks */,
 				F893355F1A4CE83000B88685 /* Argo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,7 +440,7 @@
 				EAD9FAD119D0EAB50031E006 /* Argo */,
 				EAD9FADB19D0EAB60031E006 /* ArgoTests */,
 				EAD9FAD019D0EAB50031E006 /* Products */,
-				F87AD8BB1AF7DFD200D6E3FF /* Frameworks */,
+				F8ABEBCF1D42C67100B4363C /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -500,7 +507,6 @@
 		EAD9FAE919D0F6480031E006 /* Operators */ = {
 			isa = PBXGroup;
 			children = (
-				F876F1D61B56FBB300B38589 /* Runes.swift */,
 				EA04D5A41BBF2047001DE23B /* Argo.swift */,
 				EAD9FAF519D0F7900031E006 /* Decode.swift */,
 			);
@@ -563,32 +569,6 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		F87AD8BB1AF7DFD200D6E3FF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F842902A1B57EFB5008F57B4 /* Curry.framework */,
-				F84290281B57EFAE008F57B4 /* Curry.framework */,
-				809586041BB84CE7004F9319 /* Curry.framework */,
-				F87AD8BD1AF7E04B00D6E3FF /* Mac */,
-				F87AD8BC1AF7E04500D6E3FF /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F87AD8BC1AF7E04500D6E3FF /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		F87AD8BD1AF7E04B00D6E3FF /* Mac */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Mac;
-			sourceTree = "<group>";
-		};
 		F87EB6981ABC5F1300E3B0AB /* Functions */ = {
 			isa = PBXGroup;
 			children = (
@@ -610,6 +590,20 @@
 				F84318A71B9A2D7A00165216 /* DecodeError.swift */,
 			);
 			path = Types;
+			sourceTree = "<group>";
+		};
+		F8ABEBCF1D42C67100B4363C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F85F93451D42C8DD001C8EA7 /* Curry.framework */,
+				F85F93431D42C8D6001C8EA7 /* Curry.framework */,
+				F85F93411D42C8CE001C8EA7 /* Curry.framework */,
+				F8ABEBD61D42C68200B4363C /* Runes.framework */,
+				F8ABEBD41D42C67E00B4363C /* Runes.framework */,
+				F8ABEBD21D42C67800B4363C /* Runes.framework */,
+				F8ABEBD01D42C67100B4363C /* Runes.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F8CBE6651A6451F800316FBC /* Extensions */ = {
@@ -990,7 +984,6 @@
 				809754DE1BADF36D00C409E6 /* Decode.swift in Sources */,
 				809754D81BADF36D00C409E6 /* Decoded.swift in Sources */,
 				809754E41BADF36D00C409E6 /* sequence.swift in Sources */,
-				809754DD1BADF36D00C409E6 /* Runes.swift in Sources */,
 				809754E21BADF36D00C409E6 /* decode.swift in Sources */,
 				809754DC1BADF36D00C409E6 /* DecodeError.swift in Sources */,
 				EA9159FA1BDE74F300D85292 /* Applicative.swift in Sources */,
@@ -1043,7 +1036,6 @@
 				D0592EBE1B77DD8E00EFEF39 /* Decoded.swift in Sources */,
 				F84318AA1B9A2D7A00165216 /* DecodeError.swift in Sources */,
 				D0592EBF1B77DD8E00EFEF39 /* JSON.swift in Sources */,
-				D0592EC21B77DD9300EFEF39 /* Runes.swift in Sources */,
 				F8EF43311BBC729F001886BA /* catDecoded.swift in Sources */,
 				D0592EC31B77DD9300EFEF39 /* Decode.swift in Sources */,
 				EA1200CE1BAB621C006DDBD8 /* RawRepresentable.swift in Sources */,
@@ -1071,7 +1063,6 @@
 				F87EB6A61ABC5F1300E3B0AB /* flatReduce.swift in Sources */,
 				F87EB6A81ABC5F1300E3B0AB /* sequence.swift in Sources */,
 				F84318A81B9A2D7A00165216 /* DecodeError.swift in Sources */,
-				F876F1D71B56FBB300B38589 /* Runes.swift in Sources */,
 				F8CBE6671A64521000316FBC /* Dictionary.swift in Sources */,
 				EAD9FAF619D0F7900031E006 /* Decode.swift in Sources */,
 				F87EB6B01ABC5F1300E3B0AB /* StandardTypes.swift in Sources */,
@@ -1122,7 +1113,6 @@
 				EA04D5A21BBF2021001DE23B /* FailureCoalescing.swift in Sources */,
 				F87EB6A91ABC5F1300E3B0AB /* sequence.swift in Sources */,
 				F84318A91B9A2D7A00165216 /* DecodeError.swift in Sources */,
-				F876F1D81B56FBB300B38589 /* Runes.swift in Sources */,
 				F8CBE6681A64526300316FBC /* Dictionary.swift in Sources */,
 				F8EF43301BBC729F001886BA /* catDecoded.swift in Sources */,
 				F89335761A4CE93600B88685 /* Decode.swift in Sources */,
@@ -1233,7 +1223,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				INFOPLIST_FILE = ArgoTests/Info.plist;
@@ -1250,7 +1239,6 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				INFOPLIST_FILE = ArgoTests/Info.plist;
@@ -1561,7 +1549,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1580,7 +1567,6 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ArgoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;

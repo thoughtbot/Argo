@@ -1,5 +1,6 @@
 import Argo
 import Curry
+import Runes
 
 struct Booleans: Decodable {
   let bool: Bool

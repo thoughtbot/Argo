@@ -1,3 +1,5 @@
+import Runes
+
 /**
   Attempt to decode a value at the specified key into the requested type.
 

@@ -48,6 +48,9 @@ Then run `carthage update`.
 Follow the current instructions in [Carthage's README][carthage-installation]
 for up to date installation instructions.
 
+Note that if you are using newer versions of Argo, you will need to link both
+`Argo.framework` and `Runes.framework` into your app.
+
 [carthage-installation]: https://github.com/Carthage/Carthage#adding-frameworks-to-an-application
 
 ### [CocoaPods]
@@ -75,13 +78,24 @@ I guess you could do it this way if that's your thing.
 Add this repo as a submodule, and add the project file to your workspace. You
 can then link against `Argo.framework` for your application target.
 
+You will need to do the same for [Runes] if you are using newer versions of
+Argo.
+
+[Runes]: https://github.com/thoughtbot/Runes
+
 ## Usage tl;dr:
 
-Please note: the example below requires an additional, external module named [Curry](https://github.com/thoughtbot/Curry) which lets us use the `curry` function to curry `User.init`.
+Please note: the example below requires an additional, external module named
+[Curry](https://github.com/thoughtbot/Curry) which lets us use the `curry`
+function to curry `User.init`.
+
+It also imports [Runes], which is a dependency of Argo in newer versions. If
+you are using an older version of Argo, you might not need that import.
 
 ```swift
 import Argo
 import Curry
+import Runes
 
 struct User {
   let id: Int

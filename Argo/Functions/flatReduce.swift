@@ -1,3 +1,5 @@
+import Runes
+
 /**
   Reduce a sequence with a combinator that returns a `Decoded` type, flattening
   the result.

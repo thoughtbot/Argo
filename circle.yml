@@ -7,7 +7,7 @@ machine:
 
 dependencies:
   override:
-    - git submodule update --init --recursive
+    - bin/setup
 
 test:
   override:

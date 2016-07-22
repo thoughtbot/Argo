@@ -1,3 +1,5 @@
+import Runes
+
 /**
   Conditionally map a function over a `Decoded` value, flattening the result.
 

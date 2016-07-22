@@ -1,4 +1,5 @@
 import Foundation
+import Runes
 
 extension String: Decodable {
   /**

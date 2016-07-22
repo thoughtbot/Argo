@@ -5,6 +5,9 @@
       location = "group:Argo.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Carthage/Checkouts/Runes/Runes.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Carthage/Checkouts/Curry/Curry.xcodeproj">
    </FileRef>
 </Workspace>

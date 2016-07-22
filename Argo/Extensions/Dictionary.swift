@@ -1,3 +1,5 @@
+import Runes
+
 // pure merge for Dictionaries
 func + <T, U>(lhs: [T: U], rhs: [T: U]) -> [T: U] {
   var merged = lhs
