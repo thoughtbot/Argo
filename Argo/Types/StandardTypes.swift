@@ -37,6 +37,25 @@ extension Int: Decodable {
   }
 }
 
+extension UInt: Decodable {
+  /**
+    Decode `JSON` into `Decoded<UInt>`.
+
+    Succeeds if the value is a number that can be converted to a `UInt`,
+    otherwise it returns a type mismatch.
+
+    - parameter json: The `JSON` value to decode
+
+    - returns: A decoded `UInt` value
+  */
+  public static func decode(_ json: JSON) -> Decoded<UInt> {
+    switch json {
+    case let .number(n): return pure(n as UInt)
+    default: return .typeMismatch(expected: "UInt", actual: json)
+    }
+  }
+}
+
 extension Int64: Decodable {
   /**
     Decode `JSON` into `Decoded<Int64>`.
@@ -56,6 +75,29 @@ extension Int64: Decodable {
       guard let i = Int64(s) else { fallthrough }
       return pure(i)
     default: return .typeMismatch(expected: "Int64", actual: json)
+    }
+  }
+}
+
+extension UInt64: Decodable {
+  /**
+    Decode `JSON` into `Decoded<UInt64>`.
+
+    Succeeds if the value is a number that can be converted to an `UInt64` or a
+    string that represents a large number, otherwise it returns a type
+    mismatch.
+
+    - parameter json: The `JSON` value to decode
+
+    - returns: A decoded `UInt` value
+  */
+  public static func decode(_ json: JSON) -> Decoded<UInt64> {
+    switch json {
+    case let .number(n): return pure(n.uint64Value)
+    case let .string(s):
+      guard let i = UInt64(s) else { fallthrough }
+      return pure(i)
+    default: return .typeMismatch(expected: "UInt64", actual: json)
     }
   }
 }

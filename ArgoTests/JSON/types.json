@@ -5,7 +5,12 @@
     "int64_string": "1076543210012345678",
     "double": 3.4,
     "float": 1.1,
-    "int_opt": 4
+    "int_opt": 4,
+    "unsigned_numerics": {
+      "uint": 500,
+      "uint64": 9223372036854775807,
+      "uint64_string": "18446744073709551614"
+    }
   },
   "bool": false,
   "string_array": [
