@@ -6,11 +6,9 @@
     "double": 3.4,
     "float": 1.1,
     "int_opt": 4,
-    "unsigned_numerics": {
-      "uint": 500,
-      "uint64": 9223372036854775807,
-      "uint64_string": "18446744073709551614"
-    }
+    "uint": 500,
+    "uint64": 9223372036854775807,
+    "uint64_string": "18446744073709551614"
   },
   "bool": false,
   "string_array": [
