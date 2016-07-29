@@ -36,36 +36,23 @@ struct TestModelNumerics {
   let double: Double
   let float: Float
   let intOpt: Int?
-  /*
-    Split unsignedNumerics out into a separate model due to the
-    "Expression was too complex to be solved in reasonable time" bug in Swift
-  */
-  let unsignedNumerics: TestModelUnsignedNumerics
+  let uint: UInt
+  let uint64: UInt64
+  let uint64String: UInt64
 }
 
 extension TestModelNumerics: Decodable {
   static func decode(_ json: JSON) -> Decoded<TestModelNumerics> {
-    return curry(self.init)
+    let f = curry(self.init)
       <^> json <| "int"
       <*> json <| "int64"
       <*> json <| "int64_string"
       <*> json <| "double"
       <*> json <| "float"
       <*> json <|? "int_opt"
-      <*> json <| "unsigned_numerics"
-  }
-}
 
-struct TestModelUnsignedNumerics {
-  let uint: UInt
-  let uint64: UInt64
-  let uint64String: UInt64
-}
-
-extension TestModelUnsignedNumerics: Decodable {
-  static func decode(_ json: JSON) -> Decoded<TestModelUnsignedNumerics> {
-    return curry(self.init)
-      <^> json <| "uint"
+    return f
+      <*> json <| "uint"
       <*> json <| "uint64"
       <*> json <| "uint64_string"
   }

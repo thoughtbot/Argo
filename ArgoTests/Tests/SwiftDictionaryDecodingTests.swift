@@ -11,11 +11,9 @@ class SwiftDictionaryDecodingTests: XCTestCase {
         "double": 3.4,
         "float": 1.1,
         "int_opt": 4,
-        "unsigned_numerics": [
-          "uint": 500,
-          "uint64": 1039288,
-          "uint64_string": "18446744073709551614"
-        ]
+        "uint": 500,
+        "uint64": 1039288,
+        "uint64_string": "18446744073709551614"
       ],
       "bool": false,
       "string_array": ["hello", "world"],
@@ -37,9 +35,9 @@ class SwiftDictionaryDecodingTests: XCTestCase {
     XCTAssert(model != nil)
     XCTAssert(model?.numerics.int == 5)
     XCTAssert(model?.numerics.int64 == 900719)//9254740992)
-    XCTAssert(model?.numerics.unsignedNumerics.uint == 500)
-    XCTAssert(model?.numerics.unsignedNumerics.uint64 == 1039288)
-    XCTAssert(model?.numerics.unsignedNumerics.uint64String == 18446744073709551614)
+    XCTAssert(model?.numerics.uint == 500)
+    XCTAssert(model?.numerics.uint64 == 1039288)
+    XCTAssert(model?.numerics.uint64String == 18446744073709551614)
     XCTAssert(model?.numerics.double == 3.4)
     XCTAssert(model?.numerics.float == 1.1)
     XCTAssert(model?.numerics.intOpt != nil)
