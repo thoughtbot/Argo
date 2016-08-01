@@ -8,13 +8,15 @@ to address some of those situations and set you on the right track!
 ## `curry` limitations
 
 It is very important to fully curry your model’s `init` in order to use Argo.
-Because of this, `Argo` recommends using
-[`Curry`](https://github.com/thoughtbot/Curry) which allows you to change your
-standard `init` functions into fully curried functions. Unfortunately, Swift
-can only compile `curry` for up to 20 arguments in a reasonable amount of time.
-That may sound like a lot, but one can still run up against this limitation
-quite quickly, especially when you are not in control of the JSON API you are
-interfacing with.
+Because of this, Our recommended best practice is to use [Curry] which allows
+you to change your standard `init` functions into fully curried functions.
+Unfortunately, The Swift compiler can currently only handle compiling `curry`
+for around 20 arguments in a reasonable amount of time. That may sound like a
+lot, but one can still run up against this limitation quite quickly,
+especially when you are not in control of the JSON API you are interfacing
+with.
+
+[Curry]: https://github.com/thoughtbot/Curry
 
 The solution is to try to find a way to normalize your data into nested models,
 thus reducing the number of arguments needed for `init`. For simplicity, assume
@@ -44,8 +46,8 @@ struct User: Decodable {
 
 With our assumption on `curry`, we would get a Swift compiler error when doing
 `curry(User.init)` because `User.init` takes 6 arguments. Even though the API
-has decided to send us back separate fields for each avatar size, there is a
-very clear normalization we can do in our model:
+has decided to send back separate fields for each avatar size, we can
+normalize this response by introducing a new `Avatar` type.
 
 ```swift
 struct User {
@@ -53,27 +55,27 @@ struct User {
   let name: String
   let bio: String
   let avatar: Avatar
+}
 
-  struct Avatar {
-    let small: String
-    let medium: String
-    let large: String
-  }
+struct Avatar {
+  let small: String
+  let medium: String
+  let large: String
 }
 ```
 
-Now `User.init` has 4 arguments and `User.Avatar.init` has 3 arguments, so we
-are within the assumed limitations of `curry`. But, it is also less clear how we
+Now `User.init` has 4 arguments and `Avatar.init` has 3 arguments, so we are
+within the assumed limitations of `curry`. But, it is also less clear how we
 should write `User.decode`. How can we extract the 3 avatar fields from `JSON`
-to build `User.Avatar` first, and then use that to build `User`? The key insight
-is to see that `j <| "key"` returns a `Decoded<T>` value, representing one step
-of decoding. So, we can decode a `User.Avatar` first using `j`, and then just
-plug that directly into `curry(User.init)`:
+to build `Avatar` first, and then use that to build `User`? The key insight is
+to see that `j <| "key"` returns a `Decoded<T>` value, representing one step
+of decoding. So, we can decode a `Avatar` first using `j`, and then plug that
+directly into `curry(User.init)`:
 
 ```swift
-extension User.Avatar: Decodable {
-  static func decode(j: JSON) -> Decoded<User.Avatar> {
-    return curry(User.Avatar.init)
+extension Avatar: Decodable {
+  static func decode(j: JSON) -> Decoded<Avatar> {
+    return curry(Avatar.init)
       <^> j <| "small_avatar"
       <*> j <| "medium_avatar"
       <*> j <| "large_avatar"
@@ -86,15 +88,15 @@ extension User: Decodable {
       <^> j <| "id"
       <*> j <| "name"
       <*> j <| "bio"
-      <*> User.Avatar.decode(j)
+      <*> Avatar.decode(j)
   }
 }
 ```
 
-We have now successfully gotten around `curry`’s limitations, but also produced
-a better, normalized model! We also retain all of the great error handling that
-Argo provides, so if there is a decoding error in `User.Avatar` it will
-propogate through to a decoding error in `User`.
+We have now successfully gotten around `curry`’s limitations, and also
+produced a better, normalized model! We also retain all of the great error
+handling that Argo provides, so if there is a decoding error in `Avatar` it
+will propagate through to a decoding error in `User`.
 
 ## Compilation errors
 
@@ -110,10 +112,10 @@ the composition of pieces, it is not surprising that Swift sometimes has
 difficulty compiling the expression in a reasonable amount of time. This
 manifests itself with the following error:
 
-> Expression was too complex to be solved in reasonable time; consider breaking
-up the expression into distinct sub-expressions.
+> Expression was too complex to be solved in reasonable time; consider
+> breaking up the expression into distinct sub-expressions.
 
-Fortunately this is easy to solve. A first step is to simply store
+Fortunately this is easy to solve. A first step is to store
 `curry(Model.init)` in a variable instead of using it directly:
 
 ```swift
@@ -155,8 +157,8 @@ function you will see an error of the form:
 
 > Cannot invoke 'curry' with an argument list of type 'A -> B -> C'
 
-> Cannot convert value of type 'A -> B -> C' to expected argument type
-'_ -> _ -> C'
+> Cannot convert value of type 'A -> B -> C' to expected argument type '_ -> _
+> -> C'
 
 The latter happens when you are returning `curry(Model.init)` directly, and the
 former happens when you have stored `curry(Model.init)` in a variable instead of
@@ -165,9 +167,9 @@ information on why one would do that.
 
 There are a few ways in which you may not have correctly decoded your model:
 
-1. You are missing a `j <| "key"` for a field in your model.
-2. You incorrectly decoded the type of a field, e.g. you used
-`j <| "optional_key"` when you meant `j <|? "optional_key"`.
+ * You are missing a `j <| "key"` for a field in your model.
+ * You incorrectly decoded the type of a field, e.g. you used `j <|
+   "optional_key"` when you meant `j <|? "optional_key"`.
 
 The best way forward is to re-examine all of the fields in your model and make
 sure they are accounted for in `decode` and that types match up.
@@ -177,8 +179,8 @@ sure they are accounted for in `decode` and that types match up.
 When you have misused the map `<^>` or applicative `<*>` operators you will see
 errors that mention the `Decoded` type. One such kind of error is:
 
-> No 'curry' candidates produce the expected contextual result type
-'Decoded<_ -> _ -> _ -> C>'
+> No 'curry' candidates produce the expected contextual result type 'Decoded<_
+> -> _ -> _ -> C>'
 
 > Cannot convert value of type 'A -> B -> C' to type 'Decoded<_ -> _ -> C>'
 
@@ -209,8 +211,8 @@ value into `Model.init`.
 Another misuse of the functional operators comes in the form of the following
 error:
 
-> Cannot convert call result type 'Decoded<_>' to expected type
-'@noescape _ -> _ -> C'
+> Cannot convert call result type 'Decoded<_>' to expected type '@noescape _
+> -> _ -> C'
 
 Now we see that `Decoded<>` is mentioned on the left. This happens when you have
 used the map operator `<^>` instead of the applicative operator `<*>`:
