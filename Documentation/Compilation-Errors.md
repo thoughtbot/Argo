@@ -86,7 +86,9 @@ There are a few ways in which you may not have correctly decoded your model:
 
  * You are missing a `j <| "key"` for a field in your model.
  * You incorrectly decoded the type of a field, e.g. you used `j <|
-   "optional_key"` when you meant `j <|? "optional_key"`.
+   "optional_key"` when you meant `j <|? "optional_key"`. Or you used `j <|
+   "array_of_objects"` when you wanted `j <|| "array_of_objects"`.
+ * You are trying to decode a type that doesn't conform to `Decodable`.
 
 The best way forward is to re-examine all of the fields in your model and make
 sure they are accounted for in `decode` and that types match up.
