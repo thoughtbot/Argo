@@ -50,6 +50,23 @@ defining `tmp` we used the map operator `create <^>` but in the return
 statement we used the applicative operator `tmp <*>`. The map operator is
 _only_ used with the fully curried `init`.
 
+If either of these methods aren't doing the trick, or if you'd prefer to avoid
+the temporary variables you can help the compiler by adding more type
+information with `as` statements:
+
+```swift
+struct Model: Decodable {
+  let a: String
+  let b: Int
+
+  static func decode(json: JSON) -> Decoded<Model> {
+    return curry(Model.init)
+      <^> json <| "key1" as Decoded<String> // Note that these types correspond
+      <*> json <| "key2" as Decoded<Int>    // to the expected type above
+  }
+}
+```
+
 ## Incorrectly decoded fields
 
 When you have not correctly decoded all fields of your model in the `decode`
