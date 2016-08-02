@@ -19,11 +19,11 @@ Fortunately this is easy to solve. A first step is to store
 `curry(Model.init)` in a variable instead of using it directly:
 
 ```swift
-static func decode(j: JSON) -> Decoded<Model> {
+static func decode(json: JSON) -> Decoded<Model> {
   let create = curry(Model.init)
   return create
-    <^> j <| "key1"
-    <*> j <| "key2"
+    <^> json <| "key1"
+    <*> json <| "key2"
     ...
 ```
 
@@ -32,15 +32,15 @@ issues, the next step is to pick a midpoint in your decoding chain and set an
 intermediate variable:
 
 ```swift
-static func decode(j: JSON) -> Decoded<Model> {
+static func decode(json: JSON) -> Decoded<Model> {
   let create = curry(Model.init)
   let tmp = create
-    <^> j <| "key_a_1"
-    <*> j <| "key_a_2"
+    <^> json <| "key_a_1"
+    <*> json <| "key_a_2"
     ...
   return tmp
-    <*> j <| "key_b_1"
-    <*> j <| "key_b_2"
+    <*> json <| "key_b_1"
+    <*> json <| "key_b_2"
     ...
 ```
 
@@ -90,18 +90,18 @@ likely means that you are using `<*>` when you should be using `<^>`:
 
 ```swift
 // Correct
-static func decode(j: JSON) -> Decoded<Model> {
+static func decode(json: JSON) -> Decoded<Model> {
   return curry(Model.init)
-    <^> j <| "key1" // <-- Good
-    <*> j <| "key2"
+    <^> json <| "key1" // <-- Good
+    <*> json <| "key2"
     ...
 }
 
 // Incorrect
-static func decode(j: JSON) -> Decoded<Model> {
+static func decode(json: JSON) -> Decoded<Model> {
   return curry(Model.init)
-    <*> j <| "key1" // <-- Bad
-    <*> j <| "key2"
+    <*> json <| "key1" // <-- Bad
+    <*> json <| "key2"
     ...
 }
 ```
@@ -121,18 +121,18 @@ used the map operator `<^>` instead of the applicative operator `<*>`:
 
 ```swift
 // Correct
-static func decode(j: JSON) -> Decoded<Model> {
+static func decode(json: JSON) -> Decoded<Model> {
   return curry(Model.init)
-    <^> j <| "key1"
-    <*> j <| "key2" // <-- Good
+    <^> json <| "key1"
+    <*> json <| "key2" // <-- Good
     ...
 }
 
 // Incorrect
-static func decode(j: JSON) -> Decoded<Model> {
+static func decode(json: JSON) -> Decoded<Model> {
   return curry(Model.init)
-    <^> j <| "key1"
-    <^> j <| "key2" // <-- Bad
+    <^> json <| "key1"
+    <^> json <| "key2" // <-- Bad
     ...
 }
 ```
