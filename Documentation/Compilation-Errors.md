@@ -20,7 +20,7 @@ Fortunately this is easy to solve. A first step is to store
 
 ```swift
 static func decode(j: JSON) -> Decoded<Model> {
-  let create = Curry(Model.init)
+  let create = curry(Model.init)
   return create
     <^> j <| "key1"
     <*> j <| "key2"
@@ -33,7 +33,7 @@ intermediate variable:
 
 ```swift
 static func decode(j: JSON) -> Decoded<Model> {
-  let create = Curry(Model.init)
+  let create = curry(Model.init)
   let tmp = create
     <^> j <| "key_a_1"
     <*> j <| "key_a_2"
@@ -91,7 +91,7 @@ likely means that you are using `<*>` when you should be using `<^>`:
 ```swift
 // Correct
 static func decode(j: JSON) -> Decoded<Model> {
-  return Curry(Model.init)
+  return curry(Model.init)
     <^> j <| "key1" // <-- Good
     <*> j <| "key2"
     ...
@@ -99,7 +99,7 @@ static func decode(j: JSON) -> Decoded<Model> {
 
 // Incorrect
 static func decode(j: JSON) -> Decoded<Model> {
-  return Curry(Model.init)
+  return curry(Model.init)
     <*> j <| "key1" // <-- Bad
     <*> j <| "key2"
     ...
@@ -122,7 +122,7 @@ used the map operator `<^>` instead of the applicative operator `<*>`:
 ```swift
 // Correct
 static func decode(j: JSON) -> Decoded<Model> {
-  return Curry(Model.init)
+  return curry(Model.init)
     <^> j <| "key1"
     <*> j <| "key2" // <-- Good
     ...
@@ -130,7 +130,7 @@ static func decode(j: JSON) -> Decoded<Model> {
 
 // Incorrect
 static func decode(j: JSON) -> Decoded<Model> {
-  return Curry(Model.init)
+  return curry(Model.init)
     <^> j <| "key1"
     <^> j <| "key2" // <-- Bad
     ...
