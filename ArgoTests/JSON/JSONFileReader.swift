@@ -1,7 +1,7 @@
 import Foundation
 
 func json(fromFile file: String) -> AnyObject? {
-  return Bundle(for: JSONFileReader.self).pathForResource(file, ofType: "json")
+  return Bundle(for: JSONFileReader.self).path(forResource: file, ofType: "json")
     .flatMap { URL(fileURLWithPath: $0) }
     .flatMap { try? Data(contentsOf: $0) }
     .flatMap(JSONObjectWithData)

@@ -227,7 +227,7 @@ public func decodeArray<T: Decodable where T.DecodedType == T>(_ json: JSON) -> 
   return [T].decode(json)
 }
 
-public extension DictionaryLiteralConvertible where Value: Decodable, Value == Value.DecodedType {
+public extension ExpressibleByDictionaryLiteral where Value: Decodable, Value == Value.DecodedType {
   /**
     Decode `JSON` into a dictionary of keys and values where the keys are
     `String`s and the values are `Decodable`.
