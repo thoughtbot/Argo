@@ -1,4 +1,4 @@
-infix operator <|> { associativity left precedence 140 }
+import Runes
 
 /**
   Return the left `Decoded` value if it is `.Success`, otherwise return the
