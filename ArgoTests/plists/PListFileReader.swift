@@ -1,7 +1,7 @@
 import Foundation
 
 class PListFileReader {
-  class func plist(fromFile file: String) -> AnyObject? {
+  class func plist(fromFile file: String) -> Any? {
     let path = Bundle(for: self).path(forResource: file, ofType: "plist")
 
     if let p = path {

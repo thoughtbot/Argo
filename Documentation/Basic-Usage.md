@@ -14,14 +14,14 @@ Argo's whole purpose is to let you easily pick apart structured data (normally
 in the form of a dictionary created from JSON data) and create Swift objects
 based on the decoded content. Typically, you'll want to do this with JSON data
 received from a server or elsewhere. The first thing you need to do is convert
-the JSON data from `NSData` to an `AnyObject` using `Foundation`'s
-`NSJSONSerialization` API.  Once you have the `AnyObject`, you can call Argo's
+the JSON data from `NSData` to an `Any` using `Foundation`'s
+`NSJSONSerialization` API.  Once you have the `Any`, you can call Argo's
 global `decode` function to get back the decoded model.
 
 ```swift
-let json: AnyObject? = try? NSJSONSerialization.JSONObjectWithData(responseData, options: [])
+let json: Any? = try? NSJSONSerialization.JSONObjectWithData(responseData, options: [])
 
-if let j: AnyObject = json {
+if let j: Any = json {
   let user: User? = decode(j)                  // ignore failure info or
   let decodedUser: Decoded<User> = decode(j)   // preserve failure info
 }
@@ -32,7 +32,7 @@ type contains either a successfully decoded object or a failure state that
 preserves information about why a decoding failed. You can choose to either
 ignore the `Decoded` type and just get back the optional value or keep the
 `Decoded` type and use it to debug or report decoding failures.  When you decode
-an `AnyObject` into a model using the global `decode` function, you can specify
+an `Any` into a model using the global `decode` function, you can specify
 whether you want an `Optional` model or a `Decoded` model by specifying the
 return type as seen in the code block above.
 

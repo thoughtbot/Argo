@@ -120,9 +120,9 @@ extension User: Decodable {
 
 // Wherever you receive JSON data:
 
-let json: AnyObject? = try? NSJSONSerialization.JSONObjectWithData(data, options: [])
+let json: Any? = try? NSJSONSerialization.JSONObjectWithData(data, options: [])
 
-if let j: AnyObject = json {
+if let j: Any = json {
   let user: User? = decode(j)
 }
 ```

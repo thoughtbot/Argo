@@ -12,7 +12,7 @@ class ExampleTests: XCTestCase {
   }
 
   func testJSONWithRootObject() {
-    let object = json(fromFile: "root_object") as? [String: AnyObject]
+    let object = json(fromFile: "root_object") as? [String: Any]
     let user: User? = object.flatMap { decode($0, rootKey: "user") }
 
     XCTAssert(user != nil)
@@ -23,7 +23,7 @@ class ExampleTests: XCTestCase {
   }
 
   func testDecodingNonFinalClass() {
-    let object = json(fromFile: "url") as? [String: AnyObject]
+    let object = json(fromFile: "url") as? [String: Any]
     let url: URL? = object.flatMap { decode($0, rootKey: "url") }
 
     XCTAssert(url != nil)
@@ -38,7 +38,7 @@ class ExampleTests: XCTestCase {
   }
 
   func testFlatMapOptionals() {
-    let j: AnyObject? = json(fromFile: "user_with_email")
+    let j: Any? = json(fromFile: "user_with_email")
     let user: User? = j.flatMap(decode)
 
     XCTAssert(user?.id == 1)
@@ -47,7 +47,7 @@ class ExampleTests: XCTestCase {
   }
   
   func testNilCoalescing() {
-    let j: AnyObject? = json(fromFile: "user_with_nested_name")
+    let j: Any? = json(fromFile: "user_with_nested_name")
     let user: User? = j.flatMap(decode)
 
     XCTAssert(user?.id == 1)
@@ -56,7 +56,7 @@ class ExampleTests: XCTestCase {
   }
 
   func testFlatMapDecoded() {
-    let j: AnyObject? = json(fromFile: "user_with_email")
+    let j: Any? = json(fromFile: "user_with_email")
     let user: Decoded<User> = .fromOptional(j) >>- decode
 
     XCTAssert(user.value?.id == 1)

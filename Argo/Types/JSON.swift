@@ -12,20 +12,20 @@ public enum JSON {
 
 public extension JSON {
   /**
-    Transform an `AnyObject` instance into `JSON`.
+    Transform an `Any` instance into `JSON`.
 
     This is used to move from a loosely typed object (like those returned from
     `NSJSONSerialization`) to the strongly typed `JSON` tree structure.
 
     - parameter json: A loosely typed object
   */
-  init(_ json: AnyObject) {
+  init(_ json: Any) {
     switch json {
 
-    case let v as [AnyObject]:
+    case let v as [Any]:
       self = .array(v.map(JSON.init))
 
-    case let v as [String: AnyObject]:
+    case let v as [String: Any]:
       self = .object(v.map(JSON.init))
 
     case let v as String:
@@ -92,7 +92,7 @@ public func == (lhs: JSON, rhs: JSON) -> Bool {
 
 extension JSON {
   @available(*, deprecated: 3.0, renamed: "init")
-  static func parse(_ json: AnyObject) -> JSON {
+  static func parse(_ json: Any) -> JSON {
     return JSON(json)
   }
 }

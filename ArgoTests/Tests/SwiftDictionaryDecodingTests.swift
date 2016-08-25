@@ -3,7 +3,7 @@ import Argo
 
 class SwiftDictionaryDecodingTests: XCTestCase {
   func testDecodingAllTypesFromSwiftDictionary() {
-    let typesDict = [
+    let typesDict: [String: Any] = [
        "numerics": [
         "int": 5,
         "int64": 900719,//9254740992, Dictionaries can't handle 64bit ints (iOS only, Mac works)
