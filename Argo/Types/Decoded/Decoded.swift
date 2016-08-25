@@ -83,7 +83,7 @@ public extension Decoded {
                from the provided `expected` and `actual` values
   */
   static func typeMismatch<T, U>(expected: String, actual: U) -> Decoded<T> {
-    return .failure(.typeMismatch(expected: expected, actual: String(actual)))
+    return .failure(.typeMismatch(expected: expected, actual: String(describing: actual)))
   }
 
   /**
