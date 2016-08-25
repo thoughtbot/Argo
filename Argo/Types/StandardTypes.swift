@@ -223,7 +223,7 @@ public extension Collection where Iterator.Element: Decodable, Iterator.Element 
 
   - returns: A decoded array of values
 */
-public func decodeArray<T: Decodable where T.DecodedType == T>(_ json: JSON) -> Decoded<[T]> {
+public func decodeArray<T: Decodable>(_ json: JSON) -> Decoded<[T]> where T.DecodedType == T {
   return [T].decode(json)
 }
 
@@ -273,7 +273,7 @@ public extension ExpressibleByDictionaryLiteral where Value: Decodable, Value ==
 
   - returns: A decoded dictionary of key/value pairs
 */
-public func decodeObject<T: Decodable where T.DecodedType == T>(_ json: JSON) -> Decoded<[String: T]> {
+public func decodeObject<T: Decodable>(_ json: JSON) -> Decoded<[String: T]> where T.DecodedType == T {
   return [String: T].decode(json)
 }
 
