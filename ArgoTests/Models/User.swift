@@ -12,7 +12,7 @@ extension User: Decodable {
   static func decode(_ json: JSON) -> Decoded<User> {
     return curry(self.init)
       <^> json <| "id"
-      <*> json <| ["userinfo", "name"] <|> json <| "name"
+      <*> (json <| ["userinfo", "name"] <|> json <| "name")
       <*> json <|? "email"
   }
 }
