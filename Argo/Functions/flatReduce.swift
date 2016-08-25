@@ -19,7 +19,7 @@ import Runes
   - returns: The result of iterating the combinator over every element of the
              sequence and flattening the result
 */
-public func flatReduce<S: Sequence, U>(_ sequence: S, initial: U, combine: @noescape (U, S.Iterator.Element) -> Decoded<U>) -> Decoded<U> {
+public func flatReduce<S: Sequence, U>(_ sequence: S, initial: U, combine: (U, S.Iterator.Element) -> Decoded<U>) -> Decoded<U> {
   return sequence.reduce(pure(initial)) { accum, x in
     accum >>- { combine($0, x) }
   }

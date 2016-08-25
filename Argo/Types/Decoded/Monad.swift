@@ -13,7 +13,7 @@ import Runes
 
   - returns: A value of type `Decoded<U>`
 */
-public func >>- <T, U>(x: Decoded<T>, f: @noescape (T) -> Decoded<U>) -> Decoded<U> {
+public func >>- <T, U>(x: Decoded<T>, f: (T) -> Decoded<U>) -> Decoded<U> {
   return x.flatMap(f)
 }
 
@@ -30,7 +30,7 @@ public func >>- <T, U>(x: Decoded<T>, f: @noescape (T) -> Decoded<U>) -> Decoded
 
   - returns: A value of type `Decoded<U>`
 */
-public func -<< <T, U>(f: @noescape (T) -> Decoded<U>, x: Decoded<T>) -> Decoded<U> {
+public func -<< <T, U>(f: (T) -> Decoded<U>, x: Decoded<T>) -> Decoded<U> {
   return x.flatMap(f)
 }
 
@@ -47,7 +47,7 @@ public extension Decoded {
 
     - returns: A value of type `Decoded<U>`
   */
-  func flatMap<U>(_ f: @noescape (T) -> Decoded<U>) -> Decoded<U> {
+  func flatMap<U>(_ f: (T) -> Decoded<U>) -> Decoded<U> {
     switch self {
     case let .success(value): return f(value)
     case let .failure(error): return .failure(error)
