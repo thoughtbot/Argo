@@ -1,12 +1,12 @@
 import Runes
 
-precedencegroup DecodePrecedence {
+precedencegroup ArgoDecodePrecedence {
   associativity: left
-  higherThan: ApplicativeSequencePrecedence
+  higherThan: RunesApplicativeSequencePrecedence
   lowerThan: NilCoalescingPrecedence
 }
 
-infix operator <| : DecodePrecedence
-infix operator <|? : DecodePrecedence
-infix operator <|| : DecodePrecedence
-infix operator <||? : DecodePrecedence
+infix operator <| : ArgoDecodePrecedence
+infix operator <|? : ArgoDecodePrecedence
+infix operator <|| : ArgoDecodePrecedence
+infix operator <||? : ArgoDecodePrecedence
