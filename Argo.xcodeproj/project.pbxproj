@@ -107,6 +107,15 @@
 		EA47BB591AFC5E65002D2CCD /* user_without_key.json in Resources */ = {isa = PBXBuildFile; fileRef = EA47BB581AFC5E65002D2CCD /* user_without_key.json */; };
 		EA47BB5A1AFC5E65002D2CCD /* user_without_key.json in Resources */ = {isa = PBXBuildFile; fileRef = EA47BB581AFC5E65002D2CCD /* user_without_key.json */; };
 		EA4EAF7319DD96330036AE0D /* types_fail_embedded.json in Resources */ = {isa = PBXBuildFile; fileRef = EA4EAF7219DD96330036AE0D /* types_fail_embedded.json */; };
+		EA6600ED1D8C648F0032103D /* EmbeddedDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6600EC1D8C648F0032103D /* EmbeddedDecodingTests.swift */; };
+		EA6600EE1D8C648F0032103D /* EmbeddedDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6600EC1D8C648F0032103D /* EmbeddedDecodingTests.swift */; };
+		EA6600EF1D8C648F0032103D /* EmbeddedDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6600EC1D8C648F0032103D /* EmbeddedDecodingTests.swift */; };
+		EA6600F11D8C651E0032103D /* location_post.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6600F01D8C651E0032103D /* location_post.json */; };
+		EA6600F21D8C651E0032103D /* location_post.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6600F01D8C651E0032103D /* location_post.json */; };
+		EA6600F31D8C651E0032103D /* location_post.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6600F01D8C651E0032103D /* location_post.json */; };
+		EA6600F51D8C65940032103D /* bad_location_post.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6600F41D8C65940032103D /* bad_location_post.json */; };
+		EA6600F61D8C65940032103D /* bad_location_post.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6600F41D8C65940032103D /* bad_location_post.json */; };
+		EA6600F71D8C65940032103D /* bad_location_post.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6600F41D8C65940032103D /* bad_location_post.json */; };
 		EA6DD69C1AB383FB00CA3A5B /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6DD69B1AB383FB00CA3A5B /* PerformanceTests.swift */; };
 		EA6DD69D1AB383FB00CA3A5B /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6DD69B1AB383FB00CA3A5B /* PerformanceTests.swift */; };
 		EA6DD69F1AB384C700CA3A5B /* big_data.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6DD69E1AB384C700CA3A5B /* big_data.json */; };
@@ -296,6 +305,9 @@
 		EA47BB551AFC5DAC002D2CCD /* user_with_bad_type.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_with_bad_type.json; sourceTree = "<group>"; };
 		EA47BB581AFC5E65002D2CCD /* user_without_key.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_without_key.json; sourceTree = "<group>"; };
 		EA4EAF7219DD96330036AE0D /* types_fail_embedded.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = types_fail_embedded.json; sourceTree = "<group>"; };
+		EA6600EC1D8C648F0032103D /* EmbeddedDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbeddedDecodingTests.swift; sourceTree = "<group>"; };
+		EA6600F01D8C651E0032103D /* location_post.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location_post.json; sourceTree = "<group>"; };
+		EA6600F41D8C65940032103D /* bad_location_post.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bad_location_post.json; sourceTree = "<group>"; };
 		EA6DD69B1AB383FB00CA3A5B /* PerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 		EA6DD69E1AB384C700CA3A5B /* big_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = big_data.json; sourceTree = "<group>"; };
 		EABDF6891A9CD46100B6CC83 /* SwiftDictionaryDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDictionaryDecodingTests.swift; sourceTree = "<group>"; };
@@ -548,6 +560,8 @@
 				EA6DD69E1AB384C700CA3A5B /* big_data.json */,
 				EA47BB581AFC5E65002D2CCD /* user_without_key.json */,
 				EA47BB551AFC5DAC002D2CCD /* user_with_bad_type.json */,
+				EA6600F01D8C651E0032103D /* location_post.json */,
+				EA6600F41D8C65940032103D /* bad_location_post.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -565,6 +579,7 @@
 				EA6DD69B1AB383FB00CA3A5B /* PerformanceTests.swift */,
 				EA47BB521AFC5B76002D2CCD /* DecodedTests.swift */,
 				EA1200CA1BAB5CBA006DDBD8 /* RawRepresentableTests.swift */,
+				EA6600EC1D8C648F0032103D /* EmbeddedDecodingTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -866,11 +881,13 @@
 				809755061BADF3ED00C409E6 /* root_object.json in Resources */,
 				809755021BADF3ED00C409E6 /* post_bad_comments.json in Resources */,
 				809755001BADF3ED00C409E6 /* post_no_comments.json in Resources */,
+				EA6600F31D8C651E0032103D /* location_post.json in Resources */,
 				809754F91BADF3ED00C409E6 /* user_with_email.json in Resources */,
 				8097550A1BADF3F200C409E6 /* types.plist in Resources */,
 				809755041BADF3ED00C409E6 /* types_fail_embedded.json in Resources */,
 				809755051BADF3ED00C409E6 /* array_root.json in Resources */,
 				809754FC1BADF3ED00C409E6 /* url.json in Resources */,
+				EA6600F71D8C65940032103D /* bad_location_post.json in Resources */,
 				809755091BADF3ED00C409E6 /* user_without_key.json in Resources */,
 				809754FF1BADF3ED00C409E6 /* comment.json in Resources */,
 			);
@@ -906,11 +923,13 @@
 				4D5F6DD91B3832C200D79B25 /* user_with_nested_name.json in Resources */,
 				EABDF6911A9CD4EA00B6CC83 /* types.plist in Resources */,
 				EAD9FB0A19D214AA0031E006 /* user_without_email.json in Resources */,
+				EA6600F11D8C651E0032103D /* location_post.json in Resources */,
 				EAD9FB0619D2143A0031E006 /* user_with_email.json in Resources */,
 				EAD9FB0B19D214AA0031E006 /* TemplateIcon2x.png in Resources */,
 				EA47BB591AFC5E65002D2CCD /* user_without_key.json in Resources */,
 				EA395DC41A52F8EB00EB607E /* array_root.json in Resources */,
 				F8E33FA51A51E0C20025A6E5 /* post_bad_comments.json in Resources */,
+				EA6600F51D8C65940032103D /* bad_location_post.json in Resources */,
 				EAD9FB1419D30ED00031E006 /* comment.json in Resources */,
 				F802D4C61A5EE2D5005E236C /* url.json in Resources */,
 			);
@@ -939,11 +958,13 @@
 				4D5F6DDA1B3832C200D79B25 /* user_with_nested_name.json in Resources */,
 				EABDF6921A9CD4EA00B6CC83 /* types.plist in Resources */,
 				F8EF756E1A4CEC7100BDCC2D /* user_without_email.json in Resources */,
+				EA6600F21D8C651E0032103D /* location_post.json in Resources */,
 				F8EF756D1A4CEC7100BDCC2D /* user_with_email.json in Resources */,
 				F8EF756F1A4CEC7100BDCC2D /* TemplateIcon2x.png in Resources */,
 				EA47BB5A1AFC5E65002D2CCD /* user_without_key.json in Resources */,
 				EA395DC51A52F8EE00EB607E /* array_root.json in Resources */,
 				EA395DC21A5209C000EB607E /* post_bad_comments.json in Resources */,
+				EA6600F61D8C65940032103D /* bad_location_post.json in Resources */,
 				F8EF75701A4CEC7100BDCC2D /* comment.json in Resources */,
 				F802D4C71A5EE2D5005E236C /* url.json in Resources */,
 			);
@@ -1007,6 +1028,7 @@
 				F8C592841CB726FF007C5ABC /* Booleans.swift in Sources */,
 				809754EA1BADF3E400C409E6 /* OptionalPropertyDecodingTests.swift in Sources */,
 				809754F81BADF3E400C409E6 /* URL.swift in Sources */,
+				EA6600EF1D8C648F0032103D /* EmbeddedDecodingTests.swift in Sources */,
 				809754F41BADF3E400C409E6 /* User.swift in Sources */,
 				809754EC1BADF3E400C409E6 /* TypeTests.swift in Sources */,
 				809754E81BADF3E400C409E6 /* PListDecodingTests.swift in Sources */,
@@ -1084,6 +1106,7 @@
 				F8C592821CB726FB007C5ABC /* Booleans.swift in Sources */,
 				EAD9FB0219D211C10031E006 /* Post.swift in Sources */,
 				EABDF6941A9CD4FC00B6CC83 /* PListDecodingTests.swift in Sources */,
+				EA6600ED1D8C648F0032103D /* EmbeddedDecodingTests.swift in Sources */,
 				EAD9FB1819D49A3E0031E006 /* TestModel.swift in Sources */,
 				EAD9FB0E19D215570031E006 /* OptionalPropertyDecodingTests.swift in Sources */,
 				EA47BB531AFC5B76002D2CCD /* DecodedTests.swift in Sources */,
@@ -1135,6 +1158,7 @@
 				F8C592831CB726FE007C5ABC /* Booleans.swift in Sources */,
 				F8EF756B1A4CEC6400BDCC2D /* EmbeddedJSONDecodingTests.swift in Sources */,
 				EABDF6951A9CD4FC00B6CC83 /* PListDecodingTests.swift in Sources */,
+				EA6600EE1D8C648F0032103D /* EmbeddedDecodingTests.swift in Sources */,
 				F8EF75751A4CEC7800BDCC2D /* TestModel.swift in Sources */,
 				F8EF75741A4CEC7800BDCC2D /* Post.swift in Sources */,
 				EA47BB541AFC5B76002D2CCD /* DecodedTests.swift in Sources */,

@@ -173,7 +173,7 @@ public extension Optional where Wrapped: Decodable, Wrapped == Wrapped.DecodedTy
     - returns: A decoded optional `Wrapped` value
   */
   static func decode(_ json: JSON) -> Decoded<Wrapped?> {
-    return .optional(Wrapped.decode(json))
+    return Wrapped.decode(json) >>- { .success(.some($0)) }
   }
 }
 

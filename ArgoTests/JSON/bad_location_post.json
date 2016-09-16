@@ -1,0 +1,13 @@
+{
+  "id": 3,
+  "text": "A Cool story.",
+  "author": {
+    "id": 1,
+    "name": "Cool User"
+  },
+  "comments": [],
+  "location": {
+    "lat": -41.24673,
+    "lng": 72.89244
+  }
+}

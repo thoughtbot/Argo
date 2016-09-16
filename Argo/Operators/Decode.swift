@@ -33,7 +33,7 @@ public func <| <A: Decodable>(json: JSON, key: String) -> Decoded<A> where A == 
              the decode operation
 */
 public func <|? <A: Decodable>(json: JSON, key: String) -> Decoded<A?> where A == A.DecodedType {
-  return .optional(json <| [key])
+  return json <|? [key]
 }
 
 /**
@@ -71,7 +71,10 @@ public func <| <A: Decodable>(json: JSON, keys: [String]) -> Decoded<A> where A 
              the decode operation
 */
 public func <|? <A: Decodable>(json: JSON, keys: [String]) -> Decoded<A?> where A == A.DecodedType {
-  return .optional(json <| keys)
+  switch flatReduce(keys, initial: json, combine: decodedJSON) {
+  case .failure: return .success(.none)
+  case .success(let x): return A.decode(x) >>- { .success(.some($0)) }
+  }
 }
 
 /**
@@ -108,7 +111,7 @@ public func <|| <A: Decodable>(json: JSON, key: String) -> Decoded<[A]> where A 
              failure of the decode operation
 */
 public func <||? <A: Decodable>(json: JSON, key: String) -> Decoded<[A]?> where A == A.DecodedType {
-  return .optional(json <|| [key])
+  return json <||? [key]
 }
 
 /**
@@ -148,5 +151,8 @@ public func <|| <A: Decodable>(json: JSON, keys: [String]) -> Decoded<[A]> where
              failure of the decode operation
 */
 public func <||? <A: Decodable>(json: JSON, keys: [String]) -> Decoded<[A]?> where A == A.DecodedType {
-  return .optional(json <|| keys)
+  switch flatReduce(keys, initial: json, combine: decodedJSON) {
+  case .failure: return .success(.none)
+  case .success(let value): return Array<A>.decode(value) >>- { .success(.some($0)) }
+  }
 }
