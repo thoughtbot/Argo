@@ -23,7 +23,7 @@ Here is the current Swift compatibility breakdown:
 
 | Swift Version | Argo Version |
 | ------------- | ------------ |
-| 3.X           | master       |
+| 3.X           | 4.X          |
 | 2.2, 2.3      | 3.X          |
 | 2.0, 2.1      | 2.X          |
 | 1.2 - 2.0     | 1.X          |
