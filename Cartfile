@@ -1,1 +1,1 @@
-github "thoughtbot/Runes" "master"
+github "thoughtbot/Runes" ~> 4.0.0

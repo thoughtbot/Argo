@@ -1,1 +1,1 @@
-github "thoughtbot/Curry" "master"
+github "thoughtbot/Curry" ~> 3.0.0
