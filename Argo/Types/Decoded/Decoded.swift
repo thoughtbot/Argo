@@ -32,6 +32,20 @@ public extension Decoded {
 
 public extension Decoded {
   /**
+    Convert a `Decoded` type into a `Decoded` `Optional` type.
+
+    This is useful for when a decode operation should be allowed to fail, such
+    as when decoding an optional property.
+
+    - parameter x: A `Decoded` type
+
+    - returns: The `Decoded` type with any failure converted to `.success(.none)`
+  */
+  static func optional<T>(_ x: Decoded<T>) -> Decoded<T?> {
+    return .success(x.value)
+  }
+
+  /**
     Convert an `Optional` into a `Decoded` value.
 
     If the provided optional is `.Some`, this method extracts the value and

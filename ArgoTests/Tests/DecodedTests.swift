@@ -177,6 +177,21 @@ class DecodedTests: XCTestCase {
     default: XCTFail("Unexpected Case Occurred")
     }
   }
+
+  func testOptionalIgnoresErrors() {
+    let success = Decoded<String>.success("test")
+    let typeError = Decoded<String>.failure(.typeMismatch(expected: "", actual: ""))
+    let missingError = Decoded<String>.failure(.missingKey(""))
+    let customError = Decoded<String>.failure(.custom(""))
+    let multipleError = Decoded<String>.failure(.multiple([]))
+
+    let op: (Decoded<String>) -> Decoded<String?> = Decoded<String>.optional
+
+    switch (op(success), op(typeError), op(missingError), op(customError), op(multipleError)) {
+    case (.success, .success, .success, .success, .success): XCTAssert(true)
+    default: XCTFail("Unexpected Case Occured")
+    }
+  }
 }
 
 private struct Dummy: Decodable {
