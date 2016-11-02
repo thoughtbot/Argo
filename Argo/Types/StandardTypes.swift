@@ -32,7 +32,7 @@ extension Int: Decodable {
   */
   public static func decode(_ json: JSON) -> Decoded<Int> {
     switch json {
-    case let .number(n): return pure(n as Int)
+    case let .number(n): return pure(n.intValue)
     default: return .typeMismatch(expected: "Int", actual: json)
     }
   }
@@ -116,7 +116,7 @@ extension Double: Decodable {
   */
   public static func decode(_ json: JSON) -> Decoded<Double> {
     switch json {
-    case let .number(n): return pure(n as Double)
+    case let .number(n): return pure(n.doubleValue)
     default: return .typeMismatch(expected: "Double", actual: json)
     }
   }
@@ -155,7 +155,7 @@ extension Bool: Decodable {
   public static func decode(_ json: JSON) -> Decoded<Bool> {
     switch json {
     case let .bool(n): return pure(n)
-    case let .number(n): return pure(n as Bool)
+    case let .number(n): return pure(n.boolValue)
     default: return .typeMismatch(expected: "Bool", actual: json)
     }
   }
