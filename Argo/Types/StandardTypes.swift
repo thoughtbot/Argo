@@ -51,7 +51,7 @@ extension UInt: Decodable {
   */
   public static func decode(_ json: JSON) -> Decoded<UInt> {
     switch json {
-    case let .number(n): return pure(n as UInt)
+    case let .number(n): return pure(n.uintValue)
     default: return .typeMismatch(expected: "UInt", actual: json)
     }
   }
@@ -135,7 +135,7 @@ extension Float: Decodable {
   */
   public static func decode(_ json: JSON) -> Decoded<Float> {
     switch json {
-    case let .number(n): return pure(n as Float)
+    case let .number(n): return pure(n.floatValue)
     default: return .typeMismatch(expected: "Float", actual: json)
     }
   }
