@@ -33,7 +33,7 @@ public extension JSON {
 
     case let v as NSNumber:
       if v.isBool {
-        self = .bool(v as Bool)
+        self = .bool(v.boolValue)
       } else {
         self = .number(v)
       }
