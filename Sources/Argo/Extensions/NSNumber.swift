@@ -2,6 +2,6 @@ import Foundation
 
 extension NSNumber {
   var isBool: Bool {
-    return CFBooleanGetTypeID() == CFGetTypeID(self)
+    return type(of: self) == type(of: NSNumber(value: true))
   }
 }
