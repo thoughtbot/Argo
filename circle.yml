@@ -8,4 +8,4 @@ dependencies:
 
 test:
   override:
-    - bin/test
+    - bin/test -r

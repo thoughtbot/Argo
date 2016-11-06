@@ -1,19 +1,53 @@
-#!/usr/bin/env sh
+#!/bin/bash
+#
+# Runs tests via xcodebuild, formatting results with xcpretty.
+#
+# Usage: bin/test [options]
+#
+# Options:
+#   -k    Clean before running the tests.
+#   -r    Emit JUnit XML report.
+#   -t    Use RSpec-style test output.
 
-set -o pipefail
+set -eo pipefail
+
+build_actions=(test)
+test_reports_dir="${CIRCLE_TEST_REPORTS:-build}"
+xcpretty_options=(--color)
+
+while getopts krt opt; do
+  case ${opt} in
+    k)
+      build_actions=(clean test)
+      ;;
+    r)
+      xcpretty_options+=(--report junit --output "${test_reports_dir}/test-report.xml")
+      ;;
+    t)
+      xcpretty_options+=(--test)
+      ;;
+    *)
+      exit 1
+      ;;
+  esac
+done
+
+shift $((OPTIND - 1))
+
+mkdir -p "${test_reports_dir}"
 
 xcrun xcodebuild \
   -workspace Argo.xcworkspace \
   -scheme Argo-Mac \
-  test \
-  | xcpretty --color
+  "${build_actions[@]}" \
+  | xcpretty "${xcpretty_options[@]}"
 
 xcrun xcodebuild \
   -workspace Argo.xcworkspace \
   -scheme Argo-iOS \
   -destination "platform=iOS Simulator,name=iPhone 6" \
-  test \
-  | xcpretty --color
+  "${build_actions[@]}" \
+  | xcpretty "${xcpretty_options[@]}"
 
 xcrun xcodebuild \
   -workspace Argo.xcworkspace \
@@ -21,11 +55,11 @@ xcrun xcodebuild \
   -destination "generic/platform=watchOS" \
   CODE_SIGNING_REQUIRED=NO \
   CODE_SIGN_IDENTITY="" \
-  | xcpretty --color
+  | xcpretty "${xcpretty_options[@]}"
 
 xcrun xcodebuild \
   -workspace Argo.xcworkspace \
   -scheme Argo-tvOS \
   -destination "platform=tvOS Simulator,name=Apple TV 1080p" \
-  test \
-  | xcpretty --color
+  "${build_actions[@]}" \
+  | xcpretty "${xcpretty_options[@]}"
