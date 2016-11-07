@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   }
   spec.social_media_url = 'http://twitter.com/thoughtbot'
   spec.source = { :git => 'https://github.com/thoughtbot/Argo.git', :tag => "v#{spec.version}" }
-  spec.source_files = 'Argo/**/*.{h,swift}'
+  spec.source_files = 'Sources/**/*.{h,swift}'
 
   spec.dependency 'Runes', '>= 4.0.0'
 
