@@ -15,7 +15,7 @@
 		809754DA1BADF36D00C409E6 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6A01ABC5F1300E3B0AB /* Decodable.swift */; };
 		809754DB1BADF36D00C409E6 /* StandardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6A11ABC5F1300E3B0AB /* StandardTypes.swift */; };
 		809754DC1BADF36D00C409E6 /* DecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84318A71B9A2D7A00165216 /* DecodeError.swift */; };
-		809754DE1BADF36D00C409E6 /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* Decode.swift */; };
+		809754DE1BADF36D00C409E6 /* DecodeOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* DecodeOperators.swift */; };
 		809754DF1BADF36D00C409E6 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		809754E21BADF36D00C409E6 /* decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69A1ABC5F1300E3B0AB /* decode.swift */; };
 		809754E31BADF36D00C409E6 /* flatReduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69B1ABC5F1300E3B0AB /* flatReduce.swift */; };
@@ -63,7 +63,7 @@
 		D0592EBF1B77DD8E00EFEF39 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69F1ABC5F1300E3B0AB /* JSON.swift */; };
 		D0592EC01B77DD8E00EFEF39 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6A01ABC5F1300E3B0AB /* Decodable.swift */; };
 		D0592EC11B77DD8E00EFEF39 /* StandardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB6A11ABC5F1300E3B0AB /* StandardTypes.swift */; };
-		D0592EC31B77DD9300EFEF39 /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* Decode.swift */; };
+		D0592EC31B77DD9300EFEF39 /* DecodeOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* DecodeOperators.swift */; };
 		D0592EC51B77DD9A00EFEF39 /* decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69A1ABC5F1300E3B0AB /* decode.swift */; };
 		D0592EC61B77DD9A00EFEF39 /* flatReduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69B1ABC5F1300E3B0AB /* flatReduce.swift */; };
 		D0592EC71B77DD9A00EFEF39 /* sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87EB69C1ABC5F1300E3B0AB /* sequence.swift */; };
@@ -135,7 +135,7 @@
 		EABDF6921A9CD4EA00B6CC83 /* types.plist in Resources */ = {isa = PBXBuildFile; fileRef = EABDF68E1A9CD4EA00B6CC83 /* types.plist */; };
 		EABDF6941A9CD4FC00B6CC83 /* PListDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABDF6931A9CD4FC00B6CC83 /* PListDecodingTests.swift */; };
 		EABDF6951A9CD4FC00B6CC83 /* PListDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABDF6931A9CD4FC00B6CC83 /* PListDecodingTests.swift */; };
-		EAD9FAF619D0F7900031E006 /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* Decode.swift */; };
+		EAD9FAF619D0F7900031E006 /* DecodeOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* DecodeOperators.swift */; };
 		EAD9FAFE19D2113C0031E006 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAFD19D2113C0031E006 /* User.swift */; };
 		EAD9FB0019D211630031E006 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAFF19D211630031E006 /* Comment.swift */; };
 		EAD9FB0219D211C10031E006 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FB0119D211C10031E006 /* Post.swift */; };
@@ -185,7 +185,7 @@
 		F893355F1A4CE83000B88685 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F89335541A4CE83000B88685 /* Argo.framework */; };
 		F893356E1A4CE8FC00B88685 /* Argo.h in Headers */ = {isa = PBXBuildFile; fileRef = F893356D1A4CE8FC00B88685 /* Argo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F893356F1A4CE8FC00B88685 /* Argo.h in Headers */ = {isa = PBXBuildFile; fileRef = F893356D1A4CE8FC00B88685 /* Argo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F89335761A4CE93600B88685 /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* Decode.swift */; };
+		F89335761A4CE93600B88685 /* DecodeOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9FAF519D0F7900031E006 /* DecodeOperators.swift */; };
 		F8ABEBD11D42C67100B4363C /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8ABEBD01D42C67100B4363C /* Runes.framework */; };
 		F8ABEBD31D42C67800B4363C /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8ABEBD21D42C67800B4363C /* Runes.framework */; };
 		F8ABEBD51D42C67E00B4363C /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8ABEBD41D42C67E00B4363C /* Runes.framework */; };
@@ -317,7 +317,7 @@
 		EAD9FACF19D0EAB50031E006 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD9FAD319D0EAB50031E006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAD9FADA19D0EAB60031E006 /* ArgoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArgoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EAD9FAF519D0F7900031E006 /* Decode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decode.swift; sourceTree = "<group>"; };
+		EAD9FAF519D0F7900031E006 /* DecodeOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodeOperators.swift; sourceTree = "<group>"; };
 		EAD9FAFD19D2113C0031E006 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EAD9FAFF19D211630031E006 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		EAD9FB0119D211C10031E006 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -510,7 +510,7 @@
 			isa = PBXGroup;
 			children = (
 				EA04D5A41BBF2047001DE23B /* Argo.swift */,
-				EAD9FAF519D0F7900031E006 /* Decode.swift */,
+				EAD9FAF519D0F7900031E006 /* DecodeOperators.swift */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -992,7 +992,7 @@
 				809754DB1BADF36D00C409E6 /* StandardTypes.swift in Sources */,
 				EA9159F91BDE74EB00D85292 /* Functor.swift in Sources */,
 				809754DA1BADF36D00C409E6 /* Decodable.swift in Sources */,
-				809754DE1BADF36D00C409E6 /* Decode.swift in Sources */,
+				809754DE1BADF36D00C409E6 /* DecodeOperators.swift in Sources */,
 				809754D81BADF36D00C409E6 /* Decoded.swift in Sources */,
 				809754E41BADF36D00C409E6 /* sequence.swift in Sources */,
 				809754E21BADF36D00C409E6 /* decode.swift in Sources */,
@@ -1049,7 +1049,7 @@
 				F84318AA1B9A2D7A00165216 /* DecodeError.swift in Sources */,
 				D0592EBF1B77DD8E00EFEF39 /* JSON.swift in Sources */,
 				F8EF43311BBC729F001886BA /* catDecoded.swift in Sources */,
-				D0592EC31B77DD9300EFEF39 /* Decode.swift in Sources */,
+				D0592EC31B77DD9300EFEF39 /* DecodeOperators.swift in Sources */,
 				EA1200CE1BAB621C006DDBD8 /* RawRepresentable.swift in Sources */,
 				EA04D5931BBF1F40001DE23B /* Monad.swift in Sources */,
 				EA04D5971BBF1F80001DE23B /* Functor.swift in Sources */,
@@ -1076,7 +1076,7 @@
 				F87EB6A81ABC5F1300E3B0AB /* sequence.swift in Sources */,
 				F84318A81B9A2D7A00165216 /* DecodeError.swift in Sources */,
 				F8CBE6671A64521000316FBC /* Dictionary.swift in Sources */,
-				EAD9FAF619D0F7900031E006 /* Decode.swift in Sources */,
+				EAD9FAF619D0F7900031E006 /* DecodeOperators.swift in Sources */,
 				F87EB6B01ABC5F1300E3B0AB /* StandardTypes.swift in Sources */,
 				EA04D5911BBF1F40001DE23B /* Monad.swift in Sources */,
 				EA04D5951BBF1F80001DE23B /* Functor.swift in Sources */,
@@ -1128,7 +1128,7 @@
 				F84318A91B9A2D7A00165216 /* DecodeError.swift in Sources */,
 				F8CBE6681A64526300316FBC /* Dictionary.swift in Sources */,
 				F8EF43301BBC729F001886BA /* catDecoded.swift in Sources */,
-				F89335761A4CE93600B88685 /* Decode.swift in Sources */,
+				F89335761A4CE93600B88685 /* DecodeOperators.swift in Sources */,
 				EA1200CD1BAB621C006DDBD8 /* RawRepresentable.swift in Sources */,
 				EA04D5921BBF1F40001DE23B /* Monad.swift in Sources */,
 				EA04D5961BBF1F80001DE23B /* Functor.swift in Sources */,
