@@ -194,9 +194,9 @@ public extension Collection where Iterator.Element: Decodable, Iterator.Element 
 
     - returns: A decoded array of values
   */
-  static func decode(_ json: JSON) -> Decoded<[Generator.Element]> {
+  static func decode(_ json: JSON) -> Decoded<[Iterator.Element]> {
     switch json {
-    case let .array(a): return sequence(a.map(Generator.Element.decode))
+    case let .array(a): return sequence(a.map(Iterator.Element.decode))
     default: return .typeMismatch(expected: "Array", actual: json)
     }
   }
