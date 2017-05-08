@@ -196,7 +196,7 @@ public extension Collection where Iterator.Element: Decodable, Iterator.Element 
   */
   static func decode(_ json: JSON) -> Decoded<[Iterator.Element]> {
     switch json {
-    case let .array(a): return sequence(a.map(Iterator.Element.decode))
+    case let .array(a): return sequence(a.map({ Iterator.Element.decode(JSON($0)) }))
     default: return .typeMismatch(expected: "Array", actual: json)
     }
   }
@@ -246,7 +246,7 @@ public extension ExpressibleByDictionaryLiteral where Value: Decodable, Value ==
   */
   static func decode(_ json: JSON) -> Decoded<[String: Value]> {
     switch json {
-    case let .object(o): return sequence(Value.decode <^> o)
+    case let .object(o): return sequence({ Value.decode(JSON($0)) } <^> o)
     default: return .typeMismatch(expected: "Object", actual: json)
     }
   }
@@ -296,7 +296,7 @@ public func decodeObject<T: Decodable>(_ json: JSON) -> Decoded<[String: T]> whe
 */
 public func decodedJSON(_ json: JSON, forKey key: String) -> Decoded<JSON> {
   switch json {
-  case let .object(o): return guardNull(key, o[key] ?? .null)
+  case let .object(o): return guardNull(key, o[key].map(JSON.init) ?? .null)
   default: return .typeMismatch(expected: "Object", actual: json)
   }
 }
