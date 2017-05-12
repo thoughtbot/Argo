@@ -93,6 +93,9 @@
 		EA1200CC1BAB5CBA006DDBD8 /* RawRepresentableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1200CA1BAB5CBA006DDBD8 /* RawRepresentableTests.swift */; };
 		EA1200CD1BAB621C006DDBD8 /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF92789C1B9365900038A7E1 /* RawRepresentable.swift */; };
 		EA1200CE1BAB621C006DDBD8 /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF92789C1B9365900038A7E1 /* RawRepresentable.swift */; };
+		EA2F74A41EC6064C00AEC72D /* PartialTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F74A31EC6064C00AEC72D /* PartialTestModel.swift */; };
+		EA2F74A51EC6064C00AEC72D /* PartialTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F74A31EC6064C00AEC72D /* PartialTestModel.swift */; };
+		EA2F74A61EC6064C00AEC72D /* PartialTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F74A31EC6064C00AEC72D /* PartialTestModel.swift */; };
 		EA395DC21A5209C000EB607E /* post_bad_comments.json in Resources */ = {isa = PBXBuildFile; fileRef = F8E33FA41A51E0C20025A6E5 /* post_bad_comments.json */; };
 		EA395DC41A52F8EB00EB607E /* array_root.json in Resources */ = {isa = PBXBuildFile; fileRef = EA395DC31A52F8EB00EB607E /* array_root.json */; };
 		EA395DC51A52F8EE00EB607E /* array_root.json in Resources */ = {isa = PBXBuildFile; fileRef = EA395DC31A52F8EB00EB607E /* array_root.json */; };
@@ -298,6 +301,7 @@
 		EA08313219D5EEF2003B90D7 /* post_comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = post_comments.json; sourceTree = "<group>"; };
 		EA08313419D5EFC0003B90D7 /* types.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = types.json; sourceTree = "<group>"; };
 		EA1200CA1BAB5CBA006DDBD8 /* RawRepresentableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawRepresentableTests.swift; sourceTree = "<group>"; };
+		EA2F74A31EC6064C00AEC72D /* PartialTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartialTestModel.swift; sourceTree = "<group>"; };
 		EA395DC31A52F8EB00EB607E /* array_root.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = array_root.json; sourceTree = "<group>"; };
 		EA395DC61A52F93B00EB607E /* ExampleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		EA395DC91A52FC1400EB607E /* root_object.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = root_object.json; sourceTree = "<group>"; };
@@ -524,6 +528,7 @@
 				EAD9FB0119D211C10031E006 /* Post.swift */,
 				EAD9FB1719D49A3E0031E006 /* TestModel.swift */,
 				F802D4C21A5EE061005E236C /* URL.swift */,
+				EA2F74A31EC6064C00AEC72D /* PartialTestModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1014,6 +1019,7 @@
 				809754F01BADF3E400C409E6 /* DecodedTests.swift in Sources */,
 				809754F11BADF3E400C409E6 /* RawRepresentableTests.swift in Sources */,
 				809754F31BADF3E400C409E6 /* PListFileReader.swift in Sources */,
+				EA2F74A61EC6064C00AEC72D /* PartialTestModel.swift in Sources */,
 				809754EB1BADF3E400C409E6 /* EmbeddedJSONDecodingTests.swift in Sources */,
 				F8C592841CB726FF007C5ABC /* Booleans.swift in Sources */,
 				809754EA1BADF3E400C409E6 /* OptionalPropertyDecodingTests.swift in Sources */,
@@ -1092,6 +1098,7 @@
 				EAD9FB1219D30E660031E006 /* EmbeddedJSONDecodingTests.swift in Sources */,
 				F802D4C31A5EE061005E236C /* URL.swift in Sources */,
 				EABDF68F1A9CD4EA00B6CC83 /* PListFileReader.swift in Sources */,
+				EA2F74A41EC6064C00AEC72D /* PartialTestModel.swift in Sources */,
 				EAD9FB1019D21AF50031E006 /* JSONFileReader.swift in Sources */,
 				F8C592821CB726FB007C5ABC /* Booleans.swift in Sources */,
 				EAD9FB0219D211C10031E006 /* Post.swift in Sources */,
@@ -1144,6 +1151,7 @@
 				F8EF75731A4CEC7800BDCC2D /* Comment.swift in Sources */,
 				F802D4C41A5EE172005E236C /* URL.swift in Sources */,
 				EABDF6901A9CD4EA00B6CC83 /* PListFileReader.swift in Sources */,
+				EA2F74A51EC6064C00AEC72D /* PartialTestModel.swift in Sources */,
 				F8EF75721A4CEC7800BDCC2D /* User.swift in Sources */,
 				F8C592831CB726FE007C5ABC /* Booleans.swift in Sources */,
 				F8EF756B1A4CEC6400BDCC2D /* EmbeddedJSONDecodingTests.swift in Sources */,

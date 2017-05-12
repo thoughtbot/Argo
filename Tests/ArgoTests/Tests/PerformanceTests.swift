@@ -19,6 +19,15 @@ class PerformanceTests: XCTestCase {
     }
   }
 
+  func testPartialDecodePerformance() {
+    let obj: Any = json(fromFile: "big_data")!
+    let j = JSON(obj)
+
+    measure {
+      _ = [PartialTestModel].decode(j)
+    }
+  }
+
   func testBigDataDecodesCorrectly() {
     let obj: Any = json(fromFile: "big_data")!
     let j = JSON(obj)
