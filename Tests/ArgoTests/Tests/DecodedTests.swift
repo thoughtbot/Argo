@@ -189,7 +189,7 @@ class DecodedTests: XCTestCase {
 
     switch (op(success), op(typeError), op(missingError), op(customError), op(multipleError)) {
     case (.success, .success, .success, .success, .success): XCTAssert(true)
-    default: XCTFail("Unexpected Case Occured")
+    default: XCTFail("Unexpected Case Occurred")
     }
   }
 }
