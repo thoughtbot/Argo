@@ -1,0 +1,6 @@
+framework module Argo [system] {
+  umbrella header "Argo.h"
+
+  export *
+  module * { export * }
+}

@@ -95,7 +95,6 @@ you are using an older version of Argo, you might not need that import.
 ```swift
 import Argo
 import Curry
-import Runes
 
 struct User {
   let id: Int
