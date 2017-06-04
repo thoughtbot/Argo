@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AA2F8D91EE33C4A003FF142 /* Exports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA2F8D81EE33C4A003FF142 /* Exports.swift */; };
+		4AA2F8DA1EE33C4F003FF142 /* Exports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA2F8D81EE33C4A003FF142 /* Exports.swift */; };
+		4AA2F8DB1EE33C50003FF142 /* Exports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA2F8D81EE33C4A003FF142 /* Exports.swift */; };
+		4AA2F8DC1EE33C50003FF142 /* Exports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA2F8D81EE33C4A003FF142 /* Exports.swift */; };
 		4D5F6DD91B3832C200D79B25 /* user_with_nested_name.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D5F6DD81B3832C200D79B25 /* user_with_nested_name.json */; };
 		4D5F6DDA1B3832C200D79B25 /* user_with_nested_name.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D5F6DD81B3832C200D79B25 /* user_with_nested_name.json */; };
 		809754CB1BADF34200C409E6 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809754C11BADF34100C409E6 /* Argo.framework */; };
@@ -283,6 +287,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4AA2F8D81EE33C4A003FF142 /* Exports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exports.swift; sourceTree = "<group>"; };
 		4D5F6DD81B3832C200D79B25 /* user_with_nested_name.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_with_nested_name.json; sourceTree = "<group>"; };
 		809754C11BADF34100C409E6 /* Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		809754CA1BADF34200C409E6 /* Argo-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Argo-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -476,6 +481,7 @@
 		EAD9FAD119D0EAB50031E006 /* Argo */ = {
 			isa = PBXGroup;
 			children = (
+				4AA2F8D81EE33C4A003FF142 /* Exports.swift */,
 				F87EB69D1ABC5F1300E3B0AB /* Types */,
 				EAD9FAE919D0F6480031E006 /* Operators */,
 				F87EB6981ABC5F1300E3B0AB /* Functions */,
@@ -998,6 +1004,7 @@
 				809754E21BADF36D00C409E6 /* decode.swift in Sources */,
 				809754DC1BADF36D00C409E6 /* DecodeError.swift in Sources */,
 				EA9159FA1BDE74F300D85292 /* Applicative.swift in Sources */,
+				4AA2F8DC1EE33C50003FF142 /* Exports.swift in Sources */,
 				809754E51BADF36D00C409E6 /* Dictionary.swift in Sources */,
 				809754E61BADF36D00C409E6 /* RawRepresentable.swift in Sources */,
 				809754D91BADF36D00C409E6 /* JSON.swift in Sources */,
@@ -1046,6 +1053,7 @@
 				D0592EC81B77DD9A00EFEF39 /* Dictionary.swift in Sources */,
 				EA04D5A31BBF2021001DE23B /* FailureCoalescing.swift in Sources */,
 				D0592EBE1B77DD8E00EFEF39 /* Decoded.swift in Sources */,
+				4AA2F8DB1EE33C50003FF142 /* Exports.swift in Sources */,
 				F84318AA1B9A2D7A00165216 /* DecodeError.swift in Sources */,
 				D0592EBF1B77DD8E00EFEF39 /* JSON.swift in Sources */,
 				F8EF43311BBC729F001886BA /* catDecoded.swift in Sources */,
@@ -1072,6 +1080,7 @@
 				F82D15F31C3C82730079FFB5 /* NSNumber.swift in Sources */,
 				F87EB6AC1ABC5F1300E3B0AB /* JSON.swift in Sources */,
 				EA04D5A11BBF2021001DE23B /* FailureCoalescing.swift in Sources */,
+				4AA2F8D91EE33C4A003FF142 /* Exports.swift in Sources */,
 				F87EB6A61ABC5F1300E3B0AB /* flatReduce.swift in Sources */,
 				F87EB6A81ABC5F1300E3B0AB /* sequence.swift in Sources */,
 				F84318A81B9A2D7A00165216 /* DecodeError.swift in Sources */,
@@ -1124,6 +1133,7 @@
 				F8C2561A1C3C855B00B70968 /* NSNumber.swift in Sources */,
 				F87EB6A71ABC5F1300E3B0AB /* flatReduce.swift in Sources */,
 				EA04D5A21BBF2021001DE23B /* FailureCoalescing.swift in Sources */,
+				4AA2F8DA1EE33C4F003FF142 /* Exports.swift in Sources */,
 				F87EB6A91ABC5F1300E3B0AB /* sequence.swift in Sources */,
 				F84318A91B9A2D7A00165216 /* DecodeError.swift in Sources */,
 				F8CBE6681A64526300316FBC /* Dictionary.swift in Sources */,
