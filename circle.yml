@@ -8,4 +8,5 @@ dependencies:
 
 test:
   override:
-    - bin/test -r
+    - echo "Not implemented"
+    - exit 1
