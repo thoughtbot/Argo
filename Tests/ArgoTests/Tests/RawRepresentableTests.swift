@@ -11,8 +11,8 @@ enum TestRawInt: Int {
   case one
 }
 
-extension TestRawString: Decodable { }
-extension TestRawInt: Decodable { }
+extension TestRawString: Argo.Decodable { }
+extension TestRawInt: Argo.Decodable { }
 
 class RawRepresentable: XCTestCase {
   func testStringEnum() {

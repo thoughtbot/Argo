@@ -8,7 +8,7 @@ struct Comment {
   let authorName: String
 }
 
-extension Comment: Decodable {
+extension Comment: Argo.Decodable {
   static func decode(_ json: JSON) -> Decoded<Comment> {
     return curry(self.init)
       <^> json <| "id"

@@ -14,7 +14,7 @@ struct TestModel {
   let dict: [String: String]
 }
 
-extension TestModel: Decodable {
+extension TestModel: Argo.Decodable {
   static func decode(_ json: JSON) -> Decoded<TestModel> {
     let curriedInit = curry(self.init)
     return curriedInit
@@ -42,7 +42,7 @@ struct TestModelNumerics {
   let uint64String: UInt64
 }
 
-extension TestModelNumerics: Decodable {
+extension TestModelNumerics: Argo.Decodable {
   static func decode(_ json: JSON) -> Decoded<TestModelNumerics> {
     let f = curry(self.init)
       <^> json <| "int"

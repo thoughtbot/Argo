@@ -2,7 +2,7 @@ import Argo
 import Curry
 import Runes
 
-struct Booleans: Decodable {
+struct Booleans: Argo.Decodable {
   let bool: Bool
   let number: Bool
 

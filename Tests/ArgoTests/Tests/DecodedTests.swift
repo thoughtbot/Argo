@@ -194,7 +194,7 @@ class DecodedTests: XCTestCase {
   }
 }
 
-private struct Dummy: Decodable {
+private struct Dummy: Argo.Decodable {
   static func decode(_ json: JSON) -> Decoded<Dummy> {
     return .customError("My Custom Error")
   }

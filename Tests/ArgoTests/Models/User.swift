@@ -8,7 +8,7 @@ struct User {
   let email: String?
 }
 
-extension User: Decodable {
+extension User: Argo.Decodable {
   static func decode(_ json: JSON) -> Decoded<User> {
     return curry(self.init)
       <^> json <| "id"
