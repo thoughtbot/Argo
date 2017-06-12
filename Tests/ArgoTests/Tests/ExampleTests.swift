@@ -1,7 +1,7 @@
 import XCTest
 import Argo
-import Curry
 import Runes
+import Fixtures
 
 class ExampleTests: XCTestCase {
   func testJSONWithRootArray() {

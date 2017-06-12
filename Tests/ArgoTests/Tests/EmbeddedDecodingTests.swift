@@ -1,5 +1,6 @@
 import XCTest
 import Argo
+import Fixtures
 
 final class EmbeddedDecodingTests: XCTestCase {
   func testDecodeEmbeddedObject() {

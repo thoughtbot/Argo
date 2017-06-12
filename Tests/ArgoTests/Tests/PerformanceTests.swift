@@ -1,5 +1,6 @@
 import XCTest
 import Argo
+import Fixtures
 
 class PerformanceTests: XCTestCase {
   func testParsePerformance() {

@@ -1,9 +1,10 @@
 import XCTest
 import Argo
+import Fixtures
 
 class PListDecodingTests: XCTestCase {
   func testDecodingAllTypesFromPList() {
-    let model: TestModel? = PListFileReader.plist(fromFile: "types").flatMap(decode)
+    let model: TestModel? = plist(fromFile: "types").flatMap(decode)
 
     XCTAssert(model != nil)
     XCTAssert(model?.numerics.int == 5)

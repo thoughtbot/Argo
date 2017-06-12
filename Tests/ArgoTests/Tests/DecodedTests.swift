@@ -1,5 +1,6 @@
 import XCTest
 import Argo
+import Fixtures
 
 class DecodedTests: XCTestCase {
   func testDecodedSuccess() {
@@ -10,19 +11,19 @@ class DecodedTests: XCTestCase {
     default: XCTFail("Unexpected Case Occurred")
     }
   }
-  
+
   func testDecodedWithError() {
     let user: Decoded<User> = decode(json(fromFile: "user_with_bad_type")!)
-    
+
     switch user.error {
     case .some: XCTAssert(true)
     case .none: XCTFail("Unexpected Success")
     }
   }
-  
+
   func testDecodedWithNoError() {
     let user: Decoded<User> = decode(json(fromFile: "user_with_email")!)
-    
+
     switch user.error {
     case .some: XCTFail("Unexpected Error Occurred")
     case .none: XCTAssert(true)
@@ -96,26 +97,26 @@ class DecodedTests: XCTestCase {
   func testDecodedMaterializeSuccess() {
     let user: Decoded<User> = decode(json(fromFile: "user_with_email")!)
     let materialized = materialize { user.value! }
-    
+
     switch materialized {
     case let .success(x): XCTAssert(user.description == "Success(\(x))")
     default: XCTFail("Unexpected Case Occurred")
     }
   }
-  
+
   func testDecodedMaterializeFailure() {
     let error = NSError(domain: "com.thoughtbot.Argo", code: 0, userInfo: nil)
     let materialized = materialize { throw error }
-    
+
     switch materialized {
     case let .failure(e): XCTAssert(e.description == "Custom(\(error.description))")
     default: XCTFail("Unexpected Case Occurred")
     }
   }
-  
+
   func testDecodedDematerializeSuccess() {
     let user: Decoded<User> = decode(json(fromFile: "user_with_email")!)
-    
+
     do {
       _ = try user.dematerialize()
       XCTAssert(true)
@@ -123,10 +124,10 @@ class DecodedTests: XCTestCase {
       XCTFail("Unexpected Error Occurred")
     }
   }
-  
+
   func testDecodedDematerializeTypeMismatch() {
     let user: Decoded<User> = decode(json(fromFile: "user_with_bad_type")!)
-    
+
     do {
       _ = try user.dematerialize()
       XCTFail("Unexpected Success")
@@ -138,10 +139,10 @@ class DecodedTests: XCTestCase {
       XCTFail("Unexpected Error Occurred")
     }
   }
-  
+
   func testDecodedDematerializeMissingKey() {
     let user: Decoded<User> = decode(json(fromFile: "user_without_key")!)
-    
+
     do {
       _ = try user.dematerialize()
       XCTFail("Unexpected Success")

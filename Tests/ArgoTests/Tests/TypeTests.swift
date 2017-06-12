@@ -1,5 +1,6 @@
 import XCTest
 import Argo
+import Fixtures
 
 class TypeTests: XCTestCase {
   func testAllTheTypes() {

@@ -19,10 +19,14 @@ let package = Package(
       ]
     ),
     .testTarget(
+      name: "Fixtures"
+    ),
+    .testTarget(
       name: "ArgoTests",
       dependencies: [
         "Argo",
         "Curry",
+        "Fixtures",
       ]
     ),
   ],
