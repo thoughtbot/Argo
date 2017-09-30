@@ -9,8 +9,8 @@ errors and how to fix them.
 Since the implementation of `decode` on a model consists of fully currying a
 method and composing it with many small pieces, each of which may be composed
 of many other pieces, it is not surprising that Swift sometimes has difficulty
-compiling the expression in a reasonable amount of time. This manifests itself
-with the following error:
+compiling the expression in a reasonable amount of time. This can manifest
+itself with unusually long compilation times, or with the following error:
 
 > Expression was too complex to be solved in reasonable time; consider
 > breaking up the expression into distinct sub-expressions.
