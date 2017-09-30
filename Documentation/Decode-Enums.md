@@ -44,7 +44,7 @@ We can write `Decodable` for `FootRace` like so:
 
 ```swift
 extension FootRace: Decodable {
-  static func decode(j: JSON) -> Decoded<FootRace> {
+  static func decode(j: Value) -> Decoded<FootRace> {
     switch j {
 
     // First, make sure JSON is a number.

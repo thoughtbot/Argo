@@ -80,7 +80,7 @@ class DecodedTests: XCTestCase {
 
     let expected: [DecodeError] = [
       .missingKey("name"),
-      .typeMismatch(expected: "String", actual: String(describing: JSON.number(1)))
+      .typeMismatch(expected: "String", actual: String(describing: Value.number(1)))
     ]
 
     switch user {
@@ -195,7 +195,7 @@ class DecodedTests: XCTestCase {
 }
 
 private struct Dummy: Argo.Decodable {
-  static func decode(_ json: JSON) -> Decoded<Dummy> {
+  static func decode(_ value: Value) -> Decoded<Dummy> {
     return .customError("My Custom Error")
   }
 }

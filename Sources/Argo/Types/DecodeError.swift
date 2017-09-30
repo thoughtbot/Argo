@@ -3,13 +3,13 @@ public enum DecodeError: Error {
   /// The type existing at the key didn't match the type being requested.
   case typeMismatch(expected: String, actual: String)
 
-  /// The key did not exist in the JSON.
+  /// The key did not exist in the Value.
   case missingKey(String)
 
   /// A custom error case for adding explicit failure info.
   case custom(String)
 
-  /// There were multiple errors in the JSON.
+  /// There were multiple errors in the Value.
   case multiple([DecodeError])
 }
 

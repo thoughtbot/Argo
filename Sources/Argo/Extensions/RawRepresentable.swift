@@ -3,13 +3,13 @@
   `String` as the raw value.
 */
 public extension Decodable where Self.DecodedType == Self, Self: RawRepresentable, Self.RawValue == String {
-  static func decode(_ json: JSON) -> Decoded<Self> {
-    switch json {
+  static func decode(_ value: Value) -> Decoded<Self> {
+    switch value {
     case let .string(s):
       return self.init(rawValue: s)
-        .map(pure) ?? .typeMismatch(expected: "rawValue for \(self)", actual: json)
+        .map(pure) ?? .typeMismatch(expected: "rawValue for \(self)", actual: value)
     default:
-      return .typeMismatch(expected: "String", actual: json)
+      return .typeMismatch(expected: "String", actual: value)
     }
   }
 }
@@ -19,13 +19,13 @@ public extension Decodable where Self.DecodedType == Self, Self: RawRepresentabl
   `Int` as the raw value.
 */
 public extension Decodable where Self.DecodedType == Self, Self: RawRepresentable, Self.RawValue == Int {
-  static func decode(_ json: JSON) -> Decoded<Self> {
-    switch json {
+  static func decode(_ value: Value) -> Decoded<Self> {
+    switch value {
     case let .number(n):
       return self.init(rawValue: n.intValue)
-        .map(pure) ?? .typeMismatch(expected: "rawValue for \(self)", actual: json)
+        .map(pure) ?? .typeMismatch(expected: "rawValue for \(self)", actual: value)
     default:
-      return .typeMismatch(expected: "Int", actual: json)
+      return .typeMismatch(expected: "Int", actual: value)
     }
   }
 }

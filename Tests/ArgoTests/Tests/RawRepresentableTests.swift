@@ -16,9 +16,9 @@ extension TestRawInt: Argo.Decodable { }
 
 class RawRepresentable: XCTestCase {
   func testStringEnum() {
-    let json = JSON.object([
-      "string": JSON.string("CoolString"),
-      "another": JSON.string("NotCoolStringBro")
+    let json = Value.object([
+      "string": Value.string("CoolString"),
+      "another": Value.string("NotCoolStringBro")
       ])
 
     let string: TestRawString? = json["string"].value
@@ -28,9 +28,9 @@ class RawRepresentable: XCTestCase {
   }
 
   func testIntEnum() {
-    let json = JSON.object([
-      "zero": JSON.number(0),
-      "one": JSON.number(1)
+    let json = Value.object([
+      "zero": Value.number(0),
+      "one": Value.number(1)
       ])
 
     let zero: TestRawInt? = json["zero"].value
