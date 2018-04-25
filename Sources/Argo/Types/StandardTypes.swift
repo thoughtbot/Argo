@@ -177,7 +177,7 @@ public extension Optional where Wrapped: Decodable, Wrapped == Wrapped.DecodedTy
   }
 }
 
-public extension Collection where Iterator.Element: Decodable, Iterator.Element == Iterator.Element.DecodedType {
+extension Array: Decodable where Element: Decodable, Element == Element.DecodedType {
   /**
     Decode `JSON` into an array of values where the elements of the array are
     `Decodable`.
@@ -194,7 +194,7 @@ public extension Collection where Iterator.Element: Decodable, Iterator.Element 
 
     - returns: A decoded array of values
   */
-  static func decode(_ json: JSON) -> Decoded<[Iterator.Element]> {
+  public static func decode(_ json: JSON) -> Decoded<Array> {
     switch json {
     case let .array(a): return sequence(a.map(Iterator.Element.decode))
     default: return .typeMismatch(expected: "Array", actual: json)
@@ -202,32 +202,7 @@ public extension Collection where Iterator.Element: Decodable, Iterator.Element 
   }
 }
 
-/**
-  Decode `JSON` into an array of values where the elements of the array are
-  `Decodable`.
-
-  If the `JSON` is an array of `JSON` objects, this returns a decoded array
-  of values by mapping the element's `decode` function over the `JSON` and
-  then applying `sequence` to the result. This makes `decodeArray` an
-  all-or-nothing operation (See the documentation for `sequence` for more
-  info).
-
-  If the `JSON` is not an array, this returns a type mismatch.
-
-  This is a convenience function that is the same as `[T].decode(json)` (where `T`
-  is `Decodable`) and only exists to ease some pain around needing to use the
-  full type of the array when calling `decode`. We expect this function to be
-  removed in a future version.
-
-  - parameter json: The `JSON` value to decode
-
-  - returns: A decoded array of values
-*/
-public func decodeArray<T: Decodable>(_ json: JSON) -> Decoded<[T]> where T.DecodedType == T {
-  return [T].decode(json)
-}
-
-public extension ExpressibleByDictionaryLiteral where Value: Decodable, Value == Value.DecodedType {
+extension Dictionary: Decodable where Value: Decodable, Value == Value.DecodedType, Key == String {
   /**
     Decode `JSON` into a dictionary of keys and values where the keys are
     `String`s and the values are `Decodable`.
@@ -244,37 +219,12 @@ public extension ExpressibleByDictionaryLiteral where Value: Decodable, Value ==
 
     - returns: A decoded dictionary of key/value pairs
   */
-  static func decode(_ json: JSON) -> Decoded<[String: Value]> {
+  public static func decode(_ json: JSON) -> Decoded<Dictionary> {
     switch json {
     case let .object(o): return sequence(Value.decode <^> o)
     default: return .typeMismatch(expected: "Object", actual: json)
     }
   }
-}
-
-/**
-  Decode `JSON` into a dictionary of keys and values where the keys are
-  `String`s and the values are `Decodable`.
-
-  If the `JSON` is a dictionary of `String`/`JSON` pairs, this returns a
-  decoded dictionary of key/value pairs by mapping the value's `decode`
-  function over the `JSON` and then applying `sequence` to the result. This
-  makes `decodeObject` an all-or-nothing operation (See the documentation for
-  `sequence` for more info).
-
-  If the `JSON` is not a dictionary, this returns a type mismatch.
-
-  This is a convenience function that is the same as `[String: T].decode(json)`
-  (where `T` is `Decodable`) and only exists to ease some pain around needing to
-  use the full type of the dictionary when calling `decode`. We expect this
-  function to be removed in a future version.
-
-  - parameter json: The `JSON` value to decode
-
-  - returns: A decoded dictionary of key/value pairs
-*/
-public func decodeObject<T: Decodable>(_ json: JSON) -> Decoded<[String: T]> where T.DecodedType == T {
-  return [String: T].decode(json)
 }
 
 /**

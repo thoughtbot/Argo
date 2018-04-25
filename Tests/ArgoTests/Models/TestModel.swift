@@ -21,12 +21,12 @@ extension TestModel: Argo.Decodable {
       <^> json <| "numerics"
       <*> json <| ["user_opt", "name"]
       <*> json <| "bool"
-      <*> json <|| "string_array"
-      <*> json <||? "string_array_opt"
-      <*> json <|| ["embedded", "string_array"]
-      <*> json <||? ["embedded", "string_array_opt"]
+      <*> json <| "string_array"
+      <*> json <|? "string_array_opt"
+      <*> json <| ["embedded", "string_array"]
+      <*> json <|? ["embedded", "string_array_opt"]
       <*> json <|? "user_opt"
-      <*> (json <| "dict" >>- { [String: String].decode($0) })
+      <*> json <| "dict"
   }
 }
 

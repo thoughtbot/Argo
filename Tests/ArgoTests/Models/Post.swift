@@ -15,7 +15,7 @@ extension Post: Argo.Decodable {
       <^> json <| "id"
       <*> json <| "text"
       <*> json <| "author"
-      <*> json <|| "comments"
+      <*> json <| "comments"
   }
 }
 
@@ -33,7 +33,7 @@ extension LocationPost: Argo.Decodable {
       <^> json <| "id"
       <*> json <| "text"
       <*> json <| "author"
-      <*> json <|| "comments"
+      <*> json <| "comments"
       <*> json <|? "location"
   }
 }

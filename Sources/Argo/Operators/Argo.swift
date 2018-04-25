@@ -8,5 +8,3 @@ precedencegroup ArgoDecodePrecedence {
 
 infix operator <| : ArgoDecodePrecedence
 infix operator <|? : ArgoDecodePrecedence
-infix operator <|| : ArgoDecodePrecedence
-infix operator <||? : ArgoDecodePrecedence
