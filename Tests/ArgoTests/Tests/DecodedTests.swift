@@ -6,7 +6,7 @@ class DecodedTests: XCTestCase {
     let user: Decoded<User> = decode(json(fromFile: "user_with_email")!)
 
     switch user {
-    case let .success(x): XCTAssert(user.description == "Success(\(x))")
+    case let .success(x): XCTAssertEqual(user.description, "Success(\(x))")
     default: XCTFail("Unexpected Case Occurred")
     }
   }
@@ -33,7 +33,7 @@ class DecodedTests: XCTestCase {
     let user: Decoded<User> = decode(json(fromFile: "user_with_bad_type")!)
 
     switch user {
-    case let .failure(.typeMismatch(expected, actual)): XCTAssert(user.description == "Failure(TypeMismatch(Expected \(expected), got \(actual)))")
+    case let .failure(.typeMismatch(expected, actual)): XCTAssertEqual(user.description, "Failure(TypeMismatch(Expected \(expected), got \(actual)))")
     default: XCTFail("Unexpected Case Occurred")
     }
   }
@@ -42,7 +42,7 @@ class DecodedTests: XCTestCase {
     let user: Decoded<User> = decode(json(fromFile: "user_without_key")!)
 
     switch user {
-    case let .failure(.missingKey(s)): XCTAssert(user.description == "Failure(MissingKey(\(s)))")
+    case let .failure(.missingKey(s)): XCTAssertEqual(user.description, "Failure(MissingKey(\(s)))")
     default: XCTFail("Unexpected Case Occurred")
     }
   }
@@ -51,7 +51,7 @@ class DecodedTests: XCTestCase {
     let customError: Decoded<Dummy> = decode([:])
 
     switch customError {
-    case let .failure(e): XCTAssert(e.description == "Custom(My Custom Error)")
+    case let .failure(e): XCTAssertEqual(e.description, "Custom(My Custom Error)")
     default: XCTFail("Unexpected Case Occurred")
     }
   }
@@ -67,7 +67,7 @@ class DecodedTests: XCTestCase {
     ]
 
     switch user {
-    case let .failure(.multiple(errors)): XCTAssert(errors == expected)
+    case let .failure(.multiple(errors)): XCTAssertEqual(errors, expected)
     default: XCTFail("Unexpected Case Occurred")
     }
   }
@@ -88,7 +88,7 @@ class DecodedTests: XCTestCase {
       print("expected: \(expected)")
       print("actual: \(errors)")
 
-      XCTAssert(errors == expected)
+      XCTAssertEqual(errors, expected)
     default: XCTFail("Unexpected Case Occurred")
     }
   }
@@ -98,7 +98,7 @@ class DecodedTests: XCTestCase {
     let materialized = materialize { user.value! }
     
     switch materialized {
-    case let .success(x): XCTAssert(user.description == "Success(\(x))")
+    case let .success(x): XCTAssertEqual(user.description, "Success(\(x))")
     default: XCTFail("Unexpected Case Occurred")
     }
   }
@@ -108,7 +108,7 @@ class DecodedTests: XCTestCase {
     let materialized = materialize { throw error }
     
     switch materialized {
-    case let .failure(e): XCTAssert(e.description == "Custom(\(error.description))")
+    case let .failure(e): XCTAssertEqual(e.description, "Custom(\(error.description))")
     default: XCTFail("Unexpected Case Occurred")
     }
   }
@@ -161,7 +161,7 @@ class DecodedTests: XCTestCase {
     let result = successUser.or(failedUser)
 
     switch result {
-    case .success: XCTAssert(result.description == successUser.description)
+    case .success: XCTAssertEqual(result.description, successUser.description)
     default: XCTFail("Unexpected Case Occurred")
     }
   }
@@ -173,7 +173,7 @@ class DecodedTests: XCTestCase {
     let result = failedUser.or(successUser)
 
     switch result {
-    case .success: XCTAssert(result.description == successUser.description)
+    case .success: XCTAssertEqual(result.description, successUser.description)
     default: XCTFail("Unexpected Case Occurred")
     }
   }

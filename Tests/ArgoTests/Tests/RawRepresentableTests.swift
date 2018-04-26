@@ -23,8 +23,8 @@ class RawRepresentable: XCTestCase {
 
     let string: TestRawString? = (json <| "string").value
     let another: TestRawString? = (json <| "another").value
-    XCTAssert(TestRawString.CoolString == string)
-    XCTAssert(TestRawString.NotCoolStringBro == another)
+    XCTAssertEqual(TestRawString.CoolString, string)
+    XCTAssertEqual(TestRawString.NotCoolStringBro, another)
   }
 
   func testIntEnum() {
@@ -35,7 +35,7 @@ class RawRepresentable: XCTestCase {
 
     let zero: TestRawInt? = (json <| "zero").value
     let one: TestRawInt? = (json <| "one").value
-    XCTAssert(TestRawInt.zero == zero)
-    XCTAssert(TestRawInt.one == one)
+    XCTAssertEqual(TestRawInt.zero, zero)
+    XCTAssertEqual(TestRawInt.one, one)
   }
 }

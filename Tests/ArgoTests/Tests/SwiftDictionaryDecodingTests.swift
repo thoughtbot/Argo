@@ -6,7 +6,7 @@ class SwiftDictionaryDecodingTests: XCTestCase {
     let typesDict: [String: Any] = [
        "numerics": [
         "int": 5,
-        "int64": 900719,//9254740992, Dictionaries can't handle 64bit ints (iOS only, Mac works)
+        "int64": 900719,
         "int64_string": "1076543210012345678",
         "double": 3.4,
         "float": 1.1,
@@ -32,25 +32,21 @@ class SwiftDictionaryDecodingTests: XCTestCase {
 
     let model: TestModel? = decode(typesDict)
 
-    XCTAssert(model != nil)
-    XCTAssert(model?.numerics.int == 5)
-    XCTAssert(model?.numerics.int64 == 900719)//9254740992)
-    XCTAssert(model?.numerics.uint == 500)
-    XCTAssert(model?.numerics.uint64 == 1039288)
-    XCTAssert(model?.numerics.uint64String == 18446744073709551614)
-    XCTAssert(model?.numerics.double == 3.4)
-    XCTAssert(model?.numerics.float == 1.1)
-    XCTAssert(model?.numerics.intOpt != nil)
-    XCTAssert(model?.numerics.intOpt! == 4)
-    XCTAssert(model?.string == "Cooler User")
-    XCTAssert(model?.bool == false)
-    XCTAssert(model?.stringArray.count == 2)
-    XCTAssert(model?.stringArrayOpt == nil)
-    XCTAssert(model?.eStringArray.count == 2)
-    XCTAssert(model?.eStringArrayOpt != nil)
-    XCTAssert(model?.eStringArrayOpt?.count == 0)
-    XCTAssert(model?.userOpt != nil)
-    XCTAssert(model?.userOpt?.id == 6)
-    XCTAssert(model?.dict ?? [:] == ["foo": "bar"])
+    XCTAssertEqual(model?.numerics.int, 5)
+    XCTAssertEqual(model?.numerics.int64, 900719)
+    XCTAssertEqual(model?.numerics.uint, 500)
+    XCTAssertEqual(model?.numerics.uint64, 1039288)
+    XCTAssertEqual(model?.numerics.uint64String, 18446744073709551614)
+    XCTAssertEqual(model?.numerics.double, 3.4)
+    XCTAssertEqual(model?.numerics.float, 1.1)
+    XCTAssertEqual(model?.numerics.intOpt!, 4)
+    XCTAssertEqual(model?.string, "Cooler User")
+    XCTAssertEqual(model?.bool, false)
+    XCTAssertEqual(model?.stringArray.count, 2)
+    XCTAssertNil(model?.stringArrayOpt)
+    XCTAssertEqual(model?.eStringArray.count, 2)
+    XCTAssertEqual(model?.eStringArrayOpt?.count, 0)
+    XCTAssertEqual(model?.userOpt?.id, 6)
+    XCTAssertEqual(model?.dict, ["foo": "bar"])
   }
 }
