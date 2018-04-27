@@ -11,8 +11,8 @@ struct Comment {
 extension Comment: Argo.Decodable {
   static func decode(_ json: JSON) -> Decoded<Comment> {
     return curry(self.init)
-      <^> json <| "id"
-      <*> json <| "text"
-      <*> json <| ["author", "name"]
+      <^> json["id"]
+      <*> json["text"]
+      <*> json["author", "name"]
   }
 }

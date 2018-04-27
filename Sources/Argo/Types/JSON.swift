@@ -44,6 +44,53 @@ public extension JSON {
   }
 }
 
+extension JSON {
+  /**
+    Attempt to extract a value at the specified key path and transform it into
+    the requested type.
+
+    This method is used to decode a mandatory value from the `JSON`. If the
+    decoding fails for any reason, this will result in a `.Failure` being
+    returned.
+
+    - parameter keyPath: The key path for the object to decode, represented by
+      a variadic list of strings.
+
+    - returns: A `Decoded` value representing the success or failure of the
+      decode operation
+  */
+  public subscript<T: Decodable>(keyPath: String...) -> Decoded<T> where T == T.DecodedType {
+    return flatReduce(keyPath, initial: self, combine: decodedJSON)
+      .flatMap(T.decode)
+  }
+
+  /**
+    Attempt to extract an optional value at the specified key path and
+    transform it into the requested type.
+
+    This method is used to decode an optional value from the `JSON`. If any of
+    the keys in the key path aren't present in the `JSON`, this will still return
+    `.success`. However, if the key path exists but the object assigned to the
+    final key is unable to be decoded into the requested type, this will return
+    `.failure`.
+
+    - parameter keyPath: The key path for the object to decode, represented by
+      a variadic list of strings.
+    - returns: A `Decoded` optional value representing the success or failure
+      of the decode operation
+  */
+  public subscript<T: Decodable>(optional keyPath: String...) -> Decoded<T?> where T == T.DecodedType {
+    switch flatReduce(keyPath, initial: self, combine: decodedJSON) {
+    case .failure:
+      return .success(.none)
+
+    case let .success(x):
+      return T.decode(x)
+        .flatMap { .success(.some($0)) }
+    }
+  }
+}
+
 extension JSON: Decodable {
   /**
     Decode `JSON` into `Decoded<JSON>`.

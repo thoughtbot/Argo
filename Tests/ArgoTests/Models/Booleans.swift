@@ -8,7 +8,7 @@ struct Booleans: Argo.Decodable {
 
   static func decode(_ json: JSON) -> Decoded<Booleans> {
     return curry(Booleans.init)
-      <^> json <| "realBool"
-      <*> json <| "numberBool"
+      <^> json["realBool"]
+      <*> json["numberBool"]
   }
 }

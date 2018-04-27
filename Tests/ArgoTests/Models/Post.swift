@@ -12,10 +12,10 @@ struct Post {
 extension Post: Argo.Decodable {
   static func decode(_ json: JSON) -> Decoded<Post> {
     return curry(self.init)
-      <^> json <| "id"
-      <*> json <| "text"
-      <*> json <| "author"
-      <*> json <| "comments"
+      <^> json["id"]
+      <*> json["text"]
+      <*> json["author"]
+      <*> json["comments"]
   }
 }
 
@@ -30,11 +30,11 @@ struct LocationPost {
 extension LocationPost: Argo.Decodable {
   static func decode(_ json: JSON) -> Decoded<LocationPost> {
     return curry(self.init)
-      <^> json <| "id"
-      <*> json <| "text"
-      <*> json <| "author"
-      <*> json <| "comments"
-      <*> json <|? "location"
+      <^> json["id"]
+      <*> json["text"]
+      <*> json["author"]
+      <*> json["comments"]
+      <*> json[optional: "location"]
   }
 }
 
@@ -47,8 +47,8 @@ struct Location {
 extension Location: Argo.Decodable {
   static func decode(_ json: JSON) -> Decoded<Location> {
     return curry(self.init)
-      <^> json <| "lat"
-      <*> json <| "lng"
-      <*> json <| "title"
+      <^> json["lat"]
+      <*> json["lng"]
+      <*> json["title"]
   }
 }

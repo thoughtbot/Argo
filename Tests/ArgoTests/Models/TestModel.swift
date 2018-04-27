@@ -18,15 +18,15 @@ extension TestModel: Argo.Decodable {
   static func decode(_ json: JSON) -> Decoded<TestModel> {
     let curriedInit = curry(self.init)
     return curriedInit
-      <^> json <| "numerics"
-      <*> json <| ["user_opt", "name"]
-      <*> json <| "bool"
-      <*> json <| "string_array"
-      <*> json <|? "string_array_opt"
-      <*> json <| ["embedded", "string_array"]
-      <*> json <|? ["embedded", "string_array_opt"]
-      <*> json <|? "user_opt"
-      <*> json <| "dict"
+      <^> json["numerics"]
+      <*> json["user_opt", "name"]
+      <*> json["bool"]
+      <*> json["string_array"]
+      <*> json[optional: "string_array_opt"]
+      <*> json["embedded", "string_array"]
+      <*> json[optional: "embedded", "string_array_opt"]
+      <*> json[optional: "user_opt"]
+      <*> json["dict"]
   }
 }
 
@@ -45,16 +45,16 @@ struct TestModelNumerics {
 extension TestModelNumerics: Argo.Decodable {
   static func decode(_ json: JSON) -> Decoded<TestModelNumerics> {
     let f = curry(self.init)
-      <^> json <| "int"
-      <*> json <| "int64"
-      <*> json <| "int64_string"
-      <*> json <| "double"
-      <*> json <| "float"
-      <*> json <|? "int_opt"
+      <^> json["int"]
+      <*> json["int64"]
+      <*> json["int64_string"]
+      <*> json["double"]
+      <*> json["float"]
+      <*> json[optional: "int_opt"]
 
     return f
-      <*> json <| "uint"
-      <*> json <| "uint64"
-      <*> json <| "uint64_string"
+      <*> json["uint"]
+      <*> json["uint64"]
+      <*> json["uint64_string"]
   }
 }

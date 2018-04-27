@@ -79,7 +79,7 @@ public func decode<T: Decodable>(_ object: Any) -> T? where T == T.DecodedType {
   - returns: A `Decoded<T>` value where `T` is `Decodable`
 */
 public func decode<T: Decodable>(_ dict: [String: Any], rootKey: String) -> Decoded<T> where T == T.DecodedType {
-  return JSON(dict as Any) <| rootKey
+  return JSON(dict as Any)[rootKey]
 }
 
 /**

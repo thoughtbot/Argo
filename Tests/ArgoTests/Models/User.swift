@@ -11,8 +11,8 @@ struct User {
 extension User: Argo.Decodable {
   static func decode(_ json: JSON) -> Decoded<User> {
     return curry(self.init)
-      <^> json <| "id"
-      <*> (json <| ["userinfo", "name"] <|> json <| "name")
-      <*> json <|? "email"
+      <^> json["id"]
+      <*> (json["userinfo", "name"] <|> json["name"])
+      <*> json[optional: "email"]
   }
 }
