@@ -22,10 +22,10 @@ extension TestModel: Argo.Decodable {
       <*> json["user_opt", "name"]
       <*> json["bool"]
       <*> json["string_array"]
-      <*> json[optional: "string_array_opt"]
+      <*> .optional(json["string_array_opt"])
       <*> json["embedded", "string_array"]
-      <*> json[optional: "embedded", "string_array_opt"]
-      <*> json[optional: "user_opt"]
+      <*> .optional(json["embedded", "string_array_opt"])
+      <*> .optional(json["user_opt"])
       <*> json["dict"]
   }
 }
@@ -50,7 +50,7 @@ extension TestModelNumerics: Argo.Decodable {
       <*> json["int64_string"]
       <*> json["double"]
       <*> json["float"]
-      <*> json[optional: "int_opt"]
+      <*> .optional(json["int_opt"])
 
     return f
       <*> json["uint"]

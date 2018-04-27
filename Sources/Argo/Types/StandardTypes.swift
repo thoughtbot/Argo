@@ -161,7 +161,7 @@ extension Bool: Decodable {
   }
 }
 
-public extension Optional where Wrapped: Decodable, Wrapped == Wrapped.DecodedType {
+extension Optional: Decodable where Wrapped: Decodable, Wrapped == Wrapped.DecodedType {
   /**
     Decode `JSON` into an `Optional<Wrapped>` value where `Wrapped` is `Decodable`.
 
@@ -172,7 +172,7 @@ public extension Optional where Wrapped: Decodable, Wrapped == Wrapped.DecodedTy
 
     - returns: A decoded optional `Wrapped` value
   */
-  static func decode(_ json: JSON) -> Decoded<Wrapped?> {
+  public static func decode(_ json: JSON) -> Decoded<Optional> {
     return Wrapped.decode(json) >>- { .success(.some($0)) }
   }
 }
