@@ -2,8 +2,8 @@ import Foundation
 
 /// A type safe representation of JSON.
 public enum JSON {
-  case object([String: JSON])
-  case array([JSON])
+  case object([String: Any])
+  case array([Any])
   case string(String)
   case number(NSNumber)
   case bool(Bool)
@@ -22,11 +22,14 @@ public extension JSON {
   init(_ json: Any) {
     switch json {
 
+    case let v as JSON:
+      self = v
+
     case let v as [Any]:
-      self = .array(v.map(JSON.init))
+      self = .array(v)
 
     case let v as [String: Any]:
-      self = .object(v.map(JSON.init))
+      self = .object(v)
 
     case let v as String:
       self = .string(v)
@@ -81,8 +84,8 @@ public func == (lhs: JSON, rhs: JSON) -> Bool {
   case let (.string(l), .string(r)): return l == r
   case let (.number(l), .number(r)): return l == r
   case let (.bool(l), .bool(r)): return l == r
-  case let (.array(l), .array(r)): return l == r
-  case let (.object(l), .object(r)): return l == r
+  case let (.array(l), .array(r)): return l.map(JSON.init) == r.map(JSON.init)
+  case let (.object(l), .object(r)): return l.map(JSON.init) == r.map(JSON.init)
   case (.null, .null): return true
   default: return false
   }

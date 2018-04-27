@@ -196,7 +196,7 @@ extension Array: Decodable where Element: Decodable, Element == Element.DecodedT
   */
   public static func decode(_ json: JSON) -> Decoded<Array> {
     switch json {
-    case let .array(a): return sequence(a.map(Iterator.Element.decode))
+    case let .array(a): return sequence(a.map({ Iterator.Element.decode(JSON($0)) }))
     default: return .typeMismatch(expected: "Array", actual: json)
     }
   }
@@ -221,7 +221,7 @@ extension Dictionary: Decodable where Value: Decodable, Value == Value.DecodedTy
   */
   public static func decode(_ json: JSON) -> Decoded<Dictionary> {
     switch json {
-    case let .object(o): return sequence(Value.decode <^> o)
+    case let .object(o): return sequence({ Value.decode(JSON($0)) } <^> o)
     default: return .typeMismatch(expected: "Object", actual: json)
     }
   }
@@ -246,7 +246,7 @@ extension Dictionary: Decodable where Value: Decodable, Value == Value.DecodedTy
 */
 public func decodedJSON(_ json: JSON, forKey key: String) -> Decoded<JSON> {
   switch json {
-  case let .object(o): return guardNull(key, o[key] ?? .null)
+  case let .object(o): return guardNull(key, o[key].map(JSON.init) ?? .null)
   default: return .typeMismatch(expected: "Object", actual: json)
   }
 }
