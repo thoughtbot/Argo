@@ -14,7 +14,7 @@ enum TestRawInt: Int {
 extension TestRawString: Argo.Decodable { }
 extension TestRawInt: Argo.Decodable { }
 
-class RawRepresentable: XCTestCase {
+class RawRepresentableTests: XCTestCase {
   func testStringEnum() {
     let json = JSON.object([
       "string": JSON.string("CoolString"),
