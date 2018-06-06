@@ -20,15 +20,15 @@ public protocol Decodable {
   associatedtype DecodedType = Self
 
   /**
-    Decode an object from JSON.
+    Decode an object from Value.
 
     This is the main entry point for Argo. This function declares how the
-    conforming type should be decoded from JSON. Since this is a failable
+    conforming type should be decoded from Value. Since this is a failable
     operation, we need to return a `Decoded` type from this function.
 
-    - parameter json: The `JSON` representation of this object
+    - parameter value: The `Value` representation of this object
 
     - returns: A decoded instance of the `DecodedType`
   */
-  static func decode(_ json: JSON) -> Decoded<DecodedType>
+  static func decode(_ value: Value) -> Decoded<DecodedType>
 }

@@ -25,14 +25,14 @@ struct User: Decodable {
   let mediumAvatar: String
   let largeAvatar: String
 
-  static func decode(j: JSON) -> Decoded<User> {
+  static func decode(v: Value) -> Decoded<User> {
     return curry(User.init)
-      <^> j <| "id"
-      <*> j <| "name"
-      <*> j <| "bio"
-      <*> j <| "small_avatar"
-      <*> j <| "medium_avatar"
-      <*> j <| "large_avatar"
+      <^> v <| "id"
+      <*> v <| "name"
+      <*> v <| "bio"
+      <*> v <| "small_avatar"
+      <*> v <| "medium_avatar"
+      <*> v <| "large_avatar"
   }
 }
 ```
@@ -59,7 +59,7 @@ struct Avatar {
 
 Now `User.init` has 4 arguments and `Avatar.init` has 3 arguments, so we are
 within the assumed limitations of `curry`. But, it is also less clear how we
-should write `User.decode`. How can we extract the 3 avatar fields from `JSON`
+should write `User.decode`. How can we extract the 3 avatar fields from `Value`
 to build `Avatar` first, and then use that to build `User`? The key insight is
 to see that `j <| "key"` returns a `Decoded<T>` value, representing one step
 of decoding. So, we can decode a `Avatar` first using `j`, and then plug that
@@ -67,21 +67,21 @@ directly into `curry(User.init)`:
 
 ```swift
 extension Avatar: Decodable {
-  static func decode(j: JSON) -> Decoded<Avatar> {
+  static func decode(v: Value) -> Decoded<Avatar> {
     return curry(Avatar.init)
-      <^> j <| "small_avatar"
-      <*> j <| "medium_avatar"
-      <*> j <| "large_avatar"
+      <^> v <| "small_avatar"
+      <*> v <| "medium_avatar"
+      <*> v <| "large_avatar"
   }
 }
 
 extension User: Decodable {
-  static func decode(j: JSON) -> Decoded<User> {
+  static func decode(v: Value) -> Decoded<User> {
     return curry(User.init)
-      <^> j <| "id"
-      <*> j <| "name"
-      <*> j <| "bio"
-      <*> Avatar.decode(j)
+      <^> v <| "id"
+      <*> v <| "name"
+      <*> v <| "bio"
+      <*> Avatar.decode(v)
   }
 }
 ```

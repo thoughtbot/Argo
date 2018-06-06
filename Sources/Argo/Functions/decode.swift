@@ -22,7 +22,7 @@
   - returns: A `Decoded<T>` value where `T` is `Decodable`
 */
 public func decode<T: Decodable>(_ object: Any) -> Decoded<T> where T == T.DecodedType {
-  return T.decode(JSON(object))
+  return T.decode(Value(object))
 }
 
 /**
@@ -56,7 +56,7 @@ public func decode<T: Decodable>(_ object: Any) -> T? where T == T.DecodedType {
   Attempt to transform `Any` into a `Decodable` value using a specified
   root key.
 
-  This function attempts to extract the embedded `JSON` object from the
+  This function attempts to extract the embedded `Value` object from the
   dictionary at the specified key and transform it into a `Decodable` value.
   This works based on the type you ask for.
 
@@ -79,14 +79,14 @@ public func decode<T: Decodable>(_ object: Any) -> T? where T == T.DecodedType {
   - returns: A `Decoded<T>` value where `T` is `Decodable`
 */
 public func decode<T: Decodable>(_ dict: [String: Any], rootKey: String) -> Decoded<T> where T == T.DecodedType {
-  return JSON(dict as Any)[rootKey]
+  return Value(dict as Any)[rootKey]
 }
 
 /**
   Attempt to transform `Any` into a `Decodable` value using a specified
   root key and return an `Optional`.
 
-  This function attempts to extract the embedded `JSON` object from the
+  This function attempts to extract the embedded `Value` object from the
   dictionary at the specified key and transform it into a `Decodable` value,
   returning an `Optional`. This works based on the type you ask for.
 
