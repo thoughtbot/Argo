@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/thoughtbot/Argo/master/web/Logo.png" width="250" />
 
-# Argo [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+# Argo [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 
 Argo is a library that lets you extract models from JSON or similar structures in
 a way that's concise, type-safe, and easy to extend. Using Argo, you won't need
