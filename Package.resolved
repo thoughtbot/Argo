@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Runes",
+        "repositoryURL": "https://github.com/thoughtbot/Runes.git",
+        "state": {
+          "branch": null,
+          "revision": "9eb9cd44ea777cdfc2a7e2df07d4c34f3b46e6e5",
+          "version": "4.2.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
