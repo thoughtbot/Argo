@@ -1,0 +1,52 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Chalk",
+        "repositoryURL": "https://github.com/mxcl/Chalk.git",
+        "state": {
+          "branch": null,
+          "revision": "9aa9f348b86db3cf6702a3e43c081ecec80cf3c7",
+          "version": "0.4.0"
+        }
+      },
+      {
+        "package": "FileCheck",
+        "repositoryURL": "https://github.com/llvm-swift/FileCheck.git",
+        "state": {
+          "branch": null,
+          "revision": "f25bfb4c69b9e05bf6b8d0862dcedb875c1b0f68",
+          "version": "0.2.4"
+        }
+      },
+      {
+        "package": "Runes",
+        "repositoryURL": "https://github.com/thoughtbot/Runes.git",
+        "state": {
+          "branch": null,
+          "revision": "a007f1b9d4f8786262809dce131c3d627ab97888",
+          "version": "5.1.0"
+        }
+      },
+      {
+        "package": "swift-tools-support-core",
+        "repositoryURL": "https://github.com/apple/swift-tools-support-core.git",
+        "state": {
+          "branch": null,
+          "revision": "693aba4c4c9dcc4767cc853a0dd38bf90ad8c258",
+          "version": "0.0.1"
+        }
+      },
+      {
+        "package": "SwiftCheck",
+        "repositoryURL": "git@github.com:typelift/SwiftCheck.git",
+        "state": {
+          "branch": null,
+          "revision": "077c096c3ddfc38db223ac8e525ad16ffb987138",
+          "version": "0.12.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
