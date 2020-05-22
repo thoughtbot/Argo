@@ -13,6 +13,8 @@ Pod::Spec.new do |spec|
   spec.source = { :git => 'https://github.com/thoughtbot/Argo.git', :tag => "v#{spec.version}" }
   spec.source_files = 'Sources/**/*.{h,swift}'
 
+  spec.swift_versions = [5.0]
+
   spec.dependency 'Runes', '>= 5.0.0'
 
   spec.requires_arc = true
