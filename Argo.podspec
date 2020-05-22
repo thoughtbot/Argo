@@ -5,7 +5,7 @@ Pod::Spec.new do |spec|
   spec.homepage = 'https://github.com/thoughtbot/Argo'
   spec.license = { :type => 'MIT', :file => 'LICENSE' }
   spec.author = {
-    'Gordon Fontenot' => 'gordon@thoughtbot.com',
+    'Gordon Fontenot' => 'gordon@fonten.io',
     'Tony DiPasquale' => 'tony@thoughtbot.com',
     'thoughtbot' => nil,
   }
