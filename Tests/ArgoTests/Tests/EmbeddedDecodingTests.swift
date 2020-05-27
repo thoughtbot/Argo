@@ -11,12 +11,12 @@ final class EmbeddedDecodingTests: XCTestCase {
     }
   }
 
-  func testFailOnEmbeddedObject() {
+  func testDecodeEmbeddedOptionalObject() {
     let post: Decoded<LocationPost> = decode(json(fromFile: "bad_location_post")!)
 
-    switch post.error {
+    switch post.value {
     case .some: XCTAssert(true)
-    case .none: XCTFail("Unexpected Success")
+    case .none: XCTFail("Unexpected Failure")
     }
   }
 }

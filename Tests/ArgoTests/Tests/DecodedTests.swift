@@ -78,19 +78,9 @@ class DecodedTests: XCTestCase {
       "email": 1
     ])
 
-    let expected: [DecodeError] = [
-      .missingKey("name"),
-      .typeMismatch(expected: "String", actual: String(describing: JSON.number(1)))
-    ]
+    let expected: DecodeError = .missingKey("name")
 
-    switch user {
-    case let .failure(.multiple(errors)):
-      print("expected: \(expected)")
-      print("actual: \(errors)")
-
-      XCTAssertEqual(errors, expected)
-    default: XCTFail("Unexpected Case Occurred")
-    }
+    XCTAssertEqual(user.error, expected)
   }
 
   func testDecodedMaterializeSuccess() {

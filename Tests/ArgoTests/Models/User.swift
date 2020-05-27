@@ -13,6 +13,6 @@ extension User: Argo.Decodable {
     return curry(self.init)
       <^> json["id"]
       <*> (json["userinfo", "name"] <|> json["name"])
-      <*> json[optional: "email"]
+      <*> .optional(json["email"])
   }
 }

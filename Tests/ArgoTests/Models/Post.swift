@@ -34,7 +34,7 @@ extension LocationPost: Argo.Decodable {
       <*> json["text"]
       <*> json["author"]
       <*> json["comments"]
-      <*> json[optional: "location"]
+      <*> .optional(json["location"])
   }
 }
 
