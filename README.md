@@ -110,12 +110,12 @@ struct User {
 extension User: Decodable {
   static func decode(_ json: JSON) -> Decoded<User> {
     return curry(User.init)
-      <^> json <| "id"
-      <*> json <| "name"
-      <*> json <|? "email" // Use ? for parsing optional values
-      <*> json <| "role" // Custom types that also conform to Decodable just work
-      <*> json <| ["company", "name"] // Parse nested objects
-      <*> json <|| "friends" // parse arrays of objects
+      <^> json["id"]
+      <*> json["name"]
+      <*> json[optional: "email"] // Use `[optional:]` for parsing optional values
+      <*> json["role"] // Custom types that also conform to Decodable just work
+      <*> json["company", "name"] // Parse nested objects
+      <*> json["friends"] // parse arrays of objects
   }
 }
 
